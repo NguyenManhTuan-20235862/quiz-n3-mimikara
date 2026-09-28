@@ -941,7 +941,7 @@
             <th>Hiragana</th>
             <th>Hán Việt</th>
             <th>Nghĩa Tiếng Việt</th>
-            <th>Danh mục / Chủ đề</th>
+            <th class="col-topic">Danh mục / Chủ đề</th>
             <th style="text-align: center;">Thao tác</th>
           </tr>
         </thead>
@@ -952,7 +952,7 @@
               <td class="dict-hiragana">${w.hiragana}</td>
               <td class="dict-hanviet">${w.hanViet || '-'}</td>
               <td>${w.nghia}</td>
-              <td style="font-size: 0.85rem; color: var(--text-muted);">${w.topicName}</td>
+              <td class="col-topic" style="font-size: 0.85rem; color: var(--text-muted);">${w.topicName}</td>
               <td style="text-align: center; white-space: nowrap;">
                 <button class="audio-btn btn-speak" data-word="${w.kanji}" title="Nghe phát âm" style="width: 32px; height: 32px; font-size: 0.9rem;">🔊</button>
                 ${isMasteredTab ? `
@@ -1103,7 +1103,7 @@
           <td class="dict-hiragana"><span class="cell-text">${w.hiragana}</span></td>
           <td class="dict-hanviet"><span class="cell-text">${w.hanViet || '-'}</span></td>
           <td class="dict-nghia"><span class="cell-text">${w.nghia}</span></td>
-          <td style="font-size: 0.82rem; color: var(--text-muted);">${w.topicName}</td>
+          <td class="col-topic" style="font-size: 0.82rem; color: var(--text-muted);">${w.topicName}</td>
           <td style="text-align: center; white-space: nowrap;">
             <button class="audio-btn dict-speak-btn" data-word="${w.kanji}" title="Nghe phát âm" style="width: 32px; height: 32px; font-size: 0.9rem;">🔊</button>
             <button class="star-btn dict-star-btn ${isFav ? 'active' : ''}" data-id="${w.id}" style="position: static; font-size: 1.2rem; vertical-align: middle;">★</button>
