@@ -200,11 +200,16 @@
   </div>
 
   <script>
-    // Lấy IP từ query param hoặc hostname
+    // Link GitHub Pages chính thức (hỗ trợ PWA Offline và HTTPS)
+    const GITHUB_PAGES_URL = 'https://nguyenmanhtuan-20235862.github.io/quiz-n3-mimikara/';
+    
     const params = new URLSearchParams(window.location.search);
+    const useLocal = params.get('local') === 'true';
     const ip = params.get('ip') || window.location.hostname;
     const port = params.get('port') || window.location.port || '5500';
-    const targetUrl = `http://${ip}:${port}`;
+    const localUrl = `http://${ip}:${port}`;
+
+    const targetUrl = useLocal ? localUrl : GITHUB_PAGES_URL;
 
     document.getElementById('phoneUrl').textContent = targetUrl;
     
