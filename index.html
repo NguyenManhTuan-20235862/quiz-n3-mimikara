@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ôn Tập Từ Vựng JLPT N3 - Mimikara</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Quiz N3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="brand">
+        <div class="logo-badge">N3</div>
+        <div class="brand-title">
+          <span>JLPT VOCAB QUIZ</span>
+          <span class="brand-sub">Mimikara N3 Master</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <!-- Category selector (Extensible for Danh từ, Động từ, etc.) -->
+        <select id="categorySelect" class="custom-select" style="max-width: 220px; font-size: 0.85rem; padding: 6px 10px;">
+          <!-- Dynamically populated from QUIZ_CATEGORIES -->
+        </select>
+
+        <button id="soundToggleBtn" class="btn-icon" title="Bật/Tắt âm thanh">
+          <span id="soundIcon">🔊</span>
+        </button>
+
+        <button id="themeToggleBtn" class="btn-icon" title="Chuyển chế độ Sáng/Tối">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <a href="connect.html" id="phoneConnectBtn" class="btn-icon" title="Kết nối học trên điện thoại (Mã QR & Link)" style="text-decoration: none;">
+          <span>📱</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <div class="nav-tabs-wrapper">
+    <!-- Category Pills Switcher -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 12px 20px 6px; display: flex; gap: 10px; align-items: center; border-bottom: 1px dashed var(--border);">
+      <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Mục lớn:</span>
+      <div id="categoryPills" style="display: flex; gap: 8px;">
+        <!-- Dynamically rendered pills -->
+      </div>
+    </div>
+
+    <ul class="nav-tabs">
+      <li>
+        <button class="nav-tab-btn active" data-tab="quiz">
+          <span>🎯</span> Trắc nghiệm
+        </button>
+      </li>
+      <li>
+        <button class="nav-tab-btn" data-tab="flashcard">
+          <span>🗂️</span> Flashcard
+        </button>
+      </li>
+      <li>
+        <button class="nav-tab-btn" data-tab="spelling">
+          <span>✍️</span> Luyện gõ
+        </button>
+      </li>
+      <li>
+        <button class="nav-tab-btn" data-tab="exam">
+          <span>⏱️</span> Thi thử tính giờ
+        </button>
+      </li>
+      <li>
+        <button class="nav-tab-btn" data-tab="review">
+          <span>🌟</span> Sổ tay ôn tập
+          <span id="reviewBadge" class="badge-count">0</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-tab-btn" data-tab="dictionary">
+          <span>📖</span> Danh sách từ vựng
+          <span id="dictTotalBadge" class="badge-count">0</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Topic / Filter Control Bar -->
+    <div class="control-bar">
+      <div class="select-group">
+        <label for="topicSelect" class="select-label">Chủ đề:</label>
+        <select id="topicSelect" class="custom-select">
+          <option value="all">🌟 Tất cả 7 chủ đề (Tổng hợp 338 từ)</option>
+          <!-- Populated dynamically -->
+        </select>
+      </div>
+
+      <div class="quick-stats">
+        <div class="stat-pill">Số từ: <strong id="currentWordCount">0</strong></div>
+        <div id="statPillMastered" class="stat-pill clickable" title="Nhấn để xem danh sách các từ Đã thuộc">Đã thuộc: <strong id="masteredCount">0</strong> ↗</div>
+        <div id="statPillMistake" class="stat-pill clickable" title="Nhấn để xem danh sách các câu Cần ôn">Cần ôn: <strong id="mistakeCount">0</strong> ↗</div>
+        <button id="resetStatsBtn" class="btn-secondary" title="Đặt lại tiến độ Đã thuộc / Cần ôn" style="padding: 5px 10px; font-size: 0.8rem; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; color: var(--text-muted);">
+          <span>🔄</span> Đặt lại
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 1: TRẮC NGHIỆM (QUIZ) ==================== -->
+    <section id="view-quiz" class="view-section active">
+      <div class="app-card">
+        <!-- Progress -->
+        <div class="progress-container">
+          <div class="progress-track">
+            <div id="quizProgressFill" class="progress-fill"></div>
+          </div>
+          <div id="quizProgressText" class="progress-text">1 / 10</div>
+        </div>
+
+        <div class="quiz-header">
+          <span id="quizTopicBadge" class="quiz-topic-tag">Chủ đề 1</span>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <span>Chuỗi đúng: <strong id="streakCount" style="color: var(--primary);">0 🔥</strong></span>
+            <span id="quizScoreText">Điểm: 0</span>
+          </div>
+        </div>
+
+        <!-- Question box -->
+        <div class="quiz-question-box">
+          <button id="quizStarBtn" class="star-btn" title="Đánh dấu từ yêu thích">★</button>
+          <div id="quizPromptType" class="question-prompt">Chọn nghĩa đúng của từ:</div>
+          <div id="quizQuestionMain" class="question-main">
+            <span id="quizQuestionWord">男性</span>
+            <button id="quizAudioBtn" class="audio-btn" title="Nghe phát âm">🔊</button>
+          </div>
+          <div id="quizQuestionSub" class="question-sub">Âm Hán: NAM TÍNH</div>
+        </div>
+
+        <!-- 4 Options -->
+        <div id="quizOptionsGrid" class="options-grid">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Explanation Card (Shown after answering) -->
+        <div id="quizExplanation" class="explanation-box">
+          <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px;">Chi tiết từ vựng:</div>
+          <div class="exp-grid">
+            <div class="exp-item">
+              <div class="exp-label">Kanji</div>
+              <div id="expKanji" class="exp-val">男性</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-label">Cách đọc (Hiragana)</div>
+              <div id="expHiragana" class="exp-val">だんせい</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-label">Hán Việt</div>
+              <div id="expHanViet" class="exp-val">NAM TÍNH</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-label">Nghĩa tiếng Việt</div>
+              <div id="expNghia" class="exp-val">đàn ông, nam giới</div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-label">STT Mimikara</div>
+              <div id="expStt" class="exp-val">#1</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action bar -->
+        <div class="quiz-actions">
+          <button id="quizShuffleBtn" class="btn-secondary">🔀 Đổi thứ tự</button>
+          <button id="quizNextBtn" class="btn-primary" style="display: none;">
+            Câu tiếp theo ➜
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: FLASHCARD ==================== -->
+    <section id="view-flashcard" class="view-section">
+      <div class="app-card" style="max-width: 650px;">
+        <div class="progress-container">
+          <div class="progress-track">
+            <div id="fcProgressFill" class="progress-fill"></div>
+          </div>
+          <div id="fcProgressText" class="progress-text">1 / 49</div>
+        </div>
+
+        <!-- 3D Flip Card -->
+        <div id="flashcardElement" class="flashcard-wrapper">
+          <div class="flashcard-inner">
+            <!-- Front -->
+            <div class="flashcard-front">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span id="fcTopicBadge" class="quiz-topic-tag">Chủ đề 1</span>
+                <span id="fcSttBadge" style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">#1</span>
+              </div>
+              <div>
+                <div id="fcKanji" class="fc-word-kanji">男性</div>
+                <div id="fcHanViet" class="fc-word-hanviet">NAM TÍNH</div>
+              </div>
+              <div class="fc-hint">💡 Nhấp hoặc nhấn phím Space để lật thẻ xem nghĩa</div>
+            </div>
+
+            <!-- Back -->
+            <div class="flashcard-back">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span class="quiz-topic-tag">Đáp án & Cách đọc</span>
+                <button id="fcAudioBtn" class="audio-btn" title="Nghe phát âm">🔊</button>
+              </div>
+              <div>
+                <div id="fcHiragana" class="fc-word-hiragana">だんせい</div>
+                <div id="fcNghia" class="fc-word-nghia">đàn ông, nam giới</div>
+              </div>
+              <div class="fc-hint">Nhấp vào thẻ để quay lại mặt trước</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flashcard-controls">
+          <button id="fcPrevBtn" class="btn-secondary" title="Từ trước đó (Phím mũi tên trái)">⬅ Trước</button>
+          <button id="fcReviewBtn" class="btn-status review" title="Đánh dấu cần ôn lại">⚠️ Cần ôn lại</button>
+          <button id="fcMasteredBtn" class="btn-status mastered" title="Đánh dấu đã thuộc">✅ Đã thuộc</button>
+          <button id="fcNextBtn" class="btn-secondary" title="Từ tiếp theo (Phím mũi tên phải)">Tiếp ➡</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: LUYỆN GÕ (SPELLING) ==================== -->
+    <section id="view-spelling" class="view-section">
+      <div class="app-card">
+        <div class="progress-container">
+          <div class="progress-track">
+            <div id="spellingProgressFill" class="progress-fill"></div>
+          </div>
+          <div id="spellingProgressText" class="progress-text">1 / 10</div>
+        </div>
+
+        <div class="spelling-box">
+          <div class="quiz-topic-tag" id="spellingTopicBadge">Chủ đề 1</div>
+          <div id="spellingKanji" class="spelling-prompt">男性</div>
+          <div id="spellingHanViet" style="color: var(--primary); font-weight: 700; margin-bottom: 4px;">NAM TÍNH</div>
+          <div id="spellingMeaning" class="spelling-meaning">đàn ông, nam giới</div>
+
+          <form id="spellingForm">
+            <input type="text" id="spellingInput" class="spelling-input" placeholder="Gõ Hiragana (hoặc Romaji)..." autocomplete="off" autofocus>
+            <div id="spellingFeedback" class="spelling-feedback"></div>
+            
+            <div style="display: flex; gap: 10px; justify-content: center;">
+              <button type="button" id="spellingHintBtn" class="btn-secondary">💡 Gợi ý chữ đầu</button>
+              <button type="submit" class="btn-primary">Kiểm tra ↵</button>
+              <button type="button" id="spellingSkipBtn" class="btn-secondary">Bỏ qua ➜</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: THI THỬ TÍNH GIỜ (EXAM) ==================== -->
+    <section id="view-exam" class="view-section">
+      <!-- Exam Setup Screen -->
+      <div id="examSetupCard" class="app-card">
+        <h2 style="font-size: 1.6rem; margin-bottom: 8px;">⏱️ Thi thử trắc nghiệm JLPT N3</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">Kiểm tra năng lực từ vựng N3 dưới áp lực thời gian tương tự bài thi thật.</p>
+
+        <div style="margin-bottom: 20px;">
+          <label style="font-weight: 700; display: block; margin-bottom: 8px;">Số câu hỏi:</label>
+          <select id="examCountSelect" class="custom-select">
+            <option value="15">15 câu (Khoảng 5 phút)</option>
+            <option value="25" selected>25 câu (Khoảng 8 phút)</option>
+            <option value="40">40 câu (Khoảng 15 phút)</option>
+            <option value="all">Toàn bộ danh sách từ trong chủ đề</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label style="font-weight: 700; display: block; margin-bottom: 8px;">Thời gian mỗi câu:</label>
+          <select id="examTimeSelect" class="custom-select">
+            <option value="15">15 giây / câu (Nhanh - Phản xạ cao)</option>
+            <option value="25" selected>25 giây / câu (Chuẩn JLPT)</option>
+            <option value="40">40 giây / câu (Thư thả)</option>
+          </select>
+        </div>
+
+        <button id="examStartBtn" class="btn-primary" style="width: 100%; justify-content: center; padding: 14px;">
+          🚀 Bắt đầu thi ngay
+        </button>
+      </div>
+
+      <!-- Exam Active Screen -->
+      <div id="examActiveCard" class="app-card" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <span id="examCounterText" style="font-weight: 700;">Câu 1 / 25</span>
+          <div id="examTimer" class="exam-timer">
+            <span>⏳</span> <span id="examTimerValue">25s</span>
+          </div>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-track">
+            <div id="examProgressFill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="quiz-question-box">
+          <div id="examPromptType" class="question-prompt">Chọn nghĩa chính xác:</div>
+          <div id="examQuestionMain" class="question-main">
+            <span id="examQuestionWord">合格</span>
+            <button id="examAudioBtn" class="audio-btn" title="Nghe phát âm">🔊</button>
+          </div>
+          <div id="examQuestionSub" class="question-sub">HỢP CÁCH</div>
+        </div>
+
+        <div id="examOptionsGrid" class="options-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Exam Result Screen -->
+      <div id="examResultCard" class="app-card exam-result-card" style="display: none;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 6px;">🎉 Kết Quả Bài Thi</h2>
+        <p id="examResultSub" style="color: var(--text-muted); margin-bottom: 24px;">Hoàn thành bài thi N3</p>
+
+        <div class="score-circle">
+          <div id="examScorePercent">88%</div>
+          <span id="examScoreFraction">22 / 25 câu đúng</span>
+        </div>
+
+        <div id="examRankBadge" style="display: inline-block; padding: 8px 18px; border-radius: 999px; font-weight: 800; margin-bottom: 24px;">
+          Xuất Sắc! 🏆
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button id="examRetryBtn" class="btn-primary">🔄 Thi lại</button>
+          <button id="examReviewMistakesBtn" class="btn-secondary">⚠️ Ôn lại các câu làm sai</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: SỔ TAY TỪ KHÓ, YÊU THÍCH & ĐÃ THUỘC ==================== -->
+    <section id="view-review" class="view-section">
+      <div class="control-bar" style="margin-bottom: 16px;">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button id="subtabMistakesBtn" class="btn-secondary" style="font-weight: 700; background: var(--primary-light); color: var(--primary);">
+            ⚠️ Câu làm sai (<span id="countMistakesTab">0</span>)
+          </button>
+          <button id="subtabMasteredBtn" class="btn-secondary" style="font-weight: 700;">
+            ✅ Đã thuộc (<span id="countMasteredTab">0</span>)
+          </button>
+          <button id="subtabFavoritesBtn" class="btn-secondary" style="font-weight: 700;">
+            ⭐ Từ yêu thích (<span id="countFavoritesTab">0</span>)
+          </button>
+        </div>
+
+        <button id="clearReviewBtn" class="btn-secondary" style="color: var(--danger);">
+          🗑️ Xóa danh sách này
+        </button>
+      </div>
+
+      <div id="reviewListContainer" class="dict-table-wrapper">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- ==================== TAB 6: DANH SÁCH TỪ VỰNG ==================== -->
+    <section id="view-dictionary" class="view-section">
+      <div class="dict-controls">
+        <div class="dict-topic-group">
+          <label for="dictTopicSelect" class="select-label">🏷️ Chủ đề:</label>
+          <select id="dictTopicSelect" class="custom-select dict-topic-select">
+            <option value="all">🌟 Tất cả chủ đề</option>
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+        <div class="dict-search-wrapper">
+          <input type="text" id="dictSearchInput" class="search-input" placeholder="🔍 Tìm kiếm từ vựng theo Kanji, Hiragana, Hán Việt hoặc Nghĩa...">
+        </div>
+      </div>
+
+      <div class="dict-status-bar">
+        <span id="dictStatusText">Đang hiển thị <strong id="dictFilteredCount">0</strong> từ</span>
+        <div class="dict-col-toggles">
+          <span class="dict-col-label">Che nội dung để dò bài:</span>
+          <button type="button" class="col-pill-toggle" data-col="kanji" title="Ẩn/Hiện cột Kanji">
+            <span class="col-icon">👁️</span> Kanji
+          </button>
+          <button type="button" class="col-pill-toggle" data-col="hiragana" title="Ẩn/Hiện cột Hiragana">
+            <span class="col-icon">👁️</span> Hiragana
+          </button>
+          <button type="button" class="col-pill-toggle" data-col="hanviet" title="Ẩn/Hiện cột Âm Hán Việt">
+            <span class="col-icon">👁️</span> Hán Việt
+          </button>
+          <button type="button" class="col-pill-toggle" data-col="nghia" title="Ẩn/Hiện cột Nghĩa tiếng Việt">
+            <span class="col-icon">👁️</span> Nghĩa TV
+          </button>
+        </div>
+      </div>
+
+      <div class="dict-table-wrapper">
+        <table class="dict-table" id="dictTable">
+          <thead>
+            <tr>
+              <th style="width: 50px;">STT</th>
+              <th class="th-toggleable">
+                <div class="th-content">
+                  <span>Kanji / Từ vựng</span>
+                  <button type="button" class="btn-col-toggle" data-col="kanji" title="Ẩn/Hiện nội dung Kanji">
+                    <span class="toggle-icon">👁️</span>
+                  </button>
+                </div>
+              </th>
+              <th class="th-toggleable">
+                <div class="th-content">
+                  <span>Hiragana</span>
+                  <button type="button" class="btn-col-toggle" data-col="hiragana" title="Ẩn/Hiện nội dung Hiragana">
+                    <span class="toggle-icon">👁️</span>
+                  </button>
+                </div>
+              </th>
+              <th class="th-toggleable">
+                <div class="th-content">
+                  <span>Âm Hán Việt</span>
+                  <button type="button" class="btn-col-toggle" data-col="hanviet" title="Ẩn/Hiện nội dung Âm Hán Việt">
+                    <span class="toggle-icon">👁️</span>
+                  </button>
+                </div>
+              </th>
+              <th class="th-toggleable">
+                <div class="th-content">
+                  <span>Nghĩa Tiếng Việt</span>
+                  <button type="button" class="btn-col-toggle" data-col="nghia" title="Ẩn/Hiện nội dung Nghĩa Tiếng Việt">
+                    <span class="toggle-icon">👁️</span>
+                  </button>
+                </div>
+              </th>
+              <th>Chủ đề</th>
+              <th style="text-align: center; width: 100px;">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="dictTableBody">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reset Stats Modal -->
+  <div id="resetModal" class="modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="app-card" style="max-width: 440px; width: 90%; margin: 20px; box-shadow: var(--shadow-lg); animation: popIn 0.25s ease;">
+      <h3 style="display: flex; align-items: center; gap: 8px; font-size: 1.25rem; margin-bottom: 12px; color: var(--text-main);">
+        <span>🔄</span> Đặt lại tiến độ học tập
+      </h3>
+      <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5;">
+        Bạn muốn làm mới tiến độ học tập nào về mức 0?
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+        <button id="resetMasteredBtn" class="btn-secondary" style="justify-content: flex-start; padding: 12px 16px; font-weight: 600; text-align: left;">
+          <span>✅</span> Đặt lại danh sách <strong>"Đã thuộc"</strong> về 0
+        </button>
+        <button id="resetMistakesBtn" class="btn-secondary" style="justify-content: flex-start; padding: 12px 16px; font-weight: 600; text-align: left; color: #b45309;">
+          <span>⚠️</span> Đặt lại danh sách <strong>"Cần ôn"</strong> về 0
+        </button>
+        <button id="resetAllStatsBtn" class="btn-secondary" style="justify-content: flex-start; padding: 12px 16px; font-weight: 700; text-align: left; color: var(--danger); border-color: rgba(239, 68, 68, 0.4);">
+          <span>💥</span> Đặt lại <strong>TOÀN BỘ</strong> (Học lại từ đầu)
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end;">
+        <button id="closeResetModalBtn" class="btn-secondary" style="padding: 8px 18px;">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>JLPT N3 Vocabulary Master • Biên soạn theo giáo trình Mimikara N3 • Dữ liệu chuẩn xác 100%</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="vocab_data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js').catch(err => {
+          console.log('SW registration error:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

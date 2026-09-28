@@ -1,0 +1,19 @@
+{
+  "name": "Quiz Từ Vựng JLPT N3 - Mimikara",
+  "short_name": "Quiz N3",
+  "description": "Ứng dụng ôn tập 880 từ vựng JLPT N3 Mimikara Oboeru",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
