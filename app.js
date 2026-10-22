@@ -85,6 +85,11 @@
     mistakes: {}, // { wordId: count }
     favorites: new Set(),
 
+    // Grammar Storage
+    gMastered: new Set(),
+    gMistakes: new Set(),
+    gStarred: new Set(),
+
     load() {
       try {
         const m = localStorage.getItem('jlpt_n3_mastered');
@@ -95,6 +100,16 @@
 
         const f = localStorage.getItem('jlpt_n3_favorites');
         if (f) this.favorites = new Set(JSON.parse(f));
+
+        // Load Grammar
+        const gm = localStorage.getItem('jlpt_n3_g_mastered');
+        if (gm) this.gMastered = new Set(JSON.parse(gm));
+
+        const gmist = localStorage.getItem('jlpt_n3_g_mistakes');
+        if (gmist) this.gMistakes = new Set(JSON.parse(gmist));
+
+        const gstar = localStorage.getItem('jlpt_n3_g_starred');
+        if (gstar) this.gStarred = new Set(JSON.parse(gstar));
       } catch (e) {
         console.error('Failed to load local storage:', e);
       }
@@ -105,6 +120,11 @@
         localStorage.setItem('jlpt_n3_mastered', JSON.stringify([...this.mastered]));
         localStorage.setItem('jlpt_n3_mistakes', JSON.stringify(this.mistakes));
         localStorage.setItem('jlpt_n3_favorites', JSON.stringify([...this.favorites]));
+
+        // Save Grammar
+        localStorage.setItem('jlpt_n3_g_mastered', JSON.stringify([...this.gMastered]));
+        localStorage.setItem('jlpt_n3_g_mistakes', JSON.stringify([...this.gMistakes]));
+        localStorage.setItem('jlpt_n3_g_starred', JSON.stringify([...this.gStarred]));
       } catch (e) {
         console.error('Failed to save local storage:', e);
       }
@@ -135,6 +155,42 @@
       }
       this.save();
       return this.favorites.has(id);
+    },
+
+    // Grammar helpers
+    addGrammarMastered(id) {
+      const numId = Number(id);
+      this.gMastered.add(numId);
+      this.gMistakes.delete(numId);
+      this.save();
+    },
+
+    removeGrammarMastered(id) {
+      this.gMastered.delete(Number(id));
+      this.save();
+    },
+
+    addGrammarMistake(id) {
+      const numId = Number(id);
+      this.gMistakes.add(numId);
+      this.gMastered.delete(numId);
+      this.save();
+    },
+
+    removeGrammarMistake(id) {
+      this.gMistakes.delete(Number(id));
+      this.save();
+    },
+
+    toggleGrammarStarred(id) {
+      const numId = Number(id);
+      if (this.gStarred.has(numId)) {
+        this.gStarred.delete(numId);
+      } else {
+        this.gStarred.add(numId);
+      }
+      this.save();
+      return this.gStarred.has(numId);
     }
   };
 
@@ -183,11 +239,47 @@
       } catch (e) {
         return { kanji: false, hiragana: false, hanviet: false, nghia: false };
       }
-    })()
+    })(),
+
+    // App Mode: 'vocab' or 'grammar'
+    appMode: localStorage.getItem('jlpt_n3_app_mode') || 'vocab',
+
+    // Grammar State
+    grammarCategories: window.GRAMMAR_CATEGORIES || [],
+    grammarData: window.GRAMMAR_DATA || [],
+    grammarTab: 'handbook', // 'handbook' | 'quiz' | 'flashcard' | 'review'
+    grammarCategoryId: 'all',
+    grammarSearch: '',
+    grammarExpanded: new Set(),
+    gReviewTab: 'mistakes', // 'mistakes' | 'mastered' | 'starred'
+
+    // Grammar Quiz state
+    gQuizQuestions: [],
+    gQuizIndex: 0,
+    gQuizScore: 0,
+    gQuizStreak: 0,
+    gQuizCurrentQ: null,
+    gQuizAnswered: false,
+
+    // Grammar Flashcard state
+    gFcList: [],
+    gFcIndex: 0,
+    gFcFlipped: false
   };
 
   // --- DOM Elements ---
   const dom = {
+    // Mode switcher
+    appModeSwitch: document.getElementById('appModeSwitch'),
+    modeBtnVocab: document.getElementById('modeBtnVocab'),
+    modeBtnGrammar: document.getElementById('modeBtnGrammar'),
+    vocabNavTabsWrapper: document.getElementById('vocabNavTabsWrapper'),
+    grammarNavTabsWrapper: document.getElementById('grammarNavTabsWrapper'),
+    vocabAppSection: document.getElementById('vocabAppSection'),
+    grammarAppSection: document.getElementById('grammarAppSection'),
+    brandMainTitle: document.getElementById('brandMainTitle'),
+    brandSubTitle: document.getElementById('brandSubTitle'),
+
     categorySelect: document.getElementById('categorySelect'),
     categoryPills: document.getElementById('categoryPills'),
     topicSelect: document.getElementById('topicSelect'),
@@ -301,7 +393,71 @@
     resetMasteredBtn: document.getElementById('resetMasteredBtn'),
     resetMistakesBtn: document.getElementById('resetMistakesBtn'),
     resetAllStatsBtn: document.getElementById('resetAllStatsBtn'),
-    closeResetModalBtn: document.getElementById('closeResetModalBtn')
+    closeResetModalBtn: document.getElementById('closeResetModalBtn'),
+
+    // Grammar Navigation & Stats
+    grammarCategoryPills: document.getElementById('grammarCategoryPills'),
+    grammarCategorySelect: document.getElementById('grammarCategorySelect'),
+    grammarTotalCount: document.getElementById('grammarTotalCount'),
+    gMasteredCount: document.getElementById('gMasteredCount'),
+    gReviewCount: document.getElementById('gReviewCount'),
+    gStatPillMastered: document.getElementById('gStatPillMastered'),
+    gStatPillReview: document.getElementById('gStatPillReview'),
+    resetGrammarStatsBtn: document.getElementById('resetGrammarStatsBtn'),
+    gHandbookBadge: document.getElementById('gHandbookBadge'),
+    gReviewBadge: document.getElementById('gReviewBadge'),
+
+    // Grammar Handbook
+    grammarSearchInput: document.getElementById('grammarSearchInput'),
+    grammarToggleAllBtn: document.getElementById('grammarToggleAllBtn'),
+    toggleAllIcon: document.getElementById('toggleAllIcon'),
+    toggleAllText: document.getElementById('toggleAllText'),
+    grammarStatusText: document.getElementById('grammarStatusText'),
+    grammarCardsList: document.getElementById('grammarCardsList'),
+
+    // Grammar Quiz
+    gQuizProgressFill: document.getElementById('gQuizProgressFill'),
+    gQuizProgressText: document.getElementById('gQuizProgressText'),
+    gQuizCategoryBadge: document.getElementById('gQuizCategoryBadge'),
+    gQuizStreak: document.getElementById('gQuizStreak'),
+    gQuizStarBtn: document.getElementById('gQuizStarBtn'),
+    gQuizSentence: document.getElementById('gQuizSentence'),
+    gQuizMeaning: document.getElementById('gQuizMeaning'),
+    gQuizAudioBtn: document.getElementById('gQuizAudioBtn'),
+    gQuizOptionsGrid: document.getElementById('gQuizOptionsGrid'),
+    gQuizExplanation: document.getElementById('gQuizExplanation'),
+    gQuizExpTitle: document.getElementById('gQuizExpTitle'),
+    gQuizExpDetail: document.getElementById('gQuizExpDetail'),
+    gQuizRestartBtn: document.getElementById('gQuizRestartBtn'),
+    gQuizNextBtn: document.getElementById('gQuizNextBtn'),
+
+    // Grammar Flashcard
+    gFcProgressFill: document.getElementById('gFcProgressFill'),
+    gFcProgressText: document.getElementById('gFcProgressText'),
+    gFlashcardElement: document.getElementById('gFlashcardElement'),
+    gFcCategoryBadge: document.getElementById('gFcCategoryBadge'),
+    gFcCategoryBadgeBack: document.getElementById('gFcCategoryBadgeBack'),
+    gFcNumberBadge: document.getElementById('gFcNumberBadge'),
+    gFcPattern: document.getElementById('gFcPattern'),
+    gFcFormation: document.getElementById('gFcFormation'),
+    gFcMeaning: document.getElementById('gFcMeaning'),
+    gFcUsage: document.getElementById('gFcUsage'),
+    gFcExample: document.getElementById('gFcExample'),
+    gFcAudioBtn: document.getElementById('gFcAudioBtn'),
+    gFcReviewBtn: document.getElementById('gFcReviewBtn'),
+    gFcMasteredBtn: document.getElementById('gFcMasteredBtn'),
+    gFcPrevBtn: document.getElementById('gFcPrevBtn'),
+    gFcNextBtn: document.getElementById('gFcNextBtn'),
+
+    // Grammar Review
+    gSubtabMistakesBtn: document.getElementById('gSubtabMistakesBtn'),
+    gSubtabMasteredBtn: document.getElementById('gSubtabMasteredBtn'),
+    gSubtabStarredBtn: document.getElementById('gSubtabStarredBtn'),
+    gCountMistakesTab: document.getElementById('gCountMistakesTab'),
+    gCountMasteredTab: document.getElementById('gCountMasteredTab'),
+    gCountStarredTab: document.getElementById('gCountStarredTab'),
+    gClearReviewBtn: document.getElementById('gClearReviewBtn'),
+    gReviewListContainer: document.getElementById('gReviewListContainer')
   };
 
   // --- Helper Functions ---
@@ -381,6 +537,9 @@
     updateQuickStats();
     updateColumnVisibilityUI();
     updateHeaderHeightVar();
+
+    // App Mode: Vocab vs Grammar
+    switchAppMode(appState.appMode);
   }
 
   function renderCategoryControls() {
@@ -1128,6 +1287,602 @@
     updateColumnVisibilityUI();
   }
 
+  // =========================================================================
+  // 7. APP MODE SWITCHER & GRAMMAR ENGINE (62 MẪU NGỮ PHÁP N3)
+  // =========================================================================
+
+  function switchAppMode(mode) {
+    appState.appMode = mode;
+    localStorage.setItem('jlpt_n3_app_mode', mode);
+
+    const isGrammar = mode === 'grammar';
+    if (dom.modeBtnVocab) dom.modeBtnVocab.classList.toggle('active', !isGrammar);
+    if (dom.modeBtnGrammar) dom.modeBtnGrammar.classList.toggle('active', isGrammar);
+
+    if (dom.vocabNavTabsWrapper) dom.vocabNavTabsWrapper.style.display = isGrammar ? 'none' : 'block';
+    if (dom.grammarNavTabsWrapper) dom.grammarNavTabsWrapper.style.display = isGrammar ? 'block' : 'none';
+
+    if (dom.vocabAppSection) dom.vocabAppSection.style.display = isGrammar ? 'none' : 'block';
+    if (dom.grammarAppSection) dom.grammarAppSection.style.display = isGrammar ? 'block' : 'none';
+
+    // Hide vocab category select on desktop in grammar mode
+    if (dom.categorySelect) {
+      dom.categorySelect.style.display = isGrammar ? 'none' : 'inline-block';
+    }
+
+    if (isGrammar) {
+      document.title = 'Ôn Tập Ngữ Pháp JLPT N3 - VTI Mirai';
+      if (dom.brandMainTitle) dom.brandMainTitle.textContent = 'JLPT N3 GRAMMAR';
+      if (dom.brandSubTitle) dom.brandSubTitle.textContent = 'Tổng hợp 62 mẫu VTI Mirai';
+      initGrammarSection();
+    } else {
+      document.title = 'Ôn Tập Từ Vựng JLPT N3 - Mimikara';
+      if (dom.brandMainTitle) dom.brandMainTitle.textContent = 'JLPT N3 MASTER';
+      if (dom.brandSubTitle) dom.brandSubTitle.textContent = 'Mimikara N3 Master';
+      updateQuickStats();
+    }
+  }
+
+  function initGrammarSection() {
+    initGrammarCategories();
+    updateGrammarStats();
+    switchGrammarTab(appState.grammarTab || 'handbook');
+  }
+
+  function initGrammarCategories() {
+    if (!dom.grammarCategorySelect || !dom.grammarCategoryPills) return;
+
+    // Populate Category Select
+    dom.grammarCategorySelect.innerHTML = appState.grammarCategories.map(cat => `
+      <option value="${cat.id}">${cat.name}</option>
+    `).join('');
+    dom.grammarCategorySelect.value = appState.grammarCategoryId;
+
+    // Populate Category Pills
+    dom.grammarCategoryPills.innerHTML = appState.grammarCategories.map(cat => `
+      <button type="button" class="cat-pill ${cat.id === appState.grammarCategoryId ? 'active' : ''}" data-gcat="${cat.id}">
+        ${cat.name}
+      </button>
+    `).join('');
+
+    // Events for pills
+    dom.grammarCategoryPills.querySelectorAll('.cat-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        appState.grammarCategoryId = btn.dataset.gcat;
+        dom.grammarCategorySelect.value = appState.grammarCategoryId;
+        dom.grammarCategoryPills.querySelectorAll('.cat-pill').forEach(b => {
+          b.classList.toggle('active', b.dataset.gcat === appState.grammarCategoryId);
+        });
+        onGrammarCategoryChanged();
+      });
+    });
+
+    // Event for select
+    dom.grammarCategorySelect.onchange = () => {
+      appState.grammarCategoryId = dom.grammarCategorySelect.value;
+      dom.grammarCategoryPills.querySelectorAll('.cat-pill').forEach(b => {
+        b.classList.toggle('active', b.dataset.gcat === appState.grammarCategoryId);
+      });
+      onGrammarCategoryChanged();
+    };
+  }
+
+  function onGrammarCategoryChanged() {
+    if (appState.grammarTab === 'handbook') {
+      renderGrammarHandbook();
+    } else if (appState.grammarTab === 'quiz') {
+      initGrammarQuiz();
+    } else if (appState.grammarTab === 'flashcard') {
+      initGrammarFlashcard();
+    }
+  }
+
+  function getFilteredGrammarList() {
+    let list = appState.grammarData;
+    if (appState.grammarCategoryId !== 'all') {
+      list = list.filter(g => g.categoryId === appState.grammarCategoryId);
+    }
+
+    const q = (appState.grammarSearch || '').trim().toLowerCase();
+    if (q) {
+      list = list.filter(g => {
+        return (
+          g.pattern.toLowerCase().includes(q) ||
+          g.meaning.toLowerCase().includes(q) ||
+          g.usage.toLowerCase().includes(q) ||
+          g.formation.toLowerCase().includes(q) ||
+          g.examples.some(ex => ex.ja.toLowerCase().includes(q) || ex.vi.toLowerCase().includes(q))
+        );
+      });
+    }
+
+    return list;
+  }
+
+  function updateGrammarStats() {
+    const total = appState.grammarData.length;
+    const mastered = storage.gMastered.size;
+    const review = storage.gMistakes.size + storage.gStarred.size;
+
+    if (dom.grammarTotalCount) dom.grammarTotalCount.textContent = total;
+    if (dom.gMasteredCount) dom.gMasteredCount.textContent = mastered;
+    if (dom.gReviewCount) dom.gReviewCount.textContent = storage.gMistakes.size;
+    if (dom.gHandbookBadge) dom.gHandbookBadge.textContent = total;
+    if (dom.gReviewBadge) dom.gReviewBadge.textContent = review;
+
+    if (dom.gCountMistakesTab) dom.gCountMistakesTab.textContent = storage.gMistakes.size;
+    if (dom.gCountMasteredTab) dom.gCountMasteredTab.textContent = storage.gMastered.size;
+    if (dom.gCountStarredTab) dom.gCountStarredTab.textContent = storage.gStarred.size;
+  }
+
+  function switchGrammarTab(tabName) {
+    appState.grammarTab = tabName;
+
+    // Update active tab buttons
+    document.querySelectorAll('#grammarNavTabsWrapper .nav-tab-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.gtab === tabName);
+    });
+
+    // Update view sections
+    document.querySelectorAll('#grammarAppSection .view-section').forEach(sec => {
+      sec.classList.remove('active');
+    });
+
+    const activeSec = document.getElementById(`view-grammar-${tabName}`);
+    if (activeSec) activeSec.classList.add('active');
+
+    // Activate corresponding view logic
+    if (tabName === 'handbook') {
+      renderGrammarHandbook();
+    } else if (tabName === 'quiz') {
+      initGrammarQuiz();
+    } else if (tabName === 'flashcard') {
+      initGrammarFlashcard();
+    } else if (tabName === 'review') {
+      renderGrammarReviewList();
+    }
+  }
+
+  // --- 7.1 GRAMMAR HANDBOOK ---
+  function renderGrammarHandbook() {
+    if (!dom.grammarCardsList) return;
+    const list = getFilteredGrammarList();
+
+    if (dom.grammarStatusText) {
+      const cat = appState.grammarCategories.find(c => c.id === appState.grammarCategoryId);
+      const catName = cat ? cat.name : 'Tất cả';
+      dom.grammarStatusText.innerHTML = `Đang hiển thị <strong style="color: var(--primary);">${list.length}</strong> / ${appState.grammarData.length} mẫu (${catName})${appState.grammarSearch ? ` khớp với "<em>${appState.grammarSearch}</em>"` : ''}`;
+    }
+
+    if (list.length === 0) {
+      dom.grammarCardsList.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">🔍</div>
+          <h3>Không tìm thấy mẫu ngữ pháp nào!</h3>
+          <p>Thử tìm với từ khóa khác hoặc chọn nhóm "Tất cả (62 mẫu)".</p>
+        </div>
+      `;
+      return;
+    }
+
+    dom.grammarCardsList.innerHTML = list.map(g => {
+      const isExpanded = appState.grammarExpanded.has(g.id);
+      const isStarred = storage.gStarred.has(g.id);
+
+      const examplesHtml = g.examples.map(ex => `
+        <div class="gcard-example-item">
+          <div class="gcard-example-content">
+            <div class="gcard-example-ja">${ex.ja}</div>
+            <div class="gcard-example-vi">${ex.vi}</div>
+          </div>
+          <button class="audio-btn gcard-speak-btn" data-speak="${ex.ja}" title="Nghe phát âm">🔊</button>
+        </div>
+      `).join('');
+
+      return `
+        <div class="grammar-card ${isExpanded ? 'expanded' : ''}" data-id="${g.id}">
+          <div class="grammar-card-header" data-id="${g.id}">
+            <div class="gcard-title-group">
+              <span class="gcard-id-badge">#${g.id}</span>
+              <span class="gcard-pattern">${g.pattern}</span>
+              <span class="gcard-meaning">${g.meaning}</span>
+              <span class="gcard-cat-tag">${g.categoryName}</span>
+            </div>
+            <div class="gcard-actions">
+              <button class="star-btn gcard-star-btn ${isStarred ? 'active' : ''}" data-id="${g.id}" title="Lưu vào Sổ tay">★</button>
+              <span class="gcard-chevron">▼</span>
+            </div>
+          </div>
+          <div class="grammar-card-body">
+            <div class="gcard-section-label">📌 Cấu trúc / Kết hợp:</div>
+            <div class="gcard-formation-box">${g.formation}</div>
+
+            <div class="gcard-section-label">💡 Ý nghĩa & Giải thích cách dùng:</div>
+            <div class="gcard-usage-box">${g.usage}</div>
+
+            <div class="gcard-section-label">📝 Các câu ví dụ mẫu (${g.examples.length}):</div>
+            <div class="gcard-examples-list">
+              ${examplesHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Attach click events on cards
+    dom.grammarCardsList.querySelectorAll('.grammar-card-header').forEach(header => {
+      header.addEventListener('click', (e) => {
+        if (e.target.closest('.gcard-star-btn')) return;
+        const cardId = Number(header.dataset.id);
+        const card = header.closest('.grammar-card');
+        const willExpand = !card.classList.contains('expanded');
+        card.classList.toggle('expanded', willExpand);
+        if (willExpand) {
+          appState.grammarExpanded.add(cardId);
+        } else {
+          appState.grammarExpanded.delete(cardId);
+        }
+      });
+    });
+
+    // Star buttons
+    dom.grammarCardsList.querySelectorAll('.gcard-star-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = Number(btn.dataset.id);
+        const isNowStarred = storage.toggleGrammarStarred(id);
+        btn.classList.toggle('active', isNowStarred);
+        updateGrammarStats();
+      });
+    });
+
+    // Speak buttons
+    dom.grammarCardsList.querySelectorAll('.gcard-speak-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        soundManager.speak(btn.dataset.speak);
+      });
+    });
+  }
+
+  function toggleAllGrammarCards() {
+    const list = getFilteredGrammarList();
+    const allExpanded = list.every(g => appState.grammarExpanded.has(g.id));
+
+    if (allExpanded) {
+      list.forEach(g => appState.grammarExpanded.delete(g.id));
+      if (dom.toggleAllIcon) dom.toggleAllIcon.textContent = '📂';
+      if (dom.toggleAllText) dom.toggleAllText.textContent = 'Mở rộng tất cả';
+    } else {
+      list.forEach(g => appState.grammarExpanded.add(g.id));
+      if (dom.toggleAllIcon) dom.toggleAllIcon.textContent = '📁';
+      if (dom.toggleAllText) dom.toggleAllText.textContent = 'Thu gọn tất cả';
+    }
+    renderGrammarHandbook();
+  }
+
+  // --- 7.2 GRAMMAR QUIZ ENGINE ---
+  function initGrammarQuiz() {
+    appState.gQuizQuestions = generateGrammarQuizPool();
+    appState.gQuizIndex = 0;
+    appState.gQuizScore = 0;
+    appState.gQuizStreak = 0;
+    renderGrammarQuestion();
+  }
+
+  function generateGrammarQuizPool() {
+    let source = getFilteredGrammarList();
+    if (source.length === 0) source = appState.grammarData;
+
+    const allPatterns = appState.grammarData.map(g => ({ id: g.id, pattern: g.pattern, meaning: g.meaning }));
+    const questions = [];
+
+    const shuffledItems = shuffle(source);
+    shuffledItems.forEach(item => {
+      if (item.examples.length === 0) return;
+      const ex = item.examples[Math.floor(Math.random() * item.examples.length)];
+
+      const raw = item.pattern.replace(/^[～~]/, '').replace(/\([^)]*\)/g, '').trim();
+      let questionSentence = ex.ja;
+
+      const candidateParts = raw.split(/[/・]/).map(s => s.trim().replace(/^[～~]/, '')).filter(Boolean);
+      let foundCandidate = candidateParts.find(p => p.length >= 2 && ex.ja.includes(p));
+
+      if (foundCandidate) {
+        questionSentence = ex.ja.replace(foundCandidate, `<span class="blank-slot">【　？　】</span>`);
+      } else {
+        const words = ex.ja.split('、');
+        if (words.length > 1) {
+          questionSentence = words[0] + ` <span class="blank-slot">【　？　】</span> ` + words.slice(1).join('、');
+        } else {
+          questionSentence = ex.ja + ` ➔ Mẫu ngữ pháp: <span class="blank-slot">【　？　】</span>`;
+        }
+      }
+
+      const distractors = allPatterns
+        .filter(p => p.id !== item.id)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+        .map(p => p.pattern);
+
+      const options = shuffle([
+        { text: item.pattern, correct: true, item },
+        ...distractors.map(d => ({ text: d, correct: false, item: null }))
+      ]);
+
+      questions.push({
+        id: item.id,
+        item,
+        sentence: questionSentence,
+        rawSentence: ex.ja,
+        meaning: ex.vi,
+        correctPattern: item.pattern,
+        options
+      });
+    });
+
+    return questions.slice(0, 10);
+  }
+
+  function renderGrammarQuestion() {
+    if (appState.gQuizQuestions.length === 0) {
+      dom.gQuizSentence.innerHTML = 'Không có đủ dữ liệu câu hỏi.';
+      return;
+    }
+
+    if (appState.gQuizIndex >= appState.gQuizQuestions.length) {
+      const total = appState.gQuizQuestions.length;
+      const score = appState.gQuizScore;
+      dom.gQuizSentence.innerHTML = `🎉 Bạn đã hoàn thành bài thi: <strong>${score} / ${total}</strong> câu đúng!`;
+      dom.gQuizMeaning.textContent = score >= 8 ? 'Xuất sắc! Bạn đã nắm vững các mẫu ngữ pháp này.' : 'Hãy ôn lại các câu làm sai trong Sổ tay nhé!';
+      dom.gQuizOptionsGrid.innerHTML = '';
+      dom.gQuizExplanation.style.display = 'none';
+      dom.gQuizNextBtn.style.display = 'none';
+      return;
+    }
+
+    const q = appState.gQuizQuestions[appState.gQuizIndex];
+    appState.gQuizCurrentQ = q;
+    appState.gQuizAnswered = false;
+
+    const total = appState.gQuizQuestions.length;
+    const current = appState.gQuizIndex + 1;
+    dom.gQuizProgressFill.style.width = `${(current / total) * 100}%`;
+    dom.gQuizProgressText.textContent = `${current} / ${total}`;
+
+    dom.gQuizCategoryBadge.textContent = q.item.categoryName;
+    dom.gQuizStreak.textContent = `${appState.gQuizStreak} 🔥`;
+
+    const isStarred = storage.gStarred.has(q.item.id);
+    dom.gQuizStarBtn.classList.toggle('active', isStarred);
+
+    dom.gQuizSentence.innerHTML = q.sentence;
+    dom.gQuizMeaning.textContent = `(Dịch nghĩa: ${q.meaning})`;
+
+    dom.gQuizAudioBtn.onclick = () => {
+      soundManager.speak(q.rawSentence);
+    };
+
+    dom.gQuizOptionsGrid.innerHTML = q.options.map((opt, i) => `
+      <button type="button" class="option-btn g-opt-btn" data-correct="${opt.correct}">
+        <span class="option-key">${i + 1}</span>
+        <div class="option-content">
+          <span class="option-hira" style="font-size: 1.15rem;">${opt.text}</span>
+        </div>
+      </button>
+    `).join('');
+
+    dom.gQuizOptionsGrid.querySelectorAll('.g-opt-btn').forEach(btn => {
+      btn.addEventListener('click', () => handleGrammarAnswer(btn, q));
+    });
+
+    dom.gQuizExplanation.style.display = 'none';
+    dom.gQuizNextBtn.style.display = 'none';
+  }
+
+  function handleGrammarAnswer(selectedBtn, q) {
+    if (appState.gQuizAnswered) return;
+    appState.gQuizAnswered = true;
+
+    const isCorrect = selectedBtn && selectedBtn.dataset.correct === 'true';
+
+    if (isCorrect) {
+      appState.gQuizScore++;
+      appState.gQuizStreak++;
+      soundManager.playCorrect();
+      storage.addGrammarMastered(q.item.id);
+    } else {
+      appState.gQuizStreak = 0;
+      soundManager.playWrong();
+      storage.addGrammarMistake(q.item.id);
+    }
+
+    updateGrammarStats();
+
+    dom.gQuizOptionsGrid.querySelectorAll('.g-opt-btn').forEach(b => {
+      b.disabled = true;
+      if (b.dataset.correct === 'true') b.classList.add('correct');
+    });
+
+    if (selectedBtn && !isCorrect) {
+      selectedBtn.classList.add('incorrect');
+    }
+
+    dom.gQuizExpTitle.textContent = isCorrect ? 'Chính xác! 🎉' : `Chưa chính xác! 💡 Đáp án đúng là: ${q.correctPattern}`;
+    dom.gQuizExpDetail.innerHTML = `
+      <div style="margin-bottom: 6px;"><strong>Ý nghĩa:</strong> ${q.item.meaning}</div>
+      <div style="margin-bottom: 6px;"><strong>Cấu trúc:</strong> <span style="color: var(--primary); font-weight: 600;">${q.item.formation.replace(/\n/g, ' • ')}</span></div>
+      <div style="font-size: 0.88rem; color: var(--text-muted);">${q.item.usage.replace(/\n/g, '<br>')}</div>
+    `;
+    dom.gQuizExplanation.style.display = 'block';
+
+    dom.gQuizNextBtn.style.display = 'inline-flex';
+  }
+
+  function nextGrammarQuestion() {
+    appState.gQuizIndex++;
+    renderGrammarQuestion();
+  }
+
+  // --- 7.3 GRAMMAR FLASHCARD ---
+  function initGrammarFlashcard() {
+    const list = getFilteredGrammarList();
+    appState.gFcList = list.length > 0 ? list : appState.grammarData;
+    appState.gFcIndex = 0;
+    appState.gFcFlipped = false;
+    renderGrammarFlashcard();
+  }
+
+  function renderGrammarFlashcard() {
+    if (appState.gFcList.length === 0) return;
+    const g = appState.gFcList[appState.gFcIndex];
+
+    appState.gFcFlipped = false;
+    dom.gFlashcardElement.classList.remove('flipped');
+
+    const total = appState.gFcList.length;
+    const current = appState.gFcIndex + 1;
+    dom.gFcProgressFill.style.width = `${(current / total) * 100}%`;
+    dom.gFcProgressText.textContent = `${current} / ${total}`;
+
+    dom.gFcCategoryBadge.textContent = g.categoryName;
+    dom.gFcNumberBadge.textContent = `#${g.id}`;
+    dom.gFcPattern.textContent = g.pattern;
+    dom.gFcFormation.textContent = g.formation;
+
+    dom.gFcCategoryBadgeBack.textContent = g.categoryName;
+    dom.gFcMeaning.textContent = g.meaning;
+    dom.gFcUsage.textContent = g.usage;
+
+    const firstEx = g.examples[0] || { ja: '', vi: '' };
+    dom.gFcExample.innerHTML = `
+      <div style="font-weight: 700; margin-bottom: 3px;">${firstEx.ja}</div>
+      <div style="color: var(--text-muted); font-size: 0.88rem;">${firstEx.vi}</div>
+    `;
+
+    dom.gFcAudioBtn.onclick = (e) => {
+      e.stopPropagation();
+      soundManager.speak(firstEx.ja);
+    };
+  }
+
+  function flipGrammarFlashcard() {
+    appState.gFcFlipped = !appState.gFcFlipped;
+    dom.gFlashcardElement.classList.toggle('flipped', appState.gFcFlipped);
+  }
+
+  function nextGrammarFlashcard() {
+    if (appState.gFcIndex < appState.gFcList.length - 1) {
+      appState.gFcIndex++;
+      renderGrammarFlashcard();
+    }
+  }
+
+  function prevGrammarFlashcard() {
+    if (appState.gFcIndex > 0) {
+      appState.gFcIndex--;
+      renderGrammarFlashcard();
+    }
+  }
+
+  // --- 7.4 GRAMMAR REVIEW NOTEBOOK ---
+  function renderGrammarReviewList() {
+    if (!dom.gReviewListContainer) return;
+
+    let targetIds = [];
+    if (appState.gReviewTab === 'mistakes') {
+      targetIds = [...storage.gMistakes];
+    } else if (appState.gReviewTab === 'mastered') {
+      targetIds = [...storage.gMastered];
+    } else {
+      targetIds = [...storage.gStarred];
+    }
+
+    const items = appState.grammarData.filter(g => targetIds.includes(g.id));
+
+    if (items.length === 0) {
+      let msg = 'Chưa có mẫu câu nào trong mục này!';
+      if (appState.gReviewTab === 'mistakes') msg = 'Tuyệt vời! Bạn không có mẫu câu ngữ pháp nào bị sai.';
+      if (appState.gReviewTab === 'mastered') msg = 'Bạn chưa đánh dấu mẫu câu Đã thuộc nào. Hãy luyện tập để tích lũy nhé!';
+      if (appState.gReviewTab === 'starred') msg = 'Chưa có mẫu câu nào được gắn dấu sao ★.';
+
+      dom.gReviewListContainer.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">🌟</div>
+          <h3>${msg}</h3>
+        </div>
+      `;
+      return;
+    }
+
+    dom.gReviewListContainer.innerHTML = items.map(g => `
+      <div class="grammar-card expanded" data-id="${g.id}">
+        <div class="grammar-card-header" data-id="${g.id}">
+          <div class="gcard-title-group">
+            <span class="gcard-id-badge">#${g.id}</span>
+            <span class="gcard-pattern">${g.pattern}</span>
+            <span class="gcard-meaning">${g.meaning}</span>
+            <span class="gcard-cat-tag">${g.categoryName}</span>
+          </div>
+          <div class="gcard-actions">
+            ${appState.gReviewTab === 'mastered' ? `
+              <button class="btn-secondary btn-unmaster-grammar" data-id="${g.id}" title="Chuyển về chưa thuộc" style="padding: 4px 10px; font-size: 0.8rem;">
+                🔄 Chưa thuộc
+              </button>
+            ` : `
+              <button class="btn-icon btn-remove-grammar" data-id="${g.id}" title="Xóa khỏi danh sách này" style="color: var(--danger); padding: 4px 8px; font-size: 0.8rem;">✕</button>
+            `}
+          </div>
+        </div>
+        <div class="grammar-card-body">
+          <div class="gcard-section-label">📌 Cấu trúc:</div>
+          <div class="gcard-formation-box">${g.formation}</div>
+          <div class="gcard-section-label">💡 Cách dùng:</div>
+          <div class="gcard-usage-box">${g.usage}</div>
+          <div class="gcard-section-label">📝 Ví dụ:</div>
+          <div class="gcard-examples-list">
+            ${g.examples.map(ex => `
+              <div class="gcard-example-item">
+                <div class="gcard-example-content">
+                  <div class="gcard-example-ja">${ex.ja}</div>
+                  <div class="gcard-example-vi">${ex.vi}</div>
+                </div>
+                <button class="audio-btn gcard-speak-btn" data-speak="${ex.ja}">🔊</button>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Events in review list
+    dom.gReviewListContainer.querySelectorAll('.gcard-speak-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        soundManager.speak(btn.dataset.speak);
+      });
+    });
+
+    dom.gReviewListContainer.querySelectorAll('.btn-remove-grammar').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = Number(btn.dataset.id);
+        if (appState.gReviewTab === 'mistakes') storage.removeGrammarMistake(id);
+        if (appState.gReviewTab === 'starred') storage.toggleGrammarStarred(id);
+        updateGrammarStats();
+        renderGrammarReviewList();
+      });
+    });
+
+    dom.gReviewListContainer.querySelectorAll('.btn-unmaster-grammar').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = Number(btn.dataset.id);
+        storage.removeGrammarMastered(id);
+        updateGrammarStats();
+        renderGrammarReviewList();
+      });
+    });
+  }
+
   // --- Event Bindings ---
   function bindEvents() {
     // Topic & Category changes
@@ -1396,12 +2151,171 @@
       });
     }
 
+    // =========================================================================
+    // GRAMMAR EVENT BINDINGS
+    // =========================================================================
+    if (dom.modeBtnVocab) {
+      dom.modeBtnVocab.addEventListener('click', () => switchAppMode('vocab'));
+    }
+    if (dom.modeBtnGrammar) {
+      dom.modeBtnGrammar.addEventListener('click', () => switchAppMode('grammar'));
+    }
+
+    // Grammar Nav Tabs
+    document.querySelectorAll('#grammarNavTabsWrapper .nav-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.gtab;
+        if (tab) switchGrammarTab(tab);
+      });
+    });
+
+    // Grammar Handbook Events
+    if (dom.grammarSearchInput) {
+      dom.grammarSearchInput.addEventListener('input', (e) => {
+        appState.grammarSearch = e.target.value;
+        renderGrammarHandbook();
+      });
+    }
+
+    if (dom.grammarToggleAllBtn) {
+      dom.grammarToggleAllBtn.addEventListener('click', toggleAllGrammarCards);
+    }
+
+    // Grammar Quiz Events
+    if (dom.gQuizNextBtn) {
+      dom.gQuizNextBtn.addEventListener('click', nextGrammarQuestion);
+    }
+    if (dom.gQuizRestartBtn) {
+      dom.gQuizRestartBtn.addEventListener('click', initGrammarQuiz);
+    }
+    if (dom.gQuizStarBtn) {
+      dom.gQuizStarBtn.addEventListener('click', () => {
+        if (!appState.gQuizCurrentQ) return;
+        const active = storage.toggleGrammarStarred(appState.gQuizCurrentQ.item.id);
+        dom.gQuizStarBtn.classList.toggle('active', active);
+        updateGrammarStats();
+      });
+    }
+
+    // Grammar Flashcard Events
+    if (dom.gFlashcardElement) {
+      dom.gFlashcardElement.addEventListener('click', flipGrammarFlashcard);
+    }
+    if (dom.gFcNextBtn) dom.gFcNextBtn.addEventListener('click', nextGrammarFlashcard);
+    if (dom.gFcPrevBtn) dom.gFcPrevBtn.addEventListener('click', prevGrammarFlashcard);
+    if (dom.gFcMasteredBtn) {
+      dom.gFcMasteredBtn.addEventListener('click', () => {
+        if (appState.gFcList.length === 0) return;
+        const g = appState.gFcList[appState.gFcIndex];
+        storage.addGrammarMastered(g.id);
+        soundManager.playCorrect();
+        updateGrammarStats();
+        nextGrammarFlashcard();
+      });
+    }
+    if (dom.gFcReviewBtn) {
+      dom.gFcReviewBtn.addEventListener('click', () => {
+        if (appState.gFcList.length === 0) return;
+        const g = appState.gFcList[appState.gFcIndex];
+        storage.addGrammarMistake(g.id);
+        soundManager.playWrong();
+        updateGrammarStats();
+        nextGrammarFlashcard();
+      });
+    }
+
+    // Grammar Review Subtabs
+    function updateGrammarSubtabStyles() {
+      const activeTab = appState.gReviewTab;
+      const btns = [
+        { btn: dom.gSubtabMistakesBtn, id: 'mistakes' },
+        { btn: dom.gSubtabMasteredBtn, id: 'mastered' },
+        { btn: dom.gSubtabStarredBtn, id: 'starred' }
+      ];
+      btns.forEach(({ btn, id }) => {
+        if (!btn) return;
+        if (id === activeTab) {
+          btn.style.background = 'var(--primary-light)';
+          btn.style.color = 'var(--primary)';
+        } else {
+          btn.style.background = 'none';
+          btn.style.color = 'inherit';
+        }
+      });
+    }
+
+    if (dom.gSubtabMistakesBtn) {
+      dom.gSubtabMistakesBtn.addEventListener('click', () => {
+        appState.gReviewTab = 'mistakes';
+        updateGrammarSubtabStyles();
+        renderGrammarReviewList();
+      });
+    }
+    if (dom.gSubtabMasteredBtn) {
+      dom.gSubtabMasteredBtn.addEventListener('click', () => {
+        appState.gReviewTab = 'mastered';
+        updateGrammarSubtabStyles();
+        renderGrammarReviewList();
+      });
+    }
+    if (dom.gSubtabStarredBtn) {
+      dom.gSubtabStarredBtn.addEventListener('click', () => {
+        appState.gReviewTab = 'starred';
+        updateGrammarSubtabStyles();
+        renderGrammarReviewList();
+      });
+    }
+
+    if (dom.gStatPillMastered) {
+      dom.gStatPillMastered.addEventListener('click', () => {
+        switchGrammarTab('review');
+        appState.gReviewTab = 'mastered';
+        updateGrammarSubtabStyles();
+        renderGrammarReviewList();
+      });
+    }
+    if (dom.gStatPillReview) {
+      dom.gStatPillReview.addEventListener('click', () => {
+        switchGrammarTab('review');
+        appState.gReviewTab = 'mistakes';
+        updateGrammarSubtabStyles();
+        renderGrammarReviewList();
+      });
+    }
+
+    if (dom.gClearReviewBtn) {
+      dom.gClearReviewBtn.addEventListener('click', () => {
+        if (confirm('Bạn có chắc muốn xóa danh sách ngữ pháp này?')) {
+          if (appState.gReviewTab === 'mistakes') storage.gMistakes.clear();
+          if (appState.gReviewTab === 'mastered') storage.gMastered.clear();
+          if (appState.gReviewTab === 'starred') storage.gStarred.clear();
+          storage.save();
+          updateGrammarStats();
+          renderGrammarReviewList();
+        }
+      });
+    }
+
+    if (dom.resetGrammarStatsBtn) {
+      dom.resetGrammarStatsBtn.addEventListener('click', () => {
+        if (confirm('Bạn có chắc muốn đặt lại toàn bộ tiến độ học Ngữ pháp (Đã thuộc, Cần ôn, Đánh dấu)?')) {
+          storage.gMastered.clear();
+          storage.gMistakes.clear();
+          storage.gStarred.clear();
+          storage.save();
+          updateGrammarStats();
+          if (appState.grammarTab === 'review') renderGrammarReviewList();
+          alert('Đã đặt lại tiến độ Ngữ pháp thành công!');
+        }
+      });
+    }
+
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
       // Don't trigger shortcuts if user is typing in search or spelling input
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
-      // Quiz mode shortcuts: keys 1-4 for options, Enter for next
+      // Vocab Quiz mode shortcuts: keys 1-4 for options, Enter for next
       const activeSec = document.querySelector('.view-section.active');
       if (activeSec && activeSec.id === 'view-quiz') {
         if (['1', '2', '3', '4'].includes(e.key)) {
@@ -1415,7 +2329,7 @@
         }
       }
 
-      // Flashcard mode shortcuts: Space for flip, ArrowLeft/Right for Prev/Next
+      // Vocab Flashcard mode shortcuts: Space for flip, ArrowLeft/Right for Prev/Next
       if (activeSec && activeSec.id === 'view-flashcard') {
         if (e.code === 'Space') {
           e.preventDefault();
@@ -1424,6 +2338,31 @@
           nextFlashcard();
         } else if (e.key === 'ArrowLeft') {
           prevFlashcard();
+        }
+      }
+
+      // Grammar Quiz mode shortcuts: keys 1-4 for options, Enter for next
+      if (activeSec && activeSec.id === 'view-grammar-quiz') {
+        if (['1', '2', '3', '4'].includes(e.key)) {
+          const idx = parseInt(e.key, 10) - 1;
+          const btns = dom.gQuizOptionsGrid.querySelectorAll('.g-opt-btn');
+          if (btns[idx] && !appState.gQuizAnswered) {
+            btns[idx].click();
+          }
+        } else if (e.key === 'Enter') {
+          if (appState.gQuizAnswered) nextGrammarQuestion();
+        }
+      }
+
+      // Grammar Flashcard mode shortcuts: Space for flip, ArrowLeft/Right for Prev/Next
+      if (activeSec && activeSec.id === 'view-grammar-flashcard') {
+        if (e.code === 'Space') {
+          e.preventDefault();
+          flipGrammarFlashcard();
+        } else if (e.key === 'ArrowRight') {
+          nextGrammarFlashcard();
+        } else if (e.key === 'ArrowLeft') {
+          prevGrammarFlashcard();
         }
       }
     });

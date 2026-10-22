@@ -24,10 +24,24 @@
       <a href="#" class="brand">
         <div class="logo-badge">N3</div>
         <div class="brand-title">
-          <span>JLPT VOCAB QUIZ</span>
-          <span class="brand-sub">Mimikara N3 Master</span>
+          <span id="brandMainTitle">JLPT N3 MASTER</span>
+          <span class="brand-sub" id="brandSubTitle">Mimikara & Ngữ pháp VTI</span>
         </div>
       </a>
+
+      <!-- Main Mode Switcher: Từ Vựng vs Ngữ Pháp -->
+      <div class="app-mode-switch" id="appModeSwitch">
+        <button class="mode-btn active" data-mode="vocab" id="modeBtnVocab">
+          <span class="mode-icon">📚</span>
+          <span class="mode-text">Từ Vựng</span>
+          <span class="mode-badge">880</span>
+        </button>
+        <button class="mode-btn" data-mode="grammar" id="modeBtnGrammar">
+          <span class="mode-icon">📝</span>
+          <span class="mode-text">Ngữ Pháp</span>
+          <span class="mode-badge">62</span>
+        </button>
+      </div>
 
       <div class="header-actions">
         <!-- Category selector (Extensible for Danh từ, Động từ, etc.) -->
@@ -50,8 +64,8 @@
     </div>
   </header>
 
-  <!-- Navigation Tabs -->
-  <div class="nav-tabs-wrapper">
+  <!-- ==================== VOCAB NAVIGATION TABS ==================== -->
+  <div class="nav-tabs-wrapper" id="vocabNavTabsWrapper">
     <!-- Category Pills Switcher -->
     <div class="category-bar-wrapper">
       <span class="category-bar-label">Mục lớn:</span>
@@ -96,10 +110,48 @@
     </ul>
   </div>
 
+  <!-- ==================== GRAMMAR NAVIGATION TABS ==================== -->
+  <div class="nav-tabs-wrapper" id="grammarNavTabsWrapper" style="display: none;">
+    <!-- Category Pills for Grammar -->
+    <div class="category-bar-wrapper">
+      <span class="category-bar-label">Nhóm:</span>
+      <div id="grammarCategoryPills" class="category-pills-scroll">
+        <!-- Dynamically rendered grammar pills -->
+      </div>
+    </div>
+
+    <ul class="nav-tabs">
+      <li>
+        <button class="nav-tab-btn active" data-gtab="handbook">
+          <span>📖</span> Cẩm nang 62 mẫu
+          <span id="gHandbookBadge" class="badge-count">62</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-tab-btn" data-gtab="quiz">
+          <span>🎯</span> Trắc nghiệm điền câu
+        </button>
+      </li>
+      <li>
+        <button class="nav-tab-btn" data-gtab="flashcard">
+          <span>🗂️</span> Flashcard mẫu câu
+        </button>
+      </li>
+      <li>
+        <button class="nav-tab-btn" data-gtab="review">
+          <span>⭐</span> Sổ tay cần ôn
+          <span id="gReviewBadge" class="badge-count">0</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
   <!-- Main Content -->
   <main>
-    <!-- Topic / Filter Control Bar -->
-    <div class="control-bar">
+    <!-- ==================== VOCAB APPLICATION SPACE ==================== -->
+    <div id="vocabAppSection">
+      <!-- Topic / Filter Control Bar -->
+      <div class="control-bar">
       <div class="select-group">
         <label for="topicSelect" class="select-label">Chủ đề:</label>
         <select id="topicSelect" class="custom-select">
@@ -458,6 +510,176 @@
         </table>
       </div>
     </section>
+  </div> <!-- /#vocabAppSection -->
+
+  <!-- ==================== GRAMMAR APPLICATION SPACE ==================== -->
+  <div id="grammarAppSection" style="display: none;">
+    <!-- Grammar Filter & Stats Bar -->
+    <div class="control-bar" id="grammarControlBar">
+      <div class="select-group">
+        <label for="grammarCategorySelect" class="select-label">Phân loại:</label>
+        <select id="grammarCategorySelect" class="custom-select">
+          <!-- Populated from GRAMMAR_CATEGORIES -->
+        </select>
+      </div>
+
+      <div class="quick-stats">
+        <div class="stat-pill">Tổng mẫu: <strong id="grammarTotalCount">62</strong></div>
+        <div id="gStatPillMastered" class="stat-pill clickable" title="Xem danh sách mẫu câu Đã thuộc">Đã thuộc: <strong id="gMasteredCount">0</strong> ↗</div>
+        <div id="gStatPillReview" class="stat-pill clickable" title="Xem danh sách mẫu câu Cần ôn">Cần ôn: <strong id="gReviewCount">0</strong> ↗</div>
+        <button id="resetGrammarStatsBtn" class="btn-secondary" title="Đặt lại tiến độ ngữ pháp" style="padding: 5px 10px; font-size: 0.8rem; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; cursor: pointer; color: var(--text-muted);">
+          <span>🔄</span> Đặt lại
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== GRAMMAR TAB 1: CẨM NANG (HANDBOOK) ==================== -->
+    <section id="view-grammar-handbook" class="view-section active">
+      <div class="dict-controls">
+        <div class="dict-search-wrapper">
+          <input type="text" id="grammarSearchInput" class="search-input" placeholder="🔍 Tìm theo mẫu câu (~うちに), ý nghĩa (trong lúc), hoặc câu ví dụ...">
+        </div>
+        <button id="grammarToggleAllBtn" class="btn-secondary" style="white-space: nowrap; font-size: 0.88rem; padding: 11px 16px; display: inline-flex; align-items: center; gap: 6px;">
+          <span id="toggleAllIcon">📂</span> <span id="toggleAllText">Mở rộng tất cả</span>
+        </button>
+      </div>
+
+      <div class="dict-status-bar">
+        <span id="grammarStatusText">Đang hiển thị <strong style="color: var(--primary);">62</strong> / 62 mẫu ngữ pháp</span>
+      </div>
+
+      <!-- Accordion list container for 62 grammar cards -->
+      <div id="grammarCardsList" class="grammar-cards-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- ==================== GRAMMAR TAB 2: TRẮC NGHIỆM (QUIZ) ==================== -->
+    <section id="view-grammar-quiz" class="view-section">
+      <div class="app-card">
+        <div class="progress-container">
+          <div class="progress-track">
+            <div id="gQuizProgressFill" class="progress-fill"></div>
+          </div>
+          <div id="gQuizProgressText" class="progress-text">1 / 10</div>
+        </div>
+
+        <div class="quiz-header">
+          <span id="gQuizCategoryBadge" class="quiz-topic-tag">Thời gian & Trình tự</span>
+          <div>Chuỗi đúng: <strong id="gQuizStreak" style="color: var(--primary);">0 🔥</strong></div>
+        </div>
+
+        <div class="quiz-question-box">
+          <button id="gQuizStarBtn" class="star-btn" title="Lưu mẫu câu này vào Sổ tay cần ôn">★</button>
+          <div class="question-prompt">Điền mẫu ngữ pháp thích hợp vào chỗ trống:</div>
+          <div id="gQuizSentence" class="grammar-quiz-sentence">
+            <!-- Japanese sentence with blank slot -->
+          </div>
+          <div id="gQuizMeaning" class="question-sub" style="margin-top: 8px;">
+            <!-- Vietnamese translation hint -->
+          </div>
+          <div style="margin-top: 14px;">
+            <button id="gQuizAudioBtn" class="audio-btn" title="Nghe câu tiếng Nhật">🔊</button>
+          </div>
+        </div>
+
+        <!-- 4 Options Grid -->
+        <div id="gQuizOptionsGrid" class="options-grid">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Explanation Box -->
+        <div id="gQuizExplanation" class="explanation-box">
+          <div id="gQuizExpTitle" style="font-weight: 700; color: var(--primary); margin-bottom: 6px; font-size: 1.05rem;"></div>
+          <div id="gQuizExpDetail" style="font-size: 0.95rem; line-height: 1.5; color: var(--text-main);"></div>
+        </div>
+
+        <!-- Quiz Action Buttons -->
+        <div class="quiz-actions">
+          <button id="gQuizRestartBtn" class="btn-secondary">Làm bộ khác 🔄</button>
+          <button id="gQuizNextBtn" class="btn-primary" style="display: none;">Câu tiếp theo ➔</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GRAMMAR TAB 3: FLASHCARD ==================== -->
+    <section id="view-grammar-flashcard" class="view-section">
+      <div class="app-card" style="text-align: center;">
+        <div class="progress-container">
+          <div class="progress-track">
+            <div id="gFcProgressFill" class="progress-fill"></div>
+          </div>
+          <div id="gFcProgressText" class="progress-text">1 / 62</div>
+        </div>
+
+        <div class="flashcard-wrapper" id="gFlashcardElement">
+          <div class="flashcard-inner">
+            <!-- Mặt trước -->
+            <div class="flashcard-front">
+              <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                <span id="gFcCategoryBadge" class="quiz-topic-tag">Thời gian & Trình tự</span>
+                <span id="gFcNumberBadge" style="font-weight: 800; color: var(--primary); font-size: 0.9rem;">#1</span>
+              </div>
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                <div id="gFcPattern" class="fc-word-kanji" style="font-size: clamp(2rem, 6.5vw, 2.8rem); margin-top: 10px;">～うちに</div>
+                <div id="gFcFormation" class="grammar-fc-formation" style="font-size: 0.95rem; color: var(--text-muted); margin-top: 10px; font-weight: 600; white-space: pre-line;"></div>
+              </div>
+              <div class="fc-hint">Chạm vào thẻ để lật xem ý nghĩa & ví dụ 🔄</div>
+            </div>
+
+            <!-- Mặt sau -->
+            <div class="flashcard-back">
+              <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                <span id="gFcCategoryBadgeBack" class="quiz-topic-tag">Thời gian & Trình tự</span>
+                <button id="gFcAudioBtn" class="audio-btn" title="Nghe phát âm câu ví dụ">🔊</button>
+              </div>
+              <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; overflow-y: auto; max-height: 200px; padding: 4px; width: 100%;">
+                <div id="gFcMeaning" class="fc-word-nghia" style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-top: 4px;">Trong lúc, nhân lúc...</div>
+                <div id="gFcUsage" style="font-size: 0.85rem; color: var(--text-muted); margin: 6px 0 10px; line-height: 1.4; text-align: left; white-space: pre-line;"></div>
+                <div id="gFcExample" style="font-size: 0.92rem; text-align: left; background: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid var(--primary);"></div>
+              </div>
+              <div class="fc-hint">Chạm vào thẻ để lật lại 🔄</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flashcard-controls">
+          <button id="gFcReviewBtn" class="btn-status review">⚠️ Cần ôn</button>
+          <button id="gFcMasteredBtn" class="btn-status mastered">✅ Đã thuộc</button>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; max-width: 580px; margin: 16px auto 0;">
+          <button id="gFcPrevBtn" class="btn-secondary" style="padding: 8px 16px;">⬅️ Trước</button>
+          <button id="gFcNextBtn" class="btn-secondary" style="padding: 8px 16px;">Tiếp ➡️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GRAMMAR TAB 4: SỔ TAY (REVIEW) ==================== -->
+    <section id="view-grammar-review" class="view-section">
+      <div class="control-bar" style="margin-bottom: 16px;">
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button id="gSubtabMistakesBtn" class="btn-secondary" style="font-weight: 700; background: var(--primary-light); color: var(--primary);">
+            ⚠️ Cần ôn (<span id="gCountMistakesTab">0</span>)
+          </button>
+          <button id="gSubtabMasteredBtn" class="btn-secondary" style="font-weight: 700;">
+            ✅ Đã thuộc (<span id="gCountMasteredTab">0</span>)
+          </button>
+          <button id="gSubtabStarredBtn" class="btn-secondary" style="font-weight: 700;">
+            ⭐ Đã đánh dấu (<span id="gCountStarredTab">0</span>)
+          </button>
+        </div>
+
+        <button id="gClearReviewBtn" class="btn-secondary" style="color: var(--danger);">
+          🗑️ Xóa danh sách này
+        </button>
+      </div>
+
+      <div id="gReviewListContainer" class="grammar-cards-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+  </div> <!-- /#grammarAppSection -->
   </main>
 
   <!-- Reset Stats Modal -->
@@ -495,6 +717,7 @@
 
   <!-- Scripts -->
   <script src="vocab_data.js"></script>
+  <script src="grammar_data.js"></script>
   <script src="app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {

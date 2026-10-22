@@ -122,6 +122,59 @@ header {
   gap: 10px;
 }
 
+/* App Mode Switcher (Từ vựng vs Ngữ pháp) */
+.app-mode-switch {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-subtle);
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  gap: 3px;
+}
+
+.mode-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.mode-btn:hover {
+  color: var(--text-main);
+}
+
+.mode-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+}
+
+.mode-badge {
+  background: var(--border);
+  color: var(--text-muted);
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  transition: var(--transition);
+}
+
+.mode-btn.active .mode-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
 .btn-icon {
   background: var(--bg-subtle);
   border: 1px solid var(--border);
@@ -1262,6 +1315,238 @@ main {
   margin-bottom: 12px;
 }
 
+/* =============================================================================
+   GRAMMAR APP STYLES (CẨM NANG, TRẮC NGHIỆM, FLASHCARD & SỔ TAY NGỮ PHÁP)
+   ============================================================================= */
+
+/* Search bar on top of Handbook */
+.grammar-search-bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Grammar Accordion Cards */
+.grammar-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.grammar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.grammar-card:hover {
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-md);
+}
+
+.grammar-card-header {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  background: var(--bg-card);
+  transition: background-color 0.2s ease;
+}
+
+.grammar-card-header:hover {
+  background: var(--bg-subtle);
+}
+
+.grammar-card.expanded .grammar-card-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.gcard-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.gcard-id-badge {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.gcard-pattern {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+
+.gcard-meaning {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.gcard-cat-tag {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.gcard-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.gcard-chevron {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+}
+
+.grammar-card.expanded .gcard-chevron {
+  transform: rotate(180deg);
+}
+
+/* Grammar Card Body (Accordion Content) */
+.grammar-card-body {
+  padding: 18px 20px;
+  display: none;
+  animation: fadeIn 0.2s ease;
+}
+
+.grammar-card.expanded .grammar-card-body {
+  display: block;
+}
+
+.gcard-section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gcard-formation-box {
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: pre-line;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.gcard-usage-box {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  white-space: pre-line;
+  margin-bottom: 16px;
+  background: rgba(79, 70, 229, 0.04);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border);
+}
+
+.gcard-examples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gcard-example-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--bg-subtle);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.gcard-example-item:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+}
+
+.gcard-example-content {
+  flex: 1;
+}
+
+.gcard-example-ja {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  line-height: 1.45;
+}
+
+.gcard-example-vi {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Grammar Quiz Sentence */
+.grammar-quiz-sentence {
+  font-size: clamp(1.35rem, 4.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.blank-slot {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+  border-radius: 4px;
+  padding: 2px 14px;
+  margin: 0 4px;
+  font-weight: 800;
+}
+
+/* Grammar Flashcard Details */
+.grammar-fc-formation {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  line-height: 1.5;
+  background: var(--bg-subtle);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -1286,6 +1571,7 @@ footer {
   .header-inner {
     padding: 8px 12px;
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   .brand {
@@ -1305,6 +1591,21 @@ footer {
 
   .brand-sub {
     font-size: 0.72rem;
+  }
+
+  /* Mode switcher full-width on mobile */
+  .app-mode-switch {
+    width: 100%;
+    order: 3;
+    display: flex;
+    justify-content: stretch;
+  }
+
+  .mode-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 7px 8px;
+    font-size: 0.85rem;
   }
 
   /* On mobile, categorySelect in header is hidden to save space; user uses categoryPills below */
@@ -1685,5 +1986,52 @@ footer {
     padding: 3px 6px !important;
     font-size: 0.74rem !important;
     margin-left: 2px !important;
+  }
+
+  /* Mobile Grammar Optimizations */
+  .grammar-search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .grammar-search-bar button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .grammar-card-header {
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .gcard-pattern {
+    font-size: 1.1rem;
+  }
+
+  .gcard-meaning {
+    font-size: 0.88rem;
+  }
+
+  .grammar-card-body {
+    padding: 14px 12px;
+  }
+
+  .gcard-example-ja {
+    font-size: 0.98rem;
+  }
+
+  .gcard-example-vi {
+    font-size: 0.85rem;
+  }
+
+  .grammar-quiz-sentence {
+    font-size: clamp(1.2rem, 5vw, 1.55rem);
+    line-height: 1.5;
+  }
+
+  .blank-slot {
+    padding: 2px 8px;
+    font-size: 1rem;
   }
 }
