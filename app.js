@@ -1253,11 +1253,11 @@
       return;
     }
 
-    dom.dictTableBody.innerHTML = filtered.map(w => {
+    dom.dictTableBody.innerHTML = filtered.map((w, index) => {
       const isFav = storage.favorites.has(w.id);
       return `
         <tr>
-          <td style="font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">#${w.stt}</td>
+          <td style="font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">${index + 1}</td>
           <td class="dict-kanji"><span class="cell-text">${w.kanji}</span></td>
           <td class="dict-hiragana"><span class="cell-text">${w.hiragana}</span></td>
           <td class="dict-hanviet"><span class="cell-text">${w.hanViet || '-'}</span></td>
