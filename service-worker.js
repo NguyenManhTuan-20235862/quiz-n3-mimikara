@@ -1,13 +1,13 @@
 // Service Worker for Quiz Từ Vựng N3 (Mimikara)
 // Hỗ trợ lưu trữ toàn bộ ứng dụng để học Offline 100% không cần mạng
-const CACHE_NAME = 'quiz-n3-mimikara-v3';
+const CACHE_NAME = 'quiz-n3-mimikara-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './style.css',
-  './app.js',
+  './app.js?v=4',
   './vocab_data.js',
-  './grammar_data.js',
+  './grammar_data.js?v=4',
   './manifest.json',
   './icon.svg'
 ];
@@ -16,7 +16,7 @@ const ASSETS_TO_CACHE = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS_TO_CACHE);
+      return cache.addAll(ASSETS_TO_CACHE.map(url => new Request(url, { cache: 'reload' })));
     }).then(() => self.skipWaiting())
   );
 });
@@ -27,7 +27,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((keys) => {
       return Promise.all(
         keys.map((key) => {
-          if (key !== CACHE_NAME) {
+          if (key.startsWith('quiz-n3-mimikara-') && key !== CACHE_NAME) {
             return caches.delete(key);
           }
         })
@@ -36,26 +36,25 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Chiến lược Cache-First: Lấy từ bộ nhớ máy trước (siêu nhanh & dùng được khi tắt máy/mất mạng)
+// Prefer current files online; retain cached files for offline study.
 self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET' || new URL(event.request.url).origin !== self.location.origin) return;
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).then((networkResponse) => {
-        // Nếu là tài nguyên cùng origin thì lưu bổ sung vào cache
-        if (event.request.url.startsWith(self.location.origin) && networkResponse.status === 200) {
-          const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      try {
+        const response = await fetch(event.request, { cache: 'no-cache' });
+        if (response.ok) await cache.put(event.request, response.clone());
+        return response;
+      } catch (error) {
+        const cached = await cache.match(event.request);
+        if (cached) return cached;
+        if (event.request.mode === 'navigate') {
+          const home = await cache.match('./index.html');
+          if (home) return home;
         }
-        return networkResponse;
-      }).catch(() => {
-        // Fallback về trang chủ nếu mất mạng hoàn toàn
-        return caches.match('./index.html');
-      });
-    })
+        throw error;
+      }
+    })()
   );
 });
