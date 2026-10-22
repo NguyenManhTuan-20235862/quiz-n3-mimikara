@@ -1257,6 +1257,12 @@ const GRAMMAR_DATA = [
   }
 ];
 
+// Expose data to the browser application, which reads it from window.
+if (typeof window !== 'undefined') {
+  window.GRAMMAR_CATEGORIES = GRAMMAR_CATEGORIES;
+  window.GRAMMAR_DATA = GRAMMAR_DATA;
+}
+
 // Helper functions for Grammar
 function getAllGrammarList() {
   return GRAMMAR_DATA;

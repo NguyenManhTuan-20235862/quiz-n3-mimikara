@@ -1,6 +1,6 @@
 // Service Worker for Quiz Từ Vựng N3 (Mimikara)
 // Hỗ trợ lưu trữ toàn bộ ứng dụng để học Offline 100% không cần mạng
-const CACHE_NAME = 'quiz-n3-mimikara-v2';
+const CACHE_NAME = 'quiz-n3-mimikara-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
