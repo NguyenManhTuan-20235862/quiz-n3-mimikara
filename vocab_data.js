@@ -2921,7 +2921,7 @@ window.QUIZ_CATEGORIES = [
             "kanji": "協調",
             "hanViet": "HIỆP ĐIỀU",
             "hiragana": "きょうちょう",
-            "nghia": "nhấn mạnh; hòa hợp hiệp điều",
+            "nghia": "phối hợp, hợp tác, hòa hợp",
             "topicId": 6,
             "id": 288,
             "topicName": "Chủ đề 6: Khái niệm trừu tượng, tư duy, cảm xúc & trạng thái"
@@ -5024,7 +5024,7 @@ window.QUIZ_CATEGORIES = [
             "kanji": "完全な",
             "hanViet": "HOÀN TOÀN",
             "hiragana": "かんぜんな",
-            "nghia": "toàn bộ, trọn vẹn",
+            "nghia": "hoàn toàn, hoàn chỉnh, trọn vẹn",
             "topicId": 3,
             "id": 492,
             "topicName": "Chủ đề 3: Đánh giá, hoàn cảnh, mức độ & tính chất chung"
@@ -7937,7 +7937,7 @@ window.QUIZ_CATEGORIES = [
             "kanji": "掛ける",
             "hanViet": "QUẢI",
             "hiragana": "かける",
-            "nghia": "treo, mặc, đeo, gọi điện, tốn",
+            "nghia": "treo, mặc, đeo, gọi điện, đặt (báo thức), tốn",
             "topicId": 3,
             "id": 777,
             "topicName": "Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái"
@@ -8437,7 +8437,7 @@ window.QUIZ_CATEGORIES = [
             "kanji": "切れる",
             "hanViet": "THIẾT",
             "hiragana": "きれる",
-            "nghia": "bị đứt, hết hạn, sắc bén",
+            "nghia": "bị đứt, hết (pin, hạn), sắc bén",
             "topicId": 3,
             "id": 827,
             "topicName": "Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái"

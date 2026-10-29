@@ -1,0 +1,835 @@
+[
+  {
+    "id": "s4-reception",
+    "title": "Đón khách ở công ty",
+    "jaTitle": "受付で使った敬語",
+    "topic": "Công việc",
+    "format": "Câu chuyện",
+    "focusGrammarId": 61,
+    "newWords": [
+      "迎え",
+      "帰り",
+      "おしゃれな",
+      "派手な",
+      "地味な",
+      "親しい",
+      "呼ぶ",
+      "誘う",
+      "訪ねる",
+      "任せる"
+    ],
+    "reviewWords": [
+      "名刺",
+      "上司",
+      "確認",
+      "礼儀",
+      "マナー"
+    ],
+    "text": "会社を[[訪ねる|訪ねた|たずねた]]客の[[迎え]]を、初めて一人で担当した。朝、服を選びながら、[[派手な]]色より[[地味な]]色のほうがよいか迷った。先輩は、[[おしゃれな]]服かどうかより、清潔で相手に失礼のない服を選ぶことが大切だと言った。\n受付で[[名刺]]を受け取り、「部長の田中はいらっしゃいますか」と聞かれた。この会社では、来客の名前を確認してから案内することになっている。部長が来るまで、私は「こちらで資料をご覧になってお待ちください」と案内した。部長が先に、応接室への案内は私に[[任せる]]と言っていたので、部屋の番号も[[確認]]した。\n客は[[上司]]と[[親しい]]人だったが、私は初対面なので、[[礼儀]]と会社の[[マナー]]を意識した。部長を[[呼ぶ]]前に、客を席へ[[誘う|誘って|さそって]]お茶を用意した。[[帰り]]には、「次はいつごろいらっしゃいますか」と予定を尋ねた。緊張したが、相手の行動を丁寧に表す言葉を、実際の場面で少し使えるようになった。",
+    "translation": "Tôi lần đầu tự phụ trách đón một khách đến công ty. Buổi sáng chọn áo, tôi phân vân có nên chọn màu nhã thay vì màu nổi. Anh chị đi trước nói quan trọng hơn vẻ thời trang là trang phục sạch sẽ, không thất lễ với đối phương.\nỞ quầy tiếp tân, tôi nhận danh thiếp và được hỏi: “Trưởng phòng Tanaka có ở đây không ạ?” Công ty quy định xác nhận tên khách rồi mới dẫn vào. Trong khi đợi trưởng phòng, tôi hướng dẫn: “Xin quý khách xem tài liệu tại đây và chờ một chút.” Vì trưởng phòng đã giao tôi việc dẫn khách đến phòng tiếp, tôi kiểm tra cả số phòng.\nKhách thân với cấp trên nhưng lần đầu gặp tôi, nên tôi chú ý lễ phép và cách ứng xử của công ty. Trước khi gọi trưởng phòng, tôi mời khách vào chỗ ngồi, chuẩn bị trà. Lúc khách về, tôi hỏi lịch: “Lần sau khoảng khi nào quý khách đến ạ?” Dù hồi hộp, tôi đã phần nào dùng được cách diễn đạt kính trọng hành động của người khác trong tình huống thực tế.",
+    "grammar": [
+      {
+        "id": 61,
+        "quote": "資料をご覧になってお待ちください",
+        "note": "Tôn kính ngữ: ご覧になる là cách kính trọng nói về hành động xem của khách. Trong bài, いらっしゃる dùng cho việc có mặt/đến của người được kính trọng, không dùng để nâng hành động của chính mình."
+      },
+      {
+        "id": 52,
+        "quote": "名前を確認してから案内することになっている",
+        "note": "Ôn ～ことになっている: quy định đã có của công ty về việc xác nhận và dẫn khách."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "客の「見る」という行動を尊敬語で表します。「こちらの資料を（　）ください。」",
+      "options": [
+        "拝見して",
+        "ご覧になって",
+        "見させて"
+      ],
+      "answer": 1,
+      "explanation": "ご覧になる kính trọng hành động xem của khách. 拝見する là khiêm nhường ngữ, dùng cho hành động xem của phía mình."
+    },
+    "questions": [
+      {
+        "q": "先輩は服について何を大切にするよう言いましたか。",
+        "options": [
+          "清潔で相手に失礼がないこと",
+          "必ず派手な色にすること",
+          "値段だけで選ぶこと"
+        ],
+        "answer": 0,
+        "explanation": "Lời khuyên là chọn đồ sạch sẽ và không thất lễ, không chỉ chú trọng thời trang."
+      },
+      {
+        "q": "客と上司の関係はどうでしたか。",
+        "options": [
+          "初めて会う相手だった",
+          "名前も知らない関係だった",
+          "親しい関係だった"
+        ],
+        "answer": 2,
+        "explanation": "Khách thân với cấp trên; người mới gặp khách lần đầu là tác giả."
+      },
+      {
+        "q": "「ご覧になる」は誰の行動を丁寧に表していますか。",
+        "options": [
+          "筆者が服を選ぶ行動",
+          "客が資料を見る行動",
+          "先輩が部屋を片づける行動"
+        ],
+        "answer": 1,
+        "explanation": "ご覧になる nâng hành động xem tài liệu của khách."
+      }
+    ]
+  },
+  {
+    "id": "s4-report",
+    "title": "Trình bày điều mình đã chuẩn bị",
+    "jaTitle": "資料をお持ちしました",
+    "topic": "Công việc",
+    "format": "Câu chuyện",
+    "focusGrammarId": 62,
+    "newWords": [
+      "会",
+      "集まり",
+      "頼み",
+      "省略",
+      "詳しい",
+      "正確な",
+      "細かい",
+      "重要な",
+      "乗せる",
+      "降ろす"
+    ],
+    "reviewWords": [
+      "書類",
+      "報告",
+      "責任",
+      "手伝い",
+      "準備"
+    ],
+    "text": "地域の[[会]]から、活動を紹介する資料を作ってほしいという[[頼み]]が来た。私は先輩と[[準備]]し、当日の[[集まり]]で説明することになった。写真を選び、数字が[[正確な|正確か|せいかくか]]どうかを何度も確かめた。[[重要な]]内容は残し、時間に合わせて一部を[[省略]]した。\n当日は箱を車に[[乗せる|乗せて|のせて]]運び、会場で[[降ろす|降ろした|おろした]]。係の人に「本日説明を担当いたします。森と申します。資料をお持ちしました」とあいさつした。[[書類]]を渡すと、先方から[[詳しい]]説明も聞きたいと言われた。\n私は、まず全体を[[報告]]し、[[細かい]]点は質問に答える形で伝えた。すぐ答えられない数字は「確認してからご連絡いたします」と約束した。説明する[[責任]]があるのだから、知らないことを知っているふりはできない。終了後、[[手伝い]]をしてくれた人にもお礼を言った。丁寧な言葉だけでなく、確かな内容を届けることも大切なのだ。",
+    "translation": "Một hội ở địa phương nhờ chúng tôi làm tài liệu giới thiệu hoạt động. Tôi cùng anh chị chuẩn bị và được phân công giải thích tại buổi họp. Chúng tôi chọn ảnh, kiểm tra nhiều lần các con số có chính xác không, giữ nội dung quan trọng và lược bớt một phần cho phù hợp thời gian.\nHôm đó, chúng tôi chất thùng lên xe, chở tới rồi dỡ ở hội trường. Tôi chào người phụ trách: “Tôi là Mori, hôm nay xin phụ trách trình bày. Tôi đã mang tài liệu đến.” Khi tôi đưa giấy tờ, phía bên kia nói muốn nghe giải thích chi tiết nữa.\nTôi báo cáo tổng thể trước, rồi trả lời các điểm nhỏ qua câu hỏi. Với số liệu chưa đáp được ngay, tôi hứa: “Tôi sẽ kiểm tra rồi liên hệ lại.” Vì chịu trách nhiệm giải thích, tôi không thể giả vờ biết điều chưa biết. Kết thúc, tôi cảm ơn những người hỗ trợ. Không chỉ lời nói lịch sự, nội dung đáng tin cũng quan trọng.",
+    "grammar": [
+      {
+        "id": 62,
+        "quote": "資料をお持ちしました",
+        "note": "Khiêm nhường ngữ: お＋持ち＋する hạ hành động mang tài liệu của phía mình để thể hiện kính trọng người nhận. 申します và いたします cũng nói về hành động của người kể."
+      },
+      {
+        "id": 24,
+        "quote": "説明する責任があるのだから",
+        "note": "Ôn ～のだから: dựa vào trách nhiệm đã có để rút ra điều cần làm, ở đây là không giả vờ biết."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "自分が資料を持って来たことを、相手に対してへりくだって伝えます。「資料を（　）。」",
+      "options": [
+        "お持ちになりました",
+        "いらっしゃいました",
+        "お持ちしました"
+      ],
+      "answer": 2,
+      "explanation": "お持ちしました là khiêm nhường ngữ cho hành động của phía mình. お持ちになる là tôn kính ngữ cho hành động của người khác."
+    },
+    "questions": [
+      {
+        "q": "資料を作るとき、何をしましたか。",
+        "options": [
+          "全ての内容を省略した",
+          "数字を確認し、重要な内容を残した",
+          "写真だけで数字は調べなかった"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả kiểm tra số liệu và giữ nội dung quan trọng khi điều chỉnh độ dài."
+      },
+      {
+        "q": "すぐに答えられない数字についてどうしましたか。",
+        "options": [
+          "確認してから連絡すると約束した",
+          "適当な数字を答えた",
+          "質問をした人を責めた"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả hứa xác nhận rồi phản hồi, không đưa số liệu tùy tiện."
+      },
+      {
+        "q": "「お持ちしました」は誰の行動ですか。",
+        "options": [
+          "会の人が帰る行動",
+          "先輩が質問する行動",
+          "筆者が資料を持って来る行動"
+        ],
+        "answer": 2,
+        "explanation": "Câu khiêm nhường nói về việc chính tác giả mang tài liệu tới."
+      }
+    ]
+  },
+  {
+    "id": "s4-exhibition",
+    "title": "Nghe tin rồi kiểm tra lại",
+    "jaTitle": "まだ確かではない話",
+    "topic": "Thông tin",
+    "format": "Câu chuyện",
+    "focusGrammarId": 32,
+    "newWords": [
+      "発明",
+      "ロボット",
+      "デジタル",
+      "ヒット",
+      "ストーリー",
+      "イメージ",
+      "注目",
+      "興奮",
+      "思いつく",
+      "出会う"
+    ],
+    "reviewWords": [
+      "記事",
+      "情報",
+      "確認",
+      "興味",
+      "パートナー"
+    ],
+    "text": "友人によると、来月、図書館で昔の[[発明]]を紹介する展示が開かれるとか。私は[[興味]]を持ち、[[パートナー]]に一緒に行こうと話した。しかし、その[[情報]]が正式な案内なのかは、まだ分からなかった。\n図書館の[[記事]]を調べると、今は小さな[[ロボット]]の映像を見られるコーナーがあると分かった。そこでは、古い道具を[[デジタル]]の画面で紹介していた。ある道具が大[[ヒット]]するまでの[[ストーリー]]を見て、[[思いつく|思いついた|おもいついた]]ことを形にする大変さを知った。\n友人は新しい展示に[[興奮]]していたが、私は先に日程を[[確認]]することにした。話題に[[注目]]が集まると、自分の[[イメージ]]で内容を足してしまうこともある。来月の案内はまだ準備中だった。聞いた話を全て確定したこととして広めず、実際に新しい展示に[[出会う]]日を楽しみに待とうと思った。",
+    "translation": "Theo một người bạn, nghe đâu tháng sau thư viện sẽ mở triển lãm giới thiệu các phát minh xưa. Tôi thấy hứng thú, rủ người bạn đồng hành cùng đi. Nhưng tôi chưa biết đó có phải thông báo chính thức không.\nTra bài viết của thư viện, tôi biết hiện có góc xem video về rô-bốt nhỏ. Ở đó, dụng cụ cũ được giới thiệu trên màn hình kỹ thuật số. Xem câu chuyện một dụng cụ trải qua nhiều bước trước khi thành công lớn, tôi hiểu biến ý tưởng thành sản phẩm không đơn giản.\nBạn tôi hào hứng với triển lãm mới, nhưng tôi quyết định xác nhận lịch trước. Khi một đề tài được chú ý, đôi khi người ta tự thêm nội dung theo hình dung của mình. Thông báo tháng sau vẫn đang chuẩn bị. Tôi nghĩ không nên lan truyền mọi điều nghe được như sự thật đã chốt, mà hãy háo hức chờ ngày thực sự gặp triển lãm mới.",
+    "grammar": [
+      {
+        "id": 32,
+        "quote": "昔の発明を紹介する展示が開かれるとか",
+        "note": "～とか ở cuối câu: truyền đạt thông tin nghe được nhưng người nói chưa xác nhận chắc chắn. Không phải cách liệt kê AとかBとか."
+      },
+      {
+        "id": 49,
+        "quote": "先に日程を確認することにした",
+        "note": "Ôn ～ことにする: người nói quyết định chủ động kiểm tra lịch."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "聞いたが、まだ十分確認できていない情報を伝えます。「友人によると、来月展示が開かれる（　）。」",
+      "options": [
+        "とか",
+        "ついでに",
+        "に限る"
+      ],
+      "answer": 0,
+      "explanation": "～とか cuối câu có thể thuật lại thông tin nghe được với mức độ chưa chắc chắn."
+    },
+    "questions": [
+      {
+        "q": "友人から聞いた話は何ですか。",
+        "options": [
+          "図書館が閉まったという話",
+          "来月、発明の展示が開かれるという話",
+          "ロボットを必ず買えるという話"
+        ],
+        "answer": 1,
+        "explanation": "Người bạn nói nghe đâu sẽ có triển lãm về phát minh vào tháng sau."
+      },
+      {
+        "q": "調べた時点で、来月の案内はどうなっていましたか。",
+        "options": [
+          "すでに全て確定していた",
+          "展示の中止が決まっていた",
+          "まだ準備中だった"
+        ],
+        "answer": 2,
+        "explanation": "Thông báo chính thức cho tháng sau vẫn đang chuẩn bị; không có thông tin đã hủy."
+      },
+      {
+        "q": "筆者は情報についてどう考えましたか。",
+        "options": [
+          "聞いた話を確定事項としてすぐ広めるべきではない",
+          "注目されていれば確認しなくてよい",
+          "自分のイメージを事実に足したほうがよい"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả muốn xác nhận và không coi mọi điều nghe kể là thông tin đã chắc chắn."
+      }
+    ]
+  },
+  {
+    "id": "s4-message",
+    "title": "Một lời nhắn ngắn gây hiểu lầm",
+    "jaTitle": "短い返事の向こう側",
+    "topic": "Giao tiếp",
+    "format": "Câu chuyện",
+    "focusGrammarId": 33,
+    "newWords": [
+      "コミュニケーション",
+      "ユーモア",
+      "ショック",
+      "失礼な",
+      "けちな",
+      "わがままな",
+      "平気な",
+      "黙る",
+      "信じる",
+      "通じる"
+    ],
+    "reviewWords": [
+      "メッセージ",
+      "本人",
+      "関係",
+      "表情",
+      "誤解"
+    ],
+    "text": "友人に道具を借りたいと[[メッセージ]]を送ると、短い返事が来た。別の友人に聞かれ、私は「今日は貸せないって」と伝えた。いつもの[[ユーモア]]のある文とは違い、冷たく感じて少し[[ショック]]だった。[[けちな]]人だと思いそうになったが、理由は書かれていなかった。\n私は平気なふりをして[[黙る|黙って|だまって]]いた。しかし、そのままでは[[関係]]が悪くなると思い、後で[[本人]]に話を聞いた。実は家族が先に使う約束をしていて、急いでいたので説明を省いたそうだ。[[表情]]の見えない文だけでは、気持ちが全部[[通じる]]わけではないのだ。\n友人は、[[失礼な]]返事になったことを謝った。私も自分の都合だけを考える[[わがままな]]態度だったかもしれないと答えた。[[誤解]]が解けた今は[[平気な|平気だ|へいきだ]]。一つの短い文だけで相手の性格を決めず、これまでの[[コミュニケーション]]も思い出して、相手の言葉を[[信じる]]余地を残したいと思った。",
+    "translation": "Tôi nhắn bạn hỏi mượn dụng cụ và nhận một câu trả lời ngắn. Khi người bạn khác hỏi, tôi thuật lại: “Bạn ấy bảo hôm nay không cho mượn được.” Khác với tin nhắn thường có chút hài hước, câu này khiến tôi thấy lạnh lùng và hơi sốc. Tôi suýt nghĩ bạn keo kiệt, nhưng tin không ghi lý do.\nTôi giả vờ không sao rồi im lặng. Tuy nhiên, sợ cứ thế quan hệ sẽ xấu đi, tôi hỏi trực tiếp bạn sau đó. Hóa ra gia đình đã hẹn dùng dụng cụ trước và bạn đang vội nên lược phần giải thích. Chỉ văn bản không thấy nét mặt thì chưa chắc truyền hết cảm xúc.\nBạn xin lỗi vì trả lời thành ra thất lễ. Tôi cũng nói có lẽ mình đã ích kỷ khi chỉ xét sự tiện lợi của bản thân. Giải tỏa hiểu lầm rồi, giờ tôi không sao. Tôi muốn nhớ cả những giao tiếp trước kia và để lại chỗ cho việc tin lời nhau, thay vì phán tính cách từ một câu ngắn.",
+    "grammar": [
+      {
+        "id": 33,
+        "quote": "今日は貸せないって",
+        "note": "～って: cách nói thân mật của ～と言っていた／と言う, ở đây thuật lại lời từ chối trong tin nhắn. Không dùng cách này trong tình huống cần văn phong trang trọng."
+      },
+      {
+        "id": 37,
+        "quote": "気持ちが全部通じるわけではない",
+        "note": "Ôn ～わけではない: một câu chữ ngắn không có nghĩa mọi cảm xúc đều được truyền đạt đầy đủ."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "友人の返事を、会話で親しい人に伝えます。「今日は貸せない（　）。」",
+      "options": [
+        "に限る",
+        "ついでに",
+        "って"
+      ],
+      "answer": 2,
+      "explanation": "～って là cách thuật lời thân mật, tương đương cách nói rằng người kia đã bảo như vậy."
+    },
+    "questions": [
+      {
+        "q": "友人が道具を貸せなかった本当の理由は何ですか。",
+        "options": [
+          "家族が先に使う約束をしていたから",
+          "筆者との関係を終わらせたいから",
+          "道具を全て捨てたから"
+        ],
+        "answer": 0,
+        "explanation": "Gia đình bạn đã hẹn dùng dụng cụ trước, không phải vì muốn chấm dứt quan hệ."
+      },
+      {
+        "q": "誤解が解けたきっかけは何ですか。",
+        "options": [
+          "返事を他の人に広めたこと",
+          "後で本人に事情を聞いたこと",
+          "ずっと黙り続けたこと"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả hỏi trực tiếp nên hiểu được hoàn cảnh thật."
+      },
+      {
+        "q": "筆者が気をつけたいことは何ですか。",
+        "options": [
+          "短い返事なら必ず悪意があると考える",
+          "相手の性格をすぐ決める",
+          "一つの文だけで相手を判断しない"
+        ],
+        "answer": 2,
+        "explanation": "Tác giả muốn xét cả giao tiếp trước đây, không đánh giá đối phương chỉ từ một tin nhắn."
+      }
+    ]
+  },
+  {
+    "id": "s4-survey",
+    "title": "Đọc con số cùng điều kiện khảo sát",
+    "jaTitle": "六十パーセントの意味",
+    "topic": "Thông tin",
+    "format": "Bài chia sẻ trải nghiệm",
+    "focusGrammarId": 34,
+    "newWords": [
+      "アンケート",
+      "割合",
+      "平均",
+      "パーセント",
+      "倍",
+      "幅",
+      "種類",
+      "共通",
+      "不足",
+      "計算"
+    ],
+    "reviewWords": [
+      "調査",
+      "データ",
+      "方法",
+      "結果",
+      "提案"
+    ],
+    "text": "学校の案内によれば、来月から図書室の開室日が増えるという。私はその[[提案]]のもとになった[[調査]]を読んだ。[[アンケート]]に答えた学生は百人で、そのうち六十人が、使える時間が[[不足]]していると答えていた。[[割合]]を[[計算]]すると、六十[[パーセント]]になる。\nただし、回答者は放課後の利用者が中心だった。学校全体に[[共通]]する意見だと考える前に、[[方法]]も見る必要がある。一日の利用時間の[[平均]]は一時間だったが、[[データ]]には、試験前だけ長く使う学生も含まれていた。\n新しい案では、曜日によって使える場所の[[種類]]を増やすそうだ。選択の[[幅]]は広がるが、一人ひとりの利用時間が必ず[[倍]]になるわけではない。[[結果]]の数字だけでなく、誰に何を聞いたかを知ることで、案内の意味をより正しく理解できた。なお、この数字は授業で用いた練習用の例だ。",
+    "translation": "Theo thông báo của trường, tháng sau số ngày mở phòng đọc sẽ tăng. Tôi đọc khảo sát làm cơ sở cho đề xuất ấy. Có một trăm học sinh trả lời bảng hỏi, sáu mươi người nói thời gian có thể sử dụng chưa đủ. Tính tỷ lệ là sáu mươi phần trăm.\nTuy nhiên, người trả lời chủ yếu là người dùng sau giờ học. Trước khi coi đó là ý kiến chung toàn trường, cần xem cả phương pháp. Thời gian sử dụng trung bình một ngày là một giờ, nhưng dữ liệu cũng gồm học sinh chỉ dùng lâu vào trước kỳ thi.\nPhương án mới nghe nói tăng các loại địa điểm sử dụng tùy thứ trong tuần. Phạm vi lựa chọn rộng hơn, nhưng không có nghĩa thời gian mỗi người luôn gấp đôi. Biết ai được hỏi, hỏi điều gì giúp tôi hiểu thông báo đúng hơn thay vì chỉ xem kết quả bằng số. Các con số này là ví dụ luyện tập được dùng trong giờ học.",
+    "grammar": [
+      {
+        "id": 34,
+        "quote": "来月から図書室の開室日が増えるという",
+        "note": "～という ở cuối câu: thuật lại nội dung từ một nguồn, ở đây là văn bản thông báo của trường trong câu chuyện. Không phải ～というN để đặt tên."
+      },
+      {
+        "id": 37,
+        "quote": "利用時間が必ず倍になるわけではない",
+        "note": "Ôn ～わけではない: tăng lựa chọn không đồng nghĩa mọi người đều được gấp đôi thời gian."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "案内に書かれた情報を、文章で伝えます。「学校の案内によれば、来月から開室日が増える（　）。」",
+      "options": [
+        "はずがない",
+        "という",
+        "に限る"
+      ],
+      "answer": 1,
+      "explanation": "～という ở cuối câu văn thuật lại thông tin trong nguồn đã nêu, ở đây là thông báo của trường."
+    },
+    "questions": [
+      {
+        "q": "百人中六十人という割合は何パーセントですか。",
+        "options": [
+          "六パーセント",
+          "百六十パーセント",
+          "六十パーセント"
+        ],
+        "answer": 2,
+        "explanation": "60 chia cho 100 bằng 0,6, tức 60%."
+      },
+      {
+        "q": "調査を読むときに注意した点は何ですか。",
+        "options": [
+          "回答者が放課後の利用者中心だったこと",
+          "全校生徒が必ず回答したこと",
+          "全ての人が毎日二時間使ったこと"
+        ],
+        "answer": 0,
+        "explanation": "Mẫu trả lời chủ yếu là người dùng sau giờ học, chưa thể suy ra mọi học sinh đều cùng ý kiến."
+      },
+      {
+        "q": "新しい案で必ず起こるとは言えないことは何ですか。",
+        "options": [
+          "選べる場所の種類が増えること",
+          "一人ひとりの利用時間が倍になること",
+          "案内が出ること"
+        ],
+        "answer": 1,
+        "explanation": "Tăng loại địa điểm lựa chọn không bảo đảm thời gian của mỗi người sẽ gấp đôi."
+      }
+    ]
+  },
+  {
+    "id": "s4-repair",
+    "title": "Sửa được nhưng chưa hoàn hảo",
+    "jaTitle": "古い棚をもう一度",
+    "topic": "Cuộc sống",
+    "format": "Nhật ký",
+    "focusGrammarId": 39,
+    "newWords": [
+      "ペンキ",
+      "臭い",
+      "ぼろぼろな",
+      "揺れる",
+      "揺らす",
+      "外れる",
+      "外す",
+      "直る",
+      "直す",
+      "完全な"
+    ],
+    "reviewWords": [
+      "ガラス",
+      "表面",
+      "状態",
+      "修理",
+      "確認"
+    ],
+    "text": "友人から、[[ガラス]]の扉が付いた古い棚をもらった。[[表面]]は[[ぼろぼろな|ぼろぼろだった|ぼろぼろだった]]が、形は気に入った。ところが、扉の部品が[[外れる|外れて|はずれて]]いて、棚全体も少し[[揺れる|揺れた|ゆれた]]。私は無理に[[揺らす|揺らさず|ゆらさず]]、友人と[[状態]]を[[確認]]した。\n家具の[[修理]]をしている人に見てもらうと、扉を一度[[外す|外して|はずして]]、部品を交換する必要があると言われた。自分で全部[[直す]]のは難しかったので、その作業は任せた。作業場で新しい[[ペンキ]]も塗ってもらった。塗った直後は少し[[臭い|臭かった|くさかった]]が、仕上がるまで預かってもらえた。\n戻ってきた棚は、直ったことは[[直る|直った|なおった]]が、小さな傷は残っていた。[[完全な]]新品のようにはならなかった。それでも、扉はきちんと閉まり、安心して使えると説明を受けた。見た目がよければ丈夫だとは限らない。逆に、少し古く見えても、確かめながら大切に使える物もあるのだと思った。",
+    "translation": "Tôi được bạn cho một chiếc tủ cũ có cửa kính. Bề mặt đã tả tơi nhưng tôi thích hình dáng. Tuy nhiên, phụ kiện cửa bị tuột, cả tủ cũng hơi lung lay. Tôi không cố lắc mà cùng bạn kiểm tra tình trạng.\nNhờ người sửa đồ gỗ xem, tôi được biết cần tháo cửa ra một lần và thay phụ kiện. Tự sửa toàn bộ khá khó nên tôi giao phần đó cho người thợ. Tủ cũng được sơn lại ở xưởng. Ngay sau khi sơn thì hơi có mùi khó chịu, nhưng họ giữ giúp tới lúc hoàn thiện.\nTủ trở về đúng là đã sửa được, nhưng vẫn còn vết xước nhỏ. Nó không thành đồ mới hoàn hảo. Dù vậy, cửa đóng chắc, tôi được giải thích rằng có thể yên tâm sử dụng. Vẻ ngoài đẹp chưa chắc đồng nghĩa bền. Ngược lại, tôi nghĩ có cả đồ hơi cũ mà vẫn dùng trân trọng được nếu kiểm tra cẩn thận.",
+    "grammar": [
+      {
+        "id": 39,
+        "quote": "直ったことは直ったが、小さな傷は残っていた",
+        "note": "Vた＋ことは＋Vた＋が: công nhận đúng là đã sửa được, rồi nêu hạn chế còn lại. Khác với ～ことにする diễn tả quyết định."
+      },
+      {
+        "id": 36,
+        "quote": "見た目がよければ丈夫だとは限らない",
+        "note": "Ôn ～とは限らない: vẻ ngoài tốt không luôn bảo đảm đồ bền chắc."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "直ったことを認めつつ、限界も伝えます。「直ったことは（　）が、小さな傷は残っている。」",
+      "options": [
+        "直った",
+        "直すな",
+        "直させる"
+      ],
+      "answer": 0,
+      "explanation": "Lặp lại động từ theo mẫu ～ことは～が để công nhận sự việc rồi thêm hạn chế."
+    },
+    "questions": [
+      {
+        "q": "最初に棚を見たとき、どんな問題がありましたか。",
+        "options": [
+          "新品すぎて形が合わなかった",
+          "扉の部品が外れ、棚が少し揺れた",
+          "ガラスが全てなくなっていた"
+        ],
+        "answer": 1,
+        "explanation": "Phụ kiện cửa bị tuột và tủ lung lay nhẹ; bài không nói kính đã mất hết."
+      },
+      {
+        "q": "修理の後、何が残りましたか。",
+        "options": [
+          "扉が全く閉まらない問題",
+          "全部の部品の不足",
+          "小さな傷"
+        ],
+        "answer": 2,
+        "explanation": "Tủ đã sửa và cửa đóng chắc, nhưng vết xước nhỏ còn lại."
+      },
+      {
+        "q": "筆者は古い物についてどう考えましたか。",
+        "options": [
+          "古く見えても確認しながら大切に使える物がある",
+          "見た目だけで丈夫さが決まる",
+          "傷が一つでもあれば必ず捨てる"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả không đánh giá chỉ bằng vẻ ngoài mà coi trọng kiểm tra để tiếp tục sử dụng."
+      }
+    ]
+  },
+  {
+    "id": "s4-match",
+    "title": "Mong lần sau bình tĩnh hơn",
+    "jaTitle": "負けた日の願い",
+    "topic": "Hoạt động",
+    "format": "Câu chuyện",
+    "focusGrammarId": 42,
+    "newWords": [
+      "出場",
+      "活躍",
+      "自慢",
+      "感心",
+      "悔しい",
+      "うらやましい",
+      "最高",
+      "最低",
+      "勝ち",
+      "負け"
+    ],
+    "reviewWords": [
+      "チーム",
+      "応援",
+      "挑戦",
+      "勇気",
+      "努力"
+    ],
+    "text": "町のバドミントン大会に[[チーム]]で[[出場]]した。練習では[[最高]]の点を取れた日もあったが、本番は緊張して、これまでで[[最低]]の出来だと感じた。仲間が[[活躍]]する姿を見て、[[うらやましい]]と思う気持ちもあった。\n試合には負けた。とても[[悔しい|悔しかった|くやしかった]]が、相手の丁寧なプレーには[[感心]]した。相手は点を取っても[[自慢]]せず、一緒に戦った仲間をねぎらっていた。私はそれを見て、[[勝ち]][[負け]]だけで人のよさを決められないと思った。\n帰りに、[[応援]]してくれた友人が、たとえ賞がもらえなくても、最後まで[[挑戦]]したことには意味があると言ってくれた。私は、次はもう少し落ち着いて動けるといいな、と答えた。今すぐ結果を変えることはできないが、足りなかったところを練習することはできる。仲間の[[努力]]を見て、自分も続けようという[[勇気]]が出てきた。",
+    "translation": "Chúng tôi thi cầu lông ở khu phố theo đội. Có hôm tập tôi đạt điểm cao nhất, nhưng vào thi lại căng thẳng, cảm thấy đây là phần thể hiện tệ nhất từ trước. Nhìn đồng đội tỏa sáng, tôi cũng thấy ghen tị.\nChúng tôi thua. Tôi rất tiếc và bực vì chưa làm được, nhưng khâm phục lối chơi cẩn thận của đối thủ. Dù ghi điểm, họ không khoe mà động viên đồng đội đã cùng thi đấu. Nhìn vậy, tôi nghĩ không thể chỉ qua thắng thua mà đánh giá con người.\nLúc về, bạn đến cổ vũ bảo rằng dù không có giải, việc thử sức đến cùng vẫn có ý nghĩa. Tôi đáp: “Mong lần sau mình bình tĩnh hơn một chút.” Không thể đổi kết quả ngay bây giờ, nhưng có thể tập phần mình còn thiếu. Nhìn nỗ lực của đồng đội, tôi có thêm dũng khí tiếp tục.",
+    "grammar": [
+      {
+        "id": 42,
+        "quote": "次はもう少し落ち着いて動けるといいな",
+        "note": "～といい: diễn tả mong ước về kết quả tốt trong tương lai, ở đây người nói mong bản thân thi đấu bình tĩnh hơn."
+      },
+      {
+        "id": 28,
+        "quote": "たとえ賞がもらえなくても",
+        "note": "Ôn たとえ～ても: dù không nhận giải, giá trị của việc cố gắng tới cuối vẫn không thay đổi."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "次の試合への願いを表します。「次は落ち着いて動ける（　）な。」",
+      "options": [
+        "せいだ",
+        "ついでに",
+        "といい"
+      ],
+      "answer": 2,
+      "explanation": "～といいな diễn tả mong ước điều tốt sẽ xảy ra ở lần tiếp theo."
+    },
+    "questions": [
+      {
+        "q": "本番の筆者はどうでしたか。",
+        "options": [
+          "緊張し、よい出来ではないと感じた",
+          "必ず最高の点を取った",
+          "一度も試合をしなかった"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả căng thẳng và cảm thấy mình thể hiện kém hơn những lần tập."
+      },
+      {
+        "q": "相手のどんな点に感心しましたか。",
+        "options": [
+          "仲間を責めたこと",
+          "自慢せず、丁寧にプレーしたこと",
+          "勝ち負けを隠したこと"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả khâm phục đối thủ chơi cẩn thận, không khoe khoang và biết động viên đồng đội."
+      },
+      {
+        "q": "筆者はこれからどうしたいですか。",
+        "options": [
+          "結果だけを今すぐ消したい",
+          "仲間の努力を無視したい",
+          "足りないところを練習して続けたい"
+        ],
+        "answer": 2,
+        "explanation": "Tác giả chọn tập phần thiếu và tiếp tục, mong lần sau bình tĩnh hơn."
+      }
+    ]
+  },
+  {
+    "id": "s4-morning",
+    "title": "Tiếng chuông trước lúc ra khỏi nhà",
+    "jaTitle": "出ようとしたときに",
+    "topic": "Cuộc sống",
+    "format": "Nhật ký",
+    "focusGrammarId": 48,
+    "newWords": [
+      "チャイム",
+      "鳴る",
+      "鳴らす",
+      "起きる",
+      "起こす",
+      "覚める",
+      "覚ます",
+      "眠る",
+      "掛ける",
+      "切れる"
+    ],
+    "reviewWords": [
+      "携帯",
+      "スケジュール",
+      "約束",
+      "パートナー",
+      "報告"
+    ],
+    "text": "翌朝は、仕事の[[パートナー]]と駅で会う[[約束]]があった。私は[[スケジュール]]を確認し、[[携帯]]の目覚ましを[[掛ける|掛けて|かけて]]寝た。しかし、緊張してよく[[眠る|眠れなかった|ねむれなかった]]。夜中に何度も目が[[覚める|覚めた|さめた]]ので、朝はなかなか[[起きる|起きられなかった|おきられなかった]]。\n家族に[[起こす|起こされて|おこされて]]時計を見ると、予定より少し遅かった。携帯は電池が[[切れる|切れて|きれて]]いて、目覚ましの音を[[鳴らす|鳴らせなかった|ならせなかった]]のだ。私は顔を洗って目を[[覚ます|覚まし|さまし]]、急いで支度をした。\n靴を履いて外へ出ようとしたとき、玄関の[[チャイム]]が[[鳴る|鳴った|なった]]。相手が近くまで来たので、一緒に駅へ行こうと迎えに来てくれたのだった。私は遅れかけた事情を[[報告]]し、お礼を言った。約束したのだから、時間だけでなく、連絡できる状態も用意しておくべきだった。次は電池の残りも前の晩に確かめたい。",
+    "translation": "Sáng hôm sau, tôi hẹn gặp người cùng làm ở ga. Tôi kiểm tra lịch, đặt báo thức trên điện thoại rồi ngủ. Nhưng vì hồi hộp nên ngủ không ngon. Đêm tỉnh mấy lần, sáng tôi khó dậy.\nĐược người nhà gọi dậy, tôi nhìn đồng hồ và thấy hơi trễ hơn dự định. Điện thoại hết pin nên không phát được tiếng báo thức. Tôi rửa mặt cho tỉnh, vội chuẩn bị.\nĐang định mang giày đi ra ngoài thì chuông cửa reo. Người hẹn đã tới gần nên ghé đón tôi cùng ra ga. Tôi báo lý do suýt trễ và cảm ơn. Vì đã hẹn, tôi đáng lẽ không chỉ xem giờ mà còn phải chuẩn bị để liên lạc được. Lần sau tôi muốn kiểm tra cả pin vào tối hôm trước.",
+    "grammar": [
+      {
+        "id": 48,
+        "quote": "外へ出ようとしたとき",
+        "note": "V ý chí＋とする: vừa định thực hiện hành động. Người kể chưa ra khỏi nhà thì chuông cửa reo."
+      },
+      {
+        "id": 24,
+        "quote": "約束したのだから",
+        "note": "Ôn ～のだから: dựa vào việc đã hẹn để nói trách nhiệm chuẩn bị và giữ liên lạc."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "行動を始めようとした瞬間です。「外へ出よう（　）とき、チャイムが鳴った。」",
+      "options": [
+        "とした",
+        "のせいで",
+        "に限る"
+      ],
+      "answer": 0,
+      "explanation": "V ý chí＋としたとき diễn tả ngay lúc định bắt đầu một hành động thì việc khác xảy ra."
+    },
+    "questions": [
+      {
+        "q": "携帯の目覚ましが使えなかった理由は何ですか。",
+        "options": [
+          "掛けるのを忘れたから",
+          "電池が切れていたから",
+          "パートナーが止めたから"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả có đặt báo thức nhưng điện thoại hết pin nên không phát chuông."
+      },
+      {
+        "q": "チャイムが鳴ったのはいつですか。",
+        "options": [
+          "駅に着いた後",
+          "夜中に眠っていたとき",
+          "外へ出ようとしたとき"
+        ],
+        "answer": 2,
+        "explanation": "Chuông cửa reo đúng khi tác giả sắp ra ngoài, chưa tới ga."
+      },
+      {
+        "q": "筆者は次に何を確かめたいと思いましたか。",
+        "options": [
+          "前の晩に電池の残りも確かめたい",
+          "家族の服の色を確かめたい",
+          "駅の写真だけを確かめたい"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả rút kinh nghiệm kiểm tra cả lượng pin vào tối trước."
+      }
+    ]
+  },
+  {
+    "id": "s4-costume",
+    "title": "Thảo nào hai bộ đồ giống nhau",
+    "jaTitle": "似ている理由が分かった",
+    "topic": "Văn hóa",
+    "format": "Câu chuyện",
+    "focusGrammarId": 60,
+    "newWords": [
+      "ラベル",
+      "タイプ",
+      "スタイル",
+      "セット",
+      "固い・硬い",
+      "立派な",
+      "そっくりな",
+      "似る",
+      "似合う",
+      "写る"
+    ],
+    "reviewWords": [
+      "型",
+      "デザイン",
+      "パンフレット",
+      "文化",
+      "確認"
+    ],
+    "text": "町の[[文化]]を紹介する会で、昔の衣装を着る体験をした。会場には[[立派な]]服が並び、色や形の[[タイプ]]を選べた。私は[[パンフレット]]で見た[[スタイル]]を試したかったが、写真だけで自分に[[似合う]]とは限らないと思い、係の人に相談した。\n帽子と上着が[[セット]]になっていて、帽子は思ったより[[固い・硬い|硬かった|かたかった]]。隣の友人の服も私の服に[[そっくりな|そっくりだった|そっくりだった]]。[[ラベル]]を読むと、二着とも同じ[[型]]から作り、色だけを変えたと書いてあった。なるほど、よく[[似る|似ている|にている]]わけだ、と納得した。\n係の人は、昔の[[デザイン]]を残しながら、今の人も着やすいよう工夫していると説明した。写真に[[写る|写った|うつった]]姿を見ると、いつもと違う自分がいて面白かった。返す前に付属品の数を[[確認]]し、衣装の説明ももう一度読んだ。外から見るだけでは分からなかった工夫を、体験を通して知ることができた。",
+    "translation": "Ở buổi giới thiệu văn hóa địa phương, tôi thử mặc trang phục xưa. Hội trường bày những bộ đẹp đẽ và cho chọn kiểu màu, hình dáng. Tôi muốn thử phong cách thấy trong tờ giới thiệu, nhưng nghĩ chỉ xem ảnh chưa chắc biết có hợp mình không nên hỏi người phụ trách.\nMũ và áo đi thành bộ, chiếc mũ cứng hơn tôi nghĩ. Đồ người bạn cạnh tôi trông cũng giống hệt đồ tôi. Đọc nhãn, tôi biết hai bộ được làm từ cùng một khuôn mẫu, chỉ đổi màu. Tôi hiểu ra: thảo nào chúng giống nhau.\nNgười phụ trách giải thích họ giữ thiết kế xưa nhưng điều chỉnh để người nay dễ mặc. Xem dáng mình trong ảnh, tôi thấy thú vị vì khác thường ngày. Trước khi trả, tôi kiểm tra số phụ kiện và đọc lại mô tả. Qua trải nghiệm, tôi hiểu được sự chăm chút mà chỉ nhìn ngoài không nhận ra.",
+    "grammar": [
+      {
+        "id": 60,
+        "quote": "よく似ているわけだ",
+        "note": "～わけだ: sau khi biết hai bộ làm từ cùng mẫu, người nói hiểu ra nguyên nhân và thốt “thảo nào giống nhau”. Khác với ～はずだ dự đoán dựa vào căn cứ."
+      },
+      {
+        "id": 36,
+        "quote": "写真だけで自分に似合うとは限らない",
+        "note": "Ôn ～とは限らない: xem ảnh không luôn bảo đảm trang phục sẽ hợp người mặc."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "同じ型から作ったと知り、似ている理由に納得します。「なるほど、よく似ている（　）。」",
+      "options": [
+        "ついでだ",
+        "わけだ",
+        "せいだ"
+      ],
+      "answer": 1,
+      "explanation": "～わけだ thể hiện sự hiểu ra điều hợp lý sau khi biết nguyên nhân: thảo nào giống nhau."
+    },
+    "questions": [
+      {
+        "q": "二着がよく似ていた理由は何ですか。",
+        "options": [
+          "二人が全く同じ写真を見たから",
+          "係の人が間違えて同じ服を二度渡したから",
+          "同じ型から作られていたから"
+        ],
+        "answer": 2,
+        "explanation": "Nhãn cho biết hai bộ cùng mẫu, chỉ khác màu."
+      },
+      {
+        "q": "衣装にはどんな工夫がありましたか。",
+        "options": [
+          "昔のデザインを残しつつ今の人が着やすくした",
+          "全ての形を現代の制服に変えた",
+          "写真に写らないようにした"
+        ],
+        "answer": 0,
+        "explanation": "Trang phục giữ thiết kế xưa đồng thời điều chỉnh để người hiện tại dễ mặc."
+      },
+      {
+        "q": "返す前に何を確認しましたか。",
+        "options": [
+          "次の列車の時間",
+          "付属品の数",
+          "友人の生年月日"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả kiểm tra số phụ kiện trước khi hoàn trả."
+      }
+    ]
+  },
+  {
+    "id": "s4-review",
+    "title": "Giá như đã xác nhận sớm hơn",
+    "jaTitle": "数字と気持ちを確かめる",
+    "topic": "Tổng ôn chặng 4",
+    "format": "Câu chuyện tổng ôn",
+    "focusGrammarId": 29,
+    "newWords": [
+      "賛成",
+      "反対",
+      "考え",
+      "違い",
+      "理解",
+      "協調",
+      "決まり",
+      "例外",
+      "伝わる",
+      "決める"
+    ],
+    "reviewWords": [
+      "集まり",
+      "アンケート",
+      "割合",
+      "細かい",
+      "正確な",
+      "パートナー",
+      "情報",
+      "確認"
+    ],
+    "text": "道具を共有する活動の[[集まり]]で、新しい[[決まり]]を話し合った。私は[[アンケート]]をまとめ、多くの人が[[賛成]]だと発表した。しかし、実は[[割合]]の読み方を逆にしており、[[反対]]する人のほうが多かった。[[パートナー]]に言われて、ようやく気づいた。\nもっと早く[[確認]]していたら、こんな誤解は起きなかっただろう。私は[[正確な]][[情報]]を伝え直し、それぞれの[[考え]]を聞いた。同じ反対でも、時間が合わない人と、返す場所が遠い人では、理由に[[違い]]があった。言葉だけで十分[[伝わる]]と思っていたが、[[細かい]]事情を聞く必要もあった。\n全員の希望をそのまま通すことはできない。それでも、理由を[[理解]]し、互いに[[協調]]して工夫することはできる。私たちは基本の使い方を[[決める|決めた|きめた]]後、特別な事情がある場合の[[例外]]も相談した。一度決めたら必ず正しいとは限らない。数字も気持ちも確かめながら、続けられる形を作りたいと思った。",
+    "translation": "Ở buổi họp về hoạt động dùng chung dụng cụ, chúng tôi bàn quy tắc mới. Tôi tổng hợp bảng hỏi, phát biểu rằng nhiều người tán thành. Nhưng thực ra tôi đọc ngược tỷ lệ, số người phản đối mới nhiều hơn. Được người cùng phụ trách nhắc, tôi mới nhận ra.\nGiá như xác nhận sớm hơn thì có lẽ đã không xảy ra hiểu lầm này. Tôi đính chính thông tin chính xác rồi nghe suy nghĩ từng người. Cùng phản đối nhưng lý do khác nhau: có người không hợp giờ, có người thấy nơi trả xa. Tôi từng nghĩ chỉ nói là đủ truyền đạt, nhưng cần hỏi cả hoàn cảnh chi tiết.\nKhông thể đáp nguyên mọi nguyện vọng. Dù vậy, có thể hiểu lý do rồi cùng phối hợp tìm cách. Chúng tôi thống nhất cách dùng căn bản rồi bàn ngoại lệ cho trường hợp đặc biệt. Không phải cứ quyết một lần là luôn đúng. Tôi muốn vừa kiểm tra số liệu vừa hiểu cảm xúc, để tạo cách làm duy trì được.",
+    "grammar": [
+      {
+        "id": 29,
+        "quote": "もっと早く確認していたら、こんな誤解は起きなかっただろう",
+        "note": "～ていたら～なかっただろう: giả định trái với việc đã xảy ra để bày tỏ tiếc nuối. Thực tế đã không kiểm tra sớm và hiểu lầm đã xảy ra; không phải điều kiện cho một kế hoạch tương lai."
+      },
+      {
+        "id": 36,
+        "quote": "一度決めたら必ず正しいとは限らない",
+        "note": "Ôn ～とは限らない: quyết định đã đưa ra không có nghĩa luôn đúng trong mọi trường hợp."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "実際には早く確認せず、誤解が起きました。過去を振り返って言います。「もっと早く確認して（　）、誤解は起きなかっただろう。」",
+      "options": [
+        "いるうちに",
+        "おくことにする",
+        "いたら"
+      ],
+      "answer": 2,
+      "explanation": "～ていたら～なかっただろう diễn tả giả định khác với quá khứ thực tế, kèm tiếc nuối."
+    },
+    "questions": [
+      {
+        "q": "筆者が最初に間違えたことは何ですか。",
+        "options": [
+          "賛成と反対の割合を逆に読んだ",
+          "道具を全て捨てた",
+          "アンケートを一枚も読まなかった"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả đảo ngược cách đọc tỷ lệ nên báo nhiều người đồng ý trong khi thực tế số phản đối cao hơn."
+      },
+      {
+        "q": "反対する人の話を聞いて何が分かりましたか。",
+        "options": [
+          "全員が全く同じ理由だった",
+          "同じ反対でも理由が違っていた",
+          "全員が道具を使いたくなかった"
+        ],
+        "answer": 1,
+        "explanation": "Một số người vướng giờ, số khác thấy nơi trả xa: cùng phản đối nhưng khác lý do."
+      },
+      {
+        "q": "筆者は今後どう進めたいと思いましたか。",
+        "options": [
+          "一度決めたら絶対に変えない",
+          "数字だけを見て気持ちは聞かない",
+          "数字も事情も確かめ、続けられる形を作る"
+        ],
+        "answer": 2,
+        "explanation": "Tác giả muốn kiểm tra số liệu lẫn hoàn cảnh, phối hợp tạo cách làm có thể duy trì."
+      }
+    ]
+  }
+]
