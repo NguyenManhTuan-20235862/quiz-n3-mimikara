@@ -33,7 +33,9 @@
     const plan = window.READING_PLAN || [];
     const readySummary = [...stages].reverse().map(s=>{
       const group=lessons.filter(l=>l.stage===s);
-      return `Chặng ${s}: ${group.length} bài, ${new Set(group.flatMap(l=>l.newWordIds)).size} từ trọng tâm và ${new Set(group.map(l=>l.focusGrammarId)).size} mẫu trọng tâm`;
+      const newCount=group.filter(l=>l.focusGrammarRole!=='reinforce').length;
+      const reviewCount=group.length-newCount;
+      return `Chặng ${s}: ${group.length} bài, ${new Set(group.flatMap(l=>l.newWordIds)).size} từ trọng tâm và ${new Set(group.map(l=>l.focusGrammarId)).size} mẫu trọng tâm (${newCount} mới${reviewCount?`, ${reviewCount} củng cố`:''})`;
     }).join('; ');
     document.getElementById('readingCoverage').innerHTML = `<div class="reading-metrics">${[
       ['Đã có trong bài',`${readyWords.size}/880 từ`,`${readyGrammar.size}/62 ngữ pháp`],
@@ -83,7 +85,7 @@
       <details class="reading-detail"><summary>Bản dịch tiếng Việt</summary><div>${l.translation.split('\n').map(p => `<p>${escape(p)}</p>`).join('')}</div></details>
       <details class="reading-detail"><summary>Ngữ pháp trong bài · ${l.grammar.length} mẫu</summary><div>${l.grammar.map(g => {
         const item = (window.GRAMMAR_DATA || []).find(x => x.id === g.id);
-        return `<div class="reading-grammar"><span class="reading-kicker">${g.id === l.focusGrammarId ? 'Trọng tâm' : 'Kết hợp / ôn lại'}</span><br><strong>${escape(item?.pattern || '')}</strong><blockquote lang="ja">${escape(g.quote)}</blockquote><p>${escape(g.note)}</p>${item ? `<details><summary>Cấu trúc & cách dùng</summary><p class="reading-pre">${escape(item.formation)}\n\n${escape(item.usage)}</p></details><button class="btn-secondary" data-grammar="${g.id}">${api.storage.gStarred.has(g.id) ? '✓ Đã đánh dấu ngữ pháp' : '☆ Đánh dấu để ôn ngữ pháp'}</button>` : ''}</div>`;
+        return `<div class="reading-grammar"><span class="reading-kicker">${g.id === l.focusGrammarId ? (l.focusGrammarRole==='reinforce'?'Trọng tâm củng cố':'Trọng tâm mới') : 'Kết hợp / ôn lại'}</span><br><strong>${escape(item?.pattern || '')}</strong><blockquote lang="ja">${escape(g.quote)}</blockquote><p>${escape(g.note)}</p>${item ? `<details><summary>Cấu trúc & cách dùng</summary><p class="reading-pre">${escape(item.formation)}\n\n${escape(item.usage)}</p></details><button class="btn-secondary" data-grammar="${g.id}">${api.storage.gStarred.has(g.id) ? '✓ Đã đánh dấu ngữ pháp' : '☆ Đánh dấu để ôn ngữ pháp'}</button>` : ''}</div>`;
       }).join('')}</div></details>
       <details class="reading-detail"><summary>Từ vựng mục tiêu · ${targets(l).length} từ</summary><div class="reading-vocab">${targets(l).map(w => `<button class="btn-secondary" data-word="${w.id}"><strong lang="ja">${escape(w.kanji)}</strong> · ${escape(w.nghia)} ${l.newWordIds ? `<small>(${l.newWordIds.includes(w.id) ? 'trọng tâm' : 'ôn lại'})</small>` : ''}</button>`).join('')}</div></details>
       <details class="reading-detail"><summary>Chú giải thêm ngoài bộ từ vựng</summary><div><p class="reading-hint">Các từ hỗ trợ dưới đây chưa thuộc bộ 880 từ; sổ Cần ôn dùng cho các từ mục tiêu bên trên.</p>${(window.READING_GLOSSARY || []).filter(w => l.text.includes(w[0])).map(w => `<p><strong lang="ja">${escape(w[0])}</strong> <span lang="ja">（${escape(w[1])}）</span> · ${escape(w[2])}</p>`).join('')}</div></details>

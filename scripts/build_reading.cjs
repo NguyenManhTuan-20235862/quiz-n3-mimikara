@@ -42,6 +42,7 @@ const lessons = sources.flatMap(file => {
     assert.ok(text.includes(g.quote),`Missing grammar quote ${l.id}: ${g.quote}`);
   }
   assert.ok(l.grammar.some(g=>g.id===l.focusGrammarId));
+  assert.ok(['new','reinforce'].includes(l.focusGrammarRole || 'new'), `Invalid grammar role ${l.id}`);
   assert.equal(l.questions.length,3);
   for (const q of [...l.questions,l.grammarCheck]) {
     assert.ok(Number.isInteger(q.answer) && q.options[q.answer]);

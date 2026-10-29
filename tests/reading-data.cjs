@@ -20,7 +20,11 @@ for(let stage=2;stage<=stageFiles.length;stage++) {
   const priorGrammar=new Set(prior.flatMap(l=>l.grammar.map(g=>g.id)));
   for(const l of lessons.filter(l=>l.stage===stage)) {
     for(const id of l.newWordIds) assert.ok(!priorWords.has(id),`Stage ${stage} repeats a previously published target: ${id}`);
-    assert.ok(!priorGrammar.has(l.focusGrammarId),`Stage ${stage} repeats published focus grammar: ${l.focusGrammarId}`);
+    if(l.focusGrammarRole==='reinforce') {
+      assert.ok(priorGrammar.has(l.focusGrammarId),`Stage ${stage} reinforces grammar not previously taught: ${l.focusGrammarId}`);
+    } else {
+      assert.ok(!priorGrammar.has(l.focusGrammarId),`Stage ${stage} repeats published grammar labelled new: ${l.focusGrammarId}`);
+    }
   }
 }
 const introduced = new Set(warmup.flatMap(l=>l.words.map(k=>words.find(w=>w.kanji===k).id)));
@@ -44,4 +48,10 @@ for (const l of authored) {
 assert.deepEqual([...plan.flatMap(l=>l.wordIds)].sort((a,b)=>a-b),[...words.map(w=>w.id)].sort((a,b)=>a-b));
 assert.deepEqual([...plan.flatMap(l=>l.grammarIds)].sort((a,b)=>a-b),[...grammar.map(g=>g.id)].sort((a,b)=>a-b));
 assert.equal(plan.filter(l=>l.ready).length,authored.length);
+const stage5=authored.filter(l=>l.stage===5);
+if(stage5.length) {
+  assert.equal(stage5.filter(l=>l.focusGrammarRole==='new').length,5);
+  assert.equal(stage5.filter(l=>l.focusGrammarRole==='reinforce').length,5);
+  assert.deepEqual([...new Set(lessons.flatMap(l=>l.grammar.map(g=>g.id)))].sort((a,b)=>a-b),[...grammar.map(g=>g.id)].sort((a,b)=>a-b));
+}
 console.log(`PASS: 10 warmups + ${stageFiles.length} stages; ${newIds.length} distinct introductions; new-stage targets absent from prior content; conjugation links, prior review links, ${authored.length*3} questions, complete 880/62 allocation.`);

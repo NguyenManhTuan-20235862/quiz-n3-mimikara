@@ -1,0 +1,845 @@
+[
+  {
+    "id": "s5-reunion",
+    "title": "Niềm vui gặp lại bạn cũ",
+    "jaTitle": "帰ってきた友人と",
+    "topic": "Gia đình",
+    "format": "Nhật ký",
+    "focusGrammarId": 11,
+    "focusGrammarRole": "new",
+    "newWords": [
+      "帰国",
+      "帰宅",
+      "別れ",
+      "喜び",
+      "楽しみ",
+      "思い",
+      "年",
+      "暮れ",
+      "祝う",
+      "暮らす"
+    ],
+    "reviewWords": [
+      "故郷",
+      "友人",
+      "思い出",
+      "約束",
+      "感謝"
+    ],
+    "text": "[[年]]の[[暮れ]]に、外国で[[暮らす|暮らして|くらして]]いた[[友人]]が[[帰国]]した。学生のころ、駅で[[別れ]]てから、直接会うのは久しぶりだった。私は[[故郷]]の店で食事をする[[約束]]をし、その日を一番の[[楽しみ]]にしていた。\n友人は、知らない町で困ったときに助けてくれた人への[[感謝]]を話した。私は帰ってきたことを[[祝う|祝って|いわって]]、小さな写真集を渡した。昔の写真を見ると、同じ出来事でも、二人の[[思い出]]には少し違うところがあった。離れていた間も、相手への[[思い]]がなくなったわけではなかった。\n久しぶりに友人と笑って過ごす時間ほど楽しいものはない、とその日は思った。特別な場所に行かなくても、安心して話せることがうれしかった。[[帰宅]]してから、また会えた[[喜び]]を家族に伝えた。次はいつ会えるか分からない。それでも、離れている時間も、互いの暮らしを大切にしながら関係を続けたい。",
+    "translation": "Cuối năm, người bạn sống ở nước ngoài trở về. Từ lần chia tay ở ga thời còn là học sinh, đã lâu chúng tôi chưa gặp trực tiếp. Tôi hẹn ăn ở một quán tại quê nhà và mong chờ ngày ấy hơn cả.\nBạn kể lòng biết ơn đối với những người giúp mình khi khó khăn ở nơi xa lạ. Tôi mừng bạn trở về, tặng một tập ảnh nhỏ. Xem ảnh cũ, chúng tôi thấy cùng một chuyện mà ký ức mỗi người hơi khác. Dù xa nhau, tình cảm dành cho đối phương không biến mất.\nHôm đó tôi nghĩ không có gì vui bằng thời gian được cười nói bên bạn cũ. Không cần nơi đặc biệt, chỉ được yên tâm trò chuyện đã vui. Về nhà, tôi kể với gia đình niềm vui được gặp lại. Chưa biết khi nào gặp lần nữa, nhưng tôi vẫn muốn duy trì quan hệ và trân trọng cuộc sống mỗi người, cả lúc xa nhau.",
+    "grammar": [
+      {
+        "id": 11,
+        "quote": "友人と笑って過ごす時間ほど楽しいものはない",
+        "note": "N＋ほど～ものはない: nhấn mạnh đối với người nói không có gì vui bằng khoảng thời gian đó. Đây là đánh giá cảm xúc, không phải so sánh khách quan cho mọi người."
+      },
+      {
+        "id": 37,
+        "quote": "相手への思いがなくなったわけではなかった",
+        "note": "Ôn ～わけではない: xa nhau không có nghĩa tình cảm cũng mất đi."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "話し手にとって一番楽しいものを強調します。「友人と笑う時間（　）楽しいものはない。」",
+      "options": [
+        "ついでに",
+        "ほど",
+        "のせいで"
+      ],
+      "answer": 1,
+      "explanation": "～ほど…はない nhấn mạnh rằng theo cảm nhận người nói, không có gì bằng điều đó."
+    },
+    "questions": [
+      {
+        "q": "筆者は何を楽しみにしていましたか。",
+        "options": [
+          "帰国した友人と故郷で食事をすること",
+          "一人で外国へ引っ越すこと",
+          "友人との約束を断ること"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả mong chờ bữa ăn gặp lại người bạn ở quê nhà."
+      },
+      {
+        "q": "写真を見て気づいたことは何ですか。",
+        "options": [
+          "二人とも昔のことを全て忘れていた",
+          "友人が写真を嫌いだった",
+          "同じ出来事でも思い出に違いがあった"
+        ],
+        "answer": 2,
+        "explanation": "Cùng một chuyện nhưng ký ức của hai người không hoàn toàn giống nhau."
+      },
+      {
+        "q": "筆者は今後の関係についてどう思っていますか。",
+        "options": [
+          "会えない間は連絡に意味がない",
+          "互いの生活を大切にしながら続けたい",
+          "毎日必ず会わなければならない"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả muốn tiếp tục quan hệ đồng thời tôn trọng cuộc sống riêng của mỗi người."
+      }
+    ]
+  },
+  {
+    "id": "s5-play",
+    "title": "Những lời nói mạnh trong vở kịch",
+    "jaTitle": "舞台の命令と普段の言葉",
+    "topic": "Giao tiếp",
+    "format": "Câu chuyện",
+    "focusGrammarId": 43,
+    "focusGrammarRole": "new",
+    "newWords": [
+      "警察",
+      "犯人",
+      "事件",
+      "衝突",
+      "騒ぎ",
+      "叫ぶ",
+      "盗む",
+      "捕まる",
+      "捕まえる",
+      "隠れる"
+    ],
+    "reviewWords": [
+      "協力",
+      "確認",
+      "ルール",
+      "責任",
+      "情報"
+    ],
+    "text": "学校で、架空の[[事件]]を描く劇を作った。私は[[警察]]の役で、友人はかばんを[[盗む]]人の役だった。話の中では、[[犯人]]が物の後ろに[[隠れる|隠れ|かくれ]]、周りで大きな[[騒ぎ]]が起こる。もちろん、実際の事件ではなく、全て舞台の演技だ。\n私が「止まれ」と[[叫ぶ]]と、友人は逃げる動きをした。しかし、練習で人と人が[[衝突]]しそうになったため、先生は「舞台では走るな」と注意した。私は、相手を[[捕まえる]]場面も、急に手を出さず、合図を[[確認]]してから動くことにした。最後は、友人が[[捕まる]]場面で終わる話だった。\n練習後、先生は、強い言い方には使う場面を考える[[責任]]があると話した。緊急の[[情報]]を伝えるときや演技で使う言葉を、普段の友人との会話でも使うべきではない。私たちは安全の[[ルール]]を確かめ、全員で[[協力]]した。言葉の形を覚えるだけでなく、誰に、どんな状況で言うかも大切なのだ。",
+    "translation": "Ở trường, chúng tôi dựng vở kịch về một vụ việc hư cấu. Tôi đóng cảnh sát, bạn đóng người trộm túi. Trong chuyện, thủ phạm nấp sau đồ vật và xung quanh náo loạn. Tất nhiên đây chỉ là diễn trên sân khấu, không có vụ việc thật.\nKhi tôi hô “Đứng lại!”, bạn làm động tác chạy trốn. Nhưng vì lúc tập suýt có người va nhau, giáo viên nhắc: “Không chạy trên sân khấu!” Tôi quyết định cả ở cảnh bắt người cũng kiểm tra tín hiệu rồi mới di chuyển, không đột ngột đưa tay ra. Chuyện kết thúc bằng cảnh bạn bị bắt.\nSau buổi tập, giáo viên nói người dùng cách nói mạnh có trách nhiệm cân nhắc hoàn cảnh. Không nên dùng cả trong hội thoại thường ngày những lời dành cho tình huống khẩn hoặc diễn xuất. Chúng tôi xác nhận quy tắc an toàn, cùng phối hợp. Không chỉ nhớ hình thức câu, cần xét nói với ai, trong tình huống nào.",
+    "grammar": [
+      {
+        "id": 43,
+        "quote": "舞台では走るな",
+        "note": "Vる＋な: thể cấm đoán mạnh, ở đây là 走るな. 止まれ trong đoạn trước là thể mệnh lệnh của 止まる. Bài dùng lời thoại của vở kịch và lời nhắc khẩn để phân biệt với lời nhờ lịch sự."
+      },
+      {
+        "id": 45,
+        "quote": "普段の友人との会話でも使うべきではない",
+        "note": "Ôn ～べきではない: theo lời giáo viên, không nên dùng lời mạnh như vậy trong giao tiếp thường ngày."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "「走る」の強い禁止形を選びます。劇の練習で先生が「舞台では（　）」と言いました。",
+      "options": [
+        "走ってください",
+        "走ることがある",
+        "走るな"
+      ],
+      "answer": 2,
+      "explanation": "Vる＋な là cách cấm đoán mạnh: 走るな. 走ってください lại là lời nhờ chạy, nghĩa ngược lại."
+    },
+    "questions": [
+      {
+        "q": "劇の中で、筆者はどんな役でしたか。",
+        "options": [
+          "かばんを盗む人",
+          "警察",
+          "店の客"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả đóng cảnh sát, còn bạn đóng người trộm túi."
+      },
+      {
+        "q": "先生が走るなと言った理由は何ですか。",
+        "options": [
+          "練習で人がぶつかりそうになったから",
+          "友人が本当に盗みをしたから",
+          "劇の内容を全員が忘れたから"
+        ],
+        "answer": 0,
+        "explanation": "Giáo viên nhắc vì có nguy cơ va chạm trong buổi tập, không phải có tội phạm thật."
+      },
+      {
+        "q": "筆者が言葉について学んだことは何ですか。",
+        "options": [
+          "強い言葉は誰にでも同じように使える",
+          "形だけ覚えれば十分だ",
+          "相手と状況も考える必要がある"
+        ],
+        "answer": 2,
+        "explanation": "Câu kết nhấn mạnh xem xét đối tượng và hoàn cảnh khi chọn lời nói."
+      }
+    ]
+  },
+  {
+    "id": "s5-rules",
+    "title": "Đọc nội quy trước ngày hội",
+    "jaTitle": "短い決まりを読む",
+    "topic": "Cộng đồng",
+    "format": "Tường thuật hoạt động",
+    "focusGrammarId": 44,
+    "focusGrammarRole": "new",
+    "newWords": [
+      "禁煙",
+      "缶",
+      "順番",
+      "番",
+      "合図",
+      "行う",
+      "数える",
+      "分ける",
+      "残す",
+      "汚す"
+    ],
+    "reviewWords": [
+      "会",
+      "ルール",
+      "片づけ",
+      "協力",
+      "確認"
+    ],
+    "text": "町の[[会]]が開く一日交流会で、受付を手伝った。会場は[[禁煙]]で、案内には短い[[ルール]]が書かれていた。その一つは、「使った物は元の場所に戻すこと。ごみを[[残す|残さない|のこさない]]こと」だった。私は始まる前に、担当の人と内容を[[確認]]した。\n食事の後は、飲み物の[[缶]]を種類ごとに[[分ける]]。テーブルを[[汚す|汚した|よごした]]ときは、係の人へ知らせることになっていた。ゲームでは[[順番]]に並び、自分の[[番]]が来たら、係の人の[[合図]]を待つ。私は参加者の人数を[[数える|数えて|かぞえて]]、全員にカードを渡した。\n最初は、短い文なので読み飛ばしそうになった。しかし、[[片づけ]]を誰か一人に任せると、終わる時間が遅くなる。片づけは全員で[[行う]]ことになっていたので、私も最後まで[[協力]]した。書かれた決まりは、ただ覚えるためのものではない。みんなが同じ場所を気持ちよく使うための約束なのだと感じた。",
+    "translation": "Tôi phụ tiếp tân ở buổi giao lưu một ngày do hội địa phương tổ chức. Hội trường cấm hút thuốc, bảng hướng dẫn có các quy tắc ngắn. Một quy tắc là: “Phải trả đồ đã dùng về chỗ cũ. Không để lại rác.” Trước khi bắt đầu, tôi kiểm tra nội dung cùng người phụ trách.\nSau bữa ăn, lon đồ uống được chia theo loại. Nếu làm bẩn bàn, phải báo người phụ trách. Trong trò chơi, mọi người xếp đúng thứ tự, đợi tín hiệu khi đến lượt mình. Tôi đếm số người rồi phát thẻ cho tất cả.\nBan đầu tôi suýt lướt qua vì câu ngắn. Nhưng nếu để một người dọn, giờ kết thúc sẽ muộn. Vì buổi hội quy định tất cả cùng dọn, tôi cũng giúp đến cuối. Nội quy không chỉ để ghi nhớ mà là thỏa thuận giúp mọi người dùng chung một nơi thoải mái.",
+    "grammar": [
+      {
+        "id": 44,
+        "quote": "使った物は元の場所に戻すこと",
+        "note": "Vる／Vない＋こと ở cuối câu: chỉ thị trong văn bản, nội quy. 戻すこと là phải trả về; 残さないこと là không được để lại. Không phải ～こと chỉ dùng để danh từ hóa hành động."
+      },
+      {
+        "id": 52,
+        "quote": "片づけは全員で行うことになっていた",
+        "note": "Ôn ～ことになっている: việc mọi người cùng dọn đã được quy định trước."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "掲示の指示として文を完成させます。「使った物は元の場所に戻す（　）。」",
+      "options": [
+        "こと",
+        "ついでに",
+        "っぽい"
+      ],
+      "answer": 0,
+      "explanation": "～こと cuối câu có thể nêu yêu cầu trong bảng nội quy, ở đây là phải trả vật dụng về chỗ cũ."
+    },
+    "questions": [
+      {
+        "q": "会場の案内に書いてあったことは何ですか。",
+        "options": [
+          "ごみはどこに置いてもよい",
+          "使った物は元の場所に戻す",
+          "カードは自分で買う"
+        ],
+        "answer": 1,
+        "explanation": "Một nội quy được trích là phải trả vật dụng đã dùng về đúng chỗ."
+      },
+      {
+        "q": "ゲームで自分の番が来たらどうしますか。",
+        "options": [
+          "すぐ勝手に始める",
+          "隣の人のカードを取る",
+          "係の人の合図を待つ"
+        ],
+        "answer": 2,
+        "explanation": "Đến lượt mình vẫn phải chờ tín hiệu của người phụ trách."
+      },
+      {
+        "q": "筆者は最後にルールをどう考えましたか。",
+        "options": [
+          "同じ場所を気持ちよく使うための約束だ",
+          "短いので読む必要がない",
+          "片づけを一人に任せるためのものだ"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả hiểu nội quy giúp mọi người cùng sử dụng không gian thoải mái."
+      }
+    ]
+  },
+  {
+    "id": "s5-robot",
+    "title": "Trông như một con chim thật",
+    "jaTitle": "見たことから考える",
+    "topic": "Khám phá",
+    "format": "Nhật ký",
+    "focusGrammarId": 53,
+    "focusGrammarRole": "new",
+    "newWords": [
+      "まるで",
+      "そっと",
+      "じっと",
+      "もしかすると",
+      "様々な",
+      "想像",
+      "飛ぶ",
+      "振る",
+      "動く",
+      "動かす"
+    ],
+    "reviewWords": [
+      "ロボット",
+      "デジタル",
+      "興味",
+      "確認",
+      "特徴"
+    ],
+    "text": "図書館の展示で、鳥の形の[[ロボット]]を見た。止まったままだったので、私は[[じっと]]見つめた。近くで手を[[振る|振った|ふった]]と、羽がゆっくり[[動く|動いた|うごいた]]。私は[[興味]]を持ち、人の手に反応して動くみたいだ、と友人に話した。その時点では、仕組みをまだ[[確認]]していなかった。\n係の人に聞くと、近くの動きを感じ取り、内部の装置が羽を[[動かす]]のだと分かった。私はもう一度[[そっと]]手を近づけた。[[まるで]]本物の鳥みたいだったが、実際に空を[[飛ぶ]]わけではなく、台に固定されていた。\n隣の[[デジタル]]画面には、[[様々な]]動き方の例が映っていた。[[もしかすると]]、将来はもっと複雑な動きもできるかもしれない、と[[想像]]した。同じ展示でも、人によって想像するものは違う。まず見たことから考え、その後で説明を聞くと、形だけを眺めたときより、その[[特徴]]がよく分かった。",
+    "translation": "Ở triển lãm thư viện, tôi thấy rô-bốt hình chim. Tôi chăm chú nhìn nó đang đứng yên. Khi tôi vẫy tay gần đó, cánh chậm rãi chuyển động. Thấy hứng thú, tôi nói với bạn: “Có vẻ nó phản ứng với tay người rồi chuyển động.” Lúc ấy tôi chưa xác minh cơ chế.\nHỏi người phụ trách, tôi biết nó cảm nhận chuyển động gần đó và bộ phận bên trong làm cánh cử động. Tôi nhẹ đưa tay lại gần. Trông cứ như chim thật, nhưng thực ra nó không bay mà được cố định trên bệ.\nMàn hình kỹ thuật số cạnh bên chiếu ví dụ nhiều kiểu chuyển động. Tôi tưởng tượng biết đâu tương lai nó làm được động tác phức tạp hơn. Cùng xem một thứ nhưng mỗi người hình dung khác nhau. Tự suy nghĩ từ điều quan sát rồi nghe giải thích giúp tôi hiểu đặc điểm rõ hơn chỉ nhìn hình dáng.",
+    "grammar": [
+      {
+        "id": 53,
+        "quote": "人の手に反応して動くみたいだ",
+        "note": "～みたいだ: suy đoán dựa trên điều trực tiếp quan sát. “本物の鳥みたい” ở đoạn sau là cách ví giống một vật khác; không nhầm lời phỏng đoán với sự thật đã xác nhận."
+      },
+      {
+        "id": 6,
+        "quote": "人によって想像するものは違う",
+        "note": "Ôn ～によって: cách tưởng tượng khác nhau tùy người."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "観察をもとに、まだ確かめていない仕組みを推測します。「人の手に反応して動く（　）。」",
+      "options": [
+        "ついでに",
+        "ことにする",
+        "みたいだ"
+      ],
+      "answer": 2,
+      "explanation": "～みたいだ cho phép nêu suy đoán từ hiện tượng vừa thấy, trước khi được giải thích xác nhận."
+    },
+    "questions": [
+      {
+        "q": "最初、筆者は何を見て推測しましたか。",
+        "options": [
+          "手を振ると羽が動いたこと",
+          "鳥が窓から飛んで行ったこと",
+          "全ての装置が壊れたこと"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả suy đoán sau khi vẫy tay và thấy cánh chuyển động."
+      },
+      {
+        "q": "説明を聞いて分かったことは何ですか。",
+        "options": [
+          "本物の鳥が中にいた",
+          "装置が羽を動かし、台に固定されていた",
+          "何も感じ取らず必ず同じ時間に飛ぶ"
+        ],
+        "answer": 1,
+        "explanation": "Thiết bị cảm nhận chuyển động và làm cánh hoạt động; rô-bốt cố định trên bệ chứ không bay."
+      },
+      {
+        "q": "筆者にとって理解が深まった方法は何ですか。",
+        "options": [
+          "説明を全く聞かないこと",
+          "自分の想像だけで決めること",
+          "観察して考えた後、説明を聞くこと"
+        ],
+        "answer": 2,
+        "explanation": "Kết hợp quan sát, suy nghĩ và nghe giải thích giúp tác giả hiểu rõ đặc điểm."
+      }
+    ]
+  },
+  {
+    "id": "s5-craft",
+    "title": "Làm một chút để tiếp tục được lâu",
+    "jaTitle": "飽きっぽい私の工夫",
+    "topic": "Sở thích",
+    "format": "Bài chia sẻ trải nghiệm",
+    "focusGrammarId": 56,
+    "focusGrammarRole": "new",
+    "newWords": [
+      "おとなしい",
+      "いらいら",
+      "飽きる",
+      "熱中する",
+      "やる気",
+      "無理な",
+      "むだな",
+      "もったいない",
+      "豊かな",
+      "意外な"
+    ],
+    "reviewWords": [
+      "趣味",
+      "方法",
+      "アイデア",
+      "挑戦",
+      "感謝"
+    ],
+    "text": "新しい[[趣味]]として、紙で小物を作る教室に通い始めた。私は[[飽きる|飽き|あき]]っぽいので、大きな作品を完成させる自信がなかった。うまく折れないと[[いらいら]]し、時間を使うだけの[[むだな]]ことではないかと考えてしまった。\n普段[[おとなしい]]友人は、[[豊かな]][[アイデア]]を次々に出していた。難しい作品を一度に作らず、小さな形を一つ作る[[方法]]を教えてくれた。私には[[意外な]]助言だったが、それなら[[無理な]]計画にならない。紙もすぐ捨てるのは[[もったいない]]ので、練習用に取っておいた。\n小さな形ができると、もう一つ作ろうという[[やる気]]が出た。気づくと、私は作業に[[熱中する|熱中して|ねっちゅうして]]いた。できないことを責めるかわりに、続けられる大きさを選べばよかったのだ。帰りに友人へ[[感謝]]を伝えた。自分は何でも途中でやめる人だと決めつけず、できる形で[[挑戦]]してみたい。",
+    "translation": "Tôi bắt đầu học làm đồ nhỏ bằng giấy như một sở thích mới. Vì nhanh chán, tôi không tự tin hoàn thành tác phẩm lớn. Gấp không được là tôi bực, rồi nghĩ có phải mình chỉ đang phí thời gian không.\nNgười bạn thường trầm tính lại liên tục nghĩ ý tưởng phong phú. Bạn chỉ tôi cách làm một hình nhỏ, không cố làm món khó ngay. Đó là lời khuyên bất ngờ với tôi, nhưng như vậy kế hoạch sẽ không quá sức. Giấy vứt ngay cũng tiếc nên tôi giữ để tập.\nLàm được một hình nhỏ, tôi có động lực làm thêm. Lúc nhận ra, tôi đã say mê công việc. Thay vì trách việc chưa làm được, lẽ ra tôi chỉ cần chọn quy mô có thể tiếp tục. Khi về, tôi cảm ơn bạn. Tôi muốn thử theo cách mình làm được, thay vì tự kết luận mình luôn bỏ dở mọi thứ.",
+    "grammar": [
+      {
+        "id": 56,
+        "quote": "私は飽きっぽいので",
+        "note": "Vます bỏ ます＋っぽい: có khuynh hướng dễ làm điều đó; 飽きっぽい là nhanh chán. Dạng này thường diễn tả khuynh hướng người nói đánh giá không tốt. 飽き được liên kết về từ gốc 飽きる."
+      },
+      {
+        "id": 18,
+        "quote": "できないことを責めるかわりに",
+        "note": "Ôn ～かわりに: thay vì trách bản thân, chọn cách làm có thể duy trì."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "「飽きる」傾向が出やすいことを表します。「私は飽き（　）ので、小さい作品から始める。」",
+      "options": [
+        "っぽい",
+        "に限る",
+        "とおり"
+      ],
+      "answer": 0,
+      "explanation": "飽き＋っぽい diễn tả tính dễ chán. Đây không phải cách thuật lại lời người khác."
+    },
+    "questions": [
+      {
+        "q": "最初、筆者は何を心配していましたか。",
+        "options": [
+          "紙を一枚も使えないこと",
+          "すぐ飽きて大きな作品を完成できないこと",
+          "友人と帰れないこと"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả lo mình nhanh chán, không theo đến khi hoàn thành tác phẩm lớn."
+      },
+      {
+        "q": "友人はどんな方法を教えましたか。",
+        "options": [
+          "失敗した紙はすぐ全て捨てる",
+          "難しい作品だけを作る",
+          "小さな形を一つずつ作る"
+        ],
+        "answer": 2,
+        "explanation": "Bạn khuyên bắt đầu với từng hình nhỏ thay vì cố làm ngay tác phẩm khó."
+      },
+      {
+        "q": "小さな形ができて、どうなりましたか。",
+        "options": [
+          "やる気が出て、作業に熱中した",
+          "教室へ行くのをやめた",
+          "挑戦は全て無駄だと思った"
+        ],
+        "answer": 0,
+        "explanation": "Thành công nhỏ tạo động lực, giúp tác giả say mê và muốn tiếp tục."
+      }
+    ]
+  },
+  {
+    "id": "s5-directions",
+    "title": "Đi theo hướng dẫn, vẫn cần quan sát",
+    "jaTitle": "地図のとおりに歩いて",
+    "topic": "Du lịch",
+    "format": "Nhật ký",
+    "focusGrammarId": 5,
+    "focusGrammarRole": "reinforce",
+    "newWords": [
+      "乗る",
+      "降りる",
+      "上る",
+      "下る",
+      "通る",
+      "曲がる",
+      "差す",
+      "寄る",
+      "すれ違う",
+      "付く"
+    ],
+    "reviewWords": [
+      "パンフレット",
+      "約束",
+      "確認",
+      "道路",
+      "遅刻"
+    ],
+    "text": "初めて行く町で友人と会う[[約束]]をした。駅の案内所でもらった[[パンフレット]]に[[付く|付いて|ついて]]いた地図を見て、道を[[確認]]した。電車に[[乗る|乗り|のり]]、二つ目の駅で[[降りる|降りた|おりた]]。そこからは、地図に書いてあるとおりに歩くことにした。\nまず坂を[[上る|上り|のぼり]]、古い門を[[通る|通った|とおった]]。右へ[[曲がる]]と公園があり、その先の坂を[[下る]]と店が見えるはずだった。ところが、雨が降り始めた。傘を[[差す|差して|さして]]歩く人と狭い道で[[すれ違う]]ときは、地図だけを見ず、前にも注意した。\n途中で開いていた案内所に[[寄る|寄り|より]]、工事中の[[道路]]を避ける道も教えてもらった。人の助けのおかげで、[[遅刻]]せずに店へ着けた。地図は役に立つが、その日の道の様子まで全て分かるわけではない。書かれた順序を理解しながら、実際の状況も確かめて進むことが大切だと思った。",
+    "translation": "Tôi hẹn gặp bạn ở một thị trấn lần đầu đến. Xem bản đồ đính trong tờ giới thiệu nhận ở quầy hướng dẫn, tôi kiểm tra đường đi. Tôi lên tàu, xuống ở ga thứ hai. Từ đó, tôi quyết định đi theo đúng bản đồ.\nĐầu tiên lên dốc, đi qua cổng cũ. Rẽ phải sẽ có công viên, đi xuống dốc phía sau thì đáng lẽ thấy quán. Nhưng trời bắt đầu mưa. Khi giương ô, đi lướt qua người khác trên lối hẹp, tôi không chỉ nhìn bản đồ mà còn chú ý phía trước.\nGiữa đường, tôi ghé một điểm hướng dẫn đang mở và được chỉ đường tránh đoạn đang thi công. Nhờ người giúp, tôi đến quán không trễ. Bản đồ hữu ích nhưng không cho biết hết tình hình đường ngày hôm đó. Tôi nghĩ cần vừa hiểu thứ tự đã viết, vừa xác nhận thực tế rồi tiến lên.",
+    "grammar": [
+      {
+        "id": 5,
+        "quote": "地図に書いてあるとおりに歩く",
+        "note": "Củng cố ～とおりに: đi đúng theo hướng dẫn đã được viết. Bài đồng thời nhắc rằng hiểu hướng dẫn không thay thế việc quan sát tình hình thực tế."
+      },
+      {
+        "id": 22,
+        "quote": "人の助けのおかげで",
+        "note": "Ôn ～おかげで: nhờ được giúp mà đến nơi không trễ."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "書かれた内容に従って行動します。「地図に書いてある（　）歩いた。」",
+      "options": [
+        "のせいで",
+        "っぽく",
+        "とおりに"
+      ],
+      "answer": 2,
+      "explanation": "～とおりに diễn tả làm theo đúng nội dung đã thấy hoặc được chỉ dẫn."
+    },
+    "questions": [
+      {
+        "q": "筆者は電車をどこで降りましたか。",
+        "options": [
+          "二つ目の駅",
+          "最初の駅",
+          "公園の中"
+        ],
+        "answer": 0,
+        "explanation": "Đoạn đầu nói tác giả xuống ở ga thứ hai."
+      },
+      {
+        "q": "途中の案内所で何を教えてもらいましたか。",
+        "options": [
+          "傘の作り方",
+          "工事中の道を避ける道",
+          "友人の生年月日"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả được chỉ đường tránh phần đang thi công."
+      },
+      {
+        "q": "筆者が大切だと思ったことは何ですか。",
+        "options": [
+          "地図だけを見て歩くこと",
+          "雨の日は必ず約束をやめること",
+          "案内を理解し、実際の状況も確認すること"
+        ],
+        "answer": 2,
+        "explanation": "Cần kết hợp hướng dẫn trên bản đồ với quan sát thực tế, không chỉ nhìn giấy."
+      }
+    ]
+  },
+  {
+    "id": "s5-cooking",
+    "title": "Đồ ăn tự thay đổi hay mình tác động?",
+    "jaTitle": "台所で覚える動詞",
+    "topic": "Nấu ăn",
+    "format": "Nhật ký",
+    "focusGrammarId": 7,
+    "focusGrammarRole": "reinforce",
+    "newWords": [
+      "沸く",
+      "煮える",
+      "煮る",
+      "焼ける",
+      "揚げる",
+      "蒸す",
+      "冷める",
+      "温める",
+      "温まる",
+      "バランス"
+    ],
+    "reviewWords": [
+      "栄養",
+      "方法",
+      "生活",
+      "準備",
+      "新鮮な"
+    ],
+    "text": "料理教室に行くたびに、新しい動詞を覚える。今週は、[[新鮮な]]野菜と肉を使う食事を作った。先生は[[栄養]]の[[バランス]]も考え、[[準備]]の順序を教えてくれた。忙しい[[生活]]でも、簡単にできる[[方法]]を増やしたいと思った。\nまず、湯が[[沸く]]まで待ってから、肉を[[煮る|煮た|にた]]。野菜が十分に[[煮える|煮えた|にえた]]ら、火を止めた。別の皿では、魚が[[焼ける|焼けた|やけた]]か先生に見てもらった。全部を[[揚げる]]かわりに、一部の野菜は[[蒸す]]ことにしたので、違う食感も楽しめた。\n食べる前に話していると、料理が[[冷める|冷めて|さめて]]しまった。そこで、私が皿の料理を[[温める|温めた|あたためた]]。しばらくすると、中まで[[温まる|温まった|あたたまった]]。自分が何かをする動詞と、物の状態が変わる動詞を、実際の動きと一緒に覚えると分かりやすかった。次の教室でも、言葉だけでなく、何がどう変わったかに注目したい。",
+    "translation": "Mỗi lần đến lớp nấu ăn, tôi lại học động từ mới. Tuần này chúng tôi nấu bữa ăn với rau và thịt tươi. Giáo viên cân nhắc cả cân bằng dinh dưỡng, hướng dẫn thứ tự chuẩn bị. Tôi muốn tăng cách làm đơn giản có thể dùng cả trong cuộc sống bận.\nTrước hết đợi nước sôi rồi ninh thịt. Khi rau đã chín mềm thì tắt lửa. Ở đĩa khác, tôi nhờ giáo viên xem cá đã nướng chín chưa. Thay vì chiên tất cả, chúng tôi chọn hấp một phần rau nên có thêm kết cấu khác.\nMải nói trước khi ăn, đồ nguội mất. Tôi hâm thức ăn trên đĩa; một lúc sau, bên trong cũng ấm lên. Ghi nhớ động từ mình tác động và động từ chỉ vật thay đổi cùng hành động thật giúp tôi hiểu hơn. Lần tới tôi muốn chú ý không chỉ từ mà còn vật nào thay đổi thế nào.",
+    "grammar": [
+      {
+        "id": 7,
+        "quote": "料理教室に行くたびに、新しい動詞を覚える",
+        "note": "Củng cố Vる＋たびに: mỗi lần đến lớp thì lại học được từ mới. Không phải chỉ kể một lần đã xảy ra."
+      },
+      {
+        "id": 18,
+        "quote": "全部を揚げるかわりに",
+        "note": "Ôn ～かわりに: thay vì chiên hết thì chọn hấp một phần rau."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "繰り返される機会ごとに起こることです。「料理教室に行く（　）、新しい動詞を覚える。」",
+      "options": [
+        "せいで",
+        "たびに",
+        "ところだった"
+      ],
+      "answer": 1,
+      "explanation": "Vる＋たびに diễn tả cứ mỗi lần một hành động xảy ra thì có việc đi cùng."
+    },
+    "questions": [
+      {
+        "q": "湯が沸くまで待った後、何をしましたか。",
+        "options": [
+          "全ての料理を捨てた",
+          "教室から帰った",
+          "肉を煮た"
+        ],
+        "answer": 2,
+        "explanation": "Tác giả đợi nước sôi rồi mới ninh thịt."
+      },
+      {
+        "q": "料理が冷めた後、筆者は何をしましたか。",
+        "options": [
+          "料理を温めた",
+          "野菜を全部揚げた",
+          "魚を冷蔵庫へ入れた"
+        ],
+        "answer": 0,
+        "explanation": "Sau khi đồ nguội vì mải nói, tác giả hâm lại thức ăn."
+      },
+      {
+        "q": "動詞を覚えるのに役立ったことは何ですか。",
+        "options": [
+          "文字を全く見ないこと",
+          "実際の行動や状態の変化と結び付けること",
+          "料理の名前だけを暗記すること"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả thấy dễ hiểu khi gắn động từ với hành động và sự thay đổi trạng thái thật."
+      }
+    ]
+  },
+  {
+    "id": "s5-routine",
+    "title": "Tiện lợi nhưng vẫn cần cân đối",
+    "jaTitle": "家で働く日の食事",
+    "topic": "Cuộc sống",
+    "format": "Bài chia sẻ trải nghiệm",
+    "focusGrammarId": 15,
+    "focusGrammarRole": "reinforce",
+    "newWords": [
+      "健康な",
+      "楽な",
+      "面倒な",
+      "ファストフード",
+      "インスタント",
+      "コンビニエンスストア",
+      "疲れ",
+      "不満な",
+      "満足な",
+      "マッサージ"
+    ],
+    "reviewWords": [
+      "生活",
+      "栄養",
+      "条件",
+      "スケジュール",
+      "確認"
+    ],
+    "text": "家で仕事をする日が増え、私の[[生活]]も変わった。通勤しなくてよいのは[[楽な|楽だ|らくだ]]が、仕事と休みの区別が難しかった。仕事の[[条件]]を[[確認]]すると、昼休みは自分で取ることになっていたのに、忙しい日は短くしてしまっていた。\n料理が[[面倒な|面倒だ|めんどうだ]]と感じ、[[インスタント]]の食事で済ませたり、[[コンビニエンスストア]]や[[ファストフード]]の店で買ったりした。すぐ食べられるのは便利な反面、同じ物ばかり選びやすかった。値段には[[満足な|満足だった|まんぞくだった]]が、食事の楽しみが減ったことには[[不満な|不満だった|ふまんだった]]。\n週末、[[疲れ]]を感じて[[マッサージ]]の店に寄った。そこで休む時間そのものが少なかったと気づき、毎日の[[スケジュール]]を見直した。私は自分の食事の[[栄養]]も考え、昼は席を離れて休むようにしている。[[健康な]]生活を目指すなら、一度だけの工夫ではなく、続けられる形を探したい。",
+    "translation": "Những ngày làm ở nhà tăng lên, sinh hoạt của tôi cũng đổi. Không phải đi lại thì nhàn, nhưng khó phân biệt giờ làm và nghỉ. Xem lại điều kiện làm việc, giờ trưa vốn được tự nghỉ, vậy mà ngày bận tôi lại rút ngắn.\nThấy nấu ăn phiền, tôi ăn đồ ăn liền hoặc mua ở cửa hàng tiện lợi, quán thức ăn nhanh. Có ngay đồ ăn thì tiện, mặt khác tôi dễ chỉ chọn đi chọn lại cùng món. Tôi hài lòng về giá nhưng không hài lòng vì bữa ăn bớt thú vị.\nCuối tuần thấy mệt, tôi ghé tiệm mát-xa. Nghỉ ở đó, tôi nhận ra thời gian nghỉ mỗi ngày quá ít và xem lại lịch. Tôi đang cân nhắc dinh dưỡng bữa ăn và cố rời chỗ ngồi nghỉ vào buổi trưa. Muốn sinh hoạt lành mạnh, tôi muốn tìm cách duy trì được thay vì chỉ thay đổi một lần.",
+    "grammar": [
+      {
+        "id": 15,
+        "quote": "すぐ食べられるのは便利な反面、同じ物ばかり選びやすかった",
+        "note": "Củng cố Aな＋な反面: nêu hai mặt của cùng sự tiện lợi, trong trải nghiệm riêng của người kể."
+      },
+      {
+        "id": 47,
+        "quote": "昼は席を離れて休むようにしている",
+        "note": "Ôn ～ようにしている: cố gắng duy trì hành động nghỉ trưa thường xuyên."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "同じことのよい面と別の面を対比します。「すぐ食べられるのは便利な（　）、同じ物ばかり選びやすい。」",
+      "options": [
+        "ついでに",
+        "っぽい",
+        "反面"
+      ],
+      "answer": 2,
+      "explanation": "～反面 nêu một mặt khác đi cùng mặt tiện lợi của cùng sự việc."
+    },
+    "questions": [
+      {
+        "q": "家で仕事をする際、筆者が難しいと感じたことは何ですか。",
+        "options": [
+          "仕事と休みを分けること",
+          "通勤の電車を選ぶこと",
+          "全ての店へ行くこと"
+        ],
+        "answer": 0,
+        "explanation": "Ở nhà tiện đi lại nhưng tác giả khó giữ ranh giới giữa làm và nghỉ."
+      },
+      {
+        "q": "買った食事について、何に不満がありましたか。",
+        "options": [
+          "全てが高すぎたこと",
+          "同じ物を選び、食事の楽しみが減ったこと",
+          "すぐ食べられないこと"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả hài lòng về giá, nhưng bữa ăn lặp lại và kém vui khiến không hài lòng."
+      },
+      {
+        "q": "筆者が見直したことは何ですか。",
+        "options": [
+          "一日だけ働けばよいという条件",
+          "店に全ての責任を任せる方法",
+          "休む時間も含めた毎日の予定"
+        ],
+        "answer": 2,
+        "explanation": "Tác giả xem lại lịch mỗi ngày, bổ sung thời gian nghỉ và suy nghĩ về bữa ăn."
+      }
+    ]
+  },
+  {
+    "id": "s5-peace",
+    "title": "Hiểu khác biệt và tìm điểm chung",
+    "jaTitle": "写真の向こうの暮らし",
+    "topic": "Văn hóa",
+    "format": "Bài nêu cảm nhận",
+    "focusGrammarId": 16,
+    "focusGrammarRole": "reinforce",
+    "newWords": [
+      "マスコミ",
+      "国際的な",
+      "盛んな",
+      "自身",
+      "愛",
+      "宗教",
+      "戦争",
+      "平和",
+      "祈る",
+      "争う"
+    ],
+    "reviewWords": [
+      "文化",
+      "理解",
+      "コミュニケーション",
+      "関係",
+      "協調"
+    ],
+    "text": "私の町は[[国際的な]]交流が[[盛んな]]地域で、[[平和]]について考える写真展が開かれた。[[マスコミ]]の短い報道で知ったが、実際の会場では、一枚の写真に長い説明が付いていた。[[戦争]]の悲しみを知る一方で、人を支えた小さな行動の記録も読むことができた。\nある人の話には、遠く離れた家族への[[愛]]が書かれていた。別の写真には、[[宗教]]の違う人たちが、同じ場所で静かに[[祈る]]姿があった。違う[[文化]]の人が、全て同じ考えを持つわけではない。それでも、違いを理由に[[争う]]のではなく、互いを[[理解]]しようとすることはできると思った。\n会場で、私[[自身]]の暮らしについても聞かれた。自分の当たり前を説明するのは、意外に難しかった。日々の[[コミュニケーション]]で相手の話を聞くことが、よい[[関係]]や[[協調]]の出発点になるのかもしれない。大きな話題を遠い世界のことにせず、身近な会話から考えてみたいと感じた。",
+    "translation": "Khu tôi sống có giao lưu quốc tế sôi nổi, và một triển lãm ảnh suy nghĩ về hòa bình được mở. Tôi biết qua bản tin ngắn, nhưng ở hội trường thật, mỗi ảnh đều có lời giải thích dài. Một mặt tìm hiểu nỗi buồn chiến tranh, mặt khác tôi cũng đọc được ghi chép về các hành động nhỏ nâng đỡ con người.\nMột lời kể viết về tình yêu dành cho gia đình xa cách. Ảnh khác ghi cảnh người có tôn giáo khác nhau cùng lặng lẽ cầu nguyện ở một nơi. Người từ các nền văn hóa khác nhau không phải đều suy nghĩ giống nhau. Dù vậy, thay vì tranh chấp vì khác biệt, tôi nghĩ có thể cố hiểu nhau.\nỞ hội trường, tôi còn được hỏi về cuộc sống của chính mình. Giải thích điều mình coi là đương nhiên lại khó bất ngờ. Lắng nghe trong giao tiếp hằng ngày có lẽ là điểm khởi đầu của quan hệ tốt và sự phối hợp. Tôi muốn suy nghĩ từ hội thoại gần mình, không chỉ coi chủ đề lớn là chuyện xa xôi.",
+    "grammar": [
+      {
+        "id": 16,
+        "quote": "戦争の悲しみを知る一方で、人を支えた小さな行動の記録も読むことができた",
+        "note": "Củng cố Vる＋一方で: đặt song song hai mặt trải nghiệm, vừa tìm hiểu nỗi buồn vừa biết những hành động nâng đỡ người khác."
+      },
+      {
+        "id": 37,
+        "quote": "全て同じ考えを持つわけではない",
+        "note": "Ôn ～わけではない: phủ định việc cho rằng những người có nền văn hóa khác nhau đều suy nghĩ giống nhau."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "二つの側面を並べます。「悲しみを知る（　）、人を支える行動についても学んだ。」",
+      "options": [
+        "一方で",
+        "っぽい",
+        "たびだ"
+      ],
+      "answer": 0,
+      "explanation": "～一方で nối hai mặt được xem xét song song trong cùng trải nghiệm."
+    },
+    "questions": [
+      {
+        "q": "実際の会場には、報道に加えて何がありましたか。",
+        "options": [
+          "写真を見ないというルール",
+          "全ての人の住所",
+          "写真ごとの詳しい説明"
+        ],
+        "answer": 2,
+        "explanation": "Mỗi ảnh ở hội trường có phần giải thích dài, giúp hiểu hơn bản tin ngắn."
+      },
+      {
+        "q": "筆者は文化の違いについてどう考えましたか。",
+        "options": [
+          "違う人とは話してはいけない",
+          "同じだと決めつけず、理解しようとできる",
+          "全ての文化は必ず同じだ"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả không phủ nhận khác biệt nhưng muốn cố hiểu nhau thay vì tranh chấp."
+      },
+      {
+        "q": "筆者は何から考えてみたいと思いましたか。",
+        "options": [
+          "身近な会話や相手の話を聞くこと",
+          "自分の暮らしは説明しないこと",
+          "短い報道だけで判断すること"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả muốn bắt đầu từ giao tiếp gần gũi và lắng nghe đối phương."
+      }
+    ]
+  },
+  {
+    "id": "s5-review",
+    "title": "Thử cách giải thích khác",
+    "jaTitle": "同じ教えを違う形で",
+    "topic": "Tổng ôn chặng 5",
+    "format": "Câu chuyện tổng ôn",
+    "focusGrammarId": 18,
+    "focusGrammarRole": "reinforce",
+    "newWords": [
+      "進歩",
+      "成長",
+      "発達",
+      "感想",
+      "普通",
+      "当たり前",
+      "基本",
+      "教え",
+      "繰り返す",
+      "思いやる"
+    ],
+    "reviewWords": [
+      "喜び",
+      "楽しみ",
+      "合図",
+      "バランス",
+      "自身",
+      "方法",
+      "アイデア",
+      "約束"
+    ],
+    "text": "地域の言葉の教室で、子どもと大人が一緒に学ぶ活動を手伝った。子どもの[[成長]]を見守る家族から、言葉の[[発達]]には一人ひとり違いがあるという話も聞いた。速さだけで[[進歩]]を比べず、その人に合う説明を考えたいと思った。\nある作業で、同じ言葉を[[繰り返す]]かわりに、動作を見せる[[方法]]を試した。手を上げる[[合図]]を使うという[[アイデア]]も加えた。すると、できなかった人が自分で始められた。私はその[[喜び]]を、活動後の[[感想]]に書いた。先生の[[教え]]は、[[基本]]を大切にしながら、相手を[[思いやる]]ことだった。\n私[[自身]]には[[普通]]にできることも、初めての人には[[当たり前]]ではない。説明と体験の[[バランス]]を考え、会うたびに小さく直していきたい。次も来るという[[約束]]をした子の笑顔が、私の[[楽しみ]]になった。全部を一度に変えようとせず、相手の反応を見ながら、伝わる形を探し続けたい。",
+    "translation": "Tôi giúp hoạt động ở lớp ngôn ngữ địa phương nơi trẻ em và người lớn cùng học. Từ gia đình dõi theo con lớn lên, tôi cũng nghe rằng sự phát triển ngôn ngữ mỗi người khác nhau. Tôi muốn nghĩ cách giải thích hợp từng người, không chỉ so tiến bộ bằng tốc độ.\nỞ một công việc, thay vì lặp cùng lời giải thích, tôi thử làm mẫu động tác. Tôi thêm ý tưởng dùng tín hiệu giơ tay. Kết quả, người trước chưa làm được đã tự bắt đầu. Tôi viết niềm vui ấy vào cảm nghĩ sau buổi học. Điều giáo viên dạy là coi trọng căn bản nhưng đồng thời biết nghĩ cho đối phương.\nĐiều chính tôi làm được bình thường chưa chắc hiển nhiên với người mới. Tôi muốn cân đối giải thích và trải nghiệm, mỗi lần gặp lại điều chỉnh một chút. Nụ cười của em hẹn sẽ đến lần sau trở thành niềm mong đợi của tôi. Không cố đổi mọi thứ cùng lúc, tôi muốn tiếp tục tìm cách truyền đạt qua phản ứng người học.",
+    "grammar": [
+      {
+        "id": 18,
+        "quote": "同じ言葉を繰り返すかわりに、動作を見せる",
+        "note": "Củng cố Vる＋かわりに: thay một cách làm bằng cách khác, ở đây là làm mẫu thay vì chỉ lặp lời giải thích."
+      },
+      {
+        "id": 7,
+        "quote": "会うたびに小さく直していきたい",
+        "note": "Ôn ～たびに: mỗi lần gặp lại thì tiếp tục điều chỉnh một chút."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "一つの方法を別の方法に替えます。「同じ言葉を繰り返す（　）、動作を見せた。」",
+      "options": [
+        "のせいで",
+        "かわりに",
+        "ことから"
+      ],
+      "answer": 1,
+      "explanation": "～かわりに diễn tả thay vì làm một việc thì chọn làm việc khác."
+    },
+    "questions": [
+      {
+        "q": "筆者は進歩についてどう考えましたか。",
+        "options": [
+          "速さだけで比べず、その人に合う説明を考えたい",
+          "全員が同じ速さで学ぶべきだ",
+          "大人と子どもは一緒に学べない"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả muốn chú trọng cách giải thích phù hợp, không chỉ xét tốc độ."
+      },
+      {
+        "q": "同じ言葉を繰り返すかわりに、何をしましたか。",
+        "options": [
+          "活動を全部やめた",
+          "基本の説明を隠した",
+          "動作を見せ、手を上げる合図も使った"
+        ],
+        "answer": 2,
+        "explanation": "Tác giả chuyển sang làm mẫu và bổ sung tín hiệu giơ tay."
+      },
+      {
+        "q": "筆者が続けたいことは何ですか。",
+        "options": [
+          "一度決めた説明を全く変えないこと",
+          "相手の反応を見ながら伝わる形を探すこと",
+          "自分に普通なら誰にも当たり前だと考えること"
+        ],
+        "answer": 1,
+        "explanation": "Kết thúc bài, tác giả muốn tiếp tục điều chỉnh dựa trên phản ứng để truyền đạt tốt hơn."
+      }
+    ]
+  }
+]

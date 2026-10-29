@@ -25,11 +25,11 @@ const server=require('node:http').createServer((req,res)=>{
  await page.goto('http://127.0.0.1:5503'); await page.waitForLoadState('networkidle');
  await page.locator('#modeBtnReading').click();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingProgress').innerText(),/1\/50/);
+ assert.match(await page.locator('#readingProgress').innerText(),/1\/60/);
  assert.equal(await page.locator('#readingStage').inputValue(),'1');
  assert.match(await page.locator('#readingCoverage').innerText(),/0\/880/);
  await page.locator('#readingStage').selectOption('all');
- assert.equal(await page.locator('[data-lesson]').count(),50);
+ assert.equal(await page.locator('[data-lesson]').count(),60);
  const data=await page.evaluate(()=>window.READING_DATA);
  for(const l of data){
    await page.locator(`[data-lesson="${l.id}"]`).click();
@@ -73,8 +73,8 @@ const server=require('node:http').createServer((req,res)=>{
      assert.ok(!(await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_mistakes'))))[l.newWordIds[0]]);
    }
  }
- assert.match(await page.locator('#readingCoverage').innerText(),/400\/880/);
- assert.match(await page.locator('#readingCoverage').innerText(),/40\/62/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/500\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/50\/62/);
  await page.locator('#readingStage').selectOption('2');
  assert.equal(await page.locator('[data-lesson]').count(),10);
  await page.locator('[data-lesson="s2-class"]').click();
@@ -94,6 +94,23 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-lesson="s4-costume"]').click();
  await page.getByRole('button',{name:'Tra từ 硬かった',exact:true}).click();
  assert.match(await page.locator('#readingLookup').innerText(),/固い・硬い/);
+ await page.locator('#readingStage').selectOption('5');
+ assert.equal(await page.locator('[data-lesson]').count(),10);
+ assert.match(await page.locator('#readingCoverage').textContent(),/5 mới, 5 củng cố/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/62\/62/);
+ await page.locator('[data-lesson="s5-reunion"]').click();
+ const newGrammar=page.locator('#readingArticle > .reading-detail').nth(1);
+ await newGrammar.locator('summary').first().click();
+ assert.equal(await newGrammar.getByText('Trọng tâm mới',{exact:true}).isVisible(),true);
+ await page.locator('#readingNext').click();
+ assert.match(await page.locator('#readingArticle h2').innerText(),/舞台の命令/);
+ await page.locator('[data-lesson="s5-directions"]').click();
+ const reviewGrammar=page.locator('#readingArticle > .reading-detail').nth(1);
+ await reviewGrammar.locator('summary').first().click();
+ assert.equal(await reviewGrammar.getByText('Trọng tâm củng cố',{exact:true}).isVisible(),true);
+ await page.locator('[data-lesson="s5-craft"]').click();
+ await page.getByRole('button',{name:'Tra từ 飽き',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/飽きる/);
  await page.locator('[data-review-word]').click();
  assert.equal(await page.locator('[data-review-word]').isDisabled(),true);
  await page.locator('#readingFilter').selectOption('review');assert.ok(await page.locator('[data-lesson]').count()>0);
@@ -105,9 +122,9 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-grammar]').first().click();assert.match(await page.locator('[data-grammar]').first().innerText(),/Đã đánh dấu/);
  await page.reload();await page.waitForLoadState('networkidle');
  assert.equal(await page.locator('#readingAppSection').isVisible(),true);
- assert.equal(await page.locator('#readingStage').inputValue(),'4');
- assert.match(await page.locator('#readingProgress').innerText(),/50\/50/);
- assert.match(await page.locator('#readingCoverage').innerText(),/400\/880/);
+ assert.equal(await page.locator('#readingStage').inputValue(),'5');
+ assert.match(await page.locator('#readingProgress').innerText(),/60\/60/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/500\/880/);
  await page.locator('#modeBtnVocab').click();assert.equal(await page.locator('#vocabAppSection').isVisible(),true);
  await page.locator('#modeBtnGrammar').click();assert.equal(await page.locator('#grammarAppSection').isVisible(),true);
  await page.locator('#modeBtnReading').click();
@@ -118,15 +135,15 @@ const server=require('node:http').createServer((req,res)=>{
  await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'tests/reading-desktop.png',fullPage:true});
  const fresh=await browser.newContext(); const freshPage=await fresh.newPage();
  await freshPage.goto('http://127.0.0.1:5503'); await freshPage.locator('#modeBtnReading').click();
- assert.equal(await freshPage.locator('#readingStage').inputValue(),'4');
+ assert.equal(await freshPage.locator('#readingStage').inputValue(),'5');
  assert.equal(await freshPage.locator('[data-lesson]').count(),10);
- assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s4-'));
+ assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s5-'));
  await fresh.close();
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
  await context.setOffline(true);await page.reload();await page.locator('#readingArticle h2').waitFor();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingCoverage').innerText(),/400\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/500\/880/);
  assert.deepEqual(errors,[]);
- console.log('PASS: 50 articles / 140 reading questions; 400 word + 40 grammar checks; wrong-to-correct review; no auto mastery; stage 1 migration, stage 2/3 access, stage 4 resume + latest default, passive + spelling-variant lookup, filters, persisted coverage, mobile, dark mode, offline.');
+ console.log('PASS: 60 articles / 170 reading questions; 500 word + 50 grammar checks; full 62 grammar publication; new/reinforced grammar labels; old-stage migration, latest resume, derived-word lookup, filters, persisted coverage, mobile, dark mode, offline.');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exit(1)});
