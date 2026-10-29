@@ -2035,3 +2035,58 @@ footer {
     font-size: 1rem;
   }
 }
+/* Reading room: quiet typography and a book-like two-column layout. */
+.reading-heading { display:flex; justify-content:space-between; align-items:center; gap:16px; margin:26px 0; }
+.reading-heading h1 { font-size:clamp(1.6rem,3vw,2.2rem); letter-spacing:-.04em; }
+.reading-heading p,.reading-subtitle { color:var(--text-muted); }
+.reading-kicker { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); }
+#readingProgress { white-space:nowrap; border:1px solid var(--border); border-radius:30px; padding:8px 16px; font-size:.85rem; }
+.reading-layout { display:grid; grid-template-columns:260px minmax(0,1fr); gap:28px; align-items:start; }
+.reading-sidebar label { display:block; margin-bottom:8px; font-weight:600; }
+#readingFilter { width:100%; margin-bottom:14px; }
+#readingList { display:grid; gap:8px; }
+.reading-lesson { text-align:left; width:100%; padding:15px; border:1px solid var(--border); border-radius:10px; background:var(--bg-card); color:var(--text-main); cursor:pointer; display:grid; gap:6px; font:inherit; }
+.reading-lesson.selected { border-color:var(--primary); box-shadow:inset 3px 0 var(--primary); background:var(--primary-light); }
+.reading-lesson > span:last-child { font-size:.76rem; color:var(--text-muted); }
+.reading-paper { min-width:0; background:var(--bg-card); border:1px solid var(--border); border-top:4px solid var(--primary); border-radius:4px 4px 16px 16px; padding:clamp(20px,4vw,48px); scroll-margin-top:calc(var(--header-height) + 16px); }
+.reading-paper h2 { font-family:'Noto Sans JP',serif; font-size:clamp(1.5rem,3vw,2rem); margin:12px 0 4px; }
+.reading-tools { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+.reading-hint,.reading-empty { font-size:.82rem; color:var(--text-muted); margin:14px 0; }
+.reading-prose { font-family:'Noto Sans JP',sans-serif; font-size:1.12rem; line-height:2.7; letter-spacing:.035em; margin:28px 0; overflow-wrap:anywhere; }
+.reading-prose p { margin-bottom:22px; text-indent:1em; }
+.reading-word { display:inline; padding:0 1px; border:0; border-bottom:1px dashed var(--primary); background:transparent; color:inherit; font:inherit; letter-spacing:inherit; cursor:pointer; text-indent:0; }
+.reading-word:hover { background:var(--primary-light); }
+.reading-word rt { font-size:.55em; letter-spacing:0; color:var(--text-muted); }
+.reading-lookup { border-left:3px solid var(--primary); background:var(--bg-subtle); padding:16px 20px; border-radius:0 10px 10px 0; font-size:.9rem; }
+.reading-lookup > strong { font-size:1.35rem; margin-right:12px; }
+.reading-detail { margin-top:18px; border-top:1px solid var(--border); padding-top:16px; }
+.reading-detail summary { cursor:pointer; font-weight:600; }
+.reading-detail > div { padding:16px 0; }
+.reading-detail p { margin:10px 0; line-height:1.9; }
+.reading-grammar { margin-bottom:20px; }
+.reading-grammar blockquote { padding:10px 16px; border-left:2px solid var(--border); margin:12px 0; font-size:1.05rem; }
+.reading-pre { white-space:pre-line; }
+.reading-vocab { display:flex; flex-wrap:wrap; gap:8px; }
+.reading-vocab button { text-align:left; white-space:normal; }
+.reading-questions { margin-top:30px; border-top:2px solid var(--border); padding-top:24px; }
+.reading-questions > p { color:var(--text-muted); font-size:.85rem; margin:8px 0 20px; }
+.reading-questions fieldset { border:1px solid var(--border); border-radius:10px; padding:16px; margin:20px 0; min-width:0; }
+.reading-questions legend { font-family:'Noto Sans JP',sans-serif; font-weight:600; padding:0 6px; }
+.reading-questions label { display:flex; align-items:baseline; gap:8px; padding:10px; border-radius:6px; cursor:pointer; }
+.reading-questions label:has(input:checked) { background:var(--primary-light); }
+.reading-feedback { font-size:.88rem; margin-top:10px; }
+.reading-feedback.right { color:var(--text-main); border-left:3px solid var(--success); padding-left:12px; }
+.reading-feedback.wrong { color:var(--text-main); border-left:3px solid var(--danger); padding-left:12px; }
+#readingAppSection button:focus-visible,#readingAppSection summary:focus-visible { outline:2px solid var(--primary); outline-offset:4px; }
+#readingAppSection button:disabled { opacity:.65; cursor:default; }
+@media(max-width:900px) { .reading-layout { grid-template-columns:210px minmax(0,1fr); gap:16px; } }
+@media(max-width:640px) {
+  .reading-heading { align-items:flex-start; flex-direction:column; }
+  .reading-layout { grid-template-columns:minmax(0,1fr); }
+  #readingList { grid-template-columns:repeat(10,190px); overflow-x:auto; padding:4px 2px 12px; }
+  .reading-sidebar .reading-hint { display:none; }
+  .reading-prose { font-size:1.04rem; line-height:2.7; }
+  .app-mode-switch { flex-wrap:nowrap; }
+  .app-mode-switch .mode-btn { min-width:0; padding:7px 6px; gap:4px; font-size:.8rem; }
+  .app-mode-switch .mode-badge { display:none; }
+}

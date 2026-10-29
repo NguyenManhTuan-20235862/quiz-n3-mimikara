@@ -917,6 +917,7 @@
   }
 
   function renderExamQuestion() {
+    if (!appState.examActive) return;
     clearInterval(appState.examTimer);
 
     if (appState.examIndex >= appState.examWords.length) {
@@ -1292,25 +1293,39 @@
   // =========================================================================
 
   function switchAppMode(mode) {
+    if (!['vocab', 'grammar', 'reading'].includes(mode)) mode = 'vocab';
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
     appState.appMode = mode;
     localStorage.setItem('jlpt_n3_app_mode', mode);
 
     const isGrammar = mode === 'grammar';
-    if (dom.modeBtnVocab) dom.modeBtnVocab.classList.toggle('active', !isGrammar);
+    const isReading = mode === 'reading';
+    document.getElementById('modeBtnReading').classList.toggle('active', isReading);
+    document.getElementById('readingAppSection').style.display = isReading ? 'block' : 'none';
+    if (dom.modeBtnVocab) dom.modeBtnVocab.classList.toggle('active', mode === 'vocab');
     if (dom.modeBtnGrammar) dom.modeBtnGrammar.classList.toggle('active', isGrammar);
 
-    if (dom.vocabNavTabsWrapper) dom.vocabNavTabsWrapper.style.display = isGrammar ? 'none' : 'block';
+    if (dom.vocabNavTabsWrapper) dom.vocabNavTabsWrapper.style.display = mode === 'vocab' ? 'block' : 'none';
     if (dom.grammarNavTabsWrapper) dom.grammarNavTabsWrapper.style.display = isGrammar ? 'block' : 'none';
 
-    if (dom.vocabAppSection) dom.vocabAppSection.style.display = isGrammar ? 'none' : 'block';
+    if (dom.vocabAppSection) dom.vocabAppSection.style.display = mode === 'vocab' ? 'block' : 'none';
     if (dom.grammarAppSection) dom.grammarAppSection.style.display = isGrammar ? 'block' : 'none';
 
     // Hide vocab category select on desktop in grammar mode
     if (dom.categorySelect) {
-      dom.categorySelect.style.display = isGrammar ? 'none' : 'inline-block';
+      dom.categorySelect.style.display = mode === 'vocab' ? 'inline-block' : 'none';
     }
 
-    if (isGrammar) {
+    if (isReading) {
+      clearInterval(appState.examTimer);
+      appState.examActive = false;
+      document.title = 'Luyện đọc JLPT N3';
+      dom.brandMainTitle.textContent = 'JLPT N3 READING';
+      dom.brandSubTitle.textContent = 'Đọc hiểu · Từ vựng · Ngữ pháp';
+      window.initReading({storage, speak: text => soundManager.speak(text),
+        stop: () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); },
+        update: () => { updateQuickStats(); updateGrammarStats(); }});
+    } else if (isGrammar) {
       document.title = 'Ôn Tập Ngữ Pháp JLPT N3 - VTI Mirai';
       if (dom.brandMainTitle) dom.brandMainTitle.textContent = 'JLPT N3 GRAMMAR';
       if (dom.brandSubTitle) dom.brandSubTitle.textContent = 'Tổng hợp 62 mẫu VTI Mirai';
@@ -1321,6 +1336,7 @@
       if (dom.brandSubTitle) dom.brandSubTitle.textContent = 'Mimikara N3 Master';
       updateQuickStats();
     }
+    requestAnimationFrame(updateHeaderHeightVar);
   }
 
   function initGrammarSection() {
@@ -1885,6 +1901,7 @@
 
   // --- Event Bindings ---
   function bindEvents() {
+    document.getElementById('modeBtnReading').addEventListener('click', () => switchAppMode('reading'));
     // Topic & Category changes
     dom.categorySelect.addEventListener('change', (e) => {
       const cat = appState.categories.find(c => c.id === e.target.value);
@@ -2312,6 +2329,7 @@
 
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
+      if (appState.appMode === 'reading') return;
       // Don't trigger shortcuts if user is typing in search or spelling input
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 

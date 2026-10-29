@@ -41,6 +41,7 @@
           <span class="mode-text">Ngữ Pháp</span>
           <span class="mode-badge">62</span>
         </button>
+        <button class="mode-btn" data-mode="reading" id="modeBtnReading"><span class="mode-icon">📖</span><span class="mode-text">Luyện đọc</span><span class="mode-badge">10</span></button>
       </div>
 
       <div class="header-actions">
@@ -680,6 +681,7 @@
       </div>
     </section>
   </div> <!-- /#grammarAppSection -->
+    <section id="readingAppSection" style="display: none;"></section>
   </main>
 
   <!-- Reset Stats Modal -->
@@ -718,7 +720,9 @@
   <!-- Scripts -->
   <script src="vocab_data.js"></script>
   <script src="grammar_data.js?v=4"></script>
-  <script src="app.js?v=5"></script>
+  <script src="reading_data.js"></script>
+  <script src="reading.js"></script>
+  <script src="app.js?v=6"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let reloading = false;
