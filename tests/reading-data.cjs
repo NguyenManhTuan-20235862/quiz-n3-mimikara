@@ -27,6 +27,10 @@ for(let stage=2;stage<=stageFiles.length;stage++) {
     }
   }
 }
+if(stageFiles.length===8) {
+  const covered=new Set(lessons.flatMap(l=>l.vocabulary?l.vocabulary.map(v=>v.id):l.words.map(k=>words.find(w=>w.kanji===k).id)));
+  assert.equal(covered.size,866,'Stage eight should leave exactly fourteen vocabulary targets');
+}
 const introduced = new Set(warmup.flatMap(l=>l.words.map(k=>words.find(w=>w.kanji===k).id)));
 for (const l of authored) {
   assert.equal(l.newWordIds.length,10);

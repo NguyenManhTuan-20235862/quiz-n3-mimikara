@@ -25,11 +25,11 @@ const server=require('node:http').createServer((req,res)=>{
  await page.goto('http://127.0.0.1:5503'); await page.waitForLoadState('networkidle');
  await page.locator('#modeBtnReading').click();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingProgress').innerText(),/1\/80/);
+ assert.match(await page.locator('#readingProgress').innerText(),/1\/90/);
  assert.equal(await page.locator('#readingStage').inputValue(),'1');
  assert.match(await page.locator('#readingCoverage').innerText(),/0\/880/);
  await page.locator('#readingStage').selectOption('all');
- assert.equal(await page.locator('[data-lesson]').count(),80);
+ assert.equal(await page.locator('[data-lesson]').count(),90);
  const data=await page.evaluate(()=>window.READING_DATA);
  for(const l of data){
    await page.locator(`[data-lesson="${l.id}"]`).click();
@@ -73,7 +73,7 @@ const server=require('node:http').createServer((req,res)=>{
      assert.ok(!(await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_mistakes'))))[l.newWordIds[0]]);
    }
  }
- assert.match(await page.locator('#readingCoverage').innerText(),/700\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/800\/880/);
  assert.match(await page.locator('#readingCoverage').innerText(),/62\/62/);
  await page.locator('#readingStage').selectOption('2');
  assert.equal(await page.locator('[data-lesson]').count(),10);
@@ -133,7 +133,7 @@ const server=require('node:http').createServer((req,res)=>{
  const records=await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_reading')).recall);
  assert.equal(Object.keys(records).filter(k=>k.startsWith('grammar:')).length,62,'Repeated practice must not double-count grammar');
  assert.equal(Object.entries(records).filter(([k,v])=>k.startsWith('grammar:')&&v.correct).length,62);
- assert.equal(Object.keys(records).filter(k=>k.startsWith('word:')).length,700);
+ assert.equal(Object.keys(records).filter(k=>k.startsWith('word:')).length,800);
  await page.locator('#readingStage').selectOption('7');
  assert.equal(await page.locator('[data-lesson]').count(),10);
  await page.locator('[data-lesson="s7-dog"]').click();
@@ -150,6 +150,17 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-lesson="s7-booklet"]').click();
  await page.getByRole('button',{name:'Tra từ まとめた',exact:true}).click();
  assert.match(await page.locator('#readingLookup').innerText(),/纏める/);
+ await page.locator('#readingStage').selectOption('8');
+ assert.equal(await page.locator('[data-lesson]').count(),10);
+ await page.locator('[data-lesson="s8-memoir"]').click();
+ await page.getByRole('button',{name:'Tra từ 亡くした',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/亡くす/);
+ await page.locator('[data-lesson="s8-commute"]').click();
+ await page.getByRole('button',{name:'Tra từ 混んで',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/込む/);
+ await page.locator('[data-lesson="s8-colors"]').click();
+ await page.getByRole('button',{name:'Tra từ 溶ける',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/解ける・溶ける/);
  await page.locator('[data-review-word]').click();
  assert.equal(await page.locator('[data-review-word]').isDisabled(),true);
  await page.locator('#readingFilter').selectOption('review');assert.ok(await page.locator('[data-lesson]').count()>0);
@@ -161,9 +172,9 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-grammar]').first().click();assert.match(await page.locator('[data-grammar]').first().innerText(),/Đã đánh dấu/);
  await page.reload();await page.waitForLoadState('networkidle');
  assert.equal(await page.locator('#readingAppSection').isVisible(),true);
- assert.equal(await page.locator('#readingStage').inputValue(),'7');
- assert.match(await page.locator('#readingProgress').innerText(),/80\/80/);
- assert.match(await page.locator('#readingCoverage').innerText(),/700\/880/);
+ assert.equal(await page.locator('#readingStage').inputValue(),'8');
+ assert.match(await page.locator('#readingProgress').innerText(),/90\/90/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/800\/880/);
  await page.locator('#modeBtnVocab').click();assert.equal(await page.locator('#vocabAppSection').isVisible(),true);
  await page.locator('#modeBtnGrammar').click();assert.equal(await page.locator('#grammarAppSection').isVisible(),true);
  await page.locator('#modeBtnReading').click();
@@ -174,15 +185,15 @@ const server=require('node:http').createServer((req,res)=>{
  await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'tests/reading-desktop.png',fullPage:true});
  const fresh=await browser.newContext(); const freshPage=await fresh.newPage();
  await freshPage.goto('http://127.0.0.1:5503'); await freshPage.locator('#modeBtnReading').click();
- assert.equal(await freshPage.locator('#readingStage').inputValue(),'7');
+ assert.equal(await freshPage.locator('#readingStage').inputValue(),'8');
  assert.equal(await freshPage.locator('[data-lesson]').count(),10);
- assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s7-'));
+ assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s8-'));
  await fresh.close();
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
  await context.setOffline(true);await page.reload();await page.locator('#readingArticle h2').waitFor();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingCoverage').innerText(),/700\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/800\/880/);
  assert.deepEqual(errors,[]);
- console.log('PASS: 80 articles / 230 reading questions; 700 word + 70 grammar checks (62 unique); repeat-safe grammar tracking; reinforcement labels; old-stage migration, latest resume, inflection + spelling lookup, filters, mobile, dark mode, offline.');
+ console.log('PASS: 90 articles / 260 reading questions; 800 word + 80 grammar checks (62 unique); repeat-safe grammar tracking; reinforcement labels; old-stage migration, latest resume, inflection + spelling lookup, filters, mobile, dark mode, offline.');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exit(1)});
