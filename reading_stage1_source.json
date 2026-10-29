@@ -1,0 +1,845 @@
+[
+  {
+    "id": "s1-office",
+    "title": "Tuần đầu ở văn phòng",
+    "jaTitle": "オフィスで覚えたこと",
+    "topic": "Công việc",
+    "format": "Nhật ký",
+    "focusGrammarId": 52,
+    "newWords": [
+      "上司",
+      "後輩",
+      "名刺",
+      "書類",
+      "報告",
+      "責任",
+      "オフィス",
+      "ルール",
+      "メッセージ",
+      "慣れる"
+    ],
+    "reviewWords": [
+      "先輩",
+      "就職",
+      "通勤",
+      "残業",
+      "知識"
+    ],
+    "text": "新しい会社に[[就職]]して一週間がたった。[[通勤]]には少し時間がかかるが、明るい[[オフィス]]は気に入っている。初日に[[上司]]から[[名刺]]をもらい、仕事の[[ルール]]を教わった。この会社では、大切な[[書類]]を外へ持ち出してはいけないことになっている。\n昨日、客から急ぎの[[メッセージ]]が届いた。私はまだ返事の仕方に[[慣れる|慣れて|なれて]]いなかったので、[[先輩]]に聞いた。先輩は答えを全部教えるかわりに、前に使った書類を一緒に探してくれた。私はそれを読んで返事を書き、最後に上司へ[[報告]]した。\n自分で返事をしたのだから、間違いがないか確かめる[[責任]]もある。今の私には、まだ足りない[[知識]]が多い。ときどき[[残業]]もするが、少しずつできることが増えてきた。来月は[[後輩]]が入るそうだ。その人が困ったとき、今度は私が助けられるようになりたい。",
+    "translation": "Đã một tuần kể từ khi tôi vào công ty mới. Đi làm hơi mất thời gian, nhưng tôi thích văn phòng sáng sủa. Ngày đầu, tôi nhận danh thiếp từ cấp trên và được hướng dẫn quy tắc làm việc. Công ty quy định không được mang tài liệu quan trọng ra ngoài.\nHôm qua, một khách hàng gửi lời nhắn khẩn. Vì chưa quen cách trả lời, tôi hỏi anh chị đi trước. Thay vì chỉ toàn bộ câu trả lời, anh chị cùng tôi tìm tài liệu từng dùng. Tôi đọc rồi viết hồi đáp, cuối cùng báo cáo với cấp trên.\nVì đã tự trả lời, tôi cũng có trách nhiệm kiểm tra sai sót. Tôi còn thiếu nhiều kiến thức. Thỉnh thoảng phải tăng ca, nhưng những việc làm được đang tăng dần. Nghe nói tháng sau có người vào sau. Khi họ gặp khó khăn, tôi muốn trở thành người có thể giúp đỡ.",
+    "grammar": [
+      {
+        "id": 52,
+        "quote": "持ち出してはいけないことになっている",
+        "note": "～ことになっている: quy định đã được đặt ra, không phải quyết định riêng của người nói."
+      },
+      {
+        "id": 18,
+        "quote": "答えを全部教えるかわりに",
+        "note": "Ôn ～かわりに: thay vì cho sẵn đáp án, người hướng dẫn giúp tìm tài liệu."
+      },
+      {
+        "id": 24,
+        "quote": "自分で返事をしたのだから",
+        "note": "～のだから: dựa vào một sự thật để nêu điều đương nhiên cần làm."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "会社の決まりを表す文：大切な書類は、外へ持ち出してはいけない（　）。",
+      "options": [
+        "ことになっている",
+        "ついでに",
+        "たばかりだ"
+      ],
+      "answer": 0,
+      "explanation": "Quy định của công ty được diễn đạt bằng ～ことになっている."
+    },
+    "questions": [
+      {
+        "q": "先輩はどのように筆者を助けましたか。",
+        "options": [
+          "返事を全部代わりに書いた",
+          "前に使った書類を一緒に探した",
+          "客への返事を断った"
+        ],
+        "answer": 1,
+        "explanation": "Anh chị cùng tìm tài liệu cũ để tác giả tự viết hồi đáp."
+      },
+      {
+        "q": "この会社では、何が禁止されていますか。",
+        "options": [
+          "後輩に教えること",
+          "客に返事をすること",
+          "大切な書類を外に持ち出すこと"
+        ],
+        "answer": 2,
+        "explanation": "Đoạn đầu nêu quy định không mang tài liệu quan trọng ra ngoài."
+      },
+      {
+        "q": "筆者は来月、どんな人になりたいですか。",
+        "options": [
+          "困っている後輩を助けられる人",
+          "残業を全部先輩に任せる人",
+          "知識を人に教えない人"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả mong giúp được người vào sau khi họ gặp khó khăn."
+      }
+    ]
+  },
+  {
+    "id": "s1-home",
+    "title": "Tìm một căn hộ phù hợp",
+    "jaTitle": "部屋を選ぶ条件",
+    "topic": "Nhà ở",
+    "format": "Hội thoại trong câu chuyện",
+    "focusGrammarId": 25,
+    "newWords": [
+      "契約",
+      "条件",
+      "申請",
+      "期間",
+      "家庭",
+      "ベランダ",
+      "ペット",
+      "禁止",
+      "預ける",
+      "断る"
+    ],
+    "reviewWords": [
+      "生活",
+      "近所",
+      "確認",
+      "友人",
+      "方法"
+    ],
+    "text": "来月から家族と新しい町で[[生活]]するので、部屋を探している。私たちの[[家庭]]には小さな子どもと犬がいる。[[友人]]は、犬と住むのなら、家賃だけでなく建物の[[条件]]をよく調べたほうがいいと教えてくれた。\n最初に見た部屋は広く、[[ベランダ]]からの景色もよかった。ところが、[[ペット]]を飼うことは[[禁止]]されていた。係の人に犬を連れて住めないか聞いたが、ほかの住民との約束なので、特別には認められないと[[断る|断られた|ことわられた]]。犬をずっと親に[[預ける]]のは難しいため、別の部屋を探すことにした。\n次の建物は犬と暮らせた。ただし、引っ越す前に[[申請]]が必要で、[[契約]]の[[期間]]は二年間だった。私たちは書類を読んで、修理が必要になった場合の連絡[[方法]]も[[確認]]した。[[近所]]を歩くと、公園や店も見つかった。部屋だけを見て決めず、そこで家族がどう暮らすか考えることが大切だと思った。",
+    "translation": "Tháng sau tôi sẽ sống cùng gia đình ở một thành phố mới nên đang tìm nhà. Gia đình tôi có con nhỏ và một chú chó. Một người bạn khuyên rằng nếu ở cùng chó, ngoài tiền thuê còn nên xem kỹ điều kiện của tòa nhà.\nCăn đầu tiên rộng, cảnh từ ban công cũng đẹp. Nhưng ở đó cấm nuôi thú cưng. Tôi hỏi người phụ trách liệu có thể mang chó đến ở không; họ từ chối vì đó là quy ước với các cư dân khác nên không thể chấp nhận ngoại lệ. Vì khó gửi chó ở nhà bố mẹ mãi, tôi quyết định tìm căn khác.\nTòa nhà tiếp theo cho phép ở cùng chó, nhưng cần đăng ký trước khi chuyển vào và hợp đồng kéo dài hai năm. Chúng tôi đọc giấy tờ, xác nhận cách liên hệ khi cần sửa chữa. Đi dạo quanh khu phố, chúng tôi tìm thấy cả công viên lẫn cửa hàng. Tôi nghĩ điều quan trọng là không chỉ nhìn căn phòng rồi quyết định mà còn nghĩ gia đình sẽ sống ở đó thế nào.",
+    "grammar": [
+      {
+        "id": 25,
+        "quote": "犬と住むのなら",
+        "note": "V thông thường＋のなら: đưa lời khuyên dựa trên hoàn cảnh hoặc ý định vừa nêu."
+      },
+      {
+        "id": 49,
+        "quote": "別の部屋を探すことにした",
+        "note": "Ôn ～ことにする: người nói tự quyết định tìm căn khác."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "友人の予定を聞いて助言します。「犬と住む（　）、ペットが飼えるか調べたほうがいいよ。」",
+      "options": [
+        "たびに",
+        "のなら",
+        "ところだった"
+      ],
+      "answer": 1,
+      "explanation": "～のなら dùng để đưa lời khuyên dựa vào ý định ở cùng chó."
+    },
+    "questions": [
+      {
+        "q": "最初の部屋を選ばなかった理由は何ですか。",
+        "options": [
+          "犬と住めなかったから",
+          "公園がなかったから",
+          "契約が二年間だったから"
+        ],
+        "answer": 0,
+        "explanation": "Căn đầu tiên cấm thú cưng, nên gia đình không chọn."
+      },
+      {
+        "q": "次の建物で、引っ越す前に必要なことは何ですか。",
+        "options": [
+          "犬を親に預けること",
+          "自分で部屋を修理すること",
+          "申請をすること"
+        ],
+        "answer": 2,
+        "explanation": "Căn thứ hai yêu cầu đăng ký trước khi chuyển đến."
+      },
+      {
+        "q": "筆者が部屋選びで大切だと思ったことは何ですか。",
+        "options": [
+          "景色だけで決めること",
+          "家族の暮らし全体を考えること",
+          "友人に全部決めてもらうこと"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả chú trọng cuộc sống cả gia đình, không chỉ căn phòng."
+      }
+    ]
+  },
+  {
+    "id": "s1-kitchen",
+    "title": "Chuẩn bị bữa trưa cho ngày mai",
+    "jaTitle": "料理教室の帰り道",
+    "topic": "Nấu ăn",
+    "format": "Nhật ký",
+    "focusGrammarId": 9,
+    "newWords": [
+      "栄養",
+      "洗剤",
+      "新鮮な",
+      "清潔な",
+      "濃い",
+      "薄い",
+      "炒める",
+      "ゆでる",
+      "冷ます",
+      "包む"
+    ],
+    "reviewWords": [
+      "生活",
+      "趣味",
+      "方法",
+      "試す",
+      "失敗"
+    ],
+    "text": "忙しい[[生活]]の中でも、[[栄養]]のある昼ご飯を食べたい。そこで、[[趣味]]も兼ねて、土曜日の料理教室に通い始めた。先生は、料理の前に台所を[[清潔な|清潔に|せいけつに]]して、野菜の土を水で落とす[[方法]]から教えてくれた。\nその日は、野菜を[[ゆでる|ゆでて|ゆでて]]から、肉と一緒に[[炒める]]料理を作った。私の料理は少し味が[[濃い|濃く|こく]]なったが、友達の料理は反対に[[薄い|薄かった|うすかった]]。先生は、調味料を少しずつ加えれば、[[失敗]]しにくいと言った。私は先生が言ったとおりに、その方法をもう一度[[試す|試した|ためした]]。\n教室の帰りに買い物をするついでに、[[新鮮な]]野菜と、食器を洗う[[洗剤]]を買った。家では、料理を十分に[[冷ます|冷まして|さまして]]から弁当箱に入れ、布で[[包む|包んだ|つつんだ]]。味付けだけでなく、保存の仕方も大切だと分かった。明日の昼休みに自分の弁当を開けるのが楽しみだ。",
+    "translation": "Dù cuộc sống bận rộn, tôi vẫn muốn ăn bữa trưa đủ dinh dưỡng. Vì vậy tôi bắt đầu đến lớp nấu ăn thứ Bảy, cũng để có một sở thích. Trước tiên, giáo viên hướng dẫn cách giữ bếp sạch và dùng nước rửa đất trên rau trước khi nấu.\nHôm đó chúng tôi làm món luộc rau rồi xào cùng thịt. Món của tôi hơi đậm, ngược lại món của bạn lại nhạt. Giáo viên nói thêm gia vị từng chút thì khó thất bại hơn. Tôi thử lại cách đó.\nTrên đường từ lớp về, nhân tiện mua sắm, tôi mua rau tươi và nước rửa chén. Ở nhà, tôi để thức ăn nguội hẳn rồi cho vào hộp và gói bằng vải. Tôi hiểu rằng không chỉ nêm nếm mà cách bảo quản cũng quan trọng. Tôi mong chờ mở hộp cơm mình làm vào giờ nghỉ trưa ngày mai.",
+    "grammar": [
+      {
+        "id": 9,
+        "quote": "買い物をするついでに",
+        "note": "Vる＋ついでに: nhân dịp làm việc chính là mua sắm để mua thêm những thứ cần thiết."
+      },
+      {
+        "id": 5,
+        "quote": "先生が言ったとおりに",
+        "note": "Ôn Vた＋とおりに: làm đúng theo điều giáo viên đã nói."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "主な用事に合わせて別のこともします。「買い物をする（　）、洗剤も買った。」",
+      "options": [
+        "ついでに",
+        "はずがない",
+        "ことになっている"
+      ],
+      "answer": 0,
+      "explanation": "～ついでに diễn tả nhân tiện làm một việc chính thì làm thêm việc khác."
+    },
+    "questions": [
+      {
+        "q": "筆者の料理は、最初どうなりましたか。",
+        "options": [
+          "十分に冷えていた",
+          "少し味が濃くなった",
+          "野菜がなかった"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả nói món của mình nêm hơi đậm."
+      },
+      {
+        "q": "先生は失敗しにくくするために何を勧めましたか。",
+        "options": [
+          "洗剤を加えること",
+          "野菜を全部生で食べること",
+          "調味料を少しずつ加えること"
+        ],
+        "answer": 2,
+        "explanation": "Giáo viên khuyên cho gia vị từng chút một."
+      },
+      {
+        "q": "弁当箱に入れる前に、何をしましたか。",
+        "options": [
+          "料理を十分に冷ました",
+          "料理をもう一度買った",
+          "布で野菜を洗った"
+        ],
+        "answer": 0,
+        "explanation": "Thức ăn được để nguội hẳn trước khi cho vào hộp."
+      }
+    ]
+  },
+  {
+    "id": "s1-rain",
+    "title": "Căn phòng trong mùa mưa",
+    "jaTitle": "梅雨の部屋を快適に",
+    "topic": "Thời tiết",
+    "format": "Bài chia sẻ kinh nghiệm",
+    "focusGrammarId": 1,
+    "newWords": [
+      "温度",
+      "湿度",
+      "湿気",
+      "梅雨",
+      "黴",
+      "暖房",
+      "蒸し暑い",
+      "乾く",
+      "乾かす",
+      "濡れる"
+    ],
+    "reviewWords": [
+      "生活",
+      "環境",
+      "変化",
+      "方法",
+      "続ける"
+    ],
+    "text": "日本で初めて[[梅雨]]を迎えたとき、雨の多さに驚いた。[[蒸し暑い]]日が続き、部屋の[[温度]]がそれほど高くなくても、体がべたべたした。外に干した服はなかなか[[乾く|乾かず|かわかず]]、雨で[[濡れる|濡れた|ぬれた]]靴も次の日まで湿っていた。\n最初は冬と同じように[[暖房]]をつければいいと思った。しかし、店の人に聞くと、[[湿度]]を下げて風を通すことが大切だと言われた。何もしないうちに、押し入れの中に[[黴]]が出ることもあるそうだ。私は部屋にたまった[[湿気]]を減らす[[方法]]を調べた。\nそれからは、雨がやんでいる間に窓を開け、洗った服は風の通る場所で[[乾かす]]ようにした。靴も中まで乾いてからしまうことにした。こうしたことを[[続ける|続けて|つづけて]]いるうちに、部屋の空気に[[変化]]を感じた。新しい場所での[[生活]]では、そこの[[環境]]に合わせて習慣を変えることも必要なのだと思った。",
+    "translation": "Khi lần đầu trải qua mùa mưa ở Nhật, tôi ngạc nhiên vì trời mưa nhiều. Những ngày oi bức kéo dài; dù nhiệt độ phòng không quá cao, người vẫn nhớp nháp. Quần áo phơi ngoài trời mãi không khô, giày ướt mưa cũng còn ẩm đến hôm sau.\nLúc đầu tôi nghĩ chỉ cần bật sưởi như mùa đông. Nhưng khi hỏi nhân viên cửa hàng, tôi được biết điều quan trọng là giảm độ ẩm và thông gió. Nghe nói để mặc một thời gian thì trong tủ cũng có thể xuất hiện nấm mốc. Tôi tìm cách giảm hơi ẩm tích trong phòng.\nTừ đó, lúc trời ngớt mưa tôi mở cửa sổ, hong quần áo đã giặt ở nơi thoáng gió. Tôi cũng quyết định chỉ cất giày sau khi bên trong đã khô. Trong quá trình duy trì những việc này, tôi cảm nhận không khí phòng thay đổi. Tôi nghĩ khi sống ở nơi mới, cần thay thói quen cho phù hợp với môi trường ở đó.",
+    "grammar": [
+      {
+        "id": 1,
+        "quote": "続けているうちに",
+        "note": "Vている＋うちに: khi một hành động được duy trì, sự thay đổi dần xuất hiện."
+      },
+      {
+        "id": 49,
+        "quote": "乾いてからしまうことにした",
+        "note": "Ôn ～ことにする: người nói quyết định một cách làm mới."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "継続中に起こった変化を表します。「換気を続けている（　）、空気の変化を感じた。」",
+      "options": [
+        "かわりに",
+        "うちに",
+        "ついでに"
+      ],
+      "answer": 1,
+      "explanation": "～うちに diễn đạt sự thay đổi diễn ra trong lúc duy trì một hành động."
+    },
+    "questions": [
+      {
+        "q": "筆者が最初に考えた方法は何ですか。",
+        "options": [
+          "湿度を測ること",
+          "靴を押し入れに入れること",
+          "暖房をつけること"
+        ],
+        "answer": 2,
+        "explanation": "Ban đầu tác giả nghĩ bật sưởi như mùa đông là đủ."
+      },
+      {
+        "q": "店の人は何が大切だと言いましたか。",
+        "options": [
+          "湿度を下げて風を通すこと",
+          "毎日新しい服を買うこと",
+          "窓をずっと閉めること"
+        ],
+        "answer": 0,
+        "explanation": "Nhân viên nhấn mạnh giảm độ ẩm và thông gió."
+      },
+      {
+        "q": "この経験から、筆者は何を学びましたか。",
+        "options": [
+          "冬と梅雨の対策は全部同じだ",
+          "環境に合わせた習慣が必要だ",
+          "雨の日には生活できない"
+        ],
+        "answer": 1,
+        "explanation": "Câu kết nói cần thay đổi thói quen theo môi trường nơi sống."
+      }
+    ]
+  },
+  {
+    "id": "s1-checkup",
+    "title": "Sau buổi kiểm tra sức khỏe",
+    "jaTitle": "検査を受けて考えたこと",
+    "topic": "Sức khỏe",
+    "format": "Nhật ký",
+    "focusGrammarId": 19,
+    "newWords": [
+      "身長",
+      "体重",
+      "検査",
+      "血液",
+      "症状",
+      "治療",
+      "予防",
+      "怪我",
+      "体力",
+      "ストレス"
+    ],
+    "reviewWords": [
+      "調子",
+      "距離",
+      "通う",
+      "続ける",
+      "友人"
+    ],
+    "text": "会社の健康[[検査]]で、[[身長]]と[[体重]]を測り、[[血液]]も調べてもらった。最近は体の[[調子]]がよくなく、階段を上るだけで疲れることがあった。何か重い病気ではないかと不安だったが、今のところ、すぐに[[治療]]が必要な問題は見つからなかった。\n医師は、気になる[[症状]]が続くなら、また来るようにと言った。また、仕事の[[ストレス]]がたまっているために、よく眠れない場合もあると説明してくれた。私は最近の生活を振り返り、寝る時間が毎日違っていたことに気づいた。\n病気の[[予防]]のためにも、無理なく体を動かすことから始めたい。[[友人]]は、久しぶりに走ると[[怪我]]をすることもあるので、最初は短い[[距離]]を歩いたらどうかと勧めてくれた。私は会社に[[通う]]とき、一つ前の駅で降りて歩くことにした。急に[[体力]]がつくとは思わないが、これなら忙しい日も[[続ける|続けられそう|つづけられそう]]だ。",
+    "translation": "Trong buổi kiểm tra sức khỏe của công ty, tôi được đo chiều cao, cân nặng và xét nghiệm máu. Gần đây người tôi không khỏe, có lúc chỉ leo cầu thang cũng mệt. Tôi lo mình mắc bệnh nặng, nhưng trước mắt chưa phát hiện vấn đề cần điều trị ngay.\nBác sĩ dặn nếu những triệu chứng đáng lo tiếp diễn thì hãy quay lại. Bác sĩ còn giải thích đôi khi căng thẳng công việc tích tụ là nguyên nhân khiến khó ngủ. Nhìn lại sinh hoạt gần đây, tôi nhận ra giờ đi ngủ mỗi ngày khác nhau.\nĐể phòng bệnh, tôi muốn bắt đầu bằng vận động vừa sức. Một người bạn khuyên thử đi bộ quãng ngắn trước, vì lâu không chạy mà chạy lại có thể bị thương. Tôi quyết định khi đi làm sẽ xuống sớm một ga rồi đi bộ. Tôi không nghĩ thể lực sẽ tăng ngay, nhưng cách này có vẻ duy trì được cả ngày bận.",
+    "grammar": [
+      {
+        "id": 19,
+        "quote": "ストレスがたまっているために",
+        "note": "～ために: nêu nguyên nhân dẫn đến trạng thái khó ngủ. Khác với “予防のために” trong đoạn sau là mục đích."
+      },
+      {
+        "id": 46,
+        "quote": "歩いたらどうか",
+        "note": "Ôn Vた＋らどうか: đưa ra lời khuyên nhẹ nhàng."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "原因を表す文を完成させます。「ストレスがたまっている（　）、よく眠れない場合もある。」",
+      "options": [
+        "ために",
+        "ついでに",
+        "とおりに"
+      ],
+      "answer": 0,
+      "explanation": "～ために trong câu này chỉ nguyên nhân gây khó ngủ, không phải mục đích."
+    },
+    "questions": [
+      {
+        "q": "検査の結果、どうでしたか。",
+        "options": [
+          "すぐに手術が必要だった",
+          "すぐ治療が必要な問題は見つからなかった",
+          "血液を調べられなかった"
+        ],
+        "answer": 1,
+        "explanation": "Chưa phát hiện vấn đề cần điều trị ngay; bài không khẳng định hoàn toàn không có bệnh."
+      },
+      {
+        "q": "友人はなぜ短い距離から始めるよう勧めましたか。",
+        "options": [
+          "電車が止まっていたから",
+          "医師が走ることを禁止したから",
+          "久しぶりに走ると怪我をすることもあるから"
+        ],
+        "answer": 2,
+        "explanation": "Người bạn lo tác giả có thể bị thương nếu chạy ngay sau thời gian dài không chạy."
+      },
+      {
+        "q": "筆者はどんな方法を選びましたか。",
+        "options": [
+          "一つ前の駅で降りて歩く",
+          "毎日長い距離を走る",
+          "会社に行くのをやめる"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả chọn xuống sớm một ga và đi bộ khi đi làm."
+      }
+    ]
+  },
+  {
+    "id": "s1-study",
+    "title": "Chuẩn bị cho cơ hội mới",
+    "jaTitle": "図書館で見つけた勉強法",
+    "topic": "Học tập",
+    "format": "Bài chia sẻ kinh nghiệm",
+    "focusGrammarId": 3,
+    "newWords": [
+      "合格",
+      "資格",
+      "専門",
+      "研究",
+      "調査",
+      "翻訳",
+      "通訳",
+      "締め切り",
+      "データ",
+      "整理"
+    ],
+    "reviewWords": [
+      "知識",
+      "努力",
+      "方法",
+      "内容",
+      "最後"
+    ],
+    "text": "将来、日本語を使う仕事がしたい。大学では社会について[[研究]]しているが、言葉の勉強も大切にしている。友人は会話が得意なので[[通訳]]を目指し、私は文章を読むのが好きなので[[翻訳]]に興味を持っている。まずは試験に[[合格]]して、自分の力を確かめたいと思った。\n図書館で、[[専門]]の本を探す[[方法]]についての講座に参加した。講師は、インターネットで集めた[[データ]]は、出典を確認してからでないと[[調査]]に使えないと言った。多くの[[知識]]を覚えるだけでなく、正しい情報を選ぶ力も必要なのだ。\n講座の後、私はノートを[[整理]]し、分からない[[内容]]をもう一度調べた。[[資格]]の試験に申し込む[[締め切り]]も手帳に書いた。試験に受かっただけで、すぐに仕事ができるわけではない。それでも、毎日少しずつ[[努力]]を重ねることは無駄ではないと思う。[[最後]]まで続けて、来年の自分が何をできるようになったか確かめたい。",
+    "translation": "Tương lai tôi muốn làm công việc dùng tiếng Nhật. Ở đại học tôi đang nghiên cứu xã hội, nhưng cũng coi trọng việc học ngôn ngữ. Bạn tôi giỏi hội thoại nên hướng đến phiên dịch; tôi thích đọc nên quan tâm đến biên dịch. Trước mắt tôi muốn thi đỗ để kiểm chứng năng lực.\nTôi tham gia buổi hướng dẫn tìm sách chuyên ngành tại thư viện. Giảng viên nói dữ liệu thu thập trên mạng chưa xác nhận nguồn thì chưa được dùng cho khảo sát. Không chỉ ghi nhớ nhiều kiến thức, khả năng chọn thông tin đúng cũng cần thiết.\nSau buổi học, tôi sắp xếp ghi chép và tra lại nội dung chưa hiểu. Tôi cũng ghi hạn đăng ký kỳ thi chứng chỉ vào sổ. Không phải chỉ đỗ là làm việc được ngay. Tuy vậy, tôi nghĩ nỗ lực tích lũy mỗi ngày không vô ích. Tôi muốn theo đến cùng, rồi xem năm sau mình làm thêm được điều gì.",
+    "grammar": [
+      {
+        "id": 3,
+        "quote": "出典を確認してからでないと調査に使えない",
+        "note": "Vて＋からでないと～ない: phải hoàn thành điều kiện xác minh nguồn trước khi sử dụng dữ liệu."
+      },
+      {
+        "id": 37,
+        "quote": "すぐに仕事ができるわけではない",
+        "note": "Ôn ～わけではない: phủ định suy luận rằng cứ thi đỗ là làm được ngay."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "先に必要な条件を示します。「出典を確認して（　）、調査に使えない。」",
+      "options": [
+        "ついでに",
+        "からでないと",
+        "いるうちに"
+      ],
+      "answer": 1,
+      "explanation": "～てからでないと～ない: nếu chưa kiểm tra nguồn thì chưa dùng được."
+    },
+    "questions": [
+      {
+        "q": "筆者が翻訳に興味を持っている理由は何ですか。",
+        "options": [
+          "会話が得意だから",
+          "資格をもう取ったから",
+          "文章を読むのが好きだから"
+        ],
+        "answer": 2,
+        "explanation": "Tác giả thích đọc văn bản nên quan tâm đến biên dịch."
+      },
+      {
+        "q": "データを調査に使う前に何をする必要がありますか。",
+        "options": [
+          "出典を確認する",
+          "必ず翻訳する",
+          "全部手帳に写す"
+        ],
+        "answer": 0,
+        "explanation": "Giảng viên nhấn mạnh phải xác minh nguồn dữ liệu trước khi sử dụng."
+      },
+      {
+        "q": "筆者は試験についてどう考えていますか。",
+        "options": [
+          "合格すれば努力はもう必要ない",
+          "合格は一歩であり、その後も学ぶ必要がある",
+          "資格がなければ本を読めない"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả cho rằng đỗ kỳ thi chưa đồng nghĩa làm được việc ngay và cần tiếp tục tích lũy."
+      }
+    ]
+  },
+  {
+    "id": "s1-shop",
+    "title": "Chọn món đồ dùng được lâu",
+    "jaTitle": "値段だけでは選べない",
+    "topic": "Mua sắm",
+    "format": "Câu chuyện",
+    "focusGrammarId": 36,
+    "newWords": [
+      "商品",
+      "質",
+      "広告",
+      "宣伝",
+      "ブランド",
+      "デザイン",
+      "レシート",
+      "レジ",
+      "比べる",
+      "迷う"
+    ],
+    "reviewWords": [
+      "注文",
+      "製品",
+      "交換",
+      "確認",
+      "結果"
+    ],
+    "text": "新しいかばんを買おうと思い、駅前の店へ行った。入り口には、有名な[[ブランド]]の[[広告]]があり、店員が新しい[[商品]]を[[宣伝]]していた。写真で見ると、とても使いやすそうだった。しかし、有名だからといって、必ず[[質]]がよいとは限らない。\n私は二つの[[製品]]を手に取って[[比べる|比べた|くらべた]]。一つは[[デザイン]]が好きだったが、荷物を入れると肩が痛くなった。もう一つは見た目が普通でも、軽くて持ちやすかった。どちらにするか[[迷う|迷った|まよった]]ので、毎日何を持ち歩くか考えた。\nその[[結果]]、軽いほうを選んだ。色違いは店になかったため、取り寄せを[[注文]]した。支払いの前に、使う前なら別の商品と[[交換]]できるか[[確認]]した。店員は、[[レジ]]でもらう[[レシート]]が必要だと説明した。私はそれを財布に入れた。広告の印象だけで決めず、自分の暮らしに合う物を選べたことがうれしかった。",
+    "translation": "Tôi định mua túi mới nên đến cửa hàng trước ga. Lối vào có quảng cáo thương hiệu nổi tiếng và nhân viên đang giới thiệu sản phẩm mới. Trong ảnh, túi trông rất dễ dùng. Nhưng không phải cứ nổi tiếng là chất lượng chắc chắn tốt.\nTôi cầm hai sản phẩm lên so sánh. Tôi thích thiết kế chiếc thứ nhất, nhưng khi cho đồ vào thì vai bị đau. Chiếc thứ hai trông bình thường nhưng nhẹ và dễ mang. Vì phân vân, tôi nghĩ xem mỗi ngày mình mang những gì.\nCuối cùng tôi chọn chiếc nhẹ. Cửa hàng không có màu tôi muốn nên tôi đặt chuyển về. Trước khi trả tiền, tôi hỏi có được đổi sang món khác khi chưa sử dụng không. Nhân viên giải thích cần hóa đơn nhận tại quầy thu ngân. Tôi cất hóa đơn vào ví. Tôi vui vì đã chọn được món hợp cuộc sống mình, thay vì chỉ dựa vào ấn tượng quảng cáo.",
+    "grammar": [
+      {
+        "id": 36,
+        "quote": "必ず質がよいとは限らない",
+        "note": "～とは限らない: không thể khẳng định chất lượng luôn tốt chỉ vì thương hiệu nổi tiếng."
+      },
+      {
+        "id": 25,
+        "quote": "使う前なら",
+        "note": "Ôn ～なら: đặt điều kiện là sản phẩm chưa được sử dụng."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "例外があることを示します。「有名なブランドなら、必ず質がよい（　）。」",
+      "options": [
+        "ことにする",
+        "とは限らない",
+        "ついでだ"
+      ],
+      "answer": 1,
+      "explanation": "～とは限らない phủ định việc khẳng định một nhận xét luôn đúng."
+    },
+    "questions": [
+      {
+        "q": "一つ目のかばんの問題は何でしたか。",
+        "options": [
+          "荷物を入れると肩が痛くなった",
+          "色が選べなかった",
+          "広告がなかった"
+        ],
+        "answer": 0,
+        "explanation": "Chiếc đầu đẹp nhưng khiến vai đau khi bỏ đồ vào."
+      },
+      {
+        "q": "交換するとき、何が必要だと言われましたか。",
+        "options": [
+          "広告の写真",
+          "ブランドの名刺",
+          "レシート"
+        ],
+        "answer": 2,
+        "explanation": "Nhân viên yêu cầu giữ hóa đơn để đổi hàng."
+      },
+      {
+        "q": "筆者は何を基準に選びましたか。",
+        "options": [
+          "ブランドの有名さだけ",
+          "毎日の使いやすさ",
+          "店員が一番宣伝した物"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả cân nhắc đồ mang hằng ngày và chọn chiếc nhẹ, dễ sử dụng."
+      }
+    ]
+  },
+  {
+    "id": "s1-transport",
+    "title": "Buổi sáng xe gặp trục trặc",
+    "jaTitle": "遅れるより大切なこと",
+    "topic": "Giao thông",
+    "format": "Câu chuyện",
+    "focusGrammarId": 24,
+    "newWords": [
+      "道路",
+      "坂",
+      "事故",
+      "故障",
+      "修理",
+      "混雑",
+      "ラッシュ",
+      "バイク",
+      "ヘルメット",
+      "ブレーキ"
+    ],
+    "reviewWords": [
+      "利用",
+      "遅刻",
+      "通勤",
+      "周り",
+      "変更"
+    ],
+    "text": "私は毎朝、[[バイク]]で[[通勤]]している。家から会社までは[[坂]]が多く、朝の[[ラッシュ]]には[[道路]]も[[混雑]]する。いつも[[ヘルメット]]をかぶり、出発する前に[[周り]]をよく見るようにしている。\nある朝、走り始めると、[[ブレーキ]]から変な音がした。会社に[[遅刻]]しそうだったので、そのまま行こうかと思った。しかし、[[事故]]になっては大変だ。私は道の安全な場所に止まり、[[修理]]の店に電話した。店の人は、音がいつもと違うのだから、無理に乗らないほうがいいと言った。\n結局、その日は電車を[[利用]]することにした。会社には先に連絡し、朝の打ち合わせの時間を[[変更]]してもらった。店で調べてもらうと、小さな[[故障]]が見つかった。早く気づいたおかげで、大きな問題になる前に直せたそうだ。遅れないことも大切だが、まず無事に着くことを考えるべきだと感じた。",
+    "translation": "Mỗi sáng tôi đi làm bằng xe máy. Từ nhà đến công ty có nhiều dốc, giờ cao điểm buổi sáng đường cũng đông. Tôi luôn đội mũ bảo hiểm và cố quan sát xung quanh trước khi đi.\nMột sáng, vừa bắt đầu chạy thì phanh phát tiếng lạ. Vì sắp muộn, tôi đã nghĩ hay cứ đi tiếp. Nhưng nếu xảy ra tai nạn thì nghiêm trọng. Tôi dừng ở nơi an toàn rồi gọi tiệm sửa xe. Nhân viên nói vì âm thanh khác thường nên tốt hơn là đừng cố chạy.\nCuối cùng hôm đó tôi quyết định đi tàu. Tôi liên hệ công ty trước, nhờ đổi giờ họp sáng. Khi kiểm tra, cửa hàng phát hiện một trục trặc nhỏ. Họ nói nhờ phát hiện sớm mà sửa được trước khi thành vấn đề lớn. Đúng giờ quan trọng, nhưng tôi cảm thấy trước hết nên nghĩ đến việc đến nơi an toàn.",
+    "grammar": [
+      {
+        "id": 24,
+        "quote": "音がいつもと違うのだから",
+        "note": "～のだから: lấy sự thật âm thanh khác thường làm căn cứ đưa lời khuyên."
+      },
+      {
+        "id": 22,
+        "quote": "早く気づいたおかげで",
+        "note": "Ôn ～おかげで: nhờ phát hiện sớm mà tránh được vấn đề lớn."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "分かっている事実を根拠に助言します。「音がいつもと違う（　）、無理に乗らないほうがいい。」",
+      "options": [
+        "ついでに",
+        "ところに",
+        "のだから"
+      ],
+      "answer": 2,
+      "explanation": "～のだから đưa ra lời khuyên dựa trên sự thật đã thấy rõ."
+    },
+    "questions": [
+      {
+        "q": "筆者がバイクを止めた理由は何ですか。",
+        "options": [
+          "ヘルメットを忘れたから",
+          "ブレーキから変な音がしたから",
+          "道路が全部通れなかったから"
+        ],
+        "answer": 1,
+        "explanation": "Phanh phát âm thanh bất thường khiến tác giả dừng lại."
+      },
+      {
+        "q": "その日、会社へはどうやって行きましたか。",
+        "options": [
+          "修理前のバイクで",
+          "歩いて",
+          "電車で"
+        ],
+        "answer": 2,
+        "explanation": "Tác giả chọn đi tàu và báo công ty trước."
+      },
+      {
+        "q": "筆者が最も伝えたいことは何ですか。",
+        "options": [
+          "時間よりも安全を優先するべきだ",
+          "故障しても遅刻してはいけない",
+          "修理はいつも必要ない"
+        ],
+        "answer": 0,
+        "explanation": "Kết luận của bài là nên ưu tiên đến nơi an toàn trước việc đúng giờ."
+      }
+    ]
+  },
+  {
+    "id": "s1-festival",
+    "title": "Cùng tổ chức ngày hội văn hóa",
+    "jaTitle": "一緒に作った国際交流会",
+    "topic": "Cộng đồng",
+    "format": "Bản tin trải nghiệm",
+    "focusGrammarId": 6,
+    "newWords": [
+      "団体",
+      "代表",
+      "国際",
+      "国籍",
+      "演奏",
+      "芸術",
+      "マイク",
+      "拍手",
+      "感動",
+      "ボランティア"
+    ],
+    "reviewWords": [
+      "参加",
+      "協力",
+      "文化",
+      "機会",
+      "準備"
+    ],
+    "text": "町の[[団体]]が開く[[国際]]交流会に、[[ボランティア]]として[[参加]]した。私は受付の仕事を希望していたが、当日は舞台の[[準備]]も手伝うことになった。係の[[代表]]は、[[国籍]]に関係なく、できることを出し合ってほしいと言った。\n会場には、さまざまな国の[[芸術]]を紹介する作品が並んでいた。音楽の時間には、留学生が自分の国の楽器を[[演奏]]した。直前に[[マイク]]の調子が悪くなったが、スタッフが[[協力]]して別の物を用意したので、時間どおりに始められた。\n同じ音楽でも、人によって感じ方は違う。私は歌詞を理解できなかったが、静かな音を聞いて、遠くの故郷を思い出した。演奏が終わると、大きな[[拍手]]が起きた。隣の人も目に涙を浮かべ、[[感動]]したと話していた。外国の[[文化]]を知るよい[[機会]]になっただけでなく、言葉が全部分からなくても気持ちを共有できると感じた。",
+    "translation": "Tôi tham gia làm tình nguyện viên cho buổi giao lưu quốc tế do một tổ chức trong khu phố tổ chức. Tôi muốn phụ trách lễ tân, nhưng hôm đó còn được phân công giúp chuẩn bị sân khấu. Người đại diện nói muốn mọi người góp việc mình làm được, bất kể quốc tịch.\nTrong hội trường có các tác phẩm giới thiệu nghệ thuật nhiều nước. Đến phần âm nhạc, một du học sinh chơi nhạc cụ quê mình. Ngay trước đó micro bị trục trặc, nhưng nhờ nhân viên hợp tác chuẩn bị chiếc khác, phần diễn bắt đầu đúng giờ.\nCùng một bản nhạc nhưng mỗi người cảm nhận khác nhau. Tôi không hiểu lời, nhưng nghe âm thanh yên tĩnh lại nhớ quê xa. Khi diễn xong, tiếng vỗ tay vang lên. Người cạnh tôi cũng rưng rưng và nói mình rất xúc động. Không chỉ là dịp tốt để biết văn hóa nước ngoài, buổi hội khiến tôi cảm thấy dù không hiểu hết ngôn ngữ, mọi người vẫn chia sẻ cảm xúc được.",
+    "grammar": [
+      {
+        "id": 6,
+        "quote": "人によって感じ方は違う",
+        "note": "N＋によって: tùy người mà cách cảm nhận khác nhau; không phải nghĩa nguyên nhân hoặc phương tiện."
+      },
+      {
+        "id": 51,
+        "quote": "準備も手伝うことになった",
+        "note": "Ôn ～ことになる: công việc được quyết định theo sự phân công."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "人ごとの差を表します。「同じ音楽でも、人（　）感じ方は違う。」",
+      "options": [
+        "によって",
+        "のせいで",
+        "のついでに"
+      ],
+      "answer": 0,
+      "explanation": "人によって chỉ sự khác biệt tùy từng người."
+    },
+    "questions": [
+      {
+        "q": "筆者は当日、受付以外に何を手伝いましたか。",
+        "options": [
+          "楽器の演奏",
+          "舞台の準備",
+          "歌詞の翻訳"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả còn giúp chuẩn bị sân khấu theo phân công."
+      },
+      {
+        "q": "マイクの問題はどうなりましたか。",
+        "options": [
+          "交流会を中止した",
+          "開始が一日遅れた",
+          "スタッフが別の物を用意した"
+        ],
+        "answer": 2,
+        "explanation": "Nhân viên cùng chuẩn bị micro khác nên bắt đầu đúng giờ."
+      },
+      {
+        "q": "筆者はこの交流会で何を感じましたか。",
+        "options": [
+          "言葉が全部分からなくても気持ちは共有できる",
+          "同じ曲なら全員の感じ方も同じだ",
+          "国籍が同じ人だけで協力すべきだ"
+        ],
+        "answer": 0,
+        "explanation": "Tác giả hiểu rằng chưa hiểu hết ngôn ngữ vẫn có thể chia sẻ cảm xúc."
+      }
+    ]
+  },
+  {
+    "id": "s1-review",
+    "title": "Lời nhắn bị đọc sót",
+    "jaTitle": "伝えたつもりだったけれど",
+    "topic": "Tổng ôn chặng 1",
+    "format": "Câu chuyện tổng ôn",
+    "focusGrammarId": 58,
+    "newWords": [
+      "お礼",
+      "感謝",
+      "約束",
+      "思い出",
+      "反省",
+      "誤解",
+      "後悔",
+      "ほっと",
+      "うっかり",
+      "思い出す"
+    ],
+    "reviewWords": [
+      "メッセージ",
+      "上司",
+      "報告",
+      "責任",
+      "ルール",
+      "確認",
+      "失敗",
+      "協力"
+    ],
+    "text": "交流会の翌日、手伝ってくれた人に[[お礼]]を伝えるため、先輩にメールを書いた。前の週には、一緒に会場へ行く[[約束]]をしていたのに、私が集合時間を[[うっかり]]間違えてしまった。遅れた理由を説明せずに仕事を始めたので、先輩は私が時間を気にしていないと思ったらしい。\nそのときのことを[[思い出す|思い出して|おもいだして]]、メールに事情と[[感謝]]の気持ちを書いた。送る前に内容を[[確認]]したところ、集合時間が変わったという[[メッセージ]]を私が読み落としていたことに気づいた。早く確かめればよかったと[[後悔]]した。\n返事には、理由が分かって[[誤解]]が解けたと書いてあった。それを読んで[[ほっと]]したが、今回の[[失敗]]は忘れないようにしたい。仕事の知識だけでなく、人と[[協力]]するための伝え方も学ぶ必要がある。[[上司]]への[[報告]]でも、相手に伝わったか確かめる[[責任]]がある。次の行事では、準備の段階で情報を共有する方法を決め、簡単な[[ルール]]として残すつもりだ。楽しい[[思い出]]にするためにも、今回のことを[[反省]]し、同じ間違いを繰り返さないようにしたい。",
+    "translation": "Hôm sau buổi giao lưu, tôi viết email cho anh chị đi trước để cảm ơn đã giúp. Tuần trước chúng tôi hẹn cùng đến hội trường, nhưng tôi sơ ý nhầm giờ tập trung. Vì bắt đầu làm việc mà không giải thích lý do đến trễ, có vẻ anh chị nghĩ tôi không coi trọng giờ giấc.\nNhớ lại chuyện đó, tôi viết hoàn cảnh và lòng biết ơn trong email. Trước khi gửi, khi kiểm tra nội dung, tôi nhận ra mình đã đọc sót thông báo thay đổi giờ tập trung. Tôi hối tiếc vì đã không xác nhận sớm.\nTrong thư hồi đáp, anh chị viết đã hiểu lý do và giải tỏa hiểu lầm. Đọc xong tôi nhẹ nhõm, nhưng muốn ghi nhớ thất bại lần này. Ngoài kiến thức công việc, tôi còn cần học cách truyền đạt để hợp tác cùng người khác. Ngay cả khi báo cáo với cấp trên, tôi cũng có trách nhiệm xác nhận đối phương đã hiểu. Với sự kiện sau, tôi định thống nhất cách chia sẻ thông tin ngay ở bước chuẩn bị và ghi lại thành quy tắc đơn giản. Để có kỷ niệm vui, tôi muốn nhìn lại lỗi lần này và tránh lặp lại.",
+    "grammar": [
+      {
+        "id": 58,
+        "quote": "内容を確認したところ",
+        "note": "Vた＋ところ: sau khi thử kiểm tra thì phát hiện một kết quả. Ở đây không có nghĩa “vừa mới làm xong”."
+      },
+      {
+        "id": 47,
+        "quote": "繰り返さないようにしたい",
+        "note": "Ôn Vない＋ようにする: cố gắng tránh lặp lại sai lầm."
+      },
+      {
+        "id": 54,
+        "quote": "思ったらしい",
+        "note": "～らしい: suy đoán dựa trên thông tin hoặc tình huống, không phải điều người nói trực tiếp biết chắc."
+      }
+    ],
+    "grammarCheck": {
+      "prompt": "行動の後で分かった結果を示します。「メールを確認した（　）、時間の変更に気づいた。」",
+      "options": [
+        "ばかりで",
+        "ところ",
+        "ついでに"
+      ],
+      "answer": 1,
+      "explanation": "Vた＋ところ nối hành động kiểm tra với kết quả mới phát hiện."
+    },
+    "questions": [
+      {
+        "q": "筆者が遅れた直接の理由は何ですか。",
+        "options": [
+          "先輩と会いたくなかったから",
+          "集合場所が遠かったから",
+          "時間変更の連絡を読み落としたから"
+        ],
+        "answer": 2,
+        "explanation": "Khi kiểm tra thư, tác giả phát hiện đã đọc sót thông báo đổi giờ."
+      },
+      {
+        "q": "先輩の返事を読んで、筆者はどう感じましたか。",
+        "options": [
+          "誤解が解けて安心した",
+          "自分は何も間違っていないと思った",
+          "約束を全部やめたくなった"
+        ],
+        "answer": 0,
+        "explanation": "Hiểu lầm được giải quyết nên tác giả thấy nhẹ nhõm, đồng thời vẫn muốn rút kinh nghiệm."
+      },
+      {
+        "q": "次の行事で何を変えるつもりですか。",
+        "options": [
+          "仕事の知識を学ばない",
+          "準備の段階で情報共有の方法を決める",
+          "連絡を全部読まない"
+        ],
+        "answer": 1,
+        "explanation": "Tác giả định thống nhất cách chia sẻ thông tin từ giai đoạn chuẩn bị."
+      }
+    ]
+  }
+]
