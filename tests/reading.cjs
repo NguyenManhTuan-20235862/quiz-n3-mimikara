@@ -18,18 +18,18 @@ const server=require('node:http').createServer((req,res)=>{
  const page=await context.newPage(), errors=[]; page.on('pageerror',e=>errors.push(e.message));
  await context.addInitScript(()=>{
    if(!localStorage.getItem('reading-test-seeded')){
-     localStorage.setItem('jlpt_n3_reading',JSON.stringify({current:'first-job',results:{'first-job':{score:1,at:'2026-10-28T00:00:00Z'}}}));
+     localStorage.setItem('jlpt_n3_reading',JSON.stringify({current:'s1-office',results:{'first-job':{score:1,at:'2026-10-28T00:00:00Z'}}}));
      localStorage.setItem('reading-test-seeded','true');
    }
  });
  await page.goto('http://127.0.0.1:5503'); await page.waitForLoadState('networkidle');
  await page.locator('#modeBtnReading').click();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingProgress').innerText(),/1\/20/);
+ assert.match(await page.locator('#readingProgress').innerText(),/1\/30/);
  assert.equal(await page.locator('#readingStage').inputValue(),'1');
  assert.match(await page.locator('#readingCoverage').innerText(),/0\/880/);
  await page.locator('#readingStage').selectOption('all');
- assert.equal(await page.locator('[data-lesson]').count(),20);
+ assert.equal(await page.locator('[data-lesson]').count(),30);
  const data=await page.evaluate(()=>window.READING_DATA);
  for(const l of data){
    await page.locator(`[data-lesson="${l.id}"]`).click();
@@ -41,9 +41,9 @@ const server=require('node:http').createServer((req,res)=>{
    assert.ok((await page.locator('#readingResult').innerText()).includes(`${l.questions.length}/${l.questions.length}`));
  }
  assert.equal(await page.evaluate(()=>localStorage.getItem('jlpt_n3_mastered')),null,'Reading completion must not mark words mastered');
- await page.locator('#readingStage').selectOption('1');
- const stage1=data.filter(l=>l.stage===1);
- for(const [lessonIndex,l] of stage1.entries()){
+ await page.locator('#readingStage').selectOption('all');
+ const authored=data.filter(l=>l.stage);
+ for(const [lessonIndex,l] of authored.entries()){
    await page.locator(`[data-lesson="${l.id}"]`).click();
    await page.locator('#readingRecall > summary').click();
    await page.locator('#readingRecallCheck').click();
@@ -73,11 +73,16 @@ const server=require('node:http').createServer((req,res)=>{
      assert.ok(!(await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_mistakes'))))[l.newWordIds[0]]);
    }
  }
- assert.match(await page.locator('#readingCoverage').innerText(),/100\/880/);
- assert.match(await page.locator('#readingCoverage').innerText(),/10\/62/);
- await page.locator('[data-lesson="s1-office"]').click();
- await page.getByRole('button',{name:'Tra từ 慣れて',exact:true}).click();
- assert.match(await page.locator('#readingLookup').innerText(),/慣れる/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/200\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/20\/62/);
+ await page.locator('#readingStage').selectOption('2');
+ assert.equal(await page.locator('[data-lesson]').count(),10);
+ await page.locator('[data-lesson="s2-neighbors"]').click();
+ await page.locator('#readingNext').click();
+ assert.match(await page.locator('#readingArticle h2').innerText(),/出発の前/);
+ await page.locator('[data-lesson="s2-class"]').click();
+ await page.getByRole('button',{name:'Tra từ 得意だ',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/得意な/);
  await page.locator('[data-review-word]').click();
  assert.equal(await page.locator('[data-review-word]').isDisabled(),true);
  await page.locator('#readingFilter').selectOption('review');assert.ok(await page.locator('[data-lesson]').count()>0);
@@ -89,8 +94,9 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-grammar]').first().click();assert.match(await page.locator('[data-grammar]').first().innerText(),/Đã đánh dấu/);
  await page.reload();await page.waitForLoadState('networkidle');
  assert.equal(await page.locator('#readingAppSection').isVisible(),true);
- assert.match(await page.locator('#readingProgress').innerText(),/20\/20/);
- assert.match(await page.locator('#readingCoverage').innerText(),/100\/880/);
+ assert.equal(await page.locator('#readingStage').inputValue(),'2');
+ assert.match(await page.locator('#readingProgress').innerText(),/30\/30/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/200\/880/);
  await page.locator('#modeBtnVocab').click();assert.equal(await page.locator('#vocabAppSection').isVisible(),true);
  await page.locator('#modeBtnGrammar').click();assert.equal(await page.locator('#grammarAppSection').isVisible(),true);
  await page.locator('#modeBtnReading').click();
@@ -99,11 +105,17 @@ const server=require('node:http').createServer((req,res)=>{
  await page.setViewportSize({width:390,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
  await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'tests/reading-mobile.png',fullPage:true});
  await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'tests/reading-desktop.png',fullPage:true});
+ const fresh=await browser.newContext(); const freshPage=await fresh.newPage();
+ await freshPage.goto('http://127.0.0.1:5503'); await freshPage.locator('#modeBtnReading').click();
+ assert.equal(await freshPage.locator('#readingStage').inputValue(),'2');
+ assert.equal(await freshPage.locator('[data-lesson]').count(),10);
+ assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s2-'));
+ await fresh.close();
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
  await context.setOffline(true);await page.reload();await page.locator('#readingArticle h2').waitFor();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingCoverage').innerText(),/100\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/200\/880/);
  assert.deepEqual(errors,[]);
- console.log('PASS: 20 articles / 50 reading questions; 100 word + 10 grammar checks; wrong-to-correct review; no auto mastery; migration, conjugation lookup, filters, persisted coverage, mobile, dark mode, offline.');
+ console.log('PASS: 30 articles / 80 reading questions; 200 word + 20 grammar checks; wrong-to-correct review; no auto mastery; stage 1 migration + stage 2 resume + latest default, conjugation lookup, filters, persisted coverage, mobile, dark mode, offline.');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exit(1)});

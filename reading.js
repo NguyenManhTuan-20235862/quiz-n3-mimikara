@@ -5,8 +5,11 @@
   const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem('jlpt_n3_reading') || '{}') || {}; } catch (_) { /* Fresh progress if damaged. */ }
-  let current = lessons.some(l => l.id === saved.current && l.stage === 1) ? saved.current : (lessons.find(l=>l.stage === 1) || lessons[0])?.id;
-  let stage = '1', filter = 'all', ruby = false, api;
+  const stages = [...new Set(lessons.map(l=>l.stage).filter(Boolean))].sort((a,b)=>b-a);
+  const latestStage = stages[0] || 0;
+  const resumed = lessons.find(l=>l.id===saved.current);
+  let current = (resumed || lessons.find(l=>l.stage===latestStage) || lessons[0])?.id;
+  let stage = String(resumed ? resumed.stage || 0 : latestStage), filter = 'all', ruby = false, api;
   const answers = {};
   const recallAnswers = {}, checkedRecall = new Set();
   const recall = saved.recall && typeof saved.recall === 'object' ? saved.recall : {};
@@ -26,14 +29,18 @@
     const completed = lessons.filter(l=>progress[l.id]);
     const seenWords = new Set(completed.flatMap(l=>targets(l).map(w=>w.id)));
     const seenGrammar = new Set(completed.flatMap(l=>l.grammar.map(g=>g.id)));
-    const correct = type => Object.entries(recall).filter(([key,r])=>key.startsWith(type+':') && r.correct).length;
+    const correct = type => Object.entries(recall).filter(([key,r])=>key.startsWith(type+':') && r?.correct).length;
     const plan = window.READING_PLAN || [];
+    const readySummary = [...stages].reverse().map(s=>{
+      const group=lessons.filter(l=>l.stage===s);
+      return `Chặng ${s}: ${group.length} bài, ${new Set(group.flatMap(l=>l.newWordIds)).size} từ trọng tâm và ${new Set(group.map(l=>l.focusGrammarId)).size} mẫu trọng tâm`;
+    }).join('; ');
     document.getElementById('readingCoverage').innerHTML = `<div class="reading-metrics">${[
       ['Đã có trong bài',`${readyWords.size}/880 từ`,`${readyGrammar.size}/62 ngữ pháp`],
       ['Đã gặp qua bài đã làm',`${seenWords.size}/880 từ`,`${seenGrammar.size}/62 ngữ pháp`],
       ['Đúng lần kiểm tra gần nhất',`${correct('word')}/880 từ`,`${correct('grammar')}/62 ngữ pháp`]
     ].map(([label,w,g])=>`<div><span>${label}</span><strong>${w}</strong><small>${g}</small></div>`).join('')}</div>
-    <details class="reading-detail"><summary>Độ phủ & kế hoạch toàn bộ lộ trình</summary><p>Đã phân bổ ${new Set(plan.flatMap(p=>p.wordIds)).size}/880 từ và ${new Set(plan.flatMap(p=>p.grammarIds)).size}/62 mẫu vào ${plan.length} bài dự kiến. Mới biên soạn chặng 1: 10 bài, 100 từ trọng tâm khác nhau và 10 mẫu ngữ pháp trọng tâm. Các chặng sau mới là kế hoạch, chưa có nội dung. Bộ khởi động được tính riêng trong độ phủ bài đã có.</p><p>“Đã gặp” chỉ tăng khi kiểm tra đọc hiểu xong; không có nghĩa là đã thuộc. Kết quả ghi nhớ chỉ dựa trên các câu kiểm tra bạn thực sự trả lời, không tự đánh dấu toàn bộ từ của bài.</p><details><summary>Từ chưa có trong bài · ${words.length-readyWords.size}</summary><p class="reading-missing">${words.filter(w=>!readyWords.has(w.id)).map(w=>`#${w.id} ${escape(w.kanji)}`).join(' · ')}</p></details><details><summary>Ngữ pháp chưa có trong bài · ${grammar.length-readyGrammar.size}</summary><p>${grammar.filter(g=>!readyGrammar.has(g.id)).map(g=>`#${g.id} ${escape(g.pattern)}`).join(' · ')}</p></details></details>`;
+    <details class="reading-detail"><summary>Độ phủ & kế hoạch toàn bộ lộ trình</summary><p>Đã phân bổ ${new Set(plan.flatMap(p=>p.wordIds)).size}/880 từ và ${new Set(plan.flatMap(p=>p.grammarIds)).size}/62 mẫu vào ${plan.length} bài dự kiến. Số bài có thể điều chỉnh khi biên soạn. Đã có: ${readySummary}. Các chặng sau mới là kế hoạch, chưa có nội dung. Bộ khởi động được tính riêng trong độ phủ bài đã có.</p><p>“Đã gặp” chỉ tăng khi kiểm tra đọc hiểu xong; không có nghĩa là đã thuộc. Kết quả ghi nhớ chỉ dựa trên các câu kiểm tra bạn thực sự trả lời, không tự đánh dấu toàn bộ từ của bài.</p><details><summary>Từ chưa có trong bài · ${words.length-readyWords.size}</summary><p class="reading-missing">${words.filter(w=>!readyWords.has(w.id)).map(w=>`#${w.id} ${escape(w.kanji)}`).join(' · ')}</p></details><details><summary>Ngữ pháp chưa có trong bài · ${grammar.length-readyGrammar.size}</summary><p>${grammar.filter(g=>!readyGrammar.has(g.id)).map(g=>`#${g.id} ${escape(g.pattern)}`).join(' · ')}</p></details></details>`;
   }
   function annotated(lesson) {
     const list = lesson.vocabulary ? lesson.vocabulary.flatMap(ref=>ref.forms.map(f=>({...f,id:ref.id}))) : targets(lesson).map(w=>({id:w.id,text:w.kanji,reading:w.hiragana}));
@@ -112,7 +119,7 @@
     const root = document.getElementById('readingAppSection');
     if (!root.dataset.ready) {
       root.dataset.ready = 'true';
-      root.innerHTML = `<div class="reading-heading"><div><div class="reading-kicker">読む・学ぶ・覚える</div><h1>Lộ trình luyện đọc N3</h1><p>Chặng 1: mười bài mới, 100 từ trọng tâm. Đích đến: 880 từ & 62 mẫu.</p></div><span id="readingProgress"></span></div><section id="readingCoverage" class="reading-coverage" aria-label="Độ phủ và tiến độ"></section><div class="reading-layout"><aside class="reading-sidebar"><label for="readingStage">Chọn chặng</label><select id="readingStage" class="custom-select"><option value="1">Chặng 1 · 10 bài mới</option><option value="0">Khởi động · 10 bài cũ</option><option value="all">Tất cả 20 bài đã có</option></select><label for="readingFilter">Lọc bài đọc</label><select id="readingFilter" class="custom-select"><option value="all">Tất cả bài trong chặng</option><option value="short">Bài ngắn</option><option value="medium">Bài vừa</option><option value="review">Có từ / ngữ pháp cần ôn</option></select><nav id="readingList" aria-label="Danh sách bài đọc"></nav><p class="reading-hint">Bài tự biên soạn ở mức N3, không phải đề thi chính thức. Cách đọc chỉ hỗ trợ các từ mục tiêu. Chặng 1 có dạng chia của từ, liên kết về đúng từ gốc.</p></aside><article id="readingArticle" class="reading-paper"></article></div><p id="readingStatus" role="status"></p>`;
+      root.innerHTML = `<div class="reading-heading"><div><div class="reading-kicker">読む・学ぶ・覚える</div><h1>Lộ trình luyện đọc N3</h1><p>Đã có ${stages.length} chặng · ${lessons.filter(l=>l.stage).length} bài trong lộ trình. Đích đến: 880 từ & 62 mẫu.</p></div><span id="readingProgress"></span></div><section id="readingCoverage" class="reading-coverage" aria-label="Độ phủ và tiến độ"></section><div class="reading-layout"><aside class="reading-sidebar"><label for="readingStage">Chọn chặng</label><select id="readingStage" class="custom-select">${stages.map(s=>`<option value="${s}" ${stage===String(s)?'selected':''}>Chặng ${s} · ${lessons.filter(l=>l.stage===s).length} bài${s===latestStage?' · Mới':''}</option>`).join('')}<option value="0" ${stage==='0'?'selected':''}>Khởi động · ${lessons.filter(l=>!l.stage).length} bài cũ</option><option value="all">Tất cả ${lessons.length} bài đã có</option></select><label for="readingFilter">Lọc bài đọc</label><select id="readingFilter" class="custom-select"><option value="all">Tất cả bài trong chặng</option><option value="short">Bài ngắn</option><option value="medium">Bài vừa</option><option value="review">Có từ / ngữ pháp cần ôn</option></select><nav id="readingList" aria-label="Danh sách bài đọc"></nav><p class="reading-hint">Bài tự biên soạn ở mức N3, không phải đề thi chính thức. Cách đọc chỉ hỗ trợ các từ mục tiêu. Dạng chia của từ được liên kết về đúng từ gốc.</p></aside><article id="readingArticle" class="reading-paper"></article></div><p id="readingStatus" role="status"></p>`;
       root.addEventListener('change', e => {
         if (e.target.id === 'readingStage' || e.target.id === 'readingFilter') {
           api.stop();
