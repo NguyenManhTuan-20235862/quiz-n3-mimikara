@@ -25,11 +25,11 @@ const server=require('node:http').createServer((req,res)=>{
  await page.goto('http://127.0.0.1:5503'); await page.waitForLoadState('networkidle');
  await page.locator('#modeBtnReading').click();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingProgress').innerText(),/1\/60/);
+ assert.match(await page.locator('#readingProgress').innerText(),/1\/70/);
  assert.equal(await page.locator('#readingStage').inputValue(),'1');
  assert.match(await page.locator('#readingCoverage').innerText(),/0\/880/);
  await page.locator('#readingStage').selectOption('all');
- assert.equal(await page.locator('[data-lesson]').count(),60);
+ assert.equal(await page.locator('[data-lesson]').count(),70);
  const data=await page.evaluate(()=>window.READING_DATA);
  for(const l of data){
    await page.locator(`[data-lesson="${l.id}"]`).click();
@@ -73,8 +73,8 @@ const server=require('node:http').createServer((req,res)=>{
      assert.ok(!(await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_mistakes'))))[l.newWordIds[0]]);
    }
  }
- assert.match(await page.locator('#readingCoverage').innerText(),/500\/880/);
- assert.match(await page.locator('#readingCoverage').innerText(),/50\/62/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/600\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/60\/62/);
  await page.locator('#readingStage').selectOption('2');
  assert.equal(await page.locator('[data-lesson]').count(),10);
  await page.locator('[data-lesson="s2-class"]').click();
@@ -111,6 +111,25 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-lesson="s5-craft"]').click();
  await page.getByRole('button',{name:'Tra từ 飽き',exact:true}).click();
  assert.match(await page.locator('#readingLookup').innerText(),/飽きる/);
+ await page.locator('#readingStage').selectOption('6');
+ assert.equal(await page.locator('[data-lesson]').count(),10);
+ assert.match(await page.locator('#readingCoverage').textContent(),/0 mới, 10 củng cố/);
+ await page.locator('[data-lesson="s6-boxes"]').click();
+ const grammar6=page.locator('#readingArticle > .reading-detail').nth(1);
+ await grammar6.locator('summary').first().click();
+ assert.equal(await grammar6.getByText('Trọng tâm củng cố',{exact:true}).isVisible(),true);
+ assert.equal(await grammar6.getByText('Trọng tâm mới',{exact:true}).count(),0);
+ await page.locator('#readingNext').click();
+ assert.match(await page.locator('#readingArticle h2').innerText(),/番号が分かれば/);
+ await page.locator('[data-lesson="s6-friends"]').click();
+ await page.getByRole('button',{name:'Tra từ 悩んで',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/なやむ/);
+ await page.locator('[data-lesson="s6-conversation"]').click();
+ await page.getByRole('button',{name:'Tra từ 延びた',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/延びる/);
+ await page.locator('[data-lesson="s6-review"]').click();
+ await page.getByRole('button',{name:'Tra từ 纏まって',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/纏まる/);
  await page.locator('[data-review-word]').click();
  assert.equal(await page.locator('[data-review-word]').isDisabled(),true);
  await page.locator('#readingFilter').selectOption('review');assert.ok(await page.locator('[data-lesson]').count()>0);
@@ -122,9 +141,9 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-grammar]').first().click();assert.match(await page.locator('[data-grammar]').first().innerText(),/Đã đánh dấu/);
  await page.reload();await page.waitForLoadState('networkidle');
  assert.equal(await page.locator('#readingAppSection').isVisible(),true);
- assert.equal(await page.locator('#readingStage').inputValue(),'5');
- assert.match(await page.locator('#readingProgress').innerText(),/60\/60/);
- assert.match(await page.locator('#readingCoverage').innerText(),/500\/880/);
+ assert.equal(await page.locator('#readingStage').inputValue(),'6');
+ assert.match(await page.locator('#readingProgress').innerText(),/70\/70/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/600\/880/);
  await page.locator('#modeBtnVocab').click();assert.equal(await page.locator('#vocabAppSection').isVisible(),true);
  await page.locator('#modeBtnGrammar').click();assert.equal(await page.locator('#grammarAppSection').isVisible(),true);
  await page.locator('#modeBtnReading').click();
@@ -135,15 +154,15 @@ const server=require('node:http').createServer((req,res)=>{
  await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'tests/reading-desktop.png',fullPage:true});
  const fresh=await browser.newContext(); const freshPage=await fresh.newPage();
  await freshPage.goto('http://127.0.0.1:5503'); await freshPage.locator('#modeBtnReading').click();
- assert.equal(await freshPage.locator('#readingStage').inputValue(),'5');
+ assert.equal(await freshPage.locator('#readingStage').inputValue(),'6');
  assert.equal(await freshPage.locator('[data-lesson]').count(),10);
- assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s5-'));
+ assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s6-'));
  await fresh.close();
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
  await context.setOffline(true);await page.reload();await page.locator('#readingArticle h2').waitFor();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingCoverage').innerText(),/500\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/600\/880/);
  assert.deepEqual(errors,[]);
- console.log('PASS: 60 articles / 170 reading questions; 500 word + 50 grammar checks; full 62 grammar publication; new/reinforced grammar labels; old-stage migration, latest resume, derived-word lookup, filters, persisted coverage, mobile, dark mode, offline.');
+ console.log('PASS: 70 articles / 200 reading questions; 600 word + 60 grammar checks; full 62 grammar publication; reinforcement labels; old-stage migration, latest resume, homophone + corrected kana lookup, filters, persisted coverage, mobile, dark mode, offline.');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exit(1)});

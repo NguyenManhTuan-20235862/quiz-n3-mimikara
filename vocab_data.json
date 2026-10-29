@@ -7308,7 +7308,7 @@
             "kanji": "埋まる",
             "hanViet": "MAI",
             "hiragana": "うまる",
-            "nghia": "bị chôn lấp, ngập",
+            "nghia": "bị chôn lấp, được lấp đầy, ngập",
             "topicId": 2,
             "id": 715,
             "topicName": "Chủ đề 2: Hành động hàng ngày, nấu ăn, xử lý đồ vật & sinh hoạt"
@@ -8225,7 +8225,7 @@
             "kanji": "当てる",
             "hanViet": "ĐƯƠNG",
             "hiragana": "あてる",
-            "nghia": "đánh trúng, bắn trúng",
+            "nghia": "đánh trúng, bắn trúng, đoán trúng",
             "topicId": 3,
             "id": 806,
             "topicName": "Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái"
@@ -8605,7 +8605,7 @@
             "kanji": "纏まる",
             "hanViet": "TRIỀN",
             "hiragana": "まとまる",
-            "nghia": "lắng lại, thu thập gom gọn",
+            "nghia": "được gom lại, được tổng hợp, được thống nhất",
             "topicId": 3,
             "id": 844,
             "topicName": "Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái"
@@ -8850,9 +8850,9 @@
           {
             "stt": "503",
             "kanji": "悩む",
-            "hanViet": "",
-            "hiragana": "悩む",
-            "nghia": "NÃO băn khoăn, lo lắng, khổ sở vì nghĩ ngợi",
+            "hanViet": "NÃO",
+            "hiragana": "なやむ",
+            "nghia": "băn khoăn, lo lắng, khổ sở vì nghĩ ngợi",
             "topicId": 4,
             "id": 868,
             "topicName": "Chủ đề 4: Tâm lý, tư duy, nhận thức & cảm giác"

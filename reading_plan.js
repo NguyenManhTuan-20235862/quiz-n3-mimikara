@@ -1051,8 +1051,218 @@ window.READING_PLAN = [
     "ready": true
   },
   {
-    "id": "planned-51",
+    "id": "s6-boxes",
     "stage": 6,
+    "title": "Chuyển nhà cùng những người bạn",
+    "wordIds": [
+      703,
+      704,
+      718,
+      715,
+      716,
+      461,
+      749,
+      748,
+      695,
+      696
+    ],
+    "grammarIds": [
+      22
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-tickets",
+    "stage": 6,
+    "title": "Đủ điều kiện để tham gia",
+    "wordIds": [
+      141,
+      805,
+      806,
+      803,
+      804,
+      752,
+      780,
+      490,
+      484,
+      482
+    ],
+    "grammarIds": [
+      27
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-notice",
+    "stage": 6,
+    "title": "Đọc thông báo thay đổi lịch",
+    "wordIds": [
+      313,
+      322,
+      323,
+      320,
+      331,
+      318,
+      131,
+      154,
+      213,
+      214
+    ],
+    "grammarIds": [
+      30
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-results",
+    "stage": 6,
+    "title": "Những con số chưa nói hết mọi điều",
+    "wordIds": [
+      345,
+      353,
+      354,
+      387,
+      388,
+      502,
+      503,
+      501,
+      516,
+      512
+    ],
+    "grammarIds": [
+      37
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-files",
+    "stage": 6,
+    "title": "Kiểm tra trước khi chia sẻ thông tin",
+    "wordIds": [
+      396,
+      644,
+      779,
+      778,
+      602,
+      689,
+      750,
+      751,
+      799,
+      800
+    ],
+    "grammarIds": [
+      45
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-friends",
+    "stage": 6,
+    "title": "Một cách hẹn gặp vừa sức",
+    "wordIds": [
+      596,
+      324,
+      325,
+      616,
+      868,
+      425,
+      473,
+      470,
+      543,
+      559
+    ],
+    "grammarIds": [
+      46
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-craft",
+    "stage": 6,
+    "title": "Giữ giấy đẹp trong lúc làm đồ thủ công",
+    "wordIds": [
+      736,
+      737,
+      738,
+      739,
+      730,
+      747,
+      700,
+      741,
+      755,
+      633
+    ],
+    "grammarIds": [
+      47
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-goal",
+    "stage": 6,
+    "title": "Đổi cách chuẩn bị cho chuyến đi",
+    "wordIds": [
+      756,
+      757,
+      815,
+      816,
+      817,
+      786,
+      793,
+      794,
+      795,
+      796
+    ],
+    "grammarIds": [
+      49
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-conversation",
+    "stage": 6,
+    "title": "Một thói quen trước buổi trò chuyện",
+    "wordIds": [
+      836,
+      837,
+      838,
+      839,
+      840,
+      841,
+      801,
+      802,
+      833,
+      834
+    ],
+    "grammarIds": [
+      50
+    ],
+    "ready": true
+  },
+  {
+    "id": "s6-review",
+    "stage": 6,
+    "title": "Khi kế hoạch do cả nhóm quyết định",
+    "wordIds": [
+      860,
+      662,
+      663,
+      669,
+      670,
+      819,
+      820,
+      824,
+      825,
+      844
+    ],
+    "grammarIds": [
+      51
+    ],
+    "ready": true
+  },
+  {
+    "id": "planned-61",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 1: Con người, gia đình, quan hệ & xã hội",
     "wordIds": [
       6,
@@ -1063,13 +1273,13 @@ window.READING_PLAN = [
       47
     ],
     "grammarIds": [
-      22
+      54
     ],
     "ready": false
   },
   {
-    "id": "planned-52",
-    "stage": 6,
+    "id": "planned-62",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 2: Học tập, công việc & kinh tế",
     "wordIds": [
       53,
@@ -1086,26 +1296,24 @@ window.READING_PLAN = [
       79
     ],
     "grammarIds": [
-      27
+      55
     ],
     "ready": false
   },
   {
-    "id": "planned-53",
-    "stage": 6,
+    "id": "planned-63",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 2: Học tập, công việc & kinh tế",
     "wordIds": [
       81,
       92
     ],
-    "grammarIds": [
-      30
-    ],
+    "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-54",
-    "stage": 6,
+    "id": "planned-64",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 3: Đời sống thường ngày, giao thông, đồ vật & địa điểm",
     "wordIds": [
       94,
@@ -1119,47 +1327,38 @@ window.READING_PLAN = [
       111,
       114,
       119,
-      131
+      133
     ],
-    "grammarIds": [
-      37
-    ],
+    "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-55",
-    "stage": 6,
+    "id": "planned-65",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 3: Đời sống thường ngày, giao thông, đồ vật & địa điểm",
     "wordIds": [
-      133,
-      141,
       145,
-      154,
       155,
       161
     ],
-    "grammarIds": [
-      45
-    ],
+    "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-56",
-    "stage": 6,
+    "id": "planned-66",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 4: Tự nhiên, môi trường & thời tiết",
     "wordIds": [
       170,
       171,
       172
     ],
-    "grammarIds": [
-      46
-    ],
+    "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-57",
-    "stage": 6,
+    "id": "planned-67",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 5: Sức khỏe, cơ thể & y tế",
     "wordIds": [
       184,
@@ -1168,14 +1367,12 @@ window.READING_PLAN = [
       187,
       188
     ],
-    "grammarIds": [
-      47
-    ],
+    "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-58",
-    "stage": 6,
+    "id": "planned-68",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 6: Khái niệm trừu tượng, tư duy, cảm xúc & trạng thái",
     "wordIds": [
       192,
@@ -1183,26 +1380,22 @@ window.READING_PLAN = [
       195,
       211,
       212,
-      213,
-      214,
       217,
       218,
       221,
       224,
-      228
+      228,
+      237,
+      238
     ],
-    "grammarIds": [
-      49
-    ],
+    "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-59",
-    "stage": 6,
+    "id": "planned-69",
+    "stage": 7,
     "title": "Danh từ · Chủ đề 6: Khái niệm trừu tượng, tư duy, cảm xúc & trạng thái",
     "wordIds": [
-      237,
-      238,
       247,
       248,
       249,
@@ -1212,169 +1405,9 @@ window.READING_PLAN = [
       268,
       271,
       280,
-      281
-    ],
-    "grammarIds": [
-      50
-    ],
-    "ready": false
-  },
-  {
-    "id": "planned-60",
-    "stage": 6,
-    "title": "Danh từ · Chủ đề 6: Khái niệm trừu tượng, tư duy, cảm xúc & trạng thái",
-    "wordIds": [
+      281,
       283,
-      284,
-      293
-    ],
-    "grammarIds": [
-      51
-    ],
-    "ready": false
-  },
-  {
-    "id": "planned-61",
-    "stage": 7,
-    "title": "Danh từ · Chủ đề 7: Danh từ bắt nguồn từ Động từ (Thể Masu bỏ Masu)",
-    "wordIds": [
-      302,
-      305,
-      313,
-      317,
-      318,
-      320,
-      322,
-      323,
-      324,
-      325,
-      329,
-      330
-    ],
-    "grammarIds": [
-      54
-    ],
-    "ready": false
-  },
-  {
-    "id": "planned-62",
-    "stage": 7,
-    "title": "Danh từ · Chủ đề 7: Danh từ bắt nguồn từ Động từ (Thể Masu bỏ Masu)",
-    "wordIds": [
-      331,
-      335,
-      336,
-      337,
-      338
-    ],
-    "grammarIds": [
-      55
-    ],
-    "ready": false
-  },
-  {
-    "id": "planned-63",
-    "stage": 7,
-    "title": "Katakana · Chủ đề 1: Thể thao, đội nhóm & công việc",
-    "wordIds": [
-      340,
-      345,
-      353,
-      354
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-64",
-    "stage": 7,
-    "title": "Katakana · Chủ đề 2: Đời sống, đồ vật, công nghệ & mua sắm",
-    "wordIds": [
-      366,
-      373,
-      381,
-      387,
-      388,
-      396
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-65",
-    "stage": 7,
-    "title": "Tính từ · Chủ đề 1: Cảm xúc, tính cách, tâm lý & thái độ",
-    "wordIds": [
-      419,
-      425
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-66",
-    "stage": 7,
-    "title": "Tính từ · Chủ đề 2: Cảm giác, vị giác & trạng thái vật chất, bề ngoài",
-    "wordIds": [
-      442,
-      450,
-      455,
-      461
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-67",
-    "stage": 7,
-    "title": "Tính từ · Chủ đề 3: Đánh giá, hoàn cảnh, mức độ & tính chất chung",
-    "wordIds": [
-      463,
-      468,
-      470,
-      471,
-      472,
-      473,
-      477,
-      482,
-      484,
-      486,
-      487,
-      488
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-68",
-    "stage": 7,
-    "title": "Tính từ · Chủ đề 3: Đánh giá, hoàn cảnh, mức độ & tính chất chung",
-    "wordIds": [
-      489,
-      490,
-      491,
-      497
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-69",
-    "stage": 7,
-    "title": "Phó từ & Liên từ · Chủ đề 1: Mức độ & số lượng",
-    "wordIds": [
-      499,
-      500,
-      501,
-      502,
-      503,
-      504,
-      505,
-      506,
-      507,
-      508,
-      509,
-      511
+      284
     ],
     "grammarIds": [],
     "ready": false
@@ -1382,13 +1415,121 @@ window.READING_PLAN = [
   {
     "id": "planned-70",
     "stage": 7,
+    "title": "Danh từ · Chủ đề 6: Khái niệm trừu tượng, tư duy, cảm xúc & trạng thái",
+    "wordIds": [
+      293
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-71",
+    "stage": 8,
+    "title": "Danh từ · Chủ đề 7: Danh từ bắt nguồn từ Động từ (Thể Masu bỏ Masu)",
+    "wordIds": [
+      302,
+      305,
+      317,
+      329,
+      330,
+      335,
+      336,
+      337,
+      338
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-72",
+    "stage": 8,
+    "title": "Katakana · Chủ đề 1: Thể thao, đội nhóm & công việc",
+    "wordIds": [
+      340
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-73",
+    "stage": 8,
+    "title": "Katakana · Chủ đề 2: Đời sống, đồ vật, công nghệ & mua sắm",
+    "wordIds": [
+      366,
+      373,
+      381
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-74",
+    "stage": 8,
+    "title": "Tính từ · Chủ đề 1: Cảm xúc, tính cách, tâm lý & thái độ",
+    "wordIds": [
+      419
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-75",
+    "stage": 8,
+    "title": "Tính từ · Chủ đề 2: Cảm giác, vị giác & trạng thái vật chất, bề ngoài",
+    "wordIds": [
+      442,
+      450,
+      455
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-76",
+    "stage": 8,
+    "title": "Tính từ · Chủ đề 3: Đánh giá, hoàn cảnh, mức độ & tính chất chung",
+    "wordIds": [
+      463,
+      468,
+      471,
+      472,
+      477,
+      486,
+      487,
+      488,
+      489,
+      491,
+      497
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-77",
+    "stage": 8,
     "title": "Phó từ & Liên từ · Chủ đề 1: Mức độ & số lượng",
     "wordIds": [
-      512,
+      499,
+      500,
+      504,
+      505,
+      506,
+      507,
+      508,
+      509,
+      511,
       513,
       514,
-      515,
-      516,
+      515
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-78",
+    "stage": 8,
+    "title": "Phó từ & Liên từ · Chủ đề 1: Mức độ & số lượng",
+    "wordIds": [
       517,
       518,
       519
@@ -1397,7 +1538,7 @@ window.READING_PLAN = [
     "ready": false
   },
   {
-    "id": "planned-71",
+    "id": "planned-79",
     "stage": 8,
     "title": "Phó từ & Liên từ · Chủ đề 2: Thời gian, tần suất & tiến trình",
     "wordIds": [
@@ -1418,7 +1559,7 @@ window.READING_PLAN = [
     "ready": false
   },
   {
-    "id": "planned-72",
+    "id": "planned-80",
     "stage": 8,
     "title": "Phó từ & Liên từ · Chủ đề 2: Thời gian, tần suất & tiến trình",
     "wordIds": [
@@ -1430,8 +1571,8 @@ window.READING_PLAN = [
     "ready": false
   },
   {
-    "id": "planned-73",
-    "stage": 8,
+    "id": "planned-81",
+    "stage": 9,
     "title": "Phó từ & Liên từ · Chủ đề 3: Trạng thái, tâm trạng, đánh giá & từ tượng thanh/tượng hình",
     "wordIds": [
       537,
@@ -1440,25 +1581,23 @@ window.READING_PLAN = [
       540,
       541,
       542,
-      543,
       545,
       547,
       548,
       551,
-      552
+      552,
+      554
     ],
     "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-74",
-    "stage": 8,
+    "id": "planned-82",
+    "stage": 9,
     "title": "Phó từ & Liên từ · Chủ đề 3: Trạng thái, tâm trạng, đánh giá & từ tượng thanh/tượng hình",
     "wordIds": [
-      554,
       555,
       556,
-      559,
       560,
       561,
       562,
@@ -1466,26 +1605,26 @@ window.READING_PLAN = [
       564,
       565,
       566,
-      567
+      567,
+      568,
+      569
     ],
     "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-75",
-    "stage": 8,
+    "id": "planned-83",
+    "stage": 9,
     "title": "Phó từ & Liên từ · Chủ đề 3: Trạng thái, tâm trạng, đánh giá & từ tượng thanh/tượng hình",
     "wordIds": [
-      568,
-      569,
       570
     ],
     "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-76",
-    "stage": 8,
+    "id": "planned-84",
+    "stage": 9,
     "title": "Phó từ & Liên từ · Chủ đề 4: Liên từ kết nối & phát triển ý",
     "wordIds": [
       572,
@@ -1500,8 +1639,8 @@ window.READING_PLAN = [
     "ready": false
   },
   {
-    "id": "planned-77",
-    "stage": 8,
+    "id": "planned-85",
+    "stage": 9,
     "title": "Động từ · Chủ đề 1: Chuyển động, thao tác cơ thể & tương tác hành vi",
     "wordIds": [
       579,
@@ -1513,22 +1652,19 @@ window.READING_PLAN = [
       585,
       586,
       593,
-      596,
-      602,
-      610
+      610,
+      611,
+      612
     ],
     "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-78",
-    "stage": 8,
+    "id": "planned-86",
+    "stage": 9,
     "title": "Động từ · Chủ đề 1: Chuyển động, thao tác cơ thể & tương tác hành vi",
     "wordIds": [
-      611,
-      612,
       613,
-      616,
       617,
       621,
       622,
@@ -1536,59 +1672,44 @@ window.READING_PLAN = [
       624,
       628,
       629,
-      630
+      630,
+      631,
+      632,
+      635
     ],
     "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-79",
-    "stage": 8,
+    "id": "planned-87",
+    "stage": 9,
     "title": "Động từ · Chủ đề 1: Chuyển động, thao tác cơ thể & tương tác hành vi",
     "wordIds": [
-      631,
-      632,
-      633,
-      635,
       636,
       637,
       638,
       640,
       641,
       642,
-      644,
-      645
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-80",
-    "stage": 8,
-    "title": "Động từ · Chủ đề 1: Chuyển động, thao tác cơ thể & tương tác hành vi",
-    "wordIds": [
+      645,
       647,
       649,
       651,
       652,
-      653,
-      662,
-      663,
-      665,
-      666,
-      667,
-      668,
-      669
+      653
     ],
     "grammarIds": [],
     "ready": false
   },
   {
-    "id": "planned-81",
+    "id": "planned-88",
     "stage": 9,
     "title": "Động từ · Chủ đề 1: Chuyển động, thao tác cơ thể & tương tác hành vi",
     "wordIds": [
-      670,
+      665,
+      666,
+      667,
+      668,
       671,
       673,
       674,
@@ -1602,169 +1723,22 @@ window.READING_PLAN = [
     "ready": false
   },
   {
-    "id": "planned-82",
+    "id": "planned-89",
     "stage": 9,
     "title": "Động từ · Chủ đề 2: Hành động hàng ngày, nấu ăn, xử lý đồ vật & sinh hoạt",
     "wordIds": [
-      689,
       692,
       693,
       694,
-      695,
-      696,
-      700,
       701,
       702,
-      703,
-      704,
-      705
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-83",
-    "stage": 9,
-    "title": "Động từ · Chủ đề 2: Hành động hàng ngày, nấu ăn, xử lý đồ vật & sinh hoạt",
-    "wordIds": [
+      705,
       706,
       708,
       712,
       713,
-      715,
-      716,
       717,
-      718,
-      719,
-      720,
-      721,
-      723
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-84",
-    "stage": 9,
-    "title": "Động từ · Chủ đề 2: Hành động hàng ngày, nấu ăn, xử lý đồ vật & sinh hoạt",
-    "wordIds": [
-      725,
-      727,
-      728,
-      729,
-      730,
-      736,
-      737,
-      738,
-      739,
-      741,
-      744,
-      745
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-85",
-    "stage": 9,
-    "title": "Động từ · Chủ đề 2: Hành động hàng ngày, nấu ăn, xử lý đồ vật & sinh hoạt",
-    "wordIds": [
-      747,
-      748,
-      749,
-      750,
-      751,
-      752,
-      755,
-      756,
-      757,
-      758,
-      759,
-      760
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-86",
-    "stage": 9,
-    "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
-    "wordIds": [
-      770,
-      771,
-      772,
-      774,
-      775,
-      776,
-      778,
-      779,
-      780,
-      781,
-      783,
-      784
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-87",
-    "stage": 9,
-    "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
-    "wordIds": [
-      785,
-      786,
-      787,
-      789,
-      793,
-      794,
-      795,
-      796,
-      797,
-      798,
-      799,
-      800
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-88",
-    "stage": 9,
-    "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
-    "wordIds": [
-      801,
-      802,
-      803,
-      804,
-      805,
-      806,
-      810,
-      811,
-      813,
-      814,
-      815,
-      816
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-89",
-    "stage": 9,
-    "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
-    "wordIds": [
-      817,
-      818,
-      819,
-      820,
-      821,
-      822,
-      823,
-      824,
-      825,
-      826,
-      828,
-      830
+      719
     ],
     "grammarIds": [],
     "ready": false
@@ -1772,20 +1746,20 @@ window.READING_PLAN = [
   {
     "id": "planned-90",
     "stage": 9,
-    "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
+    "title": "Động từ · Chủ đề 2: Hành động hàng ngày, nấu ăn, xử lý đồ vật & sinh hoạt",
     "wordIds": [
-      831,
-      832,
-      833,
-      834,
-      835,
-      836,
-      837,
-      838,
-      839,
-      840,
-      841,
-      842
+      720,
+      721,
+      723,
+      725,
+      727,
+      728,
+      729,
+      744,
+      745,
+      758,
+      759,
+      760
     ],
     "grammarIds": [],
     "ready": false
@@ -1795,18 +1769,18 @@ window.READING_PLAN = [
     "stage": 10,
     "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
     "wordIds": [
-      843,
-      844,
-      845,
-      846,
-      847,
-      848,
-      849,
-      850,
-      851,
-      852,
-      853,
-      854
+      770,
+      771,
+      772,
+      774,
+      775,
+      776,
+      781,
+      783,
+      784,
+      785,
+      787,
+      789
     ],
     "grammarIds": [],
     "ready": false
@@ -1816,6 +1790,52 @@ window.READING_PLAN = [
     "stage": 10,
     "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
     "wordIds": [
+      797,
+      798,
+      810,
+      811,
+      813,
+      814,
+      818,
+      821,
+      822,
+      823,
+      826,
+      828
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-93",
+    "stage": 10,
+    "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
+    "wordIds": [
+      830,
+      831,
+      832,
+      835,
+      842,
+      843,
+      845,
+      846,
+      847,
+      848,
+      849,
+      850
+    ],
+    "grammarIds": [],
+    "ready": false
+  },
+  {
+    "id": "planned-94",
+    "stage": 10,
+    "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
+    "wordIds": [
+      851,
+      852,
+      853,
+      854,
       855,
       856,
       857,
@@ -1826,15 +1846,13 @@ window.READING_PLAN = [
     "ready": false
   },
   {
-    "id": "planned-93",
+    "id": "planned-95",
     "stage": 10,
     "title": "Động từ · Chủ đề 4: Tâm lý, tư duy, nhận thức & cảm giác",
     "wordIds": [
-      860,
       863,
       864,
       866,
-      868,
       873,
       874
     ],
