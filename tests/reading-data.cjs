@@ -4,20 +4,24 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.join(__dirname,'..');
 const c = {window:{}}; vm.createContext(c);
-for (const file of ['vocab_data.js','grammar_data.js','reading_data.js','reading_stage1.js','reading_stage2.js','reading_plan.js']) vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),c);
+const stageFiles=fs.readdirSync(root).filter(f=>/^reading_stage\d+\.js$/.test(f)).sort((a,b)=>Number(a.match(/\d+/)[0])-Number(b.match(/\d+/)[0]));
+for (const file of ['vocab_data.js','grammar_data.js','reading_data.js',...stageFiles,'reading_plan.js']) vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),c);
 const {READING_DATA:lessons,READING_PLAN:plan,GRAMMAR_DATA:grammar,QUIZ_CATEGORIES:categories} = c.window;
 const words = categories.flatMap(c=>c.topics.flatMap(t=>t.words));
 const authored = lessons.filter(l=>l.stage), warmup = lessons.filter(l=>!l.stage);
 assert.equal(warmup.length,10);
-for(const stage of [1,2]) assert.equal(authored.filter(l=>l.stage===stage).length,10);
-assert.equal(new Set(lessons.map(l=>l.id)).size,30);
+for(let stage=1;stage<=stageFiles.length;stage++) assert.equal(authored.filter(l=>l.stage===stage).length,10);
+assert.equal(new Set(lessons.map(l=>l.id)).size,10+stageFiles.length*10);
 const newIds = authored.flatMap(l=>l.newWordIds);
-assert.equal(newIds.length,200); assert.equal(new Set(newIds).size,200);
-const priorWords = new Set(lessons.filter(l=>!l.stage || l.stage===1).flatMap(l=>l.vocabulary?l.vocabulary.map(r=>r.id):l.words.map(k=>words.find(w=>w.kanji===k).id)));
-const priorGrammar = new Set(lessons.filter(l=>!l.stage || l.stage===1).flatMap(l=>l.grammar.map(g=>g.id)));
-for(const l of lessons.filter(l=>l.stage===2)) {
-  for(const id of l.newWordIds) assert.ok(!priorWords.has(id),`Stage 2 repeats a previously published target: ${id}`);
-  assert.ok(!priorGrammar.has(l.focusGrammarId),`Stage 2 repeats published focus grammar: ${l.focusGrammarId}`);
+assert.equal(newIds.length,stageFiles.length*100); assert.equal(new Set(newIds).size,stageFiles.length*100);
+for(let stage=2;stage<=stageFiles.length;stage++) {
+  const prior=lessons.filter(l=>!l.stage || l.stage<stage);
+  const priorWords=new Set(prior.flatMap(l=>l.vocabulary?l.vocabulary.map(r=>r.id):l.words.map(k=>words.find(w=>w.kanji===k).id)));
+  const priorGrammar=new Set(prior.flatMap(l=>l.grammar.map(g=>g.id)));
+  for(const l of lessons.filter(l=>l.stage===stage)) {
+    for(const id of l.newWordIds) assert.ok(!priorWords.has(id),`Stage ${stage} repeats a previously published target: ${id}`);
+    assert.ok(!priorGrammar.has(l.focusGrammarId),`Stage ${stage} repeats published focus grammar: ${l.focusGrammarId}`);
+  }
 }
 const introduced = new Set(warmup.flatMap(l=>l.words.map(k=>words.find(w=>w.kanji===k).id)));
 for (const l of authored) {
@@ -39,5 +43,5 @@ for (const l of authored) {
 }
 assert.deepEqual([...plan.flatMap(l=>l.wordIds)].sort((a,b)=>a-b),[...words.map(w=>w.id)].sort((a,b)=>a-b));
 assert.deepEqual([...plan.flatMap(l=>l.grammarIds)].sort((a,b)=>a-b),[...grammar.map(g=>g.id)].sort((a,b)=>a-b));
-assert.equal(plan.filter(l=>l.ready).length,20);
-console.log(`PASS: 10 warmups + 2 stages; 200 distinct introductions; 100 stage 2 words + 10 focus grammar absent from prior content; conjugation links, prior review links, 60 questions, complete 880/62 allocation.`);
+assert.equal(plan.filter(l=>l.ready).length,authored.length);
+console.log(`PASS: 10 warmups + ${stageFiles.length} stages; ${newIds.length} distinct introductions; new-stage targets absent from prior content; conjugation links, prior review links, ${authored.length*3} questions, complete 880/62 allocation.`);

@@ -25,11 +25,11 @@ const server=require('node:http').createServer((req,res)=>{
  await page.goto('http://127.0.0.1:5503'); await page.waitForLoadState('networkidle');
  await page.locator('#modeBtnReading').click();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingProgress').innerText(),/1\/30/);
+ assert.match(await page.locator('#readingProgress').innerText(),/1\/40/);
  assert.equal(await page.locator('#readingStage').inputValue(),'1');
  assert.match(await page.locator('#readingCoverage').innerText(),/0\/880/);
  await page.locator('#readingStage').selectOption('all');
- assert.equal(await page.locator('[data-lesson]').count(),30);
+ assert.equal(await page.locator('[data-lesson]').count(),40);
  const data=await page.evaluate(()=>window.READING_DATA);
  for(const l of data){
    await page.locator(`[data-lesson="${l.id}"]`).click();
@@ -73,16 +73,20 @@ const server=require('node:http').createServer((req,res)=>{
      assert.ok(!(await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_mistakes'))))[l.newWordIds[0]]);
    }
  }
- assert.match(await page.locator('#readingCoverage').innerText(),/200\/880/);
- assert.match(await page.locator('#readingCoverage').innerText(),/20\/62/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/300\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/30\/62/);
  await page.locator('#readingStage').selectOption('2');
  assert.equal(await page.locator('[data-lesson]').count(),10);
- await page.locator('[data-lesson="s2-neighbors"]').click();
- await page.locator('#readingNext').click();
- assert.match(await page.locator('#readingArticle h2').innerText(),/出発の前/);
  await page.locator('[data-lesson="s2-class"]').click();
- await page.getByRole('button',{name:'Tra từ 得意だ',exact:true}).click();
- assert.match(await page.locator('#readingLookup').innerText(),/得意な/);
+ assert.match(await page.locator('#readingArticle h2').innerText(),/眠い朝/);
+ await page.locator('#readingStage').selectOption('3');
+ assert.equal(await page.locator('[data-lesson]').count(),10);
+ await page.locator('[data-lesson="s3-guide"]').click();
+ await page.locator('#readingNext').click();
+ assert.match(await page.locator('#readingArticle h2').innerText(),/地図に残った/);
+ await page.locator('[data-lesson="s3-moving"]').click();
+ await page.getByRole('button',{name:'Tra từ 壊した',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/壊す/);
  await page.locator('[data-review-word]').click();
  assert.equal(await page.locator('[data-review-word]').isDisabled(),true);
  await page.locator('#readingFilter').selectOption('review');assert.ok(await page.locator('[data-lesson]').count()>0);
@@ -94,9 +98,9 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-grammar]').first().click();assert.match(await page.locator('[data-grammar]').first().innerText(),/Đã đánh dấu/);
  await page.reload();await page.waitForLoadState('networkidle');
  assert.equal(await page.locator('#readingAppSection').isVisible(),true);
- assert.equal(await page.locator('#readingStage').inputValue(),'2');
- assert.match(await page.locator('#readingProgress').innerText(),/30\/30/);
- assert.match(await page.locator('#readingCoverage').innerText(),/200\/880/);
+ assert.equal(await page.locator('#readingStage').inputValue(),'3');
+ assert.match(await page.locator('#readingProgress').innerText(),/40\/40/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/300\/880/);
  await page.locator('#modeBtnVocab').click();assert.equal(await page.locator('#vocabAppSection').isVisible(),true);
  await page.locator('#modeBtnGrammar').click();assert.equal(await page.locator('#grammarAppSection').isVisible(),true);
  await page.locator('#modeBtnReading').click();
@@ -107,15 +111,15 @@ const server=require('node:http').createServer((req,res)=>{
  await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'tests/reading-desktop.png',fullPage:true});
  const fresh=await browser.newContext(); const freshPage=await fresh.newPage();
  await freshPage.goto('http://127.0.0.1:5503'); await freshPage.locator('#modeBtnReading').click();
- assert.equal(await freshPage.locator('#readingStage').inputValue(),'2');
+ assert.equal(await freshPage.locator('#readingStage').inputValue(),'3');
  assert.equal(await freshPage.locator('[data-lesson]').count(),10);
- assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s2-'));
+ assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s3-'));
  await fresh.close();
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
  await context.setOffline(true);await page.reload();await page.locator('#readingArticle h2').waitFor();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingCoverage').innerText(),/200\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/300\/880/);
  assert.deepEqual(errors,[]);
- console.log('PASS: 30 articles / 80 reading questions; 200 word + 20 grammar checks; wrong-to-correct review; no auto mastery; stage 1 migration + stage 2 resume + latest default, conjugation lookup, filters, persisted coverage, mobile, dark mode, offline.');
+ console.log('PASS: 40 articles / 110 reading questions; 300 word + 30 grammar checks; wrong-to-correct review; no auto mastery; stage 1 migration, stage 2 access, stage 3 resume + latest default, conjugation lookup, filters, persisted coverage, mobile, dark mode, offline.');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exit(1)});
