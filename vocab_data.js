@@ -5178,7 +5178,7 @@ window.QUIZ_CATEGORIES = [
             "kanji": "大分",
             "hanViet": "ĐẠI PHÂN",
             "hiragana": "だいぶ",
-            "nghia": "Chủ yếu, khá",
+            "nghia": "khá nhiều, đáng kể",
             "topicId": 1,
             "id": 506,
             "topicName": "Chủ đề 1: Mức độ & số lượng"
@@ -5542,7 +5542,7 @@ window.QUIZ_CATEGORIES = [
             "kanji": "ぜひ",
             "hanViet": "",
             "hiragana": "ぜひ",
-            "nghia": "Bằng mọi giá, nhất định",
+            "nghia": "nhất định, rất mong (lời mời, mong muốn)",
             "topicId": 3,
             "id": 541,
             "topicName": "Chủ đề 3: Trạng thái, tâm trạng, đánh giá & từ tượng thanh/tượng hình"

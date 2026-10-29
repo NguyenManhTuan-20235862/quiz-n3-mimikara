@@ -25,11 +25,11 @@ const server=require('node:http').createServer((req,res)=>{
  await page.goto('http://127.0.0.1:5503'); await page.waitForLoadState('networkidle');
  await page.locator('#modeBtnReading').click();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingProgress').innerText(),/1\/70/);
+ assert.match(await page.locator('#readingProgress').innerText(),/1\/80/);
  assert.equal(await page.locator('#readingStage').inputValue(),'1');
  assert.match(await page.locator('#readingCoverage').innerText(),/0\/880/);
  await page.locator('#readingStage').selectOption('all');
- assert.equal(await page.locator('[data-lesson]').count(),70);
+ assert.equal(await page.locator('[data-lesson]').count(),80);
  const data=await page.evaluate(()=>window.READING_DATA);
  for(const l of data){
    await page.locator(`[data-lesson="${l.id}"]`).click();
@@ -73,8 +73,8 @@ const server=require('node:http').createServer((req,res)=>{
      assert.ok(!(await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_mistakes'))))[l.newWordIds[0]]);
    }
  }
- assert.match(await page.locator('#readingCoverage').innerText(),/600\/880/);
- assert.match(await page.locator('#readingCoverage').innerText(),/60\/62/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/700\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/62\/62/);
  await page.locator('#readingStage').selectOption('2');
  assert.equal(await page.locator('[data-lesson]').count(),10);
  await page.locator('[data-lesson="s2-class"]').click();
@@ -130,6 +130,26 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-lesson="s6-review"]').click();
  await page.getByRole('button',{name:'Tra từ 纏まって',exact:true}).click();
  assert.match(await page.locator('#readingLookup').innerText(),/纏まる/);
+ const records=await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_reading')).recall);
+ assert.equal(Object.keys(records).filter(k=>k.startsWith('grammar:')).length,62,'Repeated practice must not double-count grammar');
+ assert.equal(Object.entries(records).filter(([k,v])=>k.startsWith('grammar:')&&v.correct).length,62);
+ assert.equal(Object.keys(records).filter(k=>k.startsWith('word:')).length,700);
+ await page.locator('#readingStage').selectOption('7');
+ assert.equal(await page.locator('[data-lesson]').count(),10);
+ await page.locator('[data-lesson="s7-dog"]').click();
+ const grammar7=page.locator('#readingArticle > .reading-detail').nth(1);
+ await grammar7.locator('summary').first().click();
+ assert.equal(await grammar7.getByText('Trọng tâm củng cố',{exact:true}).isVisible(),true);
+ await page.locator('#readingNext').click();
+ assert.match(await page.locator('#readingArticle h2').innerText(),/知らせを聞いて/);
+ await page.getByRole('button',{name:'Tra từ 幸せそうな',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/幸せな/);
+ await page.locator('[data-lesson="s7-sale"]').click();
+ await page.getByRole('button',{name:'Tra từ 必要ない',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/必要な/);
+ await page.locator('[data-lesson="s7-booklet"]').click();
+ await page.getByRole('button',{name:'Tra từ まとめた',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/纏める/);
  await page.locator('[data-review-word]').click();
  assert.equal(await page.locator('[data-review-word]').isDisabled(),true);
  await page.locator('#readingFilter').selectOption('review');assert.ok(await page.locator('[data-lesson]').count()>0);
@@ -141,9 +161,9 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-grammar]').first().click();assert.match(await page.locator('[data-grammar]').first().innerText(),/Đã đánh dấu/);
  await page.reload();await page.waitForLoadState('networkidle');
  assert.equal(await page.locator('#readingAppSection').isVisible(),true);
- assert.equal(await page.locator('#readingStage').inputValue(),'6');
- assert.match(await page.locator('#readingProgress').innerText(),/70\/70/);
- assert.match(await page.locator('#readingCoverage').innerText(),/600\/880/);
+ assert.equal(await page.locator('#readingStage').inputValue(),'7');
+ assert.match(await page.locator('#readingProgress').innerText(),/80\/80/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/700\/880/);
  await page.locator('#modeBtnVocab').click();assert.equal(await page.locator('#vocabAppSection').isVisible(),true);
  await page.locator('#modeBtnGrammar').click();assert.equal(await page.locator('#grammarAppSection').isVisible(),true);
  await page.locator('#modeBtnReading').click();
@@ -154,15 +174,15 @@ const server=require('node:http').createServer((req,res)=>{
  await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'tests/reading-desktop.png',fullPage:true});
  const fresh=await browser.newContext(); const freshPage=await fresh.newPage();
  await freshPage.goto('http://127.0.0.1:5503'); await freshPage.locator('#modeBtnReading').click();
- assert.equal(await freshPage.locator('#readingStage').inputValue(),'6');
+ assert.equal(await freshPage.locator('#readingStage').inputValue(),'7');
  assert.equal(await freshPage.locator('[data-lesson]').count(),10);
- assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s6-'));
+ assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s7-'));
  await fresh.close();
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
  await context.setOffline(true);await page.reload();await page.locator('#readingArticle h2').waitFor();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingCoverage').innerText(),/600\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/700\/880/);
  assert.deepEqual(errors,[]);
- console.log('PASS: 70 articles / 200 reading questions; 600 word + 60 grammar checks; full 62 grammar publication; reinforcement labels; old-stage migration, latest resume, homophone + corrected kana lookup, filters, persisted coverage, mobile, dark mode, offline.');
+ console.log('PASS: 80 articles / 230 reading questions; 700 word + 70 grammar checks (62 unique); repeat-safe grammar tracking; reinforcement labels; old-stage migration, latest resume, inflection + spelling lookup, filters, mobile, dark mode, offline.');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exit(1)});

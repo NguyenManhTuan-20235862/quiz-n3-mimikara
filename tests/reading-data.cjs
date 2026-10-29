@@ -50,6 +50,7 @@ assert.deepEqual([...plan.flatMap(l=>l.grammarIds)].sort((a,b)=>a-b),[...grammar
 assert.equal(plan.filter(l=>l.ready).length,authored.length);
 const stage5=authored.filter(l=>l.stage===5);
 for(const l of authored.filter(l=>l.stage>=6)) assert.equal(l.focusGrammarRole,'reinforce',`${l.id}: grammar should be labelled reinforcement`);
+if(stageFiles.length>=7) assert.deepEqual([...new Set(authored.map(l=>l.focusGrammarId))].sort((a,b)=>a-b),[...grammar.map(g=>g.id)].sort((a,b)=>a-b));
 if(stage5.length) {
   assert.equal(stage5.filter(l=>l.focusGrammarRole==='new').length,5);
   assert.equal(stage5.filter(l=>l.focusGrammarRole==='reinforce').length,5);

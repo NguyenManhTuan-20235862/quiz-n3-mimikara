@@ -15,6 +15,7 @@ const lessons = sources.flatMap(file => {
  const stage = Number(file.match(/\d+/)[0]);
  const source = JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
  assert.equal(source.length,10,`Stage ${stage} must have 10 lessons`);
+ assert.equal(new Set(source.map(l=>l.focusGrammarId)).size,source.length,`Repeated focus within stage ${stage}`);
  return source.map((l, index) => {
   const refs = new Map();
   const text = l.text.replace(/\[\[([^\]]+)\]\]/g, (_, token) => {
@@ -34,7 +35,7 @@ const lessons = sources.flatMap(file => {
   });
   const newWordIds = ids(l.newWords), reviewWordIds = ids(l.reviewWords);
   assert.equal(newWordIds.length,10);
-  for (const id of newWordIds) { assert.ok(!introduced.has(id),'Repeated introduction'); introduced.add(id); }
+  for (const id of newWordIds) { assert.ok(!introduced.has(id),`${l.id}: repeated vocabulary introduction ${id}`); introduced.add(id); }
   assert.ok(reviewWordIds.length>=5 && reviewWordIds.length<=8);
   assert.equal(refs.size,newWordIds.length+reviewWordIds.length);
   for (const g of l.grammar) {
@@ -55,8 +56,14 @@ const lessons = sources.flatMap(file => {
 });
 assert.equal(introduced.size,sources.length*100);
 assert.equal(new Set(lessons.map(l=>l.id)).size,lessons.length);
-assert.equal(new Set(lessons.map(l=>l.focusGrammarId)).size,lessons.length,'Repeated focus grammar');
-const planned = lessons.map(l=>({id:l.id,stage:l.stage,title:l.title,wordIds:l.newWordIds,grammarIds:[l.focusGrammarId],ready:true}));
+// Each grammar is allocated once; later lessons may explicitly reinforce it.
+const allocatedGrammar = new Set();
+const planned = lessons.map(l=>{
+  const repeated=allocatedGrammar.has(l.focusGrammarId);
+  if(repeated) assert.equal(l.focusGrammarRole,'reinforce',`${l.id}: repeated focus must be reinforcement`);
+  allocatedGrammar.add(l.focusGrammarId);
+  return {id:l.id,stage:l.stage,title:l.title,wordIds:l.newWordIds,grammarIds:repeated?[]:[l.focusGrammarId],ready:true};
+});
 // Draft slots have allocations only. They are never presented as finished articles.
 const remainingGrammar = grammar.filter(g=>!lessons.some(l=>l.focusGrammarId===g.id)).map(g=>g.id);
 for (const c of require('../vocab_data.json')) {
