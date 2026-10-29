@@ -25,11 +25,11 @@ const server=require('node:http').createServer((req,res)=>{
  await page.goto('http://127.0.0.1:5503'); await page.waitForLoadState('networkidle');
  await page.locator('#modeBtnReading').click();
  assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingProgress').innerText(),/1\/90/);
+ assert.match(await page.locator('#readingProgress').innerText(),/1\/92/);
  assert.equal(await page.locator('#readingStage').inputValue(),'1');
  assert.match(await page.locator('#readingCoverage').innerText(),/0\/880/);
  await page.locator('#readingStage').selectOption('all');
- assert.equal(await page.locator('[data-lesson]').count(),90);
+ assert.equal(await page.locator('[data-lesson]').count(),92);
  const data=await page.evaluate(()=>window.READING_DATA);
  for(const l of data){
    await page.locator(`[data-lesson="${l.id}"]`).click();
@@ -49,7 +49,7 @@ const server=require('node:http').createServer((req,res)=>{
    await page.locator('#readingRecallCheck').click();
    assert.match(await page.locator('#readingRecallResult').innerText(),/tất cả/);
    const questions=page.locator('.reading-recall-question');
-   assert.equal(await questions.count(),11);
+   assert.equal(await questions.count(),l.newWordIds.length+1);
    for(let i=0;i<l.newWordIds.length;i++){
      const meaning=await page.evaluate(id=>window.QUIZ_CATEGORIES.flatMap(c=>c.topics.flatMap(t=>t.words)).find(w=>w.id===id).nghia,l.newWordIds[i]);
      const labels=await questions.nth(i).locator('label').allTextContents();
@@ -73,7 +73,7 @@ const server=require('node:http').createServer((req,res)=>{
      assert.ok(!(await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_mistakes'))))[l.newWordIds[0]]);
    }
  }
- assert.match(await page.locator('#readingCoverage').innerText(),/800\/880/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/814\/880/);
  assert.match(await page.locator('#readingCoverage').innerText(),/62\/62/);
  await page.locator('#readingStage').selectOption('2');
  assert.equal(await page.locator('[data-lesson]').count(),10);
@@ -133,7 +133,7 @@ const server=require('node:http').createServer((req,res)=>{
  const records=await page.evaluate(()=>JSON.parse(localStorage.getItem('jlpt_n3_reading')).recall);
  assert.equal(Object.keys(records).filter(k=>k.startsWith('grammar:')).length,62,'Repeated practice must not double-count grammar');
  assert.equal(Object.entries(records).filter(([k,v])=>k.startsWith('grammar:')&&v.correct).length,62);
- assert.equal(Object.keys(records).filter(k=>k.startsWith('word:')).length,800);
+ assert.equal(Object.keys(records).filter(k=>k.startsWith('word:')).length,814);
  await page.locator('#readingStage').selectOption('7');
  assert.equal(await page.locator('[data-lesson]').count(),10);
  await page.locator('[data-lesson="s7-dog"]').click();
@@ -161,6 +161,16 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-lesson="s8-colors"]').click();
  await page.getByRole('button',{name:'Tra từ 溶ける',exact:true}).click();
  assert.match(await page.locator('#readingLookup').innerText(),/解ける・溶ける/);
+ await page.locator('#readingStage').selectOption('9');
+ assert.equal(await page.locator('[data-lesson]').count(),2);
+ assert.match(await page.locator('#readingCoverage').innerText(),/880\/880/);
+ await page.locator('[data-lesson="s9-festival"]').click();
+ await page.getByRole('button',{name:'Tra từ 勧めて',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/勧める/);
+ await page.locator('#readingNext').click();
+ assert.match(await page.locator('#readingArticle h2').innerText(),/読み終えた後も/);
+ await page.getByRole('button',{name:'Tra từ 薦めて',exact:true}).click();
+ assert.match(await page.locator('#readingLookup').innerText(),/薦める/);
  await page.locator('[data-review-word]').click();
  assert.equal(await page.locator('[data-review-word]').isDisabled(),true);
  await page.locator('#readingFilter').selectOption('review');assert.ok(await page.locator('[data-lesson]').count()>0);
@@ -172,9 +182,9 @@ const server=require('node:http').createServer((req,res)=>{
  await page.locator('[data-grammar]').first().click();assert.match(await page.locator('[data-grammar]').first().innerText(),/Đã đánh dấu/);
  await page.reload();await page.waitForLoadState('networkidle');
  assert.equal(await page.locator('#readingAppSection').isVisible(),true);
- assert.equal(await page.locator('#readingStage').inputValue(),'8');
- assert.match(await page.locator('#readingProgress').innerText(),/90\/90/);
- assert.match(await page.locator('#readingCoverage').innerText(),/800\/880/);
+ assert.equal(await page.locator('#readingStage').inputValue(),'9');
+ assert.match(await page.locator('#readingProgress').innerText(),/92\/92/);
+ assert.match(await page.locator('#readingCoverage').innerText(),/814\/880/);
  await page.locator('#modeBtnVocab').click();assert.equal(await page.locator('#vocabAppSection').isVisible(),true);
  await page.locator('#modeBtnGrammar').click();assert.equal(await page.locator('#grammarAppSection').isVisible(),true);
  await page.locator('#modeBtnReading').click();
@@ -185,15 +195,15 @@ const server=require('node:http').createServer((req,res)=>{
  await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'tests/reading-desktop.png',fullPage:true});
  const fresh=await browser.newContext(); const freshPage=await fresh.newPage();
  await freshPage.goto('http://127.0.0.1:5503'); await freshPage.locator('#modeBtnReading').click();
- assert.equal(await freshPage.locator('#readingStage').inputValue(),'8');
- assert.equal(await freshPage.locator('[data-lesson]').count(),10);
- assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s8-'));
+ assert.equal(await freshPage.locator('#readingStage').inputValue(),'9');
+ assert.equal(await freshPage.locator('[data-lesson]').count(),2);
+ assert.ok((await freshPage.locator('.reading-lesson.selected').getAttribute('data-lesson')).startsWith('s9-'));
  await fresh.close();
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
  await context.setOffline(true);await page.reload();await page.locator('#readingArticle h2').waitFor();
- assert.equal(await page.locator('[data-lesson]').count(),10);
- assert.match(await page.locator('#readingCoverage').innerText(),/800\/880/);
+ assert.equal(await page.locator('[data-lesson]').count(),2);
+ assert.match(await page.locator('#readingCoverage').innerText(),/814\/880/);
  assert.deepEqual(errors,[]);
- console.log('PASS: 90 articles / 260 reading questions; 800 word + 80 grammar checks (62 unique); repeat-safe grammar tracking; reinforcement labels; old-stage migration, latest resume, inflection + spelling lookup, filters, mobile, dark mode, offline.');
+ console.log('PASS: 92 articles / 266 reading questions; 814 word + 82 grammar checks (62 unique); repeat-safe grammar tracking; reinforcement labels; old-stage migration, latest resume, inflection + spelling lookup, filters, mobile, dark mode, offline.');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exit(1)});

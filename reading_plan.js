@@ -1645,236 +1645,191 @@ window.READING_PLAN = [
     "ready": true
   },
   {
-    "id": "planned-81",
+    "id": "s9-festival",
     "stage": 9,
-    "title": "Danh từ · Chủ đề 1: Con người, gia đình, quan hệ & xã hội",
+    "title": "Từ buổi tập đầu đến ngày hội",
     "wordIds": [
-      6,
-      9,
-      11,
-      21,
-      47
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-82",
-    "stage": 9,
-    "title": "Danh từ · Chủ đề 2: Học tập, công việc & kinh tế",
-    "wordIds": [
-      53,
-      56,
-      57,
-      59,
-      61,
-      62,
-      67,
-      68,
-      69,
-      71,
-      72,
-      79
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-83",
-    "stage": 9,
-    "title": "Danh từ · Chủ đề 2: Học tập, công việc & kinh tế",
-    "wordIds": [
-      81,
-      92
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-84",
-    "stage": 9,
-    "title": "Danh từ · Chủ đề 3: Đời sống thường ngày, giao thông, đồ vật & địa điểm",
-    "wordIds": [
-      94,
-      96,
-      98,
-      100,
-      103,
-      106,
-      108,
-      111,
-      114,
-      119,
-      133,
-      145
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-85",
-    "stage": 9,
-    "title": "Danh từ · Chủ đề 3: Đời sống thường ngày, giao thông, đồ vật & địa điểm",
-    "wordIds": [
-      155,
-      161
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-86",
-    "stage": 9,
-    "title": "Danh từ · Chủ đề 4: Tự nhiên, môi trường & thời tiết",
-    "wordIds": [
-      170,
-      171,
-      172
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-87",
-    "stage": 9,
-    "title": "Danh từ · Chủ đề 6: Khái niệm trừu tượng, tư duy, cảm xúc & trạng thái",
-    "wordIds": [
-      192,
-      194,
-      195,
-      211,
       212,
-      217,
-      218,
-      221,
-      224,
-      228,
-      237,
-      238
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-88",
-    "stage": 9,
-    "title": "Danh từ · Chủ đề 6: Khái niệm trừu tượng, tư duy, cảm xúc & trạng thái",
-    "wordIds": [
-      247,
-      248,
-      249,
-      250,
-      262,
-      281,
-      283,
-      284,
-      293
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-89",
-    "stage": 9,
-    "title": "Danh từ · Chủ đề 7: Danh từ bắt nguồn từ Động từ (Thể Masu bỏ Masu)",
-    "wordIds": [
       302,
       305,
       317,
       329,
-      330
+      330,
+      678
     ],
     "grammarIds": [],
-    "ready": false
+    "ready": true
   },
   {
-    "id": "planned-90",
+    "id": "s9-learning",
     "stage": 9,
-    "title": "Katakana · Chủ đề 1: Thể thao, đội nhóm & công việc",
+    "title": "Một cột mốc và cách học tiếp theo",
     "wordIds": [
-      340
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-91",
-    "stage": 10,
-    "title": "Katakana · Chủ đề 2: Đời sống, đồ vật, công nghệ & mua sắm",
-    "wordIds": [
-      381
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-92",
-    "stage": 10,
-    "title": "Tính từ · Chủ đề 3: Đánh giá, hoàn cảnh, mức độ & tính chất chung",
-    "wordIds": [
-      491
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-93",
-    "stage": 10,
-    "title": "Phó từ & Liên từ · Chủ đề 1: Mức độ & số lượng",
-    "wordIds": [
-      517
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-94",
-    "stage": 10,
-    "title": "Động từ · Chủ đề 1: Chuyển động, thao tác cơ thể & tương tác hành vi",
-    "wordIds": [
-      617,
-      653,
-      668,
-      674,
+      221,
+      283,
       675,
-      678,
-      679
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-95",
-    "stage": 10,
-    "title": "Động từ · Chủ đề 2: Hành động hàng ngày, nấu ăn, xử lý đồ vật & sinh hoạt",
-    "wordIds": [
+      679,
       712,
-      723
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-96",
-    "stage": 10,
-    "title": "Động từ · Chủ đề 3: Thay đổi, tăng giảm, kết hợp, chia tách & biến chuyển trạng thái",
-    "wordIds": [
-      818,
-      830,
-      832
-    ],
-    "grammarIds": [],
-    "ready": false
-  },
-  {
-    "id": "planned-97",
-    "stage": 10,
-    "title": "Động từ · Chủ đề 4: Tâm lý, tư duy, nhận thức & cảm giác",
-    "wordIds": [
       873,
       874
     ],
     "grammarIds": [],
-    "ready": false
+    "ready": true
+  },
+  {
+    "id": "first-job",
+    "stage": 0,
+    "title": "Ngày đầu đi làm",
+    "wordIds": [
+      6,
+      53,
+      56,
+      57,
+      59,
+      81,
+      103,
+      194
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "saving",
+    "stage": 0,
+    "title": "Tiết kiệm để thực hiện ước mơ",
+    "wordIds": [
+      62,
+      68,
+      69,
+      92,
+      94,
+      108,
+      249
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "shopping",
+    "stage": 0,
+    "title": "Một lần đổi hàng",
+    "wordIds": [
+      61,
+      67,
+      71,
+      72,
+      111,
+      247,
+      381
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "homecoming",
+    "stage": 0,
+    "title": "Chuyến về quê",
+    "wordIds": [
+      96,
+      98,
+      133,
+      171,
+      250,
+      668,
+      517
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "reading-habit",
+    "stage": 0,
+    "title": "Thói quen đọc mỗi ngày",
+    "wordIds": [
+      79,
+      119,
+      211,
+      217,
+      224,
+      262,
+      723
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "health",
+    "stage": 0,
+    "title": "Đi bộ cùng đồng nghiệp",
+    "wordIds": [
+      145,
+      155,
+      237,
+      617,
+      832,
+      653,
+      491
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "community",
+    "stage": 0,
+    "title": "Ngày dọn vệ sinh khu phố",
+    "wordIds": [
+      21,
+      100,
+      114,
+      281,
+      340,
+      818,
+      106
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "travel-change",
+    "stage": 0,
+    "title": "Khi kế hoạch thay đổi",
+    "wordIds": [
+      11,
+      47,
+      161,
+      192,
+      293
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "presentation",
+    "stage": 0,
+    "title": "Học từ lần thất bại",
+    "wordIds": [
+      9,
+      195,
+      218,
+      238,
+      830
+    ],
+    "grammarIds": [],
+    "ready": true
+  },
+  {
+    "id": "environment",
+    "stage": 0,
+    "title": "Mang theo chiếc túi nhỏ",
+    "wordIds": [
+      170,
+      172,
+      228,
+      248,
+      284,
+      674
+    ],
+    "grammarIds": [],
+    "ready": true
   }
 ];

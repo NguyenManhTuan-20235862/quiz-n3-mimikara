@@ -10,10 +10,10 @@ const {READING_DATA:lessons,READING_PLAN:plan,GRAMMAR_DATA:grammar,QUIZ_CATEGORI
 const words = categories.flatMap(c=>c.topics.flatMap(t=>t.words));
 const authored = lessons.filter(l=>l.stage), warmup = lessons.filter(l=>!l.stage);
 assert.equal(warmup.length,10);
-for(let stage=1;stage<=stageFiles.length;stage++) assert.equal(authored.filter(l=>l.stage===stage).length,10);
-assert.equal(new Set(lessons.map(l=>l.id)).size,10+stageFiles.length*10);
+for(let stage=1;stage<=stageFiles.length;stage++) assert.equal(authored.filter(l=>l.stage===stage).length,stage===9?2:10);
+assert.equal(new Set(lessons.map(l=>l.id)).size,10+Math.min(stageFiles.length,8)*10+(stageFiles.length>=9?2:0));
 const newIds = authored.flatMap(l=>l.newWordIds);
-assert.equal(newIds.length,stageFiles.length*100); assert.equal(new Set(newIds).size,stageFiles.length*100);
+assert.equal(newIds.length,Math.min(stageFiles.length,8)*100+(stageFiles.length>=9?14:0)); assert.equal(new Set(newIds).size,Math.min(stageFiles.length,8)*100+(stageFiles.length>=9?14:0));
 for(let stage=2;stage<=stageFiles.length;stage++) {
   const prior=lessons.filter(l=>!l.stage || l.stage<stage);
   const priorWords=new Set(prior.flatMap(l=>l.vocabulary?l.vocabulary.map(r=>r.id):l.words.map(k=>words.find(w=>w.kanji===k).id)));
@@ -33,7 +33,7 @@ if(stageFiles.length===8) {
 }
 const introduced = new Set(warmup.flatMap(l=>l.words.map(k=>words.find(w=>w.kanji===k).id)));
 for (const l of authored) {
-  assert.equal(l.newWordIds.length,10);
+  assert.equal(l.newWordIds.length,l.stage===9?7:10);
   assert.ok(l.reviewWordIds.length>=5 && l.reviewWordIds.length<=8);
   for(const id of l.reviewWordIds) assert.ok(introduced.has(id),`${l.id}: review before introduction ${id}`);
   l.newWordIds.forEach(id=>introduced.add(id));
@@ -51,7 +51,15 @@ for (const l of authored) {
 }
 assert.deepEqual([...plan.flatMap(l=>l.wordIds)].sort((a,b)=>a-b),[...words.map(w=>w.id)].sort((a,b)=>a-b));
 assert.deepEqual([...plan.flatMap(l=>l.grammarIds)].sort((a,b)=>a-b),[...grammar.map(g=>g.id)].sort((a,b)=>a-b));
-assert.equal(plan.filter(l=>l.ready).length,authored.length);
+const ready=plan.filter(l=>l.ready);
+assert.equal(new Set(ready.map(l=>l.id)).size,ready.length);
+for(const row of ready) {
+ const lesson=lessons.find(l=>l.id===row.id); assert.ok(lesson,`Missing published lesson: ${row.id}`);
+ const targets=new Set(lesson.vocabulary?lesson.vocabulary.map(v=>v.id):lesson.words.map(k=>words.find(w=>w.kanji===k).id));
+ for(const id of row.wordIds) assert.ok(targets.has(id),`${row.id}: allocation absent from content`);
+}
+assert.equal(ready.filter(l=>l.stage).length,authored.length);
+if(stageFiles.length===9) { assert.equal(introduced.size,880); assert.ok(plan.every(l=>l.ready)); }
 const stage5=authored.filter(l=>l.stage===5);
 for(const l of authored.filter(l=>l.stage>=6)) assert.equal(l.focusGrammarRole,'reinforce',`${l.id}: grammar should be labelled reinforcement`);
 if(stageFiles.length>=7) assert.deepEqual([...new Set(authored.map(l=>l.focusGrammarId))].sort((a,b)=>a-b),[...grammar.map(g=>g.id)].sort((a,b)=>a-b));
