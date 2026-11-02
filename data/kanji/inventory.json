@@ -1,0 +1,6679 @@
+{
+  "schemaVersion": 1,
+  "selection": "Unique CJK unified/compatibility ideographs in vocab_data.json kanji fields; kana, punctuation and iteration marks excluded.",
+  "wordCount": 880,
+  "wordCountWithKanji": 705,
+  "wordCountWithoutKanji": 175,
+  "characterCount": 568,
+  "characters": {
+    "一": {
+      "codepoint": "U+4E00",
+      "wordIds": [
+        187,
+        567
+      ]
+    },
+    "上": {
+      "codepoint": "U+4E0A",
+      "wordIds": [
+        4,
+        5,
+        8,
+        68,
+        660
+      ]
+    },
+    "下": {
+      "codepoint": "U+4E0B",
+      "wordIds": [
+        123,
+        661,
+        705,
+        786
+      ]
+    },
+    "不": {
+      "codepoint": "U+4E0D",
+      "wordIds": [
+        296,
+        437,
+        438,
+        465,
+        472,
+        476,
+        496
+      ]
+    },
+    "与": {
+      "codepoint": "U+4E0E",
+      "wordIds": [
+        674
+      ]
+    },
+    "世": {
+      "codepoint": "U+4E16",
+      "wordIds": [
+        19,
+        300
+      ]
+    },
+    "中": {
+      "codepoint": "U+4E2D",
+      "wordIds": [
+        143,
+        263,
+        423,
+        880
+      ]
+    },
+    "乗": {
+      "codepoint": "U+4E57",
+      "wordIds": [
+        606,
+        607
+      ]
+    },
+    "乾": {
+      "codepoint": "U+4E7E",
+      "wordIds": [
+        685,
+        686
+      ]
+    },
+    "予": {
+      "codepoint": "U+4E88",
+      "wordIds": [
+        182,
+        245
+      ]
+    },
+    "争": {
+      "codepoint": "U+4E89",
+      "wordIds": [
+        48,
+        232,
+        682
+      ]
+    },
+    "事": {
+      "codepoint": "U+4E8B",
+      "wordIds": [
+        113,
+        136,
+        137,
+        280
+      ]
+    },
+    "互": {
+      "codepoint": "U+4E92",
+      "wordIds": [
+        561
+      ]
+    },
+    "亡": {
+      "codepoint": "U+4EA1",
+      "wordIds": [
+        185,
+        610,
+        611
+      ]
+    },
+    "交": {
+      "codepoint": "U+4EA4",
+      "wordIds": [
+        72,
+        846,
+        847,
+        848
+      ]
+    },
+    "人": {
+      "codepoint": "U+4EBA",
+      "wordIds": [
+        11,
+        18,
+        46,
+        71,
+        116
+      ]
+    },
+    "付": {
+      "codepoint": "U+4ED8",
+      "wordIds": [
+        616,
+        697,
+        698,
+        754,
+        755
+      ]
+    },
+    "代": {
+      "codepoint": "U+4EE3",
+      "wordIds": [
+        45,
+        299
+      ]
+    },
+    "仲": {
+      "codepoint": "U+4EF2",
+      "wordIds": [
+        12
+      ]
+    },
+    "件": {
+      "codepoint": "U+4EF6",
+      "wordIds": [
+        137,
+        256
+      ]
+    },
+    "任": {
+      "codepoint": "U+4EFB",
+      "wordIds": [
+        254,
+        680
+      ]
+    },
+    "休": {
+      "codepoint": "U+4F11",
+      "wordIds": [
+        95
+      ]
+    },
+    "会": {
+      "codepoint": "U+4F1A",
+      "wordIds": [
+        107,
+        281,
+        614
+      ]
+    },
+    "伝": {
+      "codepoint": "U+4F1D",
+      "wordIds": [
+        30,
+        34,
+        309,
+        829,
+        830
+      ]
+    },
+    "伸": {
+      "codepoint": "U+4F38",
+      "wordIds": [
+        836,
+        837
+      ]
+    },
+    "似": {
+      "codepoint": "U+4F3C",
+      "wordIds": [
+        808,
+        809,
+        810
+      ]
+    },
+    "低": {
+      "codepoint": "U+4F4E",
+      "wordIds": [
+        216
+      ]
+    },
+    "体": {
+      "codepoint": "U+4F53",
+      "wordIds": [
+        37,
+        175,
+        177,
+        502,
+        567
+      ]
+    },
+    "作": {
+      "codepoint": "U+4F5C",
+      "wordIds": [
+        118,
+        119
+      ]
+    },
+    "例": {
+      "codepoint": "U+4F8B",
+      "wordIds": [
+        276
+      ]
+    },
+    "価": {
+      "codepoint": "U+4FA1",
+      "wordIds": [
+        92
+      ]
+    },
+    "係": {
+      "codepoint": "U+4FC2",
+      "wordIds": [
+        36
+      ]
+    },
+    "保": {
+      "codepoint": "U+4FDD",
+      "wordIds": [
+        294,
+        295
+      ]
+    },
+    "信": {
+      "codepoint": "U+4FE1",
+      "wordIds": [
+        875
+      ]
+    },
+    "修": {
+      "codepoint": "U+4FEE",
+      "wordIds": [
+        139
+      ]
+    },
+    "倍": {
+      "codepoint": "U+500D",
+      "wordIds": [
+        259
+      ]
+    },
+    "倒": {
+      "codepoint": "U+5012",
+      "wordIds": [
+        93,
+        467,
+        585,
+        586
+      ]
+    },
+    "借": {
+      "codepoint": "U+501F",
+      "wordIds": [
+        325
+      ]
+    },
+    "値": {
+      "codepoint": "U+5024",
+      "wordIds": [
+        68
+      ]
+    },
+    "停": {
+      "codepoint": "U+505C",
+      "wordIds": [
+        140
+      ]
+    },
+    "健": {
+      "codepoint": "U+5065",
+      "wordIds": [
+        441
+      ]
+    },
+    "偽": {
+      "codepoint": "U+507D",
+      "wordIds": [
+        267
+      ]
+    },
+    "備": {
+      "codepoint": "U+5099",
+      "wordIds": [
+        195
+      ]
+    },
+    "働": {
+      "codepoint": "U+50CD",
+      "wordIds": [
+        310
+      ]
+    },
+    "像": {
+      "codepoint": "U+50CF",
+      "wordIds": [
+        210
+      ]
+    },
+    "儀": {
+      "codepoint": "U+5100",
+      "wordIds": [
+        43
+      ]
+    },
+    "先": {
+      "codepoint": "U+5148",
+      "wordIds": [
+        6
+      ]
+    },
+    "光": {
+      "codepoint": "U+5149",
+      "wordIds": [
+        96
+      ]
+    },
+    "免": {
+      "codepoint": "U+514D",
+      "wordIds": [
+        66
+      ]
+    },
+    "全": {
+      "codepoint": "U+5168",
+      "wordIds": [
+        492,
+        516
+      ]
+    },
+    "共": {
+      "codepoint": "U+5171",
+      "wordIds": [
+        287
+      ]
+    },
+    "内": {
+      "codepoint": "U+5185",
+      "wordIds": [
+        262
+      ]
+    },
+    "冗": {
+      "codepoint": "U+5197",
+      "wordIds": [
+        199
+      ]
+    },
+    "写": {
+      "codepoint": "U+5199",
+      "wordIds": [
+        688,
+        689
+      ]
+    },
+    "冷": {
+      "codepoint": "U+51B7",
+      "wordIds": [
+        706,
+        707,
+        787,
+        788
+      ]
+    },
+    "出": {
+      "codepoint": "U+51FA",
+      "wordIds": [
+        16,
+        101,
+        198,
+        230,
+        280,
+        614,
+        826,
+        862
+      ]
+    },
+    "分": {
+      "codepoint": "U+5206",
+      "wordIds": [
+        506,
+        811,
+        812
+      ]
+    },
+    "切": {
+      "codepoint": "U+5207",
+      "wordIds": [
+        257,
+        827,
+        828
+      ]
+    },
+    "列": {
+      "codepoint": "U+5217",
+      "wordIds": [
+        147
+      ]
+    },
+    "初": {
+      "codepoint": "U+521D",
+      "wordIds": [
+        217
+      ]
+    },
+    "判": {
+      "codepoint": "U+5224",
+      "wordIds": [
+        64
+      ]
+    },
+    "別": {
+      "codepoint": "U+5225",
+      "wordIds": [
+        268,
+        332,
+        491,
+        559,
+        568
+      ]
+    },
+    "利": {
+      "codepoint": "U+5229",
+      "wordIds": [
+        250
+      ]
+    },
+    "制": {
+      "codepoint": "U+5236",
+      "wordIds": [
+        120
+      ]
+    },
+    "刺": {
+      "codepoint": "U+523A",
+      "wordIds": [
+        65,
+        640,
+        641
+      ]
+    },
+    "刻": {
+      "codepoint": "U+523B",
+      "wordIds": [
+        103
+      ]
+    },
+    "前": {
+      "codepoint": "U+524D",
+      "wordIds": [
+        213,
+        266,
+        522
+      ]
+    },
+    "剤": {
+      "codepoint": "U+5264",
+      "wordIds": [
+        121
+      ]
+    },
+    "割": {
+      "codepoint": "U+5272",
+      "wordIds": [
+        298,
+        734,
+        735
+      ]
+    },
+    "力": {
+      "codepoint": "U+529B",
+      "wordIds": [
+        21,
+        82,
+        177,
+        211
+      ]
+    },
+    "功": {
+      "codepoint": "U+529F",
+      "wordIds": [
+        193
+      ]
+    },
+    "加": {
+      "codepoint": "U+52A0",
+      "wordIds": [
+        100
+      ]
+    },
+    "助": {
+      "codepoint": "U+52A9",
+      "wordIds": [
+        635,
+        636
+      ]
+    },
+    "努": {
+      "codepoint": "U+52AA",
+      "wordIds": [
+        211
+      ]
+    },
+    "効": {
+      "codepoint": "U+52B9",
+      "wordIds": [
+        285,
+        770
+      ]
+    },
+    "勇": {
+      "codepoint": "U+52C7",
+      "wordIds": [
+        292
+      ]
+    },
+    "動": {
+      "codepoint": "U+52D5",
+      "wordIds": [
+        129,
+        242,
+        619,
+        620
+      ]
+    },
+    "勝": {
+      "codepoint": "U+52DD",
+      "wordIds": [
+        326
+      ]
+    },
+    "勤": {
+      "codepoint": "U+52E4",
+      "wordIds": [
+        57
+      ]
+    },
+    "勧": {
+      "codepoint": "U+52E7",
+      "wordIds": [
+        678
+      ]
+    },
+    "包": {
+      "codepoint": "U+5305",
+      "wordIds": [
+        699
+      ]
+    },
+    "化": {
+      "codepoint": "U+5316",
+      "wordIds": [
+        47,
+        104,
+        228
+      ]
+    },
+    "半": {
+      "codepoint": "U+534A",
+      "wordIds": [
+        213,
+        214
+      ]
+    },
+    "協": {
+      "codepoint": "U+5354",
+      "wordIds": [
+        21,
+        288
+      ]
+    },
+    "印": {
+      "codepoint": "U+5370",
+      "wordIds": [
+        156,
+        286
+      ]
+    },
+    "原": {
+      "codepoint": "U+539F",
+      "wordIds": [
+        246
+      ]
+    },
+    "参": {
+      "codepoint": "U+53C2",
+      "wordIds": [
+        100
+      ]
+    },
+    "友": {
+      "codepoint": "U+53CB",
+      "wordIds": [
+        11
+      ]
+    },
+    "反": {
+      "codepoint": "U+53CD",
+      "wordIds": [
+        209,
+        225
+      ]
+    },
+    "取": {
+      "codepoint": "U+53D6",
+      "wordIds": [
+        80
+      ]
+    },
+    "句": {
+      "codepoint": "U+53E5",
+      "wordIds": [
+        44
+      ]
+    },
+    "叩": {
+      "codepoint": "U+53E9",
+      "wordIds": [
+        581
+      ]
+    },
+    "叫": {
+      "codepoint": "U+53EB",
+      "wordIds": [
+        591
+      ]
+    },
+    "可": {
+      "codepoint": "U+53EF",
+      "wordIds": [
+        495,
+        496
+      ]
+    },
+    "司": {
+      "codepoint": "U+53F8",
+      "wordIds": [
+        8
+      ]
+    },
+    "合": {
+      "codepoint": "U+5408",
+      "wordIds": [
+        10,
+        50,
+        157,
+        298,
+        616,
+        773,
+        774,
+        803,
+        804,
+        808
+      ]
+    },
+    "同": {
+      "codepoint": "U+540C",
+      "wordIds": [
+        521
+      ]
+    },
+    "名": {
+      "codepoint": "U+540D",
+      "wordIds": [
+        65,
+        255
+      ]
+    },
+    "向": {
+      "codepoint": "U+5411",
+      "wordIds": [
+        676,
+        677
+      ]
+    },
+    "含": {
+      "codepoint": "U+542B",
+      "wordIds": [
+        851,
+        852
+      ]
+    },
+    "告": {
+      "codepoint": "U+544A",
+      "wordIds": [
+        31,
+        35
+      ]
+    },
+    "周": {
+      "codepoint": "U+5468",
+      "wordIds": [
+        145
+      ]
+    },
+    "味": {
+      "codepoint": "U+5473",
+      "wordIds": [
+        108,
+        197,
+        444
+      ]
+    },
+    "呼": {
+      "codepoint": "U+547C",
+      "wordIds": [
+        590
+      ]
+    },
+    "命": {
+      "codepoint": "U+547D",
+      "wordIds": [
+        186
+      ]
+    },
+    "和": {
+      "codepoint": "U+548C",
+      "wordIds": [
+        49
+      ]
+    },
+    "品": {
+      "codepoint": "U+54C1",
+      "wordIds": [
+        67,
+        88,
+        119
+      ]
+    },
+    "商": {
+      "codepoint": "U+5546",
+      "wordIds": [
+        87,
+        88
+      ]
+    },
+    "喋": {
+      "codepoint": "U+558B",
+      "wordIds": [
+        202
+      ]
+    },
+    "喜": {
+      "codepoint": "U+559C",
+      "wordIds": [
+        333
+      ]
+    },
+    "営": {
+      "codepoint": "U+55B6",
+      "wordIds": [
+        70
+      ]
+    },
+    "嗅": {
+      "codepoint": "U+55C5",
+      "wordIds": [
+        580
+      ]
+    },
+    "因": {
+      "codepoint": "U+56E0",
+      "wordIds": [
+        246
+      ]
+    },
+    "団": {
+      "codepoint": "U+56E3",
+      "wordIds": [
+        37
+      ]
+    },
+    "囲": {
+      "codepoint": "U+56F2",
+      "wordIds": [
+        261,
+        645
+      ]
+    },
+    "図": {
+      "codepoint": "U+56F3",
+      "wordIds": [
+        157
+      ]
+    },
+    "固": {
+      "codepoint": "U+56FA",
+      "wordIds": [
+        453
+      ]
+    },
+    "国": {
+      "codepoint": "U+56FD",
+      "wordIds": [
+        39,
+        40,
+        97,
+        498
+      ]
+    },
+    "地": {
+      "codepoint": "U+5730",
+      "wordIds": [
+        123,
+        161,
+        163,
+        444
+      ]
+    },
+    "坂": {
+      "codepoint": "U+5742",
+      "wordIds": [
+        126
+      ]
+    },
+    "均": {
+      "codepoint": "U+5747",
+      "wordIds": [
+        297
+      ]
+    },
+    "型": {
+      "codepoint": "U+578B",
+      "wordIds": [
+        158
+      ]
+    },
+    "埋": {
+      "codepoint": "U+57CB",
+      "wordIds": [
+        715,
+        716
+      ]
+    },
+    "基": {
+      "codepoint": "U+57FA",
+      "wordIds": [
+        277,
+        497
+      ]
+    },
+    "報": {
+      "codepoint": "U+5831",
+      "wordIds": [
+        35,
+        235
+      ]
+    },
+    "場": {
+      "codepoint": "U+5834",
+      "wordIds": [
+        154,
+        230
+      ]
+    },
+    "境": {
+      "codepoint": "U+5883",
+      "wordIds": [
+        172
+      ]
+    },
+    "増": {
+      "codepoint": "U+5897",
+      "wordIds": [
+        815,
+        816
+      ]
+    },
+    "壊": {
+      "codepoint": "U+58CA",
+      "wordIds": [
+        732,
+        733
+      ]
+    },
+    "売": {
+      "codepoint": "U+58F2",
+      "wordIds": [
+        87
+      ]
+    },
+    "変": {
+      "codepoint": "U+5909",
+      "wordIds": [
+        228,
+        293,
+        463,
+        471,
+        500,
+        530,
+        819,
+        820
+      ]
+    },
+    "外": {
+      "codepoint": "U+5916",
+      "wordIds": [
+        276,
+        469,
+        543,
+        742,
+        743
+      ]
+    },
+    "多": {
+      "codepoint": "U+591A",
+      "wordIds": [
+        212
+      ]
+    },
+    "夜": {
+      "codepoint": "U+591C",
+      "wordIds": [
+        105
+      ]
+    },
+    "夢": {
+      "codepoint": "U+5922",
+      "wordIds": [
+        207,
+        423
+      ]
+    },
+    "大": {
+      "codepoint": "U+5927",
+      "wordIds": [
+        463,
+        500,
+        502,
+        506
+      ]
+    },
+    "太": {
+      "codepoint": "U+592A",
+      "wordIds": [
+        162
+      ]
+    },
+    "失": {
+      "codepoint": "U+5931",
+      "wordIds": [
+        55,
+        194,
+        439
+      ]
+    },
+    "奏": {
+      "codepoint": "U+594F",
+      "wordIds": [
+        150
+      ]
+    },
+    "契": {
+      "codepoint": "U+5951",
+      "wordIds": [
+        85
+      ]
+    },
+    "奮": {
+      "codepoint": "U+596E",
+      "wordIds": [
+        243
+      ]
+    },
+    "女": {
+      "codepoint": "U+5973",
+      "wordIds": [
+        2
+      ]
+    },
+    "始": {
+      "codepoint": "U+59CB",
+      "wordIds": [
+        317,
+        329
+      ]
+    },
+    "子": {
+      "codepoint": "U+5B50",
+      "wordIds": [
+        237
+      ]
+    },
+    "存": {
+      "codepoint": "U+5B58",
+      "wordIds": [
+        294
+      ]
+    },
+    "学": {
+      "codepoint": "U+5B66",
+      "wordIds": [
+        51,
+        52,
+        58
+      ]
+    },
+    "宅": {
+      "codepoint": "U+5B85",
+      "wordIds": [
+        99
+      ]
+    },
+    "守": {
+      "codepoint": "U+5B88",
+      "wordIds": [
+        681
+      ]
+    },
+    "安": {
+      "codepoint": "U+5B89",
+      "wordIds": [
+        438
+      ]
+    },
+    "完": {
+      "codepoint": "U+5B8C",
+      "wordIds": [
+        274,
+        492
+      ]
+    },
+    "宗": {
+      "codepoint": "U+5B97",
+      "wordIds": [
+        41
+      ]
+    },
+    "実": {
+      "codepoint": "U+5B9F",
+      "wordIds": [
+        82,
+        226,
+        552
+      ]
+    },
+    "宣": {
+      "codepoint": "U+5BA3",
+      "wordIds": [
+        30
+      ]
+    },
+    "害": {
+      "codepoint": "U+5BB3",
+      "wordIds": [
+        135
+      ]
+    },
+    "家": {
+      "codepoint": "U+5BB6",
+      "wordIds": [
+        20
+      ]
+    },
+    "容": {
+      "codepoint": "U+5BB9",
+      "wordIds": [
+        262
+      ]
+    },
+    "寄": {
+      "codepoint": "U+5BC4",
+      "wordIds": [
+        672,
+        673
+      ]
+    },
+    "察": {
+      "codepoint": "U+5BDF",
+      "wordIds": [
+        115
+      ]
+    },
+    "寺": {
+      "codepoint": "U+5BFA",
+      "wordIds": [
+        124
+      ]
+    },
+    "対": {
+      "codepoint": "U+5BFE",
+      "wordIds": [
+        209,
+        565
+      ]
+    },
+    "専": {
+      "codepoint": "U+5C02",
+      "wordIds": [
+        74
+      ]
+    },
+    "尋": {
+      "codepoint": "U+5C0B",
+      "wordIds": [
+        589
+      ]
+    },
+    "小": {
+      "codepoint": "U+5C0F",
+      "wordIds": [
+        63
+      ]
+    },
+    "少": {
+      "codepoint": "U+5C11",
+      "wordIds": [
+        512,
+        514
+      ]
+    },
+    "就": {
+      "codepoint": "U+5C31",
+      "wordIds": [
+        53
+      ]
+    },
+    "屈": {
+      "codepoint": "U+5C48",
+      "wordIds": [
+        424
+      ]
+    },
+    "届": {
+      "codepoint": "U+5C4A",
+      "wordIds": [
+        626,
+        627
+      ]
+    },
+    "差": {
+      "codepoint": "U+5DEE",
+      "wordIds": [
+        684
+      ]
+    },
+    "巻": {
+      "codepoint": "U+5DFB",
+      "wordIds": [
+        748
+      ]
+    },
+    "市": {
+      "codepoint": "U+5E02",
+      "wordIds": [
+        160
+      ]
+    },
+    "希": {
+      "codepoint": "U+5E0C",
+      "wordIds": [
+        206
+      ]
+    },
+    "席": {
+      "codepoint": "U+5E2D",
+      "wordIds": [
+        101,
+        102
+      ]
+    },
+    "帯": {
+      "codepoint": "U+5E2F",
+      "wordIds": [
+        159
+      ]
+    },
+    "帰": {
+      "codepoint": "U+5E30",
+      "wordIds": [
+        97,
+        98,
+        99,
+        321
+      ]
+    },
+    "常": {
+      "codepoint": "U+5E38",
+      "wordIds": [
+        499
+      ]
+    },
+    "幅": {
+      "codepoint": "U+5E45",
+      "wordIds": [
+        260
+      ]
+    },
+    "平": {
+      "codepoint": "U+5E73",
+      "wordIds": [
+        49,
+        297,
+        426
+      ]
+    },
+    "年": {
+      "codepoint": "U+5E74",
+      "wordIds": [
+        4,
+        13,
+        15
+      ]
+    },
+    "幸": {
+      "codepoint": "U+5E78",
+      "wordIds": [
+        419
+      ]
+    },
+    "広": {
+      "codepoint": "U+5E83",
+      "wordIds": [
+        31,
+        799,
+        800,
+        842,
+        843
+      ]
+    },
+    "底": {
+      "codepoint": "U+5E95",
+      "wordIds": [
+        122
+      ]
+    },
+    "度": {
+      "codepoint": "U+5EA6",
+      "wordIds": [
+        164,
+        165,
+        272
+      ]
+    },
+    "庭": {
+      "codepoint": "U+5EAD",
+      "wordIds": [
+        20
+      ]
+    },
+    "康": {
+      "codepoint": "U+5EB7",
+      "wordIds": [
+        441
+      ]
+    },
+    "延": {
+      "codepoint": "U+5EF6",
+      "wordIds": [
+        838,
+        839
+      ]
+    },
+    "建": {
+      "codepoint": "U+5EFA",
+      "wordIds": [
+        726,
+        727
+      ]
+    },
+    "引": {
+      "codepoint": "U+5F15",
+      "wordIds": [
+        106,
+        814
+      ]
+    },
+    "弱": {
+      "codepoint": "U+5F31",
+      "wordIds": [
+        797,
+        798
+      ]
+    },
+    "張": {
+      "codepoint": "U+5F35",
+      "wordIds": [
+        238,
+        700
+      ]
+    },
+    "強": {
+      "codepoint": "U+5F37",
+      "wordIds": [
+        430,
+        795,
+        796
+      ]
+    },
+    "当": {
+      "codepoint": "U+5F53",
+      "wordIds": [
+        266,
+        468,
+        490,
+        563,
+        805,
+        806
+      ]
+    },
+    "影": {
+      "codepoint": "U+5F71",
+      "wordIds": [
+        284
+      ]
+    },
+    "役": {
+      "codepoint": "U+5F79",
+      "wordIds": [
+        712,
+        713
+      ]
+    },
+    "後": {
+      "codepoint": "U+5F8C",
+      "wordIds": [
+        7,
+        214,
+        218,
+        270
+      ]
+    },
+    "得": {
+      "codepoint": "U+5F97",
+      "wordIds": [
+        420,
+        675
+      ]
+    },
+    "徴": {
+      "codepoint": "U+5FB4",
+      "wordIds": [
+        264
+      ]
+    },
+    "徹": {
+      "codepoint": "U+5FB9",
+      "wordIds": [
+        105
+      ]
+    },
+    "心": {
+      "codepoint": "U+5FC3",
+      "wordIds": [
+        143,
+        241,
+        422
+      ]
+    },
+    "必": {
+      "codepoint": "U+5FC5",
+      "wordIds": [
+        484,
+        564
+      ]
+    },
+    "応": {
+      "codepoint": "U+5FDC",
+      "wordIds": [
+        233
+      ]
+    },
+    "怒": {
+      "codepoint": "U+6012",
+      "wordIds": [
+        337
+      ]
+    },
+    "思": {
+      "codepoint": "U+601D",
+      "wordIds": [
+        198,
+        306,
+        472,
+        548,
+        862,
+        878,
+        879
+      ]
+    },
+    "急": {
+      "codepoint": "U+6025",
+      "wordIds": [
+        322,
+        489
+      ]
+    },
+    "性": {
+      "codepoint": "U+6027",
+      "wordIds": [
+        1,
+        2,
+        220,
+        221
+      ]
+    },
+    "怪": {
+      "codepoint": "U+602A",
+      "wordIds": [
+        176
+      ]
+    },
+    "悔": {
+      "codepoint": "U+6094",
+      "wordIds": [
+        270,
+        427
+      ]
+    },
+    "悩": {
+      "codepoint": "U+60A9",
+      "wordIds": [
+        868
+      ]
+    },
+    "悲": {
+      "codepoint": "U+60B2",
+      "wordIds": [
+        338
+      ]
+    },
+    "情": {
+      "codepoint": "U+60C5",
+      "wordIds": [
+        189,
+        235
+      ]
+    },
+    "惑": {
+      "codepoint": "U+60D1",
+      "wordIds": [
+        205
+      ]
+    },
+    "想": {
+      "codepoint": "U+60F3",
+      "wordIds": [
+        210,
+        244,
+        245
+      ]
+    },
+    "意": {
+      "codepoint": "U+610F",
+      "wordIds": [
+        420,
+        465,
+        469
+      ]
+    },
+    "愛": {
+      "codepoint": "U+611B",
+      "wordIds": [
+        42
+      ]
+    },
+    "感": {
+      "codepoint": "U+611F",
+      "wordIds": [
+        22,
+        241,
+        242,
+        244,
+        873
+      ]
+    },
+    "態": {
+      "codepoint": "U+614B",
+      "wordIds": [
+        272,
+        279
+      ]
+    },
+    "慌": {
+      "codepoint": "U+614C",
+      "wordIds": [
+        869
+      ]
+    },
+    "慢": {
+      "codepoint": "U+6162",
+      "wordIds": [
+        204,
+        240,
+        430
+      ]
+    },
+    "慣": {
+      "codepoint": "U+6163",
+      "wordIds": [
+        865,
+        866
+      ]
+    },
+    "慮": {
+      "codepoint": "U+616E",
+      "wordIds": [
+        203
+      ]
+    },
+    "憩": {
+      "codepoint": "U+61A9",
+      "wordIds": [
+        95
+      ]
+    },
+    "成": {
+      "codepoint": "U+6210",
+      "wordIds": [
+        18,
+        190,
+        193,
+        208,
+        274
+      ]
+    },
+    "我": {
+      "codepoint": "U+6211",
+      "wordIds": [
+        176,
+        204,
+        430
+      ]
+    },
+    "戦": {
+      "codepoint": "U+6226",
+      "wordIds": [
+        48,
+        290
+      ]
+    },
+    "戻": {
+      "codepoint": "U+623B",
+      "wordIds": [
+        331
+      ]
+    },
+    "房": {
+      "codepoint": "U+623F",
+      "wordIds": [
+        169
+      ]
+    },
+    "所": {
+      "codepoint": "U+6240",
+      "wordIds": [
+        114
+      ]
+    },
+    "手": {
+      "codepoint": "U+624B",
+      "wordIds": [
+        9,
+        26,
+        184,
+        234,
+        283,
+        309,
+        421,
+        443
+      ]
+    },
+    "抑": {
+      "codepoint": "U+6291",
+      "wordIds": [
+        631
+      ]
+    },
+    "折": {
+      "codepoint": "U+6298",
+      "wordIds": [
+        736,
+        737
+      ]
+    },
+    "抜": {
+      "codepoint": "U+629C",
+      "wordIds": [
+        758,
+        759
+      ]
+    },
+    "抱": {
+      "codepoint": "U+62B1",
+      "wordIds": [
+        584
+      ]
+    },
+    "拍": {
+      "codepoint": "U+62CD",
+      "wordIds": [
+        234
+      ]
+    },
+    "挑": {
+      "codepoint": "U+6311",
+      "wordIds": [
+        290
+      ]
+    },
+    "挙": {
+      "codepoint": "U+6319",
+      "wordIds": [
+        38
+      ]
+    },
+    "振": {
+      "codepoint": "U+632F",
+      "wordIds": [
+        648
+      ]
+    },
+    "捕": {
+      "codepoint": "U+6355",
+      "wordIds": [
+        604,
+        605
+      ]
+    },
+    "掛": {
+      "codepoint": "U+639B",
+      "wordIds": [
+        776,
+        777
+      ]
+    },
+    "接": {
+      "codepoint": "U+63A5",
+      "wordIds": [
+        60,
+        562
+      ]
+    },
+    "掻": {
+      "codepoint": "U+63BB",
+      "wordIds": [
+        628
+      ]
+    },
+    "揃": {
+      "codepoint": "U+63C3",
+      "wordIds": [
+        752,
+        753
+      ]
+    },
+    "提": {
+      "codepoint": "U+63D0",
+      "wordIds": [
+        282
+      ]
+    },
+    "揚": {
+      "codepoint": "U+63DA",
+      "wordIds": [
+        768
+      ]
+    },
+    "換": {
+      "codepoint": "U+63DB",
+      "wordIds": [
+        72,
+        821,
+        822
+      ]
+    },
+    "握": {
+      "codepoint": "U+63E1",
+      "wordIds": [
+        26,
+        630
+      ]
+    },
+    "援": {
+      "codepoint": "U+63F4",
+      "wordIds": [
+        233
+      ]
+    },
+    "揺": {
+      "codepoint": "U+63FA",
+      "wordIds": [
+        656,
+        657
+      ]
+    },
+    "携": {
+      "codepoint": "U+643A",
+      "wordIds": [
+        159
+      ]
+    },
+    "故": {
+      "codepoint": "U+6545",
+      "wordIds": [
+        17,
+        136,
+        138
+      ]
+    },
+    "敗": {
+      "codepoint": "U+6557",
+      "wordIds": [
+        194
+      ]
+    },
+    "教": {
+      "codepoint": "U+6559",
+      "wordIds": [
+        41,
+        304,
+        599
+      ]
+    },
+    "散": {
+      "codepoint": "U+6563",
+      "wordIds": [
+        857,
+        858
+      ]
+    },
+    "数": {
+      "codepoint": "U+6570",
+      "wordIds": [
+        594
+      ]
+    },
+    "整": {
+      "codepoint": "U+6574",
+      "wordIds": [
+        196
+      ]
+    },
+    "文": {
+      "codepoint": "U+6587",
+      "wordIds": [
+        44,
+        47,
+        61
+      ]
+    },
+    "料": {
+      "codepoint": "U+6599",
+      "wordIds": [
+        59
+      ]
+    },
+    "断": {
+      "codepoint": "U+65AD",
+      "wordIds": [
+        601
+      ]
+    },
+    "新": {
+      "codepoint": "U+65B0",
+      "wordIds": [
+        458
+      ]
+    },
+    "方": {
+      "codepoint": "U+65B9",
+      "wordIds": [
+        161,
+        224
+      ]
+    },
+    "日": {
+      "codepoint": "U+65E5",
+      "wordIds": [
+        13
+      ]
+    },
+    "明": {
+      "codepoint": "U+660E",
+      "wordIds": [
+        86,
+        253,
+        859
+      ]
+    },
+    "時": {
+      "codepoint": "U+6642",
+      "wordIds": [
+        521
+      ]
+    },
+    "普": {
+      "codepoint": "U+666E",
+      "wordIds": [
+        265
+      ]
+    },
+    "景": {
+      "codepoint": "U+666F",
+      "wordIds": [
+        171
+      ]
+    },
+    "暑": {
+      "codepoint": "U+6691",
+      "wordIds": [
+        456
+      ]
+    },
+    "暖": {
+      "codepoint": "U+6696",
+      "wordIds": [
+        169
+      ]
+    },
+    "暮": {
+      "codepoint": "U+66AE",
+      "wordIds": [
+        319,
+        683
+      ]
+    },
+    "曲": {
+      "codepoint": "U+66F2",
+      "wordIds": [
+        740,
+        741
+      ]
+    },
+    "更": {
+      "codepoint": "U+66F4",
+      "wordIds": [
+        293
+      ]
+    },
+    "書": {
+      "codepoint": "U+66F8",
+      "wordIds": [
+        78,
+        79
+      ]
+    },
+    "替": {
+      "codepoint": "U+66FF",
+      "wordIds": [
+        821,
+        822
+      ]
+    },
+    "最": {
+      "codepoint": "U+6700",
+      "wordIds": [
+        215,
+        216,
+        217,
+        218
+      ]
+    },
+    "月": {
+      "codepoint": "U+6708",
+      "wordIds": [
+        13
+      ]
+    },
+    "服": {
+      "codepoint": "U+670D",
+      "wordIds": [
+        120
+      ]
+    },
+    "望": {
+      "codepoint": "U+671B",
+      "wordIds": [
+        206
+      ]
+    },
+    "期": {
+      "codepoint": "U+671F",
+      "wordIds": [
+        258
+      ]
+    },
+    "本": {
+      "codepoint": "U+672C",
+      "wordIds": [
+        46,
+        277,
+        497,
+        563
+      ]
+    },
+    "束": {
+      "codepoint": "U+675F",
+      "wordIds": [
+        201
+      ]
+    },
+    "条": {
+      "codepoint": "U+6761",
+      "wordIds": [
+        256
+      ]
+    },
+    "来": {
+      "codepoint": "U+6765",
+      "wordIds": [
+        280,
+        826
+      ]
+    },
+    "東": {
+      "codepoint": "U+6771",
+      "wordIds": [
+        148
+      ]
+    },
+    "果": {
+      "codepoint": "U+679C",
+      "wordIds": [
+        247,
+        285
+      ]
+    },
+    "査": {
+      "codepoint": "U+67FB",
+      "wordIds": [
+        76,
+        178
+      ]
+    },
+    "栄": {
+      "codepoint": "U+6804",
+      "wordIds": [
+        183
+      ]
+    },
+    "格": {
+      "codepoint": "U+683C",
+      "wordIds": [
+        50,
+        83,
+        220
+      ]
+    },
+    "案": {
+      "codepoint": "U+6848",
+      "wordIds": [
+        282,
+        543
+      ]
+    },
+    "梅": {
+      "codepoint": "U+6885",
+      "wordIds": [
+        167
+      ]
+    },
+    "検": {
+      "codepoint": "U+691C",
+      "wordIds": [
+        178
+      ]
+    },
+    "業": {
+      "codepoint": "U+696D",
+      "wordIds": [
+        55,
+        56
+      ]
+    },
+    "極": {
+      "codepoint": "U+6975",
+      "wordIds": [
+        434,
+        435
+      ]
+    },
+    "楽": {
+      "codepoint": "U+697D",
+      "wordIds": [
+        334,
+        466
+      ]
+    },
+    "構": {
+      "codepoint": "U+69CB",
+      "wordIds": [
+        470
+      ]
+    },
+    "様": {
+      "codepoint": "U+69D8",
+      "wordIds": [
+        494
+      ]
+    },
+    "機": {
+      "codepoint": "U+6A5F",
+      "wordIds": [
+        281
+      ]
+    },
+    "欠": {
+      "codepoint": "U+6B20",
+      "wordIds": [
+        102
+      ]
+    },
+    "次": {
+      "codepoint": "U+6B21",
+      "wordIds": [
+        531
+      ]
+    },
+    "止": {
+      "codepoint": "U+6B62",
+      "wordIds": [
+        153
+      ]
+    },
+    "正": {
+      "codepoint": "U+6B63",
+      "wordIds": [
+        431,
+        481
+      ]
+    },
+    "歩": {
+      "codepoint": "U+6B69",
+      "wordIds": [
+        227
+      ]
+    },
+    "歴": {
+      "codepoint": "U+6B74",
+      "wordIds": [
+        58
+      ]
+    },
+    "死": {
+      "codepoint": "U+6B7B",
+      "wordIds": [
+        185
+      ]
+    },
+    "残": {
+      "codepoint": "U+6B8B",
+      "wordIds": [
+        56,
+        781,
+        782
+      ]
+    },
+    "殴": {
+      "codepoint": "U+6BB4",
+      "wordIds": [
+        582
+      ]
+    },
+    "段": {
+      "codepoint": "U+6BB5",
+      "wordIds": [
+        283
+      ]
+    },
+    "殺": {
+      "codepoint": "U+6BBA",
+      "wordIds": [
+        642
+      ]
+    },
+    "比": {
+      "codepoint": "U+6BD4",
+      "wordIds": [
+        807
+      ]
+    },
+    "気": {
+      "codepoint": "U+6C17",
+      "wordIds": [
+        71,
+        166,
+        291,
+        292,
+        426
+      ]
+    },
+    "汚": {
+      "codepoint": "U+6C5A",
+      "wordIds": [
+        730,
+        731
+      ]
+    },
+    "決": {
+      "codepoint": "U+6C7A",
+      "wordIds": [
+        248,
+        311,
+        513,
+        860,
+        861
+      ]
+    },
+    "沸": {
+      "codepoint": "U+6CB8",
+      "wordIds": [
+        709,
+        790
+      ]
+    },
+    "治": {
+      "codepoint": "U+6CBB",
+      "wordIds": [
+        180,
+        692,
+        693
+      ]
+    },
+    "法": {
+      "codepoint": "U+6CD5",
+      "wordIds": [
+        224
+      ]
+    },
+    "注": {
+      "codepoint": "U+6CE8",
+      "wordIds": [
+        61,
+        236,
+        465
+      ]
+    },
+    "洋": {
+      "codepoint": "U+6D0B",
+      "wordIds": [
+        148,
+        149
+      ]
+    },
+    "洗": {
+      "codepoint": "U+6D17",
+      "wordIds": [
+        121
+      ]
+    },
+    "活": {
+      "codepoint": "U+6D3B",
+      "wordIds": [
+        94,
+        231
+      ]
+    },
+    "派": {
+      "codepoint": "U+6D3E",
+      "wordIds": [
+        443,
+        459
+      ]
+    },
+    "流": {
+      "codepoint": "U+6D41",
+      "wordIds": [
+        73,
+        744,
+        745
+      ]
+    },
+    "浅": {
+      "codepoint": "U+6D45",
+      "wordIds": [
+        452
+      ]
+    },
+    "消": {
+      "codepoint": "U+6D88",
+      "wordIds": [
+        91,
+        435
+      ]
+    },
+    "液": {
+      "codepoint": "U+6DB2",
+      "wordIds": [
+        179
+      ]
+    },
+    "深": {
+      "codepoint": "U+6DF1",
+      "wordIds": [
+        801,
+        802
+      ]
+    },
+    "混": {
+      "codepoint": "U+6DF7",
+      "wordIds": [
+        132,
+        846,
+        847,
+        848
+      ]
+    },
+    "清": {
+      "codepoint": "U+6E05",
+      "wordIds": [
+        457
+      ]
+    },
+    "渇": {
+      "codepoint": "U+6E07",
+      "wordIds": [
+        579
+      ]
+    },
+    "済": {
+      "codepoint": "U+6E08",
+      "wordIds": [
+        824,
+        825
+      ]
+    },
+    "渋": {
+      "codepoint": "U+6E0B",
+      "wordIds": [
+        133
+      ]
+    },
+    "減": {
+      "codepoint": "U+6E1B",
+      "wordIds": [
+        817,
+        818
+      ]
+    },
+    "温": {
+      "codepoint": "U+6E29",
+      "wordIds": [
+        164,
+        791,
+        792
+      ]
+    },
+    "湿": {
+      "codepoint": "U+6E7F",
+      "wordIds": [
+        165,
+        166
+      ]
+    },
+    "満": {
+      "codepoint": "U+6E80",
+      "wordIds": [
+        436,
+        437
+      ]
+    },
+    "源": {
+      "codepoint": "U+6E90",
+      "wordIds": [
+        173
+      ]
+    },
+    "準": {
+      "codepoint": "U+6E96",
+      "wordIds": [
+        195
+      ]
+    },
+    "溶": {
+      "codepoint": "U+6EB6",
+      "wordIds": [
+        849,
+        850
+      ]
+    },
+    "滑": {
+      "codepoint": "U+6ED1",
+      "wordIds": [
+        625
+      ]
+    },
+    "滞": {
+      "codepoint": "U+6EDE",
+      "wordIds": [
+        133
+      ]
+    },
+    "演": {
+      "codepoint": "U+6F14",
+      "wordIds": [
+        150
+      ]
+    },
+    "潔": {
+      "codepoint": "U+6F54",
+      "wordIds": [
+        457
+      ]
+    },
+    "激": {
+      "codepoint": "U+6FC0",
+      "wordIds": [
+        488
+      ]
+    },
+    "濃": {
+      "codepoint": "U+6FC3",
+      "wordIds": [
+        446
+      ]
+    },
+    "濡": {
+      "codepoint": "U+6FE1",
+      "wordIds": [
+        746,
+        747
+      ]
+    },
+    "灰": {
+      "codepoint": "U+7070",
+      "wordIds": [
+        128
+      ]
+    },
+    "炊": {
+      "codepoint": "U+708A",
+      "wordIds": [
+        760,
+        761
+      ]
+    },
+    "炒": {
+      "codepoint": "U+7092",
+      "wordIds": [
+        764
+      ]
+    },
+    "無": {
+      "codepoint": "U+7121",
+      "wordIds": [
+        464,
+        778,
+        779
+      ]
+    },
+    "然": {
+      "codepoint": "U+7136",
+      "wordIds": [
+        170,
+        468,
+        525
+      ]
+    },
+    "焼": {
+      "codepoint": "U+713C",
+      "wordIds": [
+        765,
+        766
+      ]
+    },
+    "煙": {
+      "codepoint": "U+7159",
+      "wordIds": [
+        127,
+        152
+      ]
+    },
+    "煮": {
+      "codepoint": "U+716E",
+      "wordIds": [
+        762,
+        763
+      ]
+    },
+    "熱": {
+      "codepoint": "U+71B1",
+      "wordIds": [
+        422,
+        880
+      ]
+    },
+    "燃": {
+      "codepoint": "U+71C3",
+      "wordIds": [
+        708,
+        789
+      ]
+    },
+    "片": {
+      "codepoint": "U+7247",
+      "wordIds": [
+        308,
+        697,
+        698
+      ]
+    },
+    "物": {
+      "codepoint": "U+7269",
+      "wordIds": [
+        92
+      ]
+    },
+    "特": {
+      "codepoint": "U+7279",
+      "wordIds": [
+        264,
+        491,
+        566
+      ]
+    },
+    "犯": {
+      "codepoint": "U+72AF",
+      "wordIds": [
+        116
+      ]
+    },
+    "状": {
+      "codepoint": "U+72B6",
+      "wordIds": [
+        181,
+        279
+      ]
+    },
+    "現": {
+      "codepoint": "U+73FE",
+      "wordIds": [
+        299,
+        853,
+        854
+      ]
+    },
+    "球": {
+      "codepoint": "U+7403",
+      "wordIds": [
+        163
+      ]
+    },
+    "理": {
+      "codepoint": "U+7406",
+      "wordIds": [
+        139,
+        196,
+        251,
+        464
+      ]
+    },
+    "環": {
+      "codepoint": "U+74B0",
+      "wordIds": [
+        172
+      ]
+    },
+    "生": {
+      "codepoint": "U+751F",
+      "wordIds": [
+        13,
+        14,
+        90,
+        94,
+        130,
+        187,
+        612,
+        613,
+        728,
+        729
+      ]
+    },
+    "産": {
+      "codepoint": "U+7523",
+      "wordIds": [
+        90,
+        93
+      ]
+    },
+    "用": {
+      "codepoint": "U+7528",
+      "wordIds": [
+        250
+      ]
+    },
+    "由": {
+      "codepoint": "U+7531",
+      "wordIds": [
+        475,
+        476
+      ]
+    },
+    "申": {
+      "codepoint": "U+7533",
+      "wordIds": [
+        84,
+        600
+      ]
+    },
+    "男": {
+      "codepoint": "U+7537",
+      "wordIds": [
+        1
+      ]
+    },
+    "画": {
+      "codepoint": "U+753B",
+      "wordIds": [
+        111,
+        131,
+        192
+      ]
+    },
+    "略": {
+      "codepoint": "U+7565",
+      "wordIds": [
+        289
+      ]
+    },
+    "番": {
+      "codepoint": "U+756A",
+      "wordIds": [
+        112,
+        222,
+        223
+      ]
+    },
+    "畳": {
+      "codepoint": "U+7573",
+      "wordIds": [
+        687
+      ]
+    },
+    "疲": {
+      "codepoint": "U+75B2",
+      "wordIds": [
+        315
+      ]
+    },
+    "症": {
+      "codepoint": "U+75C7",
+      "wordIds": [
+        181
+      ]
+    },
+    "療": {
+      "codepoint": "U+7642",
+      "wordIds": [
+        180
+      ]
+    },
+    "癖": {
+      "codepoint": "U+7656",
+      "wordIds": [
+        188
+      ]
+    },
+    "発": {
+      "codepoint": "U+767A",
+      "wordIds": [
+        229,
+        252,
+        253
+      ]
+    },
+    "的": {
+      "codepoint": "U+7684",
+      "wordIds": [
+        200,
+        434,
+        435,
+        497,
+        498
+      ]
+    },
+    "皮": {
+      "codepoint": "U+76AE",
+      "wordIds": [
+        109
+      ]
+    },
+    "盗": {
+      "codepoint": "U+76D7",
+      "wordIds": [
+        639
+      ]
+    },
+    "盛": {
+      "codepoint": "U+76DB",
+      "wordIds": [
+        493
+      ]
+    },
+    "目": {
+      "codepoint": "U+76EE",
+      "wordIds": [
+        5,
+        200,
+        236
+      ]
+    },
+    "直": {
+      "codepoint": "U+76F4",
+      "wordIds": [
+        431,
+        562,
+        690,
+        691
+      ]
+    },
+    "相": {
+      "codepoint": "U+76F8",
+      "wordIds": [
+        9,
+        530
+      ]
+    },
+    "省": {
+      "codepoint": "U+7701",
+      "wordIds": [
+        98,
+        225,
+        289
+      ]
+    },
+    "眠": {
+      "codepoint": "U+7720",
+      "wordIds": [
+        872
+      ]
+    },
+    "知": {
+      "codepoint": "U+77E5",
+      "wordIds": [
+        10,
+        81,
+        313
+      ]
+    },
+    "研": {
+      "codepoint": "U+7814",
+      "wordIds": [
+        75
+      ]
+    },
+    "破": {
+      "codepoint": "U+7834",
+      "wordIds": [
+        738,
+        739
+      ]
+    },
+    "硬": {
+      "codepoint": "U+786C",
+      "wordIds": [
+        453
+      ]
+    },
+    "確": {
+      "codepoint": "U+78BA",
+      "wordIds": [
+        249,
+        481,
+        482,
+        722
+      ]
+    },
+    "礼": {
+      "codepoint": "U+793C",
+      "wordIds": [
+        23,
+        43,
+        439
+      ]
+    },
+    "祈": {
+      "codepoint": "U+7948",
+      "wordIds": [
+        658
+      ]
+    },
+    "祝": {
+      "codepoint": "U+795D",
+      "wordIds": [
+        659
+      ]
+    },
+    "禁": {
+      "codepoint": "U+7981",
+      "wordIds": [
+        152,
+        153
+      ]
+    },
+    "移": {
+      "codepoint": "U+79FB",
+      "wordIds": [
+        669,
+        670
+      ]
+    },
+    "税": {
+      "codepoint": "U+7A0E",
+      "wordIds": [
+        77
+      ]
+    },
+    "種": {
+      "codepoint": "U+7A2E",
+      "wordIds": [
+        219
+      ]
+    },
+    "積": {
+      "codepoint": "U+7A4D",
+      "wordIds": [
+        434,
+        703,
+        784
+      ]
+    },
+    "穴": {
+      "codepoint": "U+7A74",
+      "wordIds": [
+        146
+      ]
+    },
+    "究": {
+      "codepoint": "U+7A76",
+      "wordIds": [
+        75
+      ]
+    },
+    "空": {
+      "codepoint": "U+7A7A",
+      "wordIds": [
+        704,
+        785
+      ]
+    },
+    "突": {
+      "codepoint": "U+7A81",
+      "wordIds": [
+        134,
+        525
+      ]
+    },
+    "立": {
+      "codepoint": "U+7ACB",
+      "wordIds": [
+        459,
+        652,
+        653,
+        712,
+        713
+      ]
+    },
+    "競": {
+      "codepoint": "U+7AF6",
+      "wordIds": [
+        232
+      ]
+    },
+    "笑": {
+      "codepoint": "U+7B11",
+      "wordIds": [
+        335
+      ]
+    },
+    "算": {
+      "codepoint": "U+7B97",
+      "wordIds": [
+        191
+      ]
+    },
+    "節": {
+      "codepoint": "U+7BC0",
+      "wordIds": [
+        69
+      ]
+    },
+    "範": {
+      "codepoint": "U+7BC4",
+      "wordIds": [
+        261
+      ]
+    },
+    "籍": {
+      "codepoint": "U+7C4D",
+      "wordIds": [
+        39
+      ]
+    },
+    "粧": {
+      "codepoint": "U+7CA7",
+      "wordIds": [
+        104
+      ]
+    },
+    "紀": {
+      "codepoint": "U+7D00",
+      "wordIds": [
+        300
+      ]
+    },
+    "約": {
+      "codepoint": "U+7D04",
+      "wordIds": [
+        69,
+        85,
+        201
+      ]
+    },
+    "細": {
+      "codepoint": "U+7D30",
+      "wordIds": [
+        479
+      ]
+    },
+    "終": {
+      "codepoint": "U+7D42",
+      "wordIds": [
+        330
+      ]
+    },
+    "組": {
+      "codepoint": "U+7D44",
+      "wordIds": [
+        112
+      ]
+    },
+    "経": {
+      "codepoint": "U+7D4C",
+      "wordIds": [
+        70,
+        772
+      ]
+    },
+    "結": {
+      "codepoint": "U+7D50",
+      "wordIds": [
+        247,
+        470,
+        749
+      ]
+    },
+    "給": {
+      "codepoint": "U+7D66",
+      "wordIds": [
+        59
+      ]
+    },
+    "絶": {
+      "codepoint": "U+7D76",
+      "wordIds": [
+        565
+      ]
+    },
+    "続": {
+      "codepoint": "U+7D9A",
+      "wordIds": [
+        318,
+        831,
+        832
+      ]
+    },
+    "緊": {
+      "codepoint": "U+7DCA",
+      "wordIds": [
+        238
+      ]
+    },
+    "締": {
+      "codepoint": "U+7DE0",
+      "wordIds": [
+        257
+      ]
+    },
+    "繰": {
+      "codepoint": "U+7E70",
+      "wordIds": [
+        724
+      ]
+    },
+    "纏": {
+      "codepoint": "U+7E8F",
+      "wordIds": [
+        844,
+        845
+      ]
+    },
+    "缶": {
+      "codepoint": "U+7F36",
+      "wordIds": [
+        110
+      ]
+    },
+    "翻": {
+      "codepoint": "U+7FFB",
+      "wordIds": [
+        33
+      ]
+    },
+    "考": {
+      "codepoint": "U+8003",
+      "wordIds": [
+        307
+      ]
+    },
+    "者": {
+      "codepoint": "U+8005",
+      "wordIds": [
+        118
+      ]
+    },
+    "職": {
+      "codepoint": "U+8077",
+      "wordIds": [
+        53,
+        54
+      ]
+    },
+    "育": {
+      "codepoint": "U+80B2",
+      "wordIds": [
+        654,
+        655
+      ]
+    },
+    "能": {
+      "codepoint": "U+80FD",
+      "wordIds": [
+        495,
+        496
+      ]
+    },
+    "腐": {
+      "codepoint": "U+8150",
+      "wordIds": [
+        783
+      ]
+    },
+    "臨": {
+      "codepoint": "U+81E8",
+      "wordIds": [
+        874
+      ]
+    },
+    "自": {
+      "codepoint": "U+81EA",
+      "wordIds": [
+        129,
+        170,
+        239,
+        240,
+        475,
+        476
+      ]
+    },
+    "臭": {
+      "codepoint": "U+81ED",
+      "wordIds": [
+        449
+      ]
+    },
+    "興": {
+      "codepoint": "U+8208",
+      "wordIds": [
+        197,
+        243
+      ]
+    },
+    "色": {
+      "codepoint": "U+8272",
+      "wordIds": [
+        171
+      ]
+    },
+    "芸": {
+      "codepoint": "U+82B8",
+      "wordIds": [
+        151
+      ]
+    },
+    "苦": {
+      "codepoint": "U+82E6",
+      "wordIds": [
+        421,
+        425
+      ]
+    },
+    "蒸": {
+      "codepoint": "U+84B8",
+      "wordIds": [
+        456,
+        769
+      ]
+    },
+    "薄": {
+      "codepoint": "U+8584",
+      "wordIds": [
+        447
+      ]
+    },
+    "薦": {
+      "codepoint": "U+85A6",
+      "wordIds": [
+        679
+      ]
+    },
+    "血": {
+      "codepoint": "U+8840",
+      "wordIds": [
+        179
+      ]
+    },
+    "行": {
+      "codepoint": "U+884C",
+      "wordIds": [
+        73,
+        226,
+        320,
+        650
+      ]
+    },
+    "術": {
+      "codepoint": "U+8853",
+      "wordIds": [
+        151,
+        184
+      ]
+    },
+    "衝": {
+      "codepoint": "U+885D",
+      "wordIds": [
+        134
+      ]
+    },
+    "表": {
+      "codepoint": "U+8868",
+      "wordIds": [
+        45,
+        189,
+        273,
+        855,
+        856
+      ]
+    },
+    "被": {
+      "codepoint": "U+88AB",
+      "wordIds": [
+        135
+      ]
+    },
+    "製": {
+      "codepoint": "U+88FD",
+      "wordIds": [
+        67
+      ]
+    },
+    "西": {
+      "codepoint": "U+897F",
+      "wordIds": [
+        149
+      ]
+    },
+    "要": {
+      "codepoint": "U+8981",
+      "wordIds": [
+        483,
+        484
+      ]
+    },
+    "見": {
+      "codepoint": "U+898B",
+      "wordIds": [
+        252,
+        602,
+        603,
+        649
+      ]
+    },
+    "覚": {
+      "codepoint": "U+899A",
+      "wordIds": [
+        870,
+        871
+      ]
+    },
+    "親": {
+      "codepoint": "U+89AA",
+      "wordIds": [
+        440
+      ]
+    },
+    "観": {
+      "codepoint": "U+89B3",
+      "wordIds": [
+        96
+      ]
+    },
+    "解": {
+      "codepoint": "U+89E3",
+      "wordIds": [
+        248,
+        251,
+        269,
+        849,
+        850
+      ]
+    },
+    "言": {
+      "codepoint": "U+8A00",
+      "wordIds": [
+        34
+      ]
+    },
+    "計": {
+      "codepoint": "U+8A08",
+      "wordIds": [
+        191,
+        192
+      ]
+    },
+    "記": {
+      "codepoint": "U+8A18",
+      "wordIds": [
+        113,
+        278
+      ]
+    },
+    "訪": {
+      "codepoint": "U+8A2A",
+      "wordIds": [
+        615
+      ]
+    },
+    "許": {
+      "codepoint": "U+8A31",
+      "wordIds": [
+        66,
+        651
+      ]
+    },
+    "訳": {
+      "codepoint": "U+8A33",
+      "wordIds": [
+        32,
+        33,
+        271,
+        725
+      ]
+    },
+    "証": {
+      "codepoint": "U+8A3C",
+      "wordIds": [
+        86
+      ]
+    },
+    "試": {
+      "codepoint": "U+8A66",
+      "wordIds": [
+        723
+      ]
+    },
+    "詫": {
+      "codepoint": "U+8A6B",
+      "wordIds": [
+        24
+      ]
+    },
+    "詰": {
+      "codepoint": "U+8A70",
+      "wordIds": [
+        717,
+        718
+      ]
+    },
+    "話": {
+      "codepoint": "U+8A71",
+      "wordIds": [
+        19
+      ]
+    },
+    "詳": {
+      "codepoint": "U+8A73",
+      "wordIds": [
+        478
+      ]
+    },
+    "認": {
+      "codepoint": "U+8A8D",
+      "wordIds": [
+        249
+      ]
+    },
+    "誕": {
+      "codepoint": "U+8A95",
+      "wordIds": [
+        14
+      ]
+    },
+    "誘": {
+      "codepoint": "U+8A98",
+      "wordIds": [
+        595
+      ]
+    },
+    "誤": {
+      "codepoint": "U+8AA4",
+      "wordIds": [
+        269
+      ]
+    },
+    "読": {
+      "codepoint": "U+8AAD",
+      "wordIds": [
+        79
+      ]
+    },
+    "課": {
+      "codepoint": "U+8AB2",
+      "wordIds": [
+        275
+      ]
+    },
+    "調": {
+      "codepoint": "U+8ABF",
+      "wordIds": [
+        76,
+        237,
+        288
+      ]
+    },
+    "談": {
+      "codepoint": "U+8AC7",
+      "wordIds": [
+        199
+      ]
+    },
+    "請": {
+      "codepoint": "U+8ACB",
+      "wordIds": [
+        84
+      ]
+    },
+    "謝": {
+      "codepoint": "U+8B1D",
+      "wordIds": [
+        22
+      ]
+    },
+    "識": {
+      "codepoint": "U+8B58",
+      "wordIds": [
+        81
+      ]
+    },
+    "警": {
+      "codepoint": "U+8B66",
+      "wordIds": [
+        115
+      ]
+    },
+    "議": {
+      "codepoint": "U+8B70",
+      "wordIds": [
+        472
+      ]
+    },
+    "譲": {
+      "codepoint": "U+8B72",
+      "wordIds": [
+        634
+      ]
+    },
+    "護": {
+      "codepoint": "U+8B77",
+      "wordIds": [
+        295
+      ]
+    },
+    "豊": {
+      "codepoint": "U+8C4A",
+      "wordIds": [
+        480
+      ]
+    },
+    "象": {
+      "codepoint": "U+8C61",
+      "wordIds": [
+        286
+      ]
+    },
+    "負": {
+      "codepoint": "U+8CA0",
+      "wordIds": [
+        327
+      ]
+    },
+    "責": {
+      "codepoint": "U+8CAC",
+      "wordIds": [
+        254
+      ]
+    },
+    "貯": {
+      "codepoint": "U+8CAF",
+      "wordIds": [
+        62,
+        756,
+        757
+      ]
+    },
+    "貸": {
+      "codepoint": "U+8CB8",
+      "wordIds": [
+        324
+      ]
+    },
+    "費": {
+      "codepoint": "U+8CBB",
+      "wordIds": [
+        91
+      ]
+    },
+    "資": {
+      "codepoint": "U+8CC7",
+      "wordIds": [
+        83,
+        173
+      ]
+    },
+    "賛": {
+      "codepoint": "U+8CDB",
+      "wordIds": [
+        208
+      ]
+    },
+    "質": {
+      "codepoint": "U+8CEA",
+      "wordIds": [
+        89,
+        221
+      ]
+    },
+    "起": {
+      "codepoint": "U+8D77",
+      "wordIds": [
+        587,
+        588
+      ]
+    },
+    "超": {
+      "codepoint": "U+8D85",
+      "wordIds": [
+        666
+      ]
+    },
+    "越": {
+      "codepoint": "U+8D8A",
+      "wordIds": [
+        106,
+        666
+      ]
+    },
+    "趣": {
+      "codepoint": "U+8DA3",
+      "wordIds": [
+        108
+      ]
+    },
+    "足": {
+      "codepoint": "U+8DB3",
+      "wordIds": [
+        296,
+        436,
+        780,
+        813
+      ]
+    },
+    "距": {
+      "codepoint": "U+8DDD",
+      "wordIds": [
+        155
+      ]
+    },
+    "路": {
+      "codepoint": "U+8DEF",
+      "wordIds": [
+        125
+      ]
+    },
+    "踊": {
+      "codepoint": "U+8E0A",
+      "wordIds": [
+        305
+      ]
+    },
+    "躍": {
+      "codepoint": "U+8E8D",
+      "wordIds": [
+        231
+      ]
+    },
+    "身": {
+      "codepoint": "U+8EAB",
+      "wordIds": [
+        16,
+        174,
+        239,
+        263
+      ]
+    },
+    "載": {
+      "codepoint": "U+8F09",
+      "wordIds": [
+        750,
+        751
+      ]
+    },
+    "輩": {
+      "codepoint": "U+8F29",
+      "wordIds": [
+        6,
+        7
+      ]
+    },
+    "辺": {
+      "codepoint": "U+8FBA",
+      "wordIds": [
+        144
+      ]
+    },
+    "込": {
+      "codepoint": "U+8FBC",
+      "wordIds": [
+        600,
+        775
+      ]
+    },
+    "迎": {
+      "codepoint": "U+8FCE",
+      "wordIds": [
+        328
+      ]
+    },
+    "近": {
+      "codepoint": "U+8FD1",
+      "wordIds": [
+        114,
+        142,
+        632,
+        633
+      ]
+    },
+    "返": {
+      "codepoint": "U+8FD4",
+      "wordIds": [
+        714,
+        724,
+        823
+      ]
+    },
+    "迷": {
+      "codepoint": "U+8FF7",
+      "wordIds": [
+        205,
+        867
+      ]
+    },
+    "退": {
+      "codepoint": "U+9000",
+      "wordIds": [
+        52,
+        54,
+        424
+      ]
+    },
+    "通": {
+      "codepoint": "U+901A",
+      "wordIds": [
+        32,
+        57,
+        265,
+        287,
+        617,
+        664,
+        665,
+        876
+      ]
+    },
+    "連": {
+      "codepoint": "U+9023",
+      "wordIds": [
+        671
+      ]
+    },
+    "進": {
+      "codepoint": "U+9032",
+      "wordIds": [
+        51,
+        227,
+        662,
+        663
+      ]
+    },
+    "遅": {
+      "codepoint": "U+9045",
+      "wordIds": [
+        103,
+        323
+      ]
+    },
+    "遊": {
+      "codepoint": "U+904A",
+      "wordIds": [
+        302
+      ]
+    },
+    "過": {
+      "codepoint": "U+904E",
+      "wordIds": [
+        667,
+        668
+      ]
+    },
+    "道": {
+      "codepoint": "U+9053",
+      "wordIds": [
+        125,
+        142
+      ]
+    },
+    "達": {
+      "codepoint": "U+9054",
+      "wordIds": [
+        229
+      ]
+    },
+    "違": {
+      "codepoint": "U+9055",
+      "wordIds": [
+        316,
+        618,
+        863,
+        864
+      ]
+    },
+    "遠": {
+      "codepoint": "U+9060",
+      "wordIds": [
+        203
+      ]
+    },
+    "適": {
+      "codepoint": "U+9069",
+      "wordIds": [
+        490
+      ]
+    },
+    "選": {
+      "codepoint": "U+9078",
+      "wordIds": [
+        38
+      ]
+    },
+    "郷": {
+      "codepoint": "U+90F7",
+      "wordIds": [
+        17
+      ]
+    },
+    "都": {
+      "codepoint": "U+90FD",
+      "wordIds": [
+        160
+      ]
+    },
+    "酸": {
+      "codepoint": "U+9178",
+      "wordIds": [
+        448
+      ]
+    },
+    "重": {
+      "codepoint": "U+91CD",
+      "wordIds": [
+        175,
+        483,
+        840,
+        841
+      ]
+    },
+    "金": {
+      "codepoint": "U+91D1",
+      "wordIds": [
+        62,
+        77
+      ]
+    },
+    "銭": {
+      "codepoint": "U+92AD",
+      "wordIds": [
+        63
+      ]
+    },
+    "録": {
+      "codepoint": "U+9332",
+      "wordIds": [
+        131,
+        278
+      ]
+    },
+    "長": {
+      "codepoint": "U+9577",
+      "wordIds": [
+        174,
+        190
+      ]
+    },
+    "門": {
+      "codepoint": "U+9580",
+      "wordIds": [
+        74
+      ]
+    },
+    "閉": {
+      "codepoint": "U+9589",
+      "wordIds": [
+        720
+      ]
+    },
+    "開": {
+      "codepoint": "U+958B",
+      "wordIds": [
+        719
+      ]
+    },
+    "間": {
+      "codepoint": "U+9593",
+      "wordIds": [
+        258,
+        526,
+        527,
+        773,
+        774,
+        863,
+        864
+      ]
+    },
+    "関": {
+      "codepoint": "U+95A2",
+      "wordIds": [
+        36
+      ]
+    },
+    "防": {
+      "codepoint": "U+9632",
+      "wordIds": [
+        182
+      ]
+    },
+    "降": {
+      "codepoint": "U+964D",
+      "wordIds": [
+        608,
+        609
+      ]
+    },
+    "陽": {
+      "codepoint": "U+967D",
+      "wordIds": [
+        162
+      ]
+    },
+    "際": {
+      "codepoint": "U+969B",
+      "wordIds": [
+        40,
+        498
+      ]
+    },
+    "障": {
+      "codepoint": "U+969C",
+      "wordIds": [
+        138
+      ]
+    },
+    "隠": {
+      "codepoint": "U+96A0",
+      "wordIds": [
+        643,
+        644
+      ]
+    },
+    "集": {
+      "codepoint": "U+96C6",
+      "wordIds": [
+        303
+      ]
+    },
+    "雑": {
+      "codepoint": "U+96D1",
+      "wordIds": [
+        132
+      ]
+    },
+    "離": {
+      "codepoint": "U+96E2",
+      "wordIds": [
+        155,
+        621,
+        622
+      ]
+    },
+    "雨": {
+      "codepoint": "U+96E8",
+      "wordIds": [
+        167
+      ]
+    },
+    "電": {
+      "codepoint": "U+96FB",
+      "wordIds": [
+        140
+      ]
+    },
+    "非": {
+      "codepoint": "U+975E",
+      "wordIds": [
+        499
+      ]
+    },
+    "面": {
+      "codepoint": "U+9762",
+      "wordIds": [
+        60,
+        111,
+        154,
+        273,
+        467
+      ]
+    },
+    "響": {
+      "codepoint": "U+97FF",
+      "wordIds": [
+        284
+      ]
+    },
+    "順": {
+      "codepoint": "U+9806",
+      "wordIds": [
+        222
+      ]
+    },
+    "預": {
+      "codepoint": "U+9810",
+      "wordIds": [
+        597,
+        598
+      ]
+    },
+    "頼": {
+      "codepoint": "U+983C",
+      "wordIds": [
+        314
+      ]
+    },
+    "題": {
+      "codepoint": "U+984C",
+      "wordIds": [
+        255,
+        275
+      ]
+    },
+    "類": {
+      "codepoint": "U+985E",
+      "wordIds": [
+        78,
+        219
+      ]
+    },
+    "飛": {
+      "codepoint": "U+98DB",
+      "wordIds": [
+        646,
+        647
+      ]
+    },
+    "飼": {
+      "codepoint": "U+98FC",
+      "wordIds": [
+        593
+      ]
+    },
+    "飽": {
+      "codepoint": "U+98FD",
+      "wordIds": [
+        877
+      ]
+    },
+    "飾": {
+      "codepoint": "U+98FE",
+      "wordIds": [
+        301
+      ]
+    },
+    "養": {
+      "codepoint": "U+990A",
+      "wordIds": [
+        183
+      ]
+    },
+    "騒": {
+      "codepoint": "U+9A12",
+      "wordIds": [
+        312
+      ]
+    },
+    "騙": {
+      "codepoint": "U+9A19",
+      "wordIds": [
+        638
+      ]
+    },
+    "驚": {
+      "codepoint": "U+9A5A",
+      "wordIds": [
+        336
+      ]
+    },
+    "高": {
+      "codepoint": "U+9AD8",
+      "wordIds": [
+        3,
+        215,
+        793,
+        794
+      ]
+    },
+    "鮮": {
+      "codepoint": "U+9BAE",
+      "wordIds": [
+        458
+      ]
+    },
+    "鳴": {
+      "codepoint": "U+9CF4",
+      "wordIds": [
+        710,
+        711
+      ]
+    },
+    "黙": {
+      "codepoint": "U+9ED9",
+      "wordIds": [
+        592
+      ]
+    },
+    "黴": {
+      "codepoint": "U+9EF4",
+      "wordIds": [
+        168
+      ]
+    },
+    "齢": {
+      "codepoint": "U+9F62",
+      "wordIds": [
+        3
+      ]
+    }
+  },
+  "wordCharacters": {
+    "1": [
+      "男",
+      "性"
+    ],
+    "2": [
+      "女",
+      "性"
+    ],
+    "3": [
+      "高",
+      "齢"
+    ],
+    "4": [
+      "年",
+      "上"
+    ],
+    "5": [
+      "目",
+      "上"
+    ],
+    "6": [
+      "先",
+      "輩"
+    ],
+    "7": [
+      "後",
+      "輩"
+    ],
+    "8": [
+      "上",
+      "司"
+    ],
+    "9": [
+      "相",
+      "手"
+    ],
+    "10": [
+      "知",
+      "合"
+    ],
+    "11": [
+      "友",
+      "人"
+    ],
+    "12": [
+      "仲"
+    ],
+    "13": [
+      "生",
+      "年",
+      "月",
+      "日"
+    ],
+    "14": [
+      "誕",
+      "生"
+    ],
+    "15": [
+      "年"
+    ],
+    "16": [
+      "出",
+      "身"
+    ],
+    "17": [
+      "故",
+      "郷"
+    ],
+    "18": [
+      "成",
+      "人"
+    ],
+    "19": [
+      "世",
+      "話"
+    ],
+    "20": [
+      "家",
+      "庭"
+    ],
+    "21": [
+      "協",
+      "力"
+    ],
+    "22": [
+      "感",
+      "謝"
+    ],
+    "23": [
+      "礼"
+    ],
+    "24": [
+      "詫"
+    ],
+    "25": [],
+    "26": [
+      "握",
+      "手"
+    ],
+    "27": [],
+    "28": [],
+    "29": [],
+    "30": [
+      "宣",
+      "伝"
+    ],
+    "31": [
+      "広",
+      "告"
+    ],
+    "32": [
+      "通",
+      "訳"
+    ],
+    "33": [
+      "翻",
+      "訳"
+    ],
+    "34": [
+      "伝",
+      "言"
+    ],
+    "35": [
+      "報",
+      "告"
+    ],
+    "36": [
+      "関",
+      "係"
+    ],
+    "37": [
+      "団",
+      "体"
+    ],
+    "38": [
+      "選",
+      "挙"
+    ],
+    "39": [
+      "国",
+      "籍"
+    ],
+    "40": [
+      "国",
+      "際"
+    ],
+    "41": [
+      "宗",
+      "教"
+    ],
+    "42": [
+      "愛"
+    ],
+    "43": [
+      "礼",
+      "儀"
+    ],
+    "44": [
+      "文",
+      "句"
+    ],
+    "45": [
+      "代",
+      "表"
+    ],
+    "46": [
+      "本",
+      "人"
+    ],
+    "47": [
+      "文",
+      "化"
+    ],
+    "48": [
+      "戦",
+      "争"
+    ],
+    "49": [
+      "平",
+      "和"
+    ],
+    "50": [
+      "合",
+      "格"
+    ],
+    "51": [
+      "進",
+      "学"
+    ],
+    "52": [
+      "退",
+      "学"
+    ],
+    "53": [
+      "就",
+      "職"
+    ],
+    "54": [
+      "退",
+      "職"
+    ],
+    "55": [
+      "失",
+      "業"
+    ],
+    "56": [
+      "残",
+      "業"
+    ],
+    "57": [
+      "通",
+      "勤"
+    ],
+    "58": [
+      "学",
+      "歴"
+    ],
+    "59": [
+      "給",
+      "料"
+    ],
+    "60": [
+      "面",
+      "接"
+    ],
+    "61": [
+      "注",
+      "文"
+    ],
+    "62": [
+      "貯",
+      "金"
+    ],
+    "63": [
+      "小",
+      "銭"
+    ],
+    "64": [
+      "判"
+    ],
+    "65": [
+      "名",
+      "刺"
+    ],
+    "66": [
+      "免",
+      "許"
+    ],
+    "67": [
+      "製",
+      "品"
+    ],
+    "68": [
+      "値",
+      "上"
+    ],
+    "69": [
+      "節",
+      "約"
+    ],
+    "70": [
+      "経",
+      "営"
+    ],
+    "71": [
+      "人",
+      "気"
+    ],
+    "72": [
+      "交",
+      "換"
+    ],
+    "73": [
+      "流",
+      "行"
+    ],
+    "74": [
+      "専",
+      "門"
+    ],
+    "75": [
+      "研",
+      "究"
+    ],
+    "76": [
+      "調",
+      "査"
+    ],
+    "77": [
+      "税",
+      "金"
+    ],
+    "78": [
+      "書",
+      "類"
+    ],
+    "79": [
+      "読",
+      "書"
+    ],
+    "80": [
+      "取"
+    ],
+    "81": [
+      "知",
+      "識"
+    ],
+    "82": [
+      "実",
+      "力"
+    ],
+    "83": [
+      "資",
+      "格"
+    ],
+    "84": [
+      "申",
+      "請"
+    ],
+    "85": [
+      "契",
+      "約"
+    ],
+    "86": [
+      "証",
+      "明"
+    ],
+    "87": [
+      "商",
+      "売"
+    ],
+    "88": [
+      "商",
+      "品"
+    ],
+    "89": [
+      "質"
+    ],
+    "90": [
+      "生",
+      "産"
+    ],
+    "91": [
+      "消",
+      "費"
+    ],
+    "92": [
+      "物",
+      "価"
+    ],
+    "93": [
+      "倒",
+      "産"
+    ],
+    "94": [
+      "生",
+      "活"
+    ],
+    "95": [
+      "休",
+      "憩"
+    ],
+    "96": [
+      "観",
+      "光"
+    ],
+    "97": [
+      "帰",
+      "国"
+    ],
+    "98": [
+      "帰",
+      "省"
+    ],
+    "99": [
+      "帰",
+      "宅"
+    ],
+    "100": [
+      "参",
+      "加"
+    ],
+    "101": [
+      "出",
+      "席"
+    ],
+    "102": [
+      "欠",
+      "席"
+    ],
+    "103": [
+      "遅",
+      "刻"
+    ],
+    "104": [
+      "化",
+      "粧"
+    ],
+    "105": [
+      "徹",
+      "夜"
+    ],
+    "106": [
+      "引",
+      "越"
+    ],
+    "107": [
+      "会"
+    ],
+    "108": [
+      "趣",
+      "味"
+    ],
+    "109": [
+      "皮"
+    ],
+    "110": [
+      "缶"
+    ],
+    "111": [
+      "画",
+      "面"
+    ],
+    "112": [
+      "番",
+      "組"
+    ],
+    "113": [
+      "記",
+      "事"
+    ],
+    "114": [
+      "近",
+      "所"
+    ],
+    "115": [
+      "警",
+      "察"
+    ],
+    "116": [
+      "犯",
+      "人"
+    ],
+    "117": [],
+    "118": [
+      "作",
+      "者"
+    ],
+    "119": [
+      "作",
+      "品"
+    ],
+    "120": [
+      "制",
+      "服"
+    ],
+    "121": [
+      "洗",
+      "剤"
+    ],
+    "122": [
+      "底"
+    ],
+    "123": [
+      "地",
+      "下"
+    ],
+    "124": [
+      "寺"
+    ],
+    "125": [
+      "道",
+      "路"
+    ],
+    "126": [
+      "坂"
+    ],
+    "127": [
+      "煙"
+    ],
+    "128": [
+      "灰"
+    ],
+    "129": [
+      "自",
+      "動"
+    ],
+    "130": [
+      "生"
+    ],
+    "131": [
+      "録",
+      "画"
+    ],
+    "132": [
+      "混",
+      "雑"
+    ],
+    "133": [
+      "渋",
+      "滞"
+    ],
+    "134": [
+      "衝",
+      "突"
+    ],
+    "135": [
+      "被",
+      "害"
+    ],
+    "136": [
+      "事",
+      "故"
+    ],
+    "137": [
+      "事",
+      "件"
+    ],
+    "138": [
+      "故",
+      "障"
+    ],
+    "139": [
+      "修",
+      "理"
+    ],
+    "140": [
+      "停",
+      "電"
+    ],
+    "141": [],
+    "142": [
+      "近",
+      "道"
+    ],
+    "143": [
+      "中",
+      "心"
+    ],
+    "144": [
+      "辺"
+    ],
+    "145": [
+      "周"
+    ],
+    "146": [
+      "穴"
+    ],
+    "147": [
+      "列"
+    ],
+    "148": [
+      "東",
+      "洋"
+    ],
+    "149": [
+      "西",
+      "洋"
+    ],
+    "150": [
+      "演",
+      "奏"
+    ],
+    "151": [
+      "芸",
+      "術"
+    ],
+    "152": [
+      "禁",
+      "煙"
+    ],
+    "153": [
+      "禁",
+      "止"
+    ],
+    "154": [
+      "場",
+      "面"
+    ],
+    "155": [
+      "距",
+      "離"
+    ],
+    "156": [
+      "印"
+    ],
+    "157": [
+      "合",
+      "図"
+    ],
+    "158": [
+      "型"
+    ],
+    "159": [
+      "携",
+      "帯"
+    ],
+    "160": [
+      "都",
+      "市"
+    ],
+    "161": [
+      "地",
+      "方"
+    ],
+    "162": [
+      "太",
+      "陽"
+    ],
+    "163": [
+      "地",
+      "球"
+    ],
+    "164": [
+      "温",
+      "度"
+    ],
+    "165": [
+      "湿",
+      "度"
+    ],
+    "166": [
+      "湿",
+      "気"
+    ],
+    "167": [
+      "梅",
+      "雨"
+    ],
+    "168": [
+      "黴"
+    ],
+    "169": [
+      "暖",
+      "房"
+    ],
+    "170": [
+      "自",
+      "然"
+    ],
+    "171": [
+      "景",
+      "色"
+    ],
+    "172": [
+      "環",
+      "境"
+    ],
+    "173": [
+      "資",
+      "源"
+    ],
+    "174": [
+      "身",
+      "長"
+    ],
+    "175": [
+      "体",
+      "重"
+    ],
+    "176": [
+      "怪",
+      "我"
+    ],
+    "177": [
+      "体",
+      "力"
+    ],
+    "178": [
+      "検",
+      "査"
+    ],
+    "179": [
+      "血",
+      "液"
+    ],
+    "180": [
+      "治",
+      "療"
+    ],
+    "181": [
+      "症",
+      "状"
+    ],
+    "182": [
+      "予",
+      "防"
+    ],
+    "183": [
+      "栄",
+      "養"
+    ],
+    "184": [
+      "手",
+      "術"
+    ],
+    "185": [
+      "死",
+      "亡"
+    ],
+    "186": [
+      "命"
+    ],
+    "187": [
+      "一",
+      "生"
+    ],
+    "188": [
+      "癖"
+    ],
+    "189": [
+      "表",
+      "情"
+    ],
+    "190": [
+      "成",
+      "長"
+    ],
+    "191": [
+      "計",
+      "算"
+    ],
+    "192": [
+      "計",
+      "画"
+    ],
+    "193": [
+      "成",
+      "功"
+    ],
+    "194": [
+      "失",
+      "敗"
+    ],
+    "195": [
+      "準",
+      "備"
+    ],
+    "196": [
+      "整",
+      "理"
+    ],
+    "197": [
+      "興",
+      "味"
+    ],
+    "198": [
+      "思",
+      "出"
+    ],
+    "199": [
+      "冗",
+      "談"
+    ],
+    "200": [
+      "目",
+      "的"
+    ],
+    "201": [
+      "約",
+      "束"
+    ],
+    "202": [
+      "喋"
+    ],
+    "203": [
+      "遠",
+      "慮"
+    ],
+    "204": [
+      "我",
+      "慢"
+    ],
+    "205": [
+      "迷",
+      "惑"
+    ],
+    "206": [
+      "希",
+      "望"
+    ],
+    "207": [
+      "夢"
+    ],
+    "208": [
+      "賛",
+      "成"
+    ],
+    "209": [
+      "反",
+      "対"
+    ],
+    "210": [
+      "想",
+      "像"
+    ],
+    "211": [
+      "努",
+      "力"
+    ],
+    "212": [
+      "多"
+    ],
+    "213": [
+      "前",
+      "半"
+    ],
+    "214": [
+      "後",
+      "半"
+    ],
+    "215": [
+      "最",
+      "高"
+    ],
+    "216": [
+      "最",
+      "低"
+    ],
+    "217": [
+      "最",
+      "初"
+    ],
+    "218": [
+      "最",
+      "後"
+    ],
+    "219": [
+      "種",
+      "類"
+    ],
+    "220": [
+      "性",
+      "格"
+    ],
+    "221": [
+      "性",
+      "質"
+    ],
+    "222": [
+      "順",
+      "番"
+    ],
+    "223": [
+      "番"
+    ],
+    "224": [
+      "方",
+      "法"
+    ],
+    "225": [
+      "反",
+      "省"
+    ],
+    "226": [
+      "実",
+      "行"
+    ],
+    "227": [
+      "進",
+      "歩"
+    ],
+    "228": [
+      "変",
+      "化"
+    ],
+    "229": [
+      "発",
+      "達"
+    ],
+    "230": [
+      "出",
+      "場"
+    ],
+    "231": [
+      "活",
+      "躍"
+    ],
+    "232": [
+      "競",
+      "争"
+    ],
+    "233": [
+      "応",
+      "援"
+    ],
+    "234": [
+      "拍",
+      "手"
+    ],
+    "235": [
+      "情",
+      "報"
+    ],
+    "236": [
+      "注",
+      "目"
+    ],
+    "237": [
+      "調",
+      "子"
+    ],
+    "238": [
+      "緊",
+      "張"
+    ],
+    "239": [
+      "自",
+      "身"
+    ],
+    "240": [
+      "自",
+      "慢"
+    ],
+    "241": [
+      "感",
+      "心"
+    ],
+    "242": [
+      "感",
+      "動"
+    ],
+    "243": [
+      "興",
+      "奮"
+    ],
+    "244": [
+      "感",
+      "想"
+    ],
+    "245": [
+      "予",
+      "想"
+    ],
+    "246": [
+      "原",
+      "因"
+    ],
+    "247": [
+      "結",
+      "果"
+    ],
+    "248": [
+      "解",
+      "決"
+    ],
+    "249": [
+      "確",
+      "認"
+    ],
+    "250": [
+      "利",
+      "用"
+    ],
+    "251": [
+      "理",
+      "解"
+    ],
+    "252": [
+      "発",
+      "見"
+    ],
+    "253": [
+      "発",
+      "明"
+    ],
+    "254": [
+      "責",
+      "任"
+    ],
+    "255": [
+      "題",
+      "名"
+    ],
+    "256": [
+      "条",
+      "件"
+    ],
+    "257": [
+      "締",
+      "切"
+    ],
+    "258": [
+      "期",
+      "間"
+    ],
+    "259": [
+      "倍"
+    ],
+    "260": [
+      "幅"
+    ],
+    "261": [
+      "範",
+      "囲"
+    ],
+    "262": [
+      "内",
+      "容"
+    ],
+    "263": [
+      "中",
+      "身"
+    ],
+    "264": [
+      "特",
+      "徴"
+    ],
+    "265": [
+      "普",
+      "通"
+    ],
+    "266": [
+      "当",
+      "前"
+    ],
+    "267": [
+      "偽"
+    ],
+    "268": [
+      "別"
+    ],
+    "269": [
+      "誤",
+      "解"
+    ],
+    "270": [
+      "後",
+      "悔"
+    ],
+    "271": [
+      "訳"
+    ],
+    "272": [
+      "態",
+      "度"
+    ],
+    "273": [
+      "表",
+      "面"
+    ],
+    "274": [
+      "完",
+      "成"
+    ],
+    "275": [
+      "課",
+      "題"
+    ],
+    "276": [
+      "例",
+      "外"
+    ],
+    "277": [
+      "基",
+      "本"
+    ],
+    "278": [
+      "記",
+      "録"
+    ],
+    "279": [
+      "状",
+      "態"
+    ],
+    "280": [
+      "出",
+      "来",
+      "事"
+    ],
+    "281": [
+      "機",
+      "会"
+    ],
+    "282": [
+      "提",
+      "案"
+    ],
+    "283": [
+      "手",
+      "段"
+    ],
+    "284": [
+      "影",
+      "響"
+    ],
+    "285": [
+      "効",
+      "果"
+    ],
+    "286": [
+      "印",
+      "象"
+    ],
+    "287": [
+      "共",
+      "通"
+    ],
+    "288": [
+      "協",
+      "調"
+    ],
+    "289": [
+      "省",
+      "略"
+    ],
+    "290": [
+      "挑",
+      "戦"
+    ],
+    "291": [
+      "気"
+    ],
+    "292": [
+      "勇",
+      "気"
+    ],
+    "293": [
+      "変",
+      "更"
+    ],
+    "294": [
+      "保",
+      "存"
+    ],
+    "295": [
+      "保",
+      "護"
+    ],
+    "296": [
+      "不",
+      "足"
+    ],
+    "297": [
+      "平",
+      "均"
+    ],
+    "298": [
+      "割",
+      "合"
+    ],
+    "299": [
+      "現",
+      "代"
+    ],
+    "300": [
+      "世",
+      "紀"
+    ],
+    "301": [
+      "飾"
+    ],
+    "302": [
+      "遊"
+    ],
+    "303": [
+      "集"
+    ],
+    "304": [
+      "教"
+    ],
+    "305": [
+      "踊"
+    ],
+    "306": [
+      "思"
+    ],
+    "307": [
+      "考"
+    ],
+    "308": [
+      "片"
+    ],
+    "309": [
+      "手",
+      "伝"
+    ],
+    "310": [
+      "働"
+    ],
+    "311": [
+      "決"
+    ],
+    "312": [
+      "騒"
+    ],
+    "313": [
+      "知"
+    ],
+    "314": [
+      "頼"
+    ],
+    "315": [
+      "疲"
+    ],
+    "316": [
+      "違"
+    ],
+    "317": [
+      "始"
+    ],
+    "318": [
+      "続"
+    ],
+    "319": [
+      "暮"
+    ],
+    "320": [
+      "行"
+    ],
+    "321": [
+      "帰"
+    ],
+    "322": [
+      "急"
+    ],
+    "323": [
+      "遅"
+    ],
+    "324": [
+      "貸"
+    ],
+    "325": [
+      "借"
+    ],
+    "326": [
+      "勝"
+    ],
+    "327": [
+      "負"
+    ],
+    "328": [
+      "迎"
+    ],
+    "329": [
+      "始"
+    ],
+    "330": [
+      "終"
+    ],
+    "331": [
+      "戻"
+    ],
+    "332": [
+      "別"
+    ],
+    "333": [
+      "喜"
+    ],
+    "334": [
+      "楽"
+    ],
+    "335": [
+      "笑"
+    ],
+    "336": [
+      "驚"
+    ],
+    "337": [
+      "怒"
+    ],
+    "338": [
+      "悲"
+    ],
+    "339": [],
+    "340": [],
+    "341": [],
+    "342": [],
+    "343": [],
+    "344": [],
+    "345": [],
+    "346": [],
+    "347": [],
+    "348": [],
+    "349": [],
+    "350": [],
+    "351": [],
+    "352": [],
+    "353": [],
+    "354": [],
+    "355": [],
+    "356": [],
+    "357": [],
+    "358": [],
+    "359": [],
+    "360": [],
+    "361": [],
+    "362": [],
+    "363": [],
+    "364": [],
+    "365": [],
+    "366": [],
+    "367": [],
+    "368": [],
+    "369": [],
+    "370": [],
+    "371": [],
+    "372": [],
+    "373": [],
+    "374": [],
+    "375": [],
+    "376": [],
+    "377": [],
+    "378": [],
+    "379": [],
+    "380": [],
+    "381": [],
+    "382": [],
+    "383": [],
+    "384": [],
+    "385": [],
+    "386": [],
+    "387": [],
+    "388": [],
+    "389": [],
+    "390": [],
+    "391": [],
+    "392": [],
+    "393": [],
+    "394": [],
+    "395": [],
+    "396": [],
+    "397": [],
+    "398": [],
+    "399": [],
+    "400": [],
+    "401": [],
+    "402": [],
+    "403": [],
+    "404": [],
+    "405": [],
+    "406": [],
+    "407": [],
+    "408": [],
+    "409": [],
+    "410": [],
+    "411": [],
+    "412": [],
+    "413": [],
+    "414": [],
+    "415": [],
+    "416": [],
+    "417": [],
+    "418": [],
+    "419": [
+      "幸"
+    ],
+    "420": [
+      "得",
+      "意"
+    ],
+    "421": [
+      "苦",
+      "手"
+    ],
+    "422": [
+      "熱",
+      "心"
+    ],
+    "423": [
+      "夢",
+      "中"
+    ],
+    "424": [
+      "退",
+      "屈"
+    ],
+    "425": [
+      "苦"
+    ],
+    "426": [
+      "平",
+      "気"
+    ],
+    "427": [
+      "悔"
+    ],
+    "428": [],
+    "429": [],
+    "430": [
+      "我",
+      "慢",
+      "強"
+    ],
+    "431": [
+      "正",
+      "直"
+    ],
+    "432": [],
+    "433": [],
+    "434": [
+      "積",
+      "極",
+      "的"
+    ],
+    "435": [
+      "消",
+      "極",
+      "的"
+    ],
+    "436": [
+      "満",
+      "足"
+    ],
+    "437": [
+      "不",
+      "満"
+    ],
+    "438": [
+      "不",
+      "安"
+    ],
+    "439": [
+      "失",
+      "礼"
+    ],
+    "440": [
+      "親"
+    ],
+    "441": [
+      "健",
+      "康"
+    ],
+    "442": [],
+    "443": [
+      "派",
+      "手"
+    ],
+    "444": [
+      "地",
+      "味"
+    ],
+    "445": [],
+    "446": [
+      "濃"
+    ],
+    "447": [
+      "薄"
+    ],
+    "448": [
+      "酸"
+    ],
+    "449": [
+      "臭"
+    ],
+    "450": [],
+    "451": [],
+    "452": [
+      "浅"
+    ],
+    "453": [
+      "固",
+      "硬"
+    ],
+    "454": [],
+    "455": [],
+    "456": [
+      "蒸",
+      "暑"
+    ],
+    "457": [
+      "清",
+      "潔"
+    ],
+    "458": [
+      "新",
+      "鮮"
+    ],
+    "459": [
+      "立",
+      "派"
+    ],
+    "460": [],
+    "461": [],
+    "462": [],
+    "463": [
+      "大",
+      "変"
+    ],
+    "464": [
+      "無",
+      "理"
+    ],
+    "465": [
+      "不",
+      "注",
+      "意"
+    ],
+    "466": [
+      "楽"
+    ],
+    "467": [
+      "面",
+      "倒"
+    ],
+    "468": [
+      "当",
+      "然"
+    ],
+    "469": [
+      "意",
+      "外"
+    ],
+    "470": [
+      "結",
+      "構"
+    ],
+    "471": [
+      "変"
+    ],
+    "472": [
+      "不",
+      "思",
+      "議"
+    ],
+    "473": [],
+    "474": [],
+    "475": [
+      "自",
+      "由"
+    ],
+    "476": [
+      "不",
+      "自",
+      "由"
+    ],
+    "477": [],
+    "478": [
+      "詳"
+    ],
+    "479": [
+      "細"
+    ],
+    "480": [
+      "豊"
+    ],
+    "481": [
+      "正",
+      "確"
+    ],
+    "482": [
+      "確"
+    ],
+    "483": [
+      "重",
+      "要"
+    ],
+    "484": [
+      "必",
+      "要"
+    ],
+    "485": [],
+    "486": [],
+    "487": [],
+    "488": [
+      "激"
+    ],
+    "489": [
+      "急"
+    ],
+    "490": [
+      "適",
+      "当"
+    ],
+    "491": [
+      "特",
+      "別"
+    ],
+    "492": [
+      "完",
+      "全"
+    ],
+    "493": [
+      "盛"
+    ],
+    "494": [
+      "様"
+    ],
+    "495": [
+      "可",
+      "能"
+    ],
+    "496": [
+      "不",
+      "可",
+      "能"
+    ],
+    "497": [
+      "基",
+      "本",
+      "的"
+    ],
+    "498": [
+      "国",
+      "際",
+      "的"
+    ],
+    "499": [
+      "非",
+      "常"
+    ],
+    "500": [
+      "大",
+      "変"
+    ],
+    "501": [],
+    "502": [
+      "大",
+      "体"
+    ],
+    "503": [],
+    "504": [],
+    "505": [],
+    "506": [
+      "大",
+      "分"
+    ],
+    "507": [],
+    "508": [],
+    "509": [],
+    "510": [],
+    "511": [],
+    "512": [
+      "少"
+    ],
+    "513": [
+      "決"
+    ],
+    "514": [
+      "少"
+    ],
+    "515": [],
+    "516": [
+      "全"
+    ],
+    "517": [],
+    "518": [],
+    "519": [],
+    "520": [],
+    "521": [
+      "同",
+      "時"
+    ],
+    "522": [
+      "前"
+    ],
+    "523": [],
+    "524": [],
+    "525": [
+      "突",
+      "然"
+    ],
+    "526": [
+      "間"
+    ],
+    "527": [
+      "間"
+    ],
+    "528": [],
+    "529": [],
+    "530": [
+      "相",
+      "変"
+    ],
+    "531": [
+      "次"
+    ],
+    "532": [],
+    "533": [],
+    "534": [],
+    "535": [],
+    "536": [],
+    "537": [],
+    "538": [],
+    "539": [],
+    "540": [],
+    "541": [],
+    "542": [],
+    "543": [
+      "案",
+      "外"
+    ],
+    "544": [],
+    "545": [],
+    "546": [],
+    "547": [],
+    "548": [
+      "思"
+    ],
+    "549": [],
+    "550": [],
+    "551": [],
+    "552": [
+      "実"
+    ],
+    "553": [],
+    "554": [],
+    "555": [],
+    "556": [],
+    "557": [],
+    "558": [],
+    "559": [
+      "別"
+    ],
+    "560": [],
+    "561": [
+      "互"
+    ],
+    "562": [
+      "直",
+      "接"
+    ],
+    "563": [
+      "本",
+      "当"
+    ],
+    "564": [
+      "必"
+    ],
+    "565": [
+      "絶",
+      "対"
+    ],
+    "566": [
+      "特"
+    ],
+    "567": [
+      "一",
+      "体"
+    ],
+    "568": [
+      "別"
+    ],
+    "569": [],
+    "570": [],
+    "571": [],
+    "572": [],
+    "573": [],
+    "574": [],
+    "575": [],
+    "576": [],
+    "577": [],
+    "578": [],
+    "579": [
+      "渇"
+    ],
+    "580": [
+      "嗅"
+    ],
+    "581": [
+      "叩"
+    ],
+    "582": [
+      "殴"
+    ],
+    "583": [],
+    "584": [
+      "抱"
+    ],
+    "585": [
+      "倒"
+    ],
+    "586": [
+      "倒"
+    ],
+    "587": [
+      "起"
+    ],
+    "588": [
+      "起"
+    ],
+    "589": [
+      "尋"
+    ],
+    "590": [
+      "呼"
+    ],
+    "591": [
+      "叫"
+    ],
+    "592": [
+      "黙"
+    ],
+    "593": [
+      "飼"
+    ],
+    "594": [
+      "数"
+    ],
+    "595": [
+      "誘"
+    ],
+    "596": [],
+    "597": [
+      "預"
+    ],
+    "598": [
+      "預"
+    ],
+    "599": [
+      "教"
+    ],
+    "600": [
+      "申",
+      "込"
+    ],
+    "601": [
+      "断"
+    ],
+    "602": [
+      "見"
+    ],
+    "603": [
+      "見"
+    ],
+    "604": [
+      "捕"
+    ],
+    "605": [
+      "捕"
+    ],
+    "606": [
+      "乗"
+    ],
+    "607": [
+      "乗"
+    ],
+    "608": [
+      "降"
+    ],
+    "609": [
+      "降"
+    ],
+    "610": [
+      "亡"
+    ],
+    "611": [
+      "亡"
+    ],
+    "612": [
+      "生"
+    ],
+    "613": [
+      "生"
+    ],
+    "614": [
+      "出",
+      "会"
+    ],
+    "615": [
+      "訪"
+    ],
+    "616": [
+      "付",
+      "合"
+    ],
+    "617": [
+      "通"
+    ],
+    "618": [
+      "違"
+    ],
+    "619": [
+      "動"
+    ],
+    "620": [
+      "動"
+    ],
+    "621": [
+      "離"
+    ],
+    "622": [
+      "離"
+    ],
+    "623": [],
+    "624": [],
+    "625": [
+      "滑"
+    ],
+    "626": [
+      "届"
+    ],
+    "627": [
+      "届"
+    ],
+    "628": [
+      "掻"
+    ],
+    "629": [],
+    "630": [
+      "握"
+    ],
+    "631": [
+      "抑"
+    ],
+    "632": [
+      "近"
+    ],
+    "633": [
+      "近"
+    ],
+    "634": [
+      "譲"
+    ],
+    "635": [
+      "助"
+    ],
+    "636": [
+      "助"
+    ],
+    "637": [],
+    "638": [
+      "騙"
+    ],
+    "639": [
+      "盗"
+    ],
+    "640": [
+      "刺"
+    ],
+    "641": [
+      "刺"
+    ],
+    "642": [
+      "殺"
+    ],
+    "643": [
+      "隠"
+    ],
+    "644": [
+      "隠"
+    ],
+    "645": [
+      "囲"
+    ],
+    "646": [
+      "飛"
+    ],
+    "647": [
+      "飛"
+    ],
+    "648": [
+      "振"
+    ],
+    "649": [
+      "見"
+    ],
+    "650": [
+      "行"
+    ],
+    "651": [
+      "許"
+    ],
+    "652": [
+      "立"
+    ],
+    "653": [
+      "立"
+    ],
+    "654": [
+      "育"
+    ],
+    "655": [
+      "育"
+    ],
+    "656": [
+      "揺"
+    ],
+    "657": [
+      "揺"
+    ],
+    "658": [
+      "祈"
+    ],
+    "659": [
+      "祝"
+    ],
+    "660": [
+      "上"
+    ],
+    "661": [
+      "下"
+    ],
+    "662": [
+      "進"
+    ],
+    "663": [
+      "進"
+    ],
+    "664": [
+      "通"
+    ],
+    "665": [
+      "通"
+    ],
+    "666": [
+      "超",
+      "越"
+    ],
+    "667": [
+      "過"
+    ],
+    "668": [
+      "過"
+    ],
+    "669": [
+      "移"
+    ],
+    "670": [
+      "移"
+    ],
+    "671": [
+      "連"
+    ],
+    "672": [
+      "寄"
+    ],
+    "673": [
+      "寄"
+    ],
+    "674": [
+      "与"
+    ],
+    "675": [
+      "得"
+    ],
+    "676": [
+      "向"
+    ],
+    "677": [
+      "向"
+    ],
+    "678": [
+      "勧"
+    ],
+    "679": [
+      "薦"
+    ],
+    "680": [
+      "任"
+    ],
+    "681": [
+      "守"
+    ],
+    "682": [
+      "争"
+    ],
+    "683": [
+      "暮"
+    ],
+    "684": [
+      "差"
+    ],
+    "685": [
+      "乾"
+    ],
+    "686": [
+      "乾"
+    ],
+    "687": [
+      "畳"
+    ],
+    "688": [
+      "写"
+    ],
+    "689": [
+      "写"
+    ],
+    "690": [
+      "直"
+    ],
+    "691": [
+      "直"
+    ],
+    "692": [
+      "治"
+    ],
+    "693": [
+      "治"
+    ],
+    "694": [],
+    "695": [],
+    "696": [],
+    "697": [
+      "片",
+      "付"
+    ],
+    "698": [
+      "片",
+      "付"
+    ],
+    "699": [
+      "包"
+    ],
+    "700": [
+      "張"
+    ],
+    "701": [],
+    "702": [],
+    "703": [
+      "積"
+    ],
+    "704": [
+      "空"
+    ],
+    "705": [
+      "下"
+    ],
+    "706": [
+      "冷"
+    ],
+    "707": [
+      "冷"
+    ],
+    "708": [
+      "燃"
+    ],
+    "709": [
+      "沸"
+    ],
+    "710": [
+      "鳴"
+    ],
+    "711": [
+      "鳴"
+    ],
+    "712": [
+      "役",
+      "立"
+    ],
+    "713": [
+      "役",
+      "立"
+    ],
+    "714": [
+      "返"
+    ],
+    "715": [
+      "埋"
+    ],
+    "716": [
+      "埋"
+    ],
+    "717": [
+      "詰"
+    ],
+    "718": [
+      "詰"
+    ],
+    "719": [
+      "開"
+    ],
+    "720": [
+      "閉"
+    ],
+    "721": [],
+    "722": [
+      "確"
+    ],
+    "723": [
+      "試"
+    ],
+    "724": [
+      "繰",
+      "返"
+    ],
+    "725": [
+      "訳"
+    ],
+    "726": [
+      "建"
+    ],
+    "727": [
+      "建"
+    ],
+    "728": [
+      "生"
+    ],
+    "729": [
+      "生"
+    ],
+    "730": [
+      "汚"
+    ],
+    "731": [
+      "汚"
+    ],
+    "732": [
+      "壊"
+    ],
+    "733": [
+      "壊"
+    ],
+    "734": [
+      "割"
+    ],
+    "735": [
+      "割"
+    ],
+    "736": [
+      "折"
+    ],
+    "737": [
+      "折"
+    ],
+    "738": [
+      "破"
+    ],
+    "739": [
+      "破"
+    ],
+    "740": [
+      "曲"
+    ],
+    "741": [
+      "曲"
+    ],
+    "742": [
+      "外"
+    ],
+    "743": [
+      "外"
+    ],
+    "744": [
+      "流"
+    ],
+    "745": [
+      "流"
+    ],
+    "746": [
+      "濡"
+    ],
+    "747": [
+      "濡"
+    ],
+    "748": [
+      "巻"
+    ],
+    "749": [
+      "結"
+    ],
+    "750": [
+      "載"
+    ],
+    "751": [
+      "載"
+    ],
+    "752": [
+      "揃"
+    ],
+    "753": [
+      "揃"
+    ],
+    "754": [
+      "付"
+    ],
+    "755": [
+      "付"
+    ],
+    "756": [
+      "貯"
+    ],
+    "757": [
+      "貯"
+    ],
+    "758": [
+      "抜"
+    ],
+    "759": [
+      "抜"
+    ],
+    "760": [
+      "炊"
+    ],
+    "761": [
+      "炊"
+    ],
+    "762": [
+      "煮"
+    ],
+    "763": [
+      "煮"
+    ],
+    "764": [
+      "炒"
+    ],
+    "765": [
+      "焼"
+    ],
+    "766": [
+      "焼"
+    ],
+    "767": [],
+    "768": [
+      "揚"
+    ],
+    "769": [
+      "蒸"
+    ],
+    "770": [
+      "効"
+    ],
+    "771": [],
+    "772": [
+      "経"
+    ],
+    "773": [
+      "間",
+      "合"
+    ],
+    "774": [
+      "間",
+      "合"
+    ],
+    "775": [
+      "込"
+    ],
+    "776": [
+      "掛"
+    ],
+    "777": [
+      "掛"
+    ],
+    "778": [
+      "無"
+    ],
+    "779": [
+      "無"
+    ],
+    "780": [
+      "足"
+    ],
+    "781": [
+      "残"
+    ],
+    "782": [
+      "残"
+    ],
+    "783": [
+      "腐"
+    ],
+    "784": [
+      "積"
+    ],
+    "785": [
+      "空"
+    ],
+    "786": [
+      "下"
+    ],
+    "787": [
+      "冷"
+    ],
+    "788": [
+      "冷"
+    ],
+    "789": [
+      "燃"
+    ],
+    "790": [
+      "沸"
+    ],
+    "791": [
+      "温"
+    ],
+    "792": [
+      "温"
+    ],
+    "793": [
+      "高"
+    ],
+    "794": [
+      "高"
+    ],
+    "795": [
+      "強"
+    ],
+    "796": [
+      "強"
+    ],
+    "797": [
+      "弱"
+    ],
+    "798": [
+      "弱"
+    ],
+    "799": [
+      "広"
+    ],
+    "800": [
+      "広"
+    ],
+    "801": [
+      "深"
+    ],
+    "802": [
+      "深"
+    ],
+    "803": [
+      "合"
+    ],
+    "804": [
+      "合"
+    ],
+    "805": [
+      "当"
+    ],
+    "806": [
+      "当"
+    ],
+    "807": [
+      "比"
+    ],
+    "808": [
+      "似",
+      "合"
+    ],
+    "809": [
+      "似"
+    ],
+    "810": [
+      "似"
+    ],
+    "811": [
+      "分"
+    ],
+    "812": [
+      "分"
+    ],
+    "813": [
+      "足"
+    ],
+    "814": [
+      "引"
+    ],
+    "815": [
+      "増"
+    ],
+    "816": [
+      "増"
+    ],
+    "817": [
+      "減"
+    ],
+    "818": [
+      "減"
+    ],
+    "819": [
+      "変"
+    ],
+    "820": [
+      "変"
+    ],
+    "821": [
+      "替",
+      "換"
+    ],
+    "822": [
+      "替",
+      "換"
+    ],
+    "823": [
+      "返"
+    ],
+    "824": [
+      "済"
+    ],
+    "825": [
+      "済"
+    ],
+    "826": [
+      "出",
+      "来"
+    ],
+    "827": [
+      "切"
+    ],
+    "828": [
+      "切"
+    ],
+    "829": [
+      "伝"
+    ],
+    "830": [
+      "伝"
+    ],
+    "831": [
+      "続"
+    ],
+    "832": [
+      "続"
+    ],
+    "833": [],
+    "834": [],
+    "835": [],
+    "836": [
+      "伸"
+    ],
+    "837": [
+      "伸"
+    ],
+    "838": [
+      "延"
+    ],
+    "839": [
+      "延"
+    ],
+    "840": [
+      "重"
+    ],
+    "841": [
+      "重"
+    ],
+    "842": [
+      "広"
+    ],
+    "843": [
+      "広"
+    ],
+    "844": [
+      "纏"
+    ],
+    "845": [
+      "纏"
+    ],
+    "846": [
+      "交",
+      "混"
+    ],
+    "847": [
+      "交",
+      "混"
+    ],
+    "848": [
+      "交",
+      "混"
+    ],
+    "849": [
+      "解",
+      "溶"
+    ],
+    "850": [
+      "解",
+      "溶"
+    ],
+    "851": [
+      "含"
+    ],
+    "852": [
+      "含"
+    ],
+    "853": [
+      "現"
+    ],
+    "854": [
+      "現"
+    ],
+    "855": [
+      "表"
+    ],
+    "856": [
+      "表"
+    ],
+    "857": [
+      "散"
+    ],
+    "858": [
+      "散"
+    ],
+    "859": [
+      "明"
+    ],
+    "860": [
+      "決"
+    ],
+    "861": [
+      "決"
+    ],
+    "862": [
+      "思",
+      "出"
+    ],
+    "863": [
+      "間",
+      "違"
+    ],
+    "864": [
+      "間",
+      "違"
+    ],
+    "865": [
+      "慣"
+    ],
+    "866": [
+      "慣"
+    ],
+    "867": [
+      "迷"
+    ],
+    "868": [
+      "悩"
+    ],
+    "869": [
+      "慌"
+    ],
+    "870": [
+      "覚"
+    ],
+    "871": [
+      "覚"
+    ],
+    "872": [
+      "眠"
+    ],
+    "873": [
+      "感"
+    ],
+    "874": [
+      "臨"
+    ],
+    "875": [
+      "信"
+    ],
+    "876": [
+      "通"
+    ],
+    "877": [
+      "飽"
+    ],
+    "878": [
+      "思"
+    ],
+    "879": [
+      "思"
+    ],
+    "880": [
+      "熱",
+      "中"
+    ]
+  },
+  "excludedCharacters": [
+    "々",
+    "あ",
+    "い",
+    "う",
+    "え",
+    "お",
+    "か",
+    "が",
+    "き",
+    "ぎ",
+    "く",
+    "ぐ",
+    "け",
+    "げ",
+    "こ",
+    "ご",
+    "さ",
+    "ざ",
+    "し",
+    "じ",
+    "す",
+    "ず",
+    "せ",
+    "ぜ",
+    "そ",
+    "ぞ",
+    "た",
+    "だ",
+    "ち",
+    "っ",
+    "つ",
+    "づ",
+    "て",
+    "で",
+    "と",
+    "ど",
+    "な",
+    "に",
+    "ぬ",
+    "ね",
+    "の",
+    "は",
+    "ば",
+    "ぱ",
+    "ひ",
+    "び",
+    "ぴ",
+    "ふ",
+    "ぶ",
+    "べ",
+    "ほ",
+    "ぼ",
+    "ま",
+    "み",
+    "む",
+    "め",
+    "も",
+    "ゃ",
+    "や",
+    "ゆ",
+    "ら",
+    "り",
+    "る",
+    "れ",
+    "ろ",
+    "わ",
+    "ん",
+    "ァ",
+    "ア",
+    "ィ",
+    "イ",
+    "ウ",
+    "ェ",
+    "エ",
+    "オ",
+    "カ",
+    "ガ",
+    "キ",
+    "ギ",
+    "ク",
+    "グ",
+    "ケ",
+    "ゲ",
+    "コ",
+    "サ",
+    "ザ",
+    "シ",
+    "ジ",
+    "ス",
+    "ズ",
+    "セ",
+    "タ",
+    "ダ",
+    "チ",
+    "ッ",
+    "ツ",
+    "テ",
+    "デ",
+    "ト",
+    "ド",
+    "ナ",
+    "ニ",
+    "ネ",
+    "バ",
+    "パ",
+    "ヒ",
+    "ビ",
+    "ピ",
+    "フ",
+    "ブ",
+    "プ",
+    "ヘ",
+    "ベ",
+    "ペ",
+    "ボ",
+    "マ",
+    "ミ",
+    "ム",
+    "メ",
+    "モ",
+    "ャ",
+    "ュ",
+    "ユ",
+    "ョ",
+    "ラ",
+    "リ",
+    "ル",
+    "レ",
+    "ロ",
+    "ン",
+    "・",
+    "ー"
+  ]
+}

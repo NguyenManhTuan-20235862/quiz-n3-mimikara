@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "70a0b7ae0c18ceb5cb358274b029cce0234a43bc",
+  "vocabularySha256": "0a1eab1f13491bb5dfbeec37741d293d4dfdb9f21ebfedbf2f27230b9bf4d6fe",
+  "wordCount": 880,
+  "uniqueKanji": 568,
+  "availableKanji": 568,
+  "missingKanji": [],
+  "fullyCoveredWordsWithKanji": 705,
+  "wordsWithoutKanji": 175,
+  "wordsWithMissingKanji": [],
+  "strokeDataBytes": 1272681
+}

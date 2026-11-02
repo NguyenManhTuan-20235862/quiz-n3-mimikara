@@ -779,6 +779,9 @@
     dom.fcTopicBadge.textContent = w.topicName;
     dom.fcSttBadge.textContent = `#${w.stt}`;
     dom.fcKanji.textContent = w.kanji;
+    const writingButton = document.getElementById('fcWritingBtn');
+    writingButton.hidden = !window.KanjiWriter.kanjiIn(w.kanji).length;
+    writingButton.dataset.kanjiWord = w.kanji;
     dom.fcHanViet.textContent = isKatakana ? (w.hanViet ? `Gốc: ${w.hanViet}` : '') : (w.hanViet || '');
     dom.fcHiragana.textContent = w.hiragana;
     dom.fcNghia.textContent = w.nghia;
@@ -2329,7 +2332,7 @@
 
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
-      if (appState.appMode === 'reading') return;
+      if (document.getElementById('kanjiDialog')?.open || appState.appMode === 'reading') return;
       // Don't trigger shortcuts if user is typing in search or spelling input
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 

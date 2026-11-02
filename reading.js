@@ -113,7 +113,7 @@
     const w = words.find(w => w.id === id);
     if (!w) return;
     const box = document.getElementById('readingLookup');
-    box.innerHTML = `<strong lang="ja">${escape(w.kanji)}</strong> <span lang="ja">${escape(w.hiragana)}</span><p>${escape(w.hanViet || '')} · ${escape(w.nghia)}</p><div class="reading-tools"><button class="btn-secondary" data-pronounce="${w.id}">🔊 Nghe từ</button><button class="btn-secondary" data-review-word="${w.id}" ${api.storage.mistakes[id] ? 'disabled' : ''}>${api.storage.mistakes[id] ? '✓ Đã có trong Cần ôn' : '+ Thêm vào Cần ôn'}</button></div>`;
+    box.innerHTML = `<strong lang="ja">${escape(w.kanji)}</strong> <span lang="ja">${escape(w.hiragana)}</span><p>${escape(w.hanViet || '')} · ${escape(w.nghia)}</p><div class="reading-tools"><button class="btn-secondary" data-pronounce="${w.id}">🔊 Nghe từ</button>${window.KanjiWriter.kanjiIn(w.kanji).length ? `<button type="button" class="btn-secondary" data-kanji-word="${escape(w.kanji)}">✍️ Cách viết</button>` : ''}<button class="btn-secondary" data-review-word="${w.id}" ${api.storage.mistakes[id] ? 'disabled' : ''}>${api.storage.mistakes[id] ? '✓ Đã có trong Cần ôn' : '+ Thêm vào Cần ôn'}</button></div>`;
     if (focus) box.scrollIntoView({block:'nearest', behavior:'smooth'});
   }
   window.initReading = function (bridge) {

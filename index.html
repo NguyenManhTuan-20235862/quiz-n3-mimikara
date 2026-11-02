@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Ôn Tập Từ Vựng JLPT N3 - Mimikara</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kanji-writer.css">
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="apple-touch-icon" href="icon.svg">
   <link rel="manifest" href="manifest.json">
@@ -283,6 +284,8 @@
             </div>
           </div>
         </div>
+
+        <div class="fc-writing-tools"><button type="button" id="fcWritingBtn" class="btn-secondary" hidden>✍️ Cách viết</button></div>
 
         <!-- Controls -->
         <div class="flashcard-controls">
@@ -731,8 +734,10 @@
   <script src="reading_stage8.js"></script>
   <script src="reading_stage9.js"></script>
   <script src="reading_plan.js"></script>
+  <script src="kanji-writer.js"></script>
+  <script src="kanji-dialog.js"></script>
   <script src="reading.js"></script>
-  <script src="app.js?v=15"></script>
+  <script src="app.js?v=16"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let reloading = false;

@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 *.pdf
 tests/*.png
+data/kanji/kanjivg-source.zip
